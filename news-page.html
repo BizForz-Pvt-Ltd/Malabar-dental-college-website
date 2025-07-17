@@ -53,90 +53,121 @@
     />
     <style>
       .grid-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 0px;
-      }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0px;
+  }
 
-      /* Ensure each news item is centered in its column */
-      .gdlr-core-blog-item {
-        display: flex;
-        justify-content: center;
-      }
+  /* Ensure each news item is centered in its column */
+  .gdlr-core-blog-item {
+    display: flex;
+    justify-content: center;
+  }
 
-      /* CSS to style the images with max height and cover */
-      .image_urls {
-        max-height: 450px;
-        object-fit: cover;
-      }
+  /* CSS to style the images with max height and cover */
+  .image_urls {
+    max-height: 450px;
+    object-fit: cover;
+  }
 
-      /* Media query for smaller screen sizes to adjust image height */
-      @media (max-width: 768px) {
-        .image_urls {
-          max-height: 450px;
-          max-width: 450px !important;
-        }
-      }
-      .loading-animation {
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #3db166;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        animation: spin 2s linear infinite;
-        margin: 20px auto;
-      }
+  /* Media query for smaller screen sizes to adjust image height */
+  @media (max-width: 768px) {
+    .image_urls {
+      max-height: 450px;
+      max-width: 450px !important;
+    }
+  }
+  .loading-animation {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3db166;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+  }
 
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-      .floating-button {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background-color: #182847; /* WhatsApp green */
-        color: #fff;
-        width: 70px; /* Set width and height to the same value for a perfect circle */
-        height: 70px;
-        border-radius: 50%; /* Make the button round */
-        cursor: pointer;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px; /* Adjust the font size for larger text */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 9999; /* Set a high z-index to appear above other content */
-      }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .floating-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #182847; /* WhatsApp green */
+    color: #fff;
+    width: 70px; /* Set width and height to the same value for a perfect circle */
+    height: 70px;
+    border-radius: 50%; /* Make the button round */
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px; /* Adjust the font size for larger text */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Set a high z-index to appear above other content */
+  }
 
-      /* Style for WhatsApp logo */
-      .whatsapp-logo {
-        width: 36px; /* Adjust the logo size */
-        height: 36px; /* Adjust the logo size */
-      }
-      .notification-list {
-        display: inline-block;
-        max-height: 20px;
-        overflow: hidden;
-        position: relative;
-        max-height: 20px;
-      }
-      ul.notification-list {
-        margin-bottom: 0px !important;
-      }
-      @keyframes marquee-up {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(-100%);
-        }
-      }
+  /* Style for WhatsApp logo */
+  .whatsapp-logo {
+    width: 36px; /* Adjust the logo size */
+    height: 36px; /* Adjust the logo size */
+  }
+  .notification-list {
+    display: inline-block;
+    max-height: 20px;
+    overflow: hidden;
+    position: relative;
+    max-height: 20px;
+  }
+  ul.notification-list {
+    margin-bottom: 0px !important;
+  }
+  @keyframes marquee-up {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  
+  /* Pagination styles */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .pagination button.active {
+    background-color: #182847;
+    color: white;
+    border-color: #182847;
+  }
+  
+  .pagination button:hover:not(.active) {
+    background-color: #ddd;
+  }
+  
+  .pagination button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
     </style>
   </head>
   <a
@@ -207,9 +238,6 @@
               data-slide="right"
             >
               <ul id="menu-main-navigation" class="m-menu">
-                <!-- <li class="menu-item menu-item-home current-menu-item">
-                <a href="index.html">Home</a>
-              </li> -->
                 <li class="menu-item menu-item-has-children">
                   <a>About HEI</a>
                   <ul class="sub-menu">
@@ -272,16 +300,6 @@
                     <li class="menu-item">
                       <a href="finance-officer.html">Finance Officer</a>
                     </li>
-                  <!-- <li class="menu-item">
-                      <a href="controller-of-examination.html"
-                        >Controller of Examination</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="chief-vigilance-officer.html"
-                        >Chief Vigilance Officer</a
-                      >
-                    </li> -->
                     <li class="menu-item">
                       <a href="internal-complaint-committee.html"
                         >Internal Complaint Committee</a
@@ -339,12 +357,6 @@
                         >Academic Calendar</a
                       >
                     </li>
-                 <!-- <li class="menu-item">
-                      <a href="/assets/ACADEMICPROSPECTS.pdf" target="_blank"
-                        >Ordinances pertaining to
-                        <br />Academics/Examinations</a
-                      >
-                    </li> -->
                     <li class="menu-item menu-item-has-children">
                       <a>Departments</a>
                       <ul class="sub-menu">
@@ -480,9 +492,6 @@
                         >Admission Process And Guidelines</a
                       >
                     </li>
-                    <!-- <li class="menu-item">
-                      <a href="fee-refund-policy.html">Fee Refund Policy</a>
-                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
@@ -537,23 +546,6 @@
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
-                       <!-- <li class="menu-item">
-                      <a href="equal-opportunity-cell.html"
-                        >Equal Opportunity Cell</a
-                      >
-                    </li> -->
-                   <!-- <li class="menu-item">
-                      <a
-                        href="socio-economically-disadvantaged-groups-cell.html"
-                        >Socio-Economically Disadvantaged Groups Cell
-                        (SEDG)</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="facilities-for-differently-abled.html"
-                        >Facilities for Differently-Abled</a
-                      >
-                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
@@ -567,9 +559,6 @@
                 <li class="menu-item menu-item-has-children">
                   <a>Information Corner</a>
                   <ul class="sub-menu">
-                    <!-- <li class="menu-item">
-                      <a href="rti.html">RTI</a>
-                    </li> -->
                     <li class="menu-item">
                       <a href="circulars-and-notices.html"
                         >Circulars and Notices</a
@@ -590,20 +579,6 @@
                     <li class="menu-item">
                       <a href="careers.html">Job Openings</a>
                     </li>
-                    <!-- <li class="menu-item">
-                      <a href="reservation-roaster.html"
-                        >Reservation Roaster</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="study-in-india.html">Study in India</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="admission.html"
-                        >Admission Procedure and Facilities Provided to
-                        International Students</a
-                      >
-                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item">
@@ -763,16 +738,6 @@
                     <li class="menu-item">
                       <a href="finance-officer.html">Finance Officer</a>
                     </li>
-                  <!-- <li class="menu-item">
-                      <a href="controller-of-examination.html"
-                        >Controller of Examination</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="chief-vigilance-officer.html"
-                        >Chief Vigilance Officer</a
-                      >
-                    </li> -->
                     <li class="menu-item">
                       <a href="internal-complaint-committee.html"
                         >Internal Complaint Committee</a
@@ -833,12 +798,6 @@
                         </li>
                       </ul>
                     </li>
-                 <!-- <li class="menu-item">
-                      <a href="/assets/ACADEMICPROSPECTS.pdf" target="_blank"
-                        >Ordinances pertaining to
-                        <br />Academics/Examinations</a
-                      >
-                    </li> -->
                     <li class="menu-item menu-item-has-children">
                       <a>Departments</a>
                       <ul class="sub-menu">
@@ -976,9 +935,6 @@
                         >Admission Process And Guidelines</a
                       >
                     </li>
-                    <!-- <li class="menu-item">
-                      <a href="fee-refund-policy.html">Fee Refund Policy</a>
-                    </li> -->
                   </ul>
                 </li>
                 <li
@@ -1037,23 +993,6 @@
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
-                       <!-- <li class="menu-item">
-                      <a href="equal-opportunity-cell.html"
-                        >Equal Opportunity Cell</a
-                      >
-                    </li> -->
-                   <!-- <li class="menu-item">
-                      <a
-                        href="socio-economically-disadvantaged-groups-cell.html"
-                        >Socio-Economically Disadvantaged Groups Cell
-                        (SEDG)</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="facilities-for-differently-abled.html"
-                        >Facilities for Differently-Abled</a
-                      >
-                    </li> -->
                   </ul>
                 </li>
                 <li
@@ -1071,9 +1010,6 @@
                 >
                   <a class="sf-with-ul-pre">Information Corner</a>
                   <ul class="sub-menu">
-                    <!-- <li class="menu-item">
-                      <a href="rti.html">RTI</a>
-                    </li> -->
                     <li class="menu-item">
                       <a href="circulars-and-notices.html"
                         >Circulars and Notices</a
@@ -1094,20 +1030,6 @@
                     <li class="menu-item">
                       <a href="careers.html">Job Openings</a>
                     </li>
-                    <!-- <li class="menu-item">
-                      <a href="reservation-roaster.html"
-                        >Reservation Roaster</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="study-in-india.html">Study in India</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="admission.html"
-                        >Admission Procedure and Facilities Provided to
-                        International Students</a
-                      >
-                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item">
@@ -1163,46 +1085,31 @@
           </div>
         </div>
       </div>
-    </header>        <div
-          class="kingster-page-title-wrap kingster-style-medium kingster-left-align"
-        >
-          <div class="kingster-header-transparent-substitute"></div>
-          <div class="kingster-page-title-overlay"></div>
-          <div class="kingster-page-title-container kingster-container">
-            <div class="kingster-page-title-content kingster-item-pdlr">
-              <div class="kingster-page-caption">MDCRC</div>
-              <h1 class="kingster-page-title">News & Updates</h1>
-            </div>
-          </div>
+    </header>
+    <div class="kingster-page-title-wrap kingster-style-medium kingster-left-align">
+  <div class="kingster-header-transparent-substitute"></div>
+  <div class="kingster-page-title-overlay"></div>
+  <div class="kingster-page-title-container kingster-container">
+    <div class="kingster-page-title-content kingster-item-pdlr">
+      <div class="kingster-page-caption">MDCRC</div>
+      <h1 class="kingster-page-title">News & Updates</h1>
+    </div>
+  </div>
+</div>
+<div class="kingster-page-wrapper" id="kingster-page-wrapper">
+  <div class="gdlr-core-page-builder-body">
+    <div class="gdlr-core-pbf-section">
+      <div class="gdlr-core-pbf-section-container gdlr-core-container clearfix">
+        <div class="gdlr-core-pbf-element">
+          <div id="loadingAnimation" class="loading-animation" style="display: none;"></div>
+          <div id="errorContainer" class="error-message" style="display: none;"></div>
+          <div id="newsContainer" class="grid-container"></div>
+          <div id="paginationContainer" class="pagination" style="margin-top: 20px; text-align: center;"></div>
         </div>
-        <div class="kingster-page-wrapper" id="kingster-page-wrapper">
-          <div class="gdlr-core-page-builder-body">
-            <div class="gdlr-core-pbf-section">
-              <div
-                class="gdlr-core-pbf-section-container gdlr-core-container clearfix"
-              >
-                <div class="gdlr-core-pbf-element">
-                  <div id="loadingAnimation" class="loading-animation"></div>
-                  <div id="newsContainer" style="display: none"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- <div
-                      class="gdlr-core-load-more-wrap gdlr-core-js gdlr-core-center-align gdlr-core-item-pdlr"
-                      data-ajax="gdlr_core_post_ajax"
-                      data-target="gdlr-core-blog-item-holder"
-                      data-target-action="append"
-                    >
-                      <a
-                        href="#"
-                        class="gdlr-core-load-more gdlr-core-button-color"
-                        data-ajax-name="paged"
-                        data-ajax-value="2"
-                        >Load More</a
-                      >
-                    </div> -->
+      </div>
+    </div>
+  </div>
+</div>
         <footer>
           <div class="kingster-footer-wrapper">
             <div class="kingster-footer-container kingster-container clearfix">
@@ -1226,9 +1133,7 @@
                     <p>
                       <span id="span_1dd7_11">
                         Toll free:<a href="tel:18008430066"> 18008430066</a>
-                      </span>
-                      <!-- <br> <span id="span_1dd7_11"> Hospital/Clinic:<a href="tel:0494 269720"> 0494 269720, 21</a> </span> | <span id="span_1dd7_11"> <a href="tel:7034555514">+91 7034555514</a></span> -->
-                      <br />
+                      </span><br />
                       <span
                         class="gdlr-core-space-shortcode"
                         id="span_1dd7_12"
@@ -1458,80 +1363,212 @@
       type="text/javascript"
       src="plugins/goodlayers-core/plugins/combine/script.js"
     ></script>
-    <script>
-      // Function to create and append a news item element to the container
-      function createNewsItem(newsData, index) {
-        // Create a new div element with the class "gdlr-core-pbf-element"
-        const newsItemDiv = document.createElement("div");
-        newsItemDiv.className = `gdlr-core-item-list gdlr-core-item-mgb gdlr-core-column-30`;
-        newsItemDiv.style.padding = `0 10px`;
-        const newsDate = new Date(newsData.news_date);
-        const newsId = newsData.id;
-        let img = "upload/clg.jpg";
-        if (newsData.image_urls.length != 0) {
-          img = newsData.image_urls[0];
-        } else {
-          let random = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-          img = `upload/mdc_pics/mdc${random}.jpg`;
-        }
-        const formattedDate = newsDate.toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        });
+<script>
+  // Global variables to store pagination state
+  let currentPage = 1;
+  let totalPages = 1;
+  const pageSize = 10;
 
-        // Set the HTML content of the news item div based on the provided template
-        newsItemDiv.innerHTML = `
-       <div class="gdlr-core-blog-modern gdlr-core-with-image gdlr-core-hover-overlay-content gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover" >
-        <div class="gdlr-core-blog-modern-inner">
-          <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
-              <a class="news_subject" href='news-single-page.html?id=${newsId}'><img class="image_urls" src="${img}" style="height:450px;object-fit:cover"  width="1280" height="580" alt=""></a>
-        
-          </div>
-          <div class="gdlr-core-blog-modern-content gdlr-core-center-align">
-            <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 700; letter-spacing: 0px;">
-              <a class="news_subject" href='news-single-page.html?id=${newsId}'>${newsData.news_subject}</a>
-            </h3>
-            <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-              <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-                <a class="news_date" href='news-single-page.html?id=${newsId}'>${formattedDate}</a>
-              </span>
-            </div>
+  // Function to create and append a news item element to the container
+  function createNewsItem(newsData, index) {
+    // Create a new div element with the class "gdlr-core-pbf-element"
+    const newsItemDiv = document.createElement("div");
+    newsItemDiv.className = `gdlr-core-item-list gdlr-core-item-mgb gdlr-core-column-30`;
+    newsItemDiv.style.padding = `0 10px`;
+    const newsDate = new Date(newsData.date);
+    const newsId = newsData.id;
+    
+    // Use news_banner as primary image, fallback to first attachment picture, then default image
+    let img = "upload/clg.jpg";
+    if (newsData.news_banner) {
+      img = newsData.news_banner;
+    } else if (newsData.attachments && newsData.attachments.length > 0 && newsData.attachments[0].picture) {
+      img = newsData.attachments[0].picture;
+    } else {
+      let random = Math.floor(Math.random() * 3) + 1;
+      img = `upload/mdc_pics/mdc${random}.jpg`;
+    }
+    
+    const formattedDate = newsDate.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
+    // Set the HTML content of the news item div based on the provided template
+    newsItemDiv.innerHTML = `
+    <div class="gdlr-core-blog-modern gdlr-core-with-image gdlr-core-hover-overlay-content gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
+      <div class="gdlr-core-blog-modern-inner">
+        <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
+            <a class="news_subject" href='news-single-page.html?id=${newsId}'><img class="image_urls" src="${img}" style="height:450px;object-fit:cover" width="1280" height="580" alt=""></a>
+        </div>
+        <div class="gdlr-core-blog-modern-content gdlr-core-center-align">
+          <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 700; letter-spacing: 0px;">
+            <a class="news_subject" href='news-single-page.html?id=${newsId}'>${newsData.subject}</a>
+          </h3>
+          <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
+            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
+              <a class="news_date" href='news-single-page.html?id=${newsId}'>${formattedDate}</a>
+            </span>
           </div>
         </div>
       </div>
-  `;
+    </div>
+    `;
 
-        return newsItemDiv;
+    return newsItemDiv;
+  }
+
+  // Function to render pagination buttons
+  function renderPagination(totalItems) {
+    totalPages = Math.ceil(totalItems / pageSize);
+    const paginationContainer = document.getElementById("paginationContainer");
+    
+    if (!paginationContainer || totalPages <= 1) {
+      return;
+    }
+    
+    paginationContainer.innerHTML = '';
+    
+    // Previous button
+    const prevButton = document.createElement('button');
+    prevButton.innerHTML = '&laquo;';
+    prevButton.disabled = currentPage === 1;
+    prevButton.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        fetchAndRenderNewsItems();
       }
-
-      // Function to fetch data from the API and render news items in a grid
-      function fetchAndRenderNewsItems() {
-        // Replace 'YOUR_API_URL_HERE' with the actual API endpoint
-        const apiUrl = "https://app.conext.in/news/api/news/";
-        loadingAnimation.style.display = "block";
-        newsContainer.style.display = "none";
-        fetch(apiUrl)
-          .then((response) => response.json())
-          .then((apiResponse) => {
-            const container = document.getElementById("newsContainer");
-
-            apiResponse.forEach((item) => {
-              const newsItemElement = createNewsItem(item);
-              container.appendChild(newsItemElement);
-              loadingAnimation.style.display = "none";
-              newsContainer.style.display = "block";
-            });
-          })
-          .catch((error) => {
-            console.error("Error fetching data from the API:", error);
-            loadingAnimation.style.display = "none";
-          });
+    });
+    paginationContainer.appendChild(prevButton);
+    
+    // Page buttons
+    const maxVisibleButtons = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisibleButtons / 2));
+    let endPage = Math.min(totalPages, startPage + maxVisibleButtons - 1);
+    
+    if (endPage - startPage + 1 < maxVisibleButtons) {
+      startPage = Math.max(1, endPage - maxVisibleButtons + 1);
+    }
+    
+    if (startPage > 1) {
+      const firstButton = document.createElement('button');
+      firstButton.textContent = '1';
+      firstButton.addEventListener('click', () => {
+        currentPage = 1;
+        fetchAndRenderNewsItems();
+      });
+      paginationContainer.appendChild(firstButton);
+      
+      if (startPage > 2) {
+        const ellipsis = document.createElement('span');
+        ellipsis.textContent = '...';
+        paginationContainer.appendChild(ellipsis);
       }
+    }
+    
+    for (let i = startPage; i <= endPage; i++) {
+      const pageButton = document.createElement('button');
+      pageButton.textContent = i;
+      if (i === currentPage) {
+        pageButton.classList.add('active');
+      }
+      pageButton.addEventListener('click', () => {
+        currentPage = i;
+        fetchAndRenderNewsItems();
+      });
+      paginationContainer.appendChild(pageButton);
+    }
+    
+    if (endPage < totalPages) {
+      if (endPage < totalPages - 1) {
+        const ellipsis = document.createElement('span');
+        ellipsis.textContent = '...';
+        paginationContainer.appendChild(ellipsis);
+      }
+      
+      const lastButton = document.createElement('button');
+      lastButton.textContent = totalPages;
+      lastButton.addEventListener('click', () => {
+        currentPage = totalPages;
+        fetchAndRenderNewsItems();
+      });
+      paginationContainer.appendChild(lastButton);
+    }
+    
+    // Next button
+    const nextButton = document.createElement('button');
+    nextButton.innerHTML = '&raquo;';
+    nextButton.disabled = currentPage === totalPages;
+    nextButton.addEventListener('click', () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        fetchAndRenderNewsItems();
+      }
+    });
+    paginationContainer.appendChild(nextButton);
+  }
 
-      // Call the function to fetch and render news items
-      fetchAndRenderNewsItems();
-    </script>
+  // Function to fetch data from the API and render news items in a grid
+  function fetchAndRenderNewsItems() {
+    // Replace 'YOUR_API_URL_HERE' with the actual API endpoint
+    const apiUrl = `https://conext.in/news/api/get_org_news_articles/1/?page=${currentPage}`;
+    const loadingAnimation = document.getElementById("loadingAnimation");
+    const newsContainer = document.getElementById("newsContainer");
+    
+    if (loadingAnimation) loadingAnimation.style.display = "block";
+    if (newsContainer) newsContainer.style.display = "none";
+    
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((apiResponse) => {
+        const container = document.getElementById("newsContainer");
+        
+        // Check if the response has the expected structure
+        if (!apiResponse || !apiResponse.results || !apiResponse.results.data) {
+            throw new Error('Invalid API response structure');
+        }
+        
+        // Clear previous content
+        if (container) container.innerHTML = '';
+        
+        // Iterate through the news items array
+        apiResponse.results.data.forEach((item) => {
+            const newsItemElement = createNewsItem(item);
+            if (container) container.appendChild(newsItemElement);
+        });
+        
+        // Render pagination
+        if (apiResponse.count) {
+          renderPagination(apiResponse.count);
+        }
+        
+        if (loadingAnimation) loadingAnimation.style.display = "none";
+        if (newsContainer) newsContainer.style.display = "grid"; // Changed to grid to maintain layout
+      })
+      .catch((error) => {
+        console.error("Error fetching data from the API:", error);
+        if (loadingAnimation) loadingAnimation.style.display = "none";
+        
+        // Display error message to user
+        const container = document.getElementById("newsContainer");
+        if (container) {
+          container.innerHTML = '<p style="text-align: center; color: red;">Failed to load news. Please try again later.</p>';
+          container.style.display = "block";
+        }
+      });
+  }
+
+  // Call the function to fetch and render news items when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    fetchAndRenderNewsItems();
+  });
+</script>
     <script>
       // Define the API URL to fetch notification data
       const apiUrlNotification =

@@ -6501,14 +6501,15 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
       }
 
       // Fetch API data
-      fetch("http://app.conext.in/news/api/MdcLatestNews/")
+      fetch("https://conext.in/news/api/get_org_news_articles/1/")
         .then((response) => response.json())
         .then((data) => {
-          if (data.length > 0) {
-            const newsItem = data[0]; // Assuming you want to update with the first item in the API response
-            const imageUrl = newsItem.image_urls[0];
-            const newsDate = formatDate(newsItem.news_date);
-            const newsSubject = newsItem.news_subject;
+          if (data.results.data.length > 0) {
+            
+            const newsItem = data.results.data[0]; // Assuming you want to update with the first item in the API response
+            const imageUrl = newsItem.picture || "upload/clg.jpg";
+            const newsDate = formatDate(newsItem.date);
+            const newsSubject = newsItem.subject;
             const id = newsItem.id;
 
             // Update the image, date, and news subject
@@ -6552,9 +6553,9 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
           const dateElement = itemDivs[index].querySelector(".news_date");
           const subjectElement = itemDivs[index].querySelector(".news_subject");
 
-          imageElement.src = item.image_urls[0];
-          dateElement.textContent = formatDate(item.news_date);
-          subjectElement.textContent = item.news_subject;
+          imageElement.src = item.picture;
+          dateElement.textContent = formatDate(item.date);
+          subjectElement.textContent = item.subject;
 
           const linkElement = itemDivs[index].querySelector("a");
           linkElement.href = `news-single-page.html?id=${item.id}`;
@@ -6564,12 +6565,13 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
       }
 
       // Fetch API data
-      fetch("http://app.conext.in/news/api/MdcLatestNews/")
+      fetch("https://conext.in/news/api/get_org_news_articles/1/")
         .then((response) => response.json())
         .then((data) => {
-          if (data.length >= 4) {
+          
+          if (data.results.data.length >= 4) {
             // Update the HTML with API response data for the next three responses
-            updateHTMLWithAPIResponse(data);
+            updateHTMLWithAPIResponse(data.results.data);
           }
         })
         .catch((error) => {
@@ -6577,7 +6579,7 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
         });
     </script>
 
-    <script>
+    <script>    
       (function (body) {
         "use strict";
         body.className = body.className.replace(/\btribe-no-js\b/, "tribe-js");
