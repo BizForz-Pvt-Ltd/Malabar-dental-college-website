@@ -3619,7 +3619,7 @@
                           <a href="latest-awards.html">
                             <img
                               class="image_urls award1-image"
-                              src="https://app.conext.in/media/news_images/768b1b0f-2fe2-428e-82b5-73d3dfd869b2.jpg"
+                              src="http://app.conext.in/media/news_images/768b1b0f-2fe2-428e-82b5-73d3dfd869b2.jpg"
                               style="
                                 max-height: 350px !important;
                                 min-height: 350px !important;
@@ -3679,7 +3679,7 @@
                           <a href="latest-awards.html"
                             ><img
                               class="image_urls award2-image"
-                              src="https://app.conext.in/media/news_images/1e5c05ec-914a-43b2-91de-a9a05c66f99b_IBWFsg7.jpeg"
+                              src="http://app.conext.in/media/news_images/1e5c05ec-914a-43b2-91de-a9a05c66f99b_IBWFsg7.jpeg"
                               style="
                                 max-height: 350px !important;
                                 width: 100%;
@@ -6106,7 +6106,7 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
 <script>
       // Define the API URL to fetch notification data
       const apiUrl =
-        "https://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";
+        "http://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";
 
       // Reference to the notification container
       const notificationContainer = document.getElementById(
@@ -6154,7 +6154,7 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
         const emailInput = document.getElementById("email").value;
 
         // Construct the API endpoint URL
-        const apiURL = "https://app.conext.in/news/news-letter-add-email/";
+        const apiURL = "http://app.conext.in/news/news-letter-add-email/";
 
         // Create data object for the API request
         const data = { email_id: emailInput };
@@ -6225,7 +6225,7 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
       async function fetchGalleryData() {
         try {
           const response = await fetch(
-            "https://app.conext.in/Events/HomeGallery/"
+            "http://app.conext.in/Events/HomeGallery/"
           );
           const data = await response.json();
           return data;
@@ -6317,9 +6317,9 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
 
       // API endpoint URLs
       const apiUrlUpcomingEvents =
-        "https://app.conext.in/Events/MdcUpcomingEventsList";
+        "http://app.conext.in/Events/MdcUpcomingEventsList";
       const apiUrlLatestEvents =
-        "https://app.conext.in/Events/MdcLatestEventsList";
+        "http://app.conext.in/Events/MdcLatestEventsList";
 
       function createEventElement(eventDate) {
         const dateObj = new Date(eventDate);
@@ -6424,7 +6424,7 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
       async function fetchPopupData() {
         try {
           const response = await fetch(
-            "https://app.conext.in/Notifications/api/latest-mdc-notification/"
+            "http://app.conext.in/Notifications/api/latest-mdc-notification/"
           );
           const data = await response.json();
           return data[0];
@@ -6875,7 +6875,7 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
   <!-- For Awards -->
   <script>
     async function fetchAndPopulateAwards() {
-      const apiURL = "https://app.conext.in/news/api/MdcLatestAwards/";
+      const apiURL = "http://app.conext.in/news/api/MdcLatestAwards/";
       try {
         const response = await fetch(apiURL);
         if (!response.ok) {
@@ -6921,7 +6921,7 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
   <!-- For Workshops -->
   <script>
     async function fetchAndPopulateWorkshops() {
-      const apiURL = "https://app.conext.in/news/api/conference_workshopsAll/";
+      const apiURL = "http://app.conext.in/news/api/conference_workshopsAll/";
       try {
         const response = await fetch(apiURL);
         if (!response.ok) {
@@ -6959,7 +6959,7 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
   </script>
   <script>
     async function fetchAndPopulatePublications() {
-      const apiURL = "https://app.conext.in/news/api/MdcPublicationsListAll/";
+      const apiURL = "http://app.conext.in/news/api/MdcPublicationsListAll/";
       try {
         const response = await fetch(apiURL);
         if (!response.ok) {
