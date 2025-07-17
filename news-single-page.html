@@ -54,7 +54,7 @@
     />
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.min.css" />
     <style>
-       .loading-animation {
+      .loading-animation {
         border: 4px solid #f3f3f3;
         border-top: 4px solid #3db166;
         border-radius: 50%;
@@ -73,84 +73,165 @@
           transform: rotate(360deg);
         }
       }
-      .image-slides a {
-        margin-right: 10px; /* Adjust the spacing as needed */
-      }
-      .image-slides a:last-child {
-        margin-right: 0; /* Remove margin from the last image */
-      }
       .floating-button {
         position: fixed;
         bottom: 30px;
         right: 30px;
-        background-color: #182847; /* WhatsApp green */
+        background-color: #182847;
         color: #fff;
-        width: 70px; /* Set width and height to the same value for a perfect circle */
+        width: 70px;
         height: 70px;
-        border-radius: 50%; /* Make the button round */
+        border-radius: 50%;
         cursor: pointer;
         text-decoration: none;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 24px; /* Adjust the font size for larger text */
+        font-size: 24px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 9999; /* Set a high z-index to appear above other content */
+        z-index: 9999;
       }
 
-      /* Style for WhatsApp logo */
       .whatsapp-logo {
-        width: 36px; /* Adjust the logo size */
-        height: 36px; /* Adjust the logo size */
+        width: 36px;
+        height: 36px;
       }
-      .notification-list {
-        display: inline-block;
-        max-height: 20px;
-        overflow: hidden;
-        position: relative;
-        max-height: 20px;
-      }
-      ul.notification-list {
-        margin-bottom: 0px !important;
-      }
-      @keyframes marquee-up {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(-100%);
-        }
-      }
-  
 
 .kingster-item-pdlr, .gdlr-core-item-pdlr {
     padding-left: 0px !important;
     padding-right: 20px;
 }
  
-
-
-  .gdlr-core-image-item {
+.gdlr-core-image-item {
     margin-bottom: 10px;
-  }
+}
 .gdlr-core-media-image img {
-  width: 415px; /* Default width for large screens */
-  height: 310px; /* Default height for large screens */
-  object-fit: cover; /* Maintain aspect ratio and cover */
+  width: 415px;
+  height: 310px;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 768px) {
   .gdlr-core-media-image img {
-    width: 210px; /* Medium screen width */
-    height: 210px; /* Medium screen height */
+    width: 210px;
+    height: 210px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .gdlr-core-media-image img {
-    width: 210px; /* Small screen width */
-    height: 210px; /* Small screen height */
+    width: 210px;
+    height: 210px;
   }
+}
+
+/* Additional styles */
+.gdlr-core-pbf-wrapper {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.gdlr-core-title-item-title {
+  color: #182847;
+}
+
+.gdlr-core-port-info {
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.gdlr-core-port-info-key {
+  min-width: 100px;
+  font-weight: 600;
+}
+
+.gdlr-core-port-info-value {
+  margin-left: 10px;
+}
+
+.gdlr-core-button {
+  background-color: #182847;
+  color: white !important;
+  transition: all 0.3s;
+}
+
+.gdlr-core-button:hover {
+  background-color: #3db166;
+}
+
+.news_content {
+  line-height: 1.6;
+}
+
+.image-container {
+  margin-top: 30px;
+}
+
+.first-image-container img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+/* Document list styles */
+.document-list {
+  margin-top: 20px;
+}
+
+.document-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.document-icon {
+  font-size: 24px;
+  margin-right: 15px;
+  color: #182847;
+}
+
+.document-name {
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.download-btn {
+  background-color: #3db166;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.download-btn:hover {
+  background-color: #2e8b57;
+}
+
+.news-type-badge {
+  background-color: #3db166;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.default-banner {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 20px;
 }
 /* 
 
@@ -1188,139 +1269,90 @@
         </div>
       </div>
     </header>
-        <div
-          class="kingster-page-title-wrap kingster-style-medium kingster-left-align"
-        ></div>
-        <div class="kingster-page-wrapper" id="kingster-page-wrapper">
-          <div class="gdlr-core-page-builder-body">
-            <div
-              class="gdlr-core-pbf-wrapper"
-              style="padding: 60px 0px 60px 0px"
-            >
-              <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                <div
-                  class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container"
-                > <div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first">
-                    <div
-                      class="gdlr-core-pbf-column-content-margin gdlr-core-js"
-                      style="padding: 10px 0px 0px 20px"
-                    >
-                      <div
-                        class="gdlr-core-pbf-column-content clearfix gdlr-core-js"
-                      >
-                        <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr"
-                          >
-                            <div
-                              class="gdlr-core-title-item-title-wrap clearfix"
-                            >
-                              <h4
-                                class="gdlr-core-title-item-title gdlr-core-skin-title news_subject"
-                                style="
-                                  font-size: 22px;
-                                  font-weight: 700;
-                                  text-transform: none;
-                                "
-                              ></h4>
+        <div class="kingster-page-title-wrap kingster-style-medium kingster-left-align"></div>
+    <div class="kingster-page-wrapper" id="kingster-page-wrapper">
+        <div class="gdlr-core-page-builder-body">
+            <div class="gdlr-core-pbf-wrapper" style="padding: 60px 0px 60px 0px">
+                <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
+                    <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                        <div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first">
+                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="padding: 10px 0px 0px 20px">
+                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
+                                    <div class="gdlr-core-pbf-element">
+                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr">
+                                            <div class="gdlr-core-title-item-title-wrap clearfix">
+                                                <span class="news-type-badge type_name"></span>
+                                                <h4 class="gdlr-core-title-item-title gdlr-core-skin-title news_subject" style="font-size: 22px; font-weight: 700; text-transform: none;"></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gdlr-core-pbf-element">
+                                        <div class="gdlr-core-port-info-item gdlr-core-item-pdb gdlr-core-item-pdlr" style="padding-bottom: 50px">
+                                            <div class="gdlr-core-port-info-wrap gdlr-core-skin-divider gdlr-core-with-border">
+                                                <div class="gdlr-core-port-info">
+                                                    <span class="gdlr-core-port-info-key gdlr-core-skin-title">Location</span>
+                                                    <b><span class="gdlr-core-port-info-value location"></span></b>
+                                                </div>
+                                                <div class="gdlr-core-port-info">
+                                                    <span class="gdlr-core-port-info-key gdlr-core-skin-title">Date </span>
+                                                    <b><span class="gdlr-core-port-info-value news_date"></span></b>
+                                                </div>
+                                                <div class="gdlr-core-port-info">
+                                                    <span class="gdlr-core-port-info-key gdlr-core-skin-title">Added By</span>
+                                                    <b><span class="gdlr-core-port-info-value staff_name"></span></b>
+                                                    &nbsp;Via CONNECT
+                                                </div>
+                                                <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-top: 20px;">
+                                                    <button class="gdlr-core-button gdlr-core-button-solid gdlr-core-button-no-border" id="shareButton" style="font-size: 14px; font-weight: 700; letter-spacing: 0px; padding: 13px 29px 18px 32px; text-transform: none; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px;">
+                                                        <span class="gdlr-core-content">Share News</span>
+                                                        <i class="gdlr-core-pos-right fa fa-external-link" style="font-size: 14px;"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                        <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-port-info-item gdlr-core-item-pdb gdlr-core-item-pdlr"
-                            style="padding-bottom: 50px"
-                          >
-                            <div
-                              class="gdlr-core-port-info-wrap gdlr-core-skin-divider gdlr-core-with-border"
-                            >
-                              <div class="gdlr-core-port-info">
-                                <span
-                                  class="gdlr-core-port-info-key gdlr-core-skin-title"
-                                  >Location</span
-                                ><b
-                                  ><span
-                                    class="gdlr-core-port-info-value location"
-                                  ></span
-                                ></b>
-                              </div>
-                              <div class="gdlr-core-port-info">
-                                <span
-                                  class="gdlr-core-port-info-key gdlr-core-skin-title"
-                                  >Date </span
-                                ><b
-                                  ><span
-                                    class="gdlr-core-port-info-value news_date"
-                                  ></span
-                                ></b>
-                              </div>
-                              <div class="gdlr-core-port-info">
-                                <span
-                                  class="gdlr-core-port-info-key gdlr-core-skin-title"
-                                  >Added By</span
-                                ><b
-                                  ><span
-                                    class="gdlr-core-port-info-value staff_name"
-                                  >
-                                  </span
-                                ></b>
-                                Via CONNECT
-                              </div>
-                              <div
-                                class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"
-                              style="padding-top: 20px;"
-                              >
-                              <button class="gdlr-core-button  gdlr-core-button-solid gdlr-core-button-no-border" id="shareButton" style="font-size: 14px ;font-weight: 700 ;letter-spacing: 0px ;padding: 13px 29px 18px 32px;text-transform: none ;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;"><span class="gdlr-core-content" >Share News</span><i class="gdlr-core-pos-right fa fa-external-link" style="font-size: 14px ;"  ></i></button>
-                               <!-- <a class="gdlr-core-button gdlr-core-button-solid gdlr-core-button-no-border" href="#" id="shareButton">
-  <span class="gdlr-core-content">Share News</span>
-  <i class="gdlr-core-pos-right fa fa-external-link" style="font-size: 14px;"></i>
-</a> -->
-
-
-                              </div>
-                              </div>
+                        <div class="gdlr-core-pbf-column gdlr-core-column-40">
+                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js">
+                                <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
+                                    <div id="loadingAnimation" class="loading-animation"></div>
+                            
+                                    <!-- Container for the banner image -->
+                                    <div class="gdlr-core-pbf-element first-image-container">
+                                        <!-- Banner image will be added here -->
+                                    </div>
+                            
+                                    <!-- News Description Section -->
+                                    <div class="gdlr-core-pbf-element">
+                                        <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
+                                            <div class="gdlr-core-text-box-item-content">
+                                                <h5 class="gdlr-core-port-info-key gdlr-core-skin-title">News Description</h5>
+                                                <div class="gdlr-core-port-info-value news_content" style="font-size: larger; line-height: 2em">
+                                                    <!-- News content will be added here -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                    <!-- Container for attachments -->
+                                    <div class="gdlr-core-pbf-element below-images-container">
+                                        <!-- Documents will be added here -->
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                        
-                      </div>
                     </div>
-                    <div class="gdlr-core-pbf-column gdlr-core-column-40">
-                      <div class="gdlr-core-pbf-column-content-margin gdlr-core-js">
-                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
-                          <div id="loadingAnimation" class="loading-animation"></div>
-                    
-                          <!-- Container for the first image -->
-                          <div class="gdlr-core-pbf-element first-image-container">
-                            <!-- First image will be added here -->
-                          </div>
-                    
-                          <!-- News Description Section -->
-                          <div class="gdlr-core-pbf-element">
-                            <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
-                              <div class="gdlr-core-text-box-item-content">
-                                <h5 class="gdlr-core-port-info-key gdlr-core-skin-title">News Description</h5>
-                                <span class="gdlr-core-port-info-value news_content" style="font-size: larger; line-height: 2em">
-                                  <!-- News content will be added here -->
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                    
-                          <!-- Container for additional images below description -->
-                          <div class="gdlr-core-pbf-element below-images-container image-container">
-                            <!-- Additional images will be added here -->
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                                     
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
+    </div>
+
+    <!-- WhatsApp floating button -->
+    <a href="https://wa.me/" class="floating-button" target="_blank" id="whatsappButton">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-logo">
+    </a>
 
         <footer>
           <div class="kingster-footer-wrapper">
@@ -1578,77 +1610,151 @@
     ></script>
     <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function () {
-  function getQueryParameter(name) {
-    const urlSearchParams = new URLSearchParams(window.location.search);
-    return urlSearchParams.get(name);
-  }
-
-  const id = getQueryParameter("id");
-  fetch(`https://app.conext.in/news/api/MdcNewsDetiles/?id=${id}`)
-    .then((response) => response.json())
-    .then((data) => {
-      const imageUrls = data.image_urls;
-      const firstImageContainer = document.querySelector(".first-image-container");
-      const belowImagesContainer = document.querySelector(".below-images-container");
-
-      // Display the first image above the description
-      if (imageUrls.length > 0) {
-        const firstImageElement = document.createElement("img");
-        firstImageElement.src = imageUrls[0];
-        firstImageElement.style.width = "100%";
-        firstImageElement.style.height = "100%";
-        firstImageElement.style.objectFit = "fill";
-        firstImageContainer.appendChild(firstImageElement);
-      }
-
-      // Display remaining images below the description
-      if (imageUrls.length > 1) {
-        const imageContainerDiv = document.createElement("div");
-        imageContainerDiv.className = "gdlr-core-pbf-element";
-        imageContainerDiv.style.display = "grid";
-        imageContainerDiv.style.gridTemplateColumns = "repeat(2, 1fr)";
-        imageContainerDiv.style.gap = "10px";
-
-        for (let i = 1; i < imageUrls.length; i++) {
-          const imageElement = document.createElement("img");
-          imageElement.src = imageUrls[i];
-
-          const anchorElement = document.createElement("a");
-          anchorElement.className =
-            "gdlr-core-lightgallery gdlr-core-js image_urls";
-          anchorElement.appendChild(imageElement);
-
-          const imageItemDiv = document.createElement("div");
-          imageItemDiv.className =
-            "gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align";
-          imageItemDiv.style.marginBottom = "10px";
-          imageItemDiv.innerHTML = `
-            <div class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-rectangle" style="border-width: 0px">
-              ${anchorElement.outerHTML}
-            </div>
-          `;
-
-          imageContainerDiv.appendChild(imageItemDiv);
+        function getQueryParameter(name) {
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            return urlSearchParams.get(name);
         }
 
-        belowImagesContainer.appendChild(imageContainerDiv);
-      }
+        const id = getQueryParameter("id");
+        if (!id) {
+            alert("No news ID provided in URL");
+            return;
+        }
 
-      // Populate news details
-      document.querySelector(".news_subject").textContent = data.news_subject;
-      document.querySelector(".location").textContent = data.location;
-      document.querySelector(".news_date").textContent = data.news_date;
-      document.querySelector(".staff_name").textContent = data.staff_name;
+        // Default image when no banner is available
+        const defaultBanner = "upload/clg.jpg";
 
-      // Parse and display news content
-      let tempDiv = document.createElement("div");
-      tempDiv.innerHTML = data.news_content;
-      let extractedText = tempDiv.textContent;
-      document.querySelector(".news_content").textContent = extractedText;
-      document.getElementById('loadingAnimation').style.display = "none";
-    })
-    .catch((error) => console.error("Error fetching data:", error));
-});
+        fetch(`https://conext.in/news/api/single-news-article/${id}`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((response) => {
+                if (!response.status || !response.data) {
+                    throw new Error("Invalid response format");
+                }
+                
+                const data = response.data;
+                // Hide loading animation
+                document.getElementById('loadingAnimation').style.display = "none";
+                
+                const firstImageContainer = document.querySelector(".first-image-container");
+                const attachmentsContainer = document.querySelector(".below-images-container");
+
+                // Display banner image or default image
+                const bannerImage = data.picture || data.news_banner || defaultBanner;
+                const bannerDiv = document.createElement("div");
+                bannerDiv.className = "gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align";
+                
+                const imageWrapDiv = document.createElement("div");
+                imageWrapDiv.className = "gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-rectangle";
+                imageWrapDiv.style.borderWidth = "0px";
+                
+                const anchorElement = document.createElement("a");
+                anchorElement.className = "gdlr-core-lightgallery gdlr-core-js image_urls";
+                
+                const imageElement = document.createElement("img");
+                imageElement.src = bannerImage;
+                imageElement.className = "default-banner";
+                imageElement.alt = data.subject;
+                
+                anchorElement.appendChild(imageElement);
+                imageWrapDiv.appendChild(anchorElement);
+                bannerDiv.appendChild(imageWrapDiv);
+                firstImageContainer.appendChild(bannerDiv);
+
+                // Display documents if available
+                const documents = data.attachments ? data.attachments.filter(att => att.doc) : [];
+                if (documents.length > 0) {
+                    const documentsHeading = document.createElement("h5");
+                    documentsHeading.className = "gdlr-core-port-info-key gdlr-core-skin-title";
+                    documentsHeading.textContent = "Attachments";
+                    attachmentsContainer.appendChild(documentsHeading);
+                    
+                    const documentListDiv = document.createElement("div");
+                    documentListDiv.className = "document-list";
+                    
+                    documents.forEach(doc => {
+                        const docItemDiv = document.createElement("div");
+                        docItemDiv.className = "document-item";
+                        
+                        const docIcon = document.createElement("i");
+                        docIcon.className = "document-icon fas fa-file-pdf";
+                        
+                        const docName = document.createElement("span");
+                        docName.className = "document-name";
+                        // Extract filename from URL
+                        const fileName = doc.doc.split('/').pop().split('?')[0];
+                        docName.textContent = fileName;
+                        
+                        const downloadLink = document.createElement("a");
+                        downloadLink.href = doc.doc;
+                        downloadLink.className = "download-btn";
+                        downloadLink.target = "_blank";
+                        downloadLink.textContent = "View Document";
+                        
+                        docItemDiv.appendChild(docIcon);
+                        docItemDiv.appendChild(docName);
+                        docItemDiv.appendChild(downloadLink);
+                        documentListDiv.appendChild(docItemDiv);
+                    });
+                    
+                    attachmentsContainer.appendChild(documentListDiv);
+                }
+
+                // Populate news details
+                document.querySelector(".news_subject").textContent = data.subject || "No title available";
+                document.querySelector(".type_name").textContent = data.type_name || "News";
+                document.querySelector(".location").textContent = data.location || "Location not specified";
+                
+                // Format date
+                const newsDate = data.date ? new Date(data.date) : null;
+                const formattedDate = newsDate ? 
+                    newsDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : 
+                    "Date not available";
+                document.querySelector(".news_date").textContent = formattedDate;
+                
+                document.querySelector(".staff_name").textContent = data.added_by_name || "Unknown author";
+
+                // Display HTML content safely
+                const newsContent = document.querySelector(".news_content");
+                if (data.content) {
+                    newsContent.innerHTML = data.content;
+                } else {
+                    newsContent.textContent = "No content available";
+                }
+
+                // Set up WhatsApp share button
+                const whatsappButton = document.getElementById("whatsappButton");
+                const shareText = `Check out this news: ${data.subject}\n\n${data.content ? 
+                    data.content.replace(/<[^>]*>/g, "").substring(0, 100) : ''}...\n\nRead more: ${window.location.href}`;
+                whatsappButton.href = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+
+                // Set up general share button
+                document.getElementById("shareButton").addEventListener("click", function() {
+                    if (navigator.share) {
+                        navigator.share({
+                            title: data.subject,
+                            text: data.content ? data.content.replace(/<[^>]*>/g, "").substring(0, 200) : '',
+                            url: window.location.href
+                        }).catch(err => {
+                            console.log('Error sharing:', err);
+                        });
+                    } else {
+                        // Fallback for browsers that don't support Web Share API
+                        const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+                        window.open(shareUrl, '_blank');
+                    }
+                });
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+                document.getElementById('loadingAnimation').style.display = "none";
+                document.querySelector(".news_content").textContent = "Failed to load news article. Please try again later.";
+            });
+    });
 
     </script>
     <script>
