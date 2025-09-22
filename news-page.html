@@ -53,121 +53,207 @@
     />
     <style>
       .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0px;
-  }
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 0px;
+      }
 
-  /* Ensure each news item is centered in its column */
-  .gdlr-core-blog-item {
-    display: flex;
-    justify-content: center;
-  }
+      .gdlr-core-blog-item {
+        display: flex;
+        justify-content: center;
+      }
 
-  /* CSS to style the images with max height and cover */
-  .image_urls {
-    max-height: 450px;
-    object-fit: cover;
-  }
+      .image_urls {
+        max-height: 450px;
+        object-fit: cover;
+      }
 
-  /* Media query for smaller screen sizes to adjust image height */
-  @media (max-width: 768px) {
-    .image_urls {
-      max-height: 450px;
-      max-width: 450px !important;
-    }
-  }
-  .loading-animation {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #3db166;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 2s linear infinite;
-    margin: 20px auto;
-  }
+      @media (max-width: 768px) {
+        .image_urls {
+          max-height: 450px;
+          max-width: 450px !important;
+        }
+      }
 
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  .floating-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #182847; /* WhatsApp green */
-    color: #fff;
-    width: 70px; /* Set width and height to the same value for a perfect circle */
-    height: 70px;
-    border-radius: 50%; /* Make the button round */
-    cursor: pointer;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px; /* Adjust the font size for larger text */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 9999; /* Set a high z-index to appear above other content */
-  }
+      .loading-animation {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3db166;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 2s linear infinite;
+        margin: 20px auto;
+      }
 
-  /* Style for WhatsApp logo */
-  .whatsapp-logo {
-    width: 36px; /* Adjust the logo size */
-    height: 36px; /* Adjust the logo size */
-  }
-  .notification-list {
-    display: inline-block;
-    max-height: 20px;
-    overflow: hidden;
-    position: relative;
-    max-height: 20px;
-  }
-  ul.notification-list {
-    margin-bottom: 0px !important;
-  }
-  @keyframes marquee-up {
-    0% {
-      transform: translateY(0);
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .floating-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #182847; 
+        color: #fff;
+        width: 70px; 
+        height: 70px;
+        border-radius: 50%; 
+        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+      }
+
+      .whatsapp-logo {
+        width: 36px; 
+        height: 36px; 
+      }
+  
+      .notification-list {
+        display: inline-block;
+        max-height: 20px;
+        overflow: hidden;
+        position: relative;
+        max-height: 20px;
+      }
+      ul.notification-list {
+        margin-bottom: 0px !important;
+      }
+      @keyframes marquee-up {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-100%);
+        }
+      }
+
+    #newsContainer {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);   /* 2 items per row */
+  gap: 25px !important;                    /* even spacing */
+  max-width: 1200px;                       /* neat center width */
+  margin: 50px auto !important;            /* centered on page */
+  padding: 0 20px !important;
+  box-sizing: border-box;
+}
+
+/* ===== RESET DEFAULT SPACING ===== */
+.gdlr-core-item-list,
+.gdlr-core-item-mgb,
+.gdlr-core-blog-modern,
+.gdlr-core-blog-modern-inner,
+.gdlr-core-blog-thumbnail {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* ===== CARD CONTAINER ===== */
+.gdlr-core-item-list {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.gdlr-core-item-list:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+}
+
+/* ===== IMAGE STYLING ===== */
+.image_urls {
+  width: 100% !important;
+  height: 380px !important;        /* consistent height */
+  object-fit: cover !important;    /* crops nicely */
+  display: block;
+}
+
+/* ===== CONTENT ===== */
+.gdlr-core-blog-modern-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.gdlr-core-blog-title a {
+  font-size: 20px;
+  font-weight: 600;
+  color: #182847;
+  text-decoration: none;
+  line-height: 1.4;
+  display: inline-block;
+}
+
+.gdlr-core-blog-title a:hover {
+  color: #3db166;   /* green hover accent */
+}
+
+.gdlr-core-blog-info-wrapper {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #888;
+}
+
+    @media (max-width: 1024px) {
+      #newsContainer {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
-    100% {
-      transform: translateY(-100%);
+
+    @media (max-width: 768px) {
+      #newsContainer {
+        grid-template-columns: 1fr;          
+      }
+      .image_urls {
+        height: 300px !important;
+      }
     }
-  }
-  
-  /* Pagination styles */
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .pagination button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  .pagination button.active {
-    background-color: #182847;
-    color: white;
-    border-color: #182847;
-  }
-  
-  .pagination button:hover:not(.active) {
-    background-color: #ddd;
-  }
-  
-  .pagination button:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .pagination button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    
+    .pagination button.active {
+      background-color: #182847;
+      color: white;
+      border-color: #182847;
+    }
+    
+    .pagination button:hover:not(.active) {
+      background-color: #ddd;
+    }
+    
+    .pagination button:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
     </style>
   </head>
   <a
@@ -199,8 +285,7 @@
           <div class="kingster-mobile-menu-right">
             <div
               class="kingster-main-menu-search"
-              id="kingster-mobile-top-search"
-            >
+              id="kingster-mobile-top-search">
               <i class="fa fa-search"></i>
             </div>
             <div class="kingster-top-search-wrap">
@@ -250,14 +335,13 @@
                       >
                     </li>
                     <li class="menu-item">
-                      <a href="institutional-development-plan.html"
-                        >Institutional Development Plan</a
-                      >
+                      <a href="institutional-development-plan.html">
+                        Institutional Development Plan</a>
                     </li>
                     <li class="menu-item menu-item-has-children">
-                      <a class="sf-with-ul-pre"
-                        >Accreditation/Ranking Status</a
-                      >
+                      <a class="sf-with-ul-pre">
+                        Accreditation/Ranking Status
+                      </a>
                       <ul class="sub-menu">
                           <li class="menu-item">
                             <a href="naac.html">NAAC</a>
@@ -274,12 +358,12 @@
                         </ul>
                     </li>
                     <li class="menu-item">
-                      <a href="recognition-approval.html"
-                        >Recognition/Approval</a
-                      >
+                      <a href="recognition-approval.html">
+                        Recognition/Approval
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                      <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
                     <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
@@ -291,8 +375,8 @@
                   <ul class="sub-menu">
                     <li class="menu-item">
                       <a href="/about-us.html#board-of-directors"
-                        >Board of Management</a
-                      >
+                        >Board of Management
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="/about-us.html#principal-message">Principal</a>
@@ -302,13 +386,13 @@
                     </li>
                     <li class="menu-item">
                       <a href="internal-complaint-committee.html"
-                        >Internal Complaint Committee</a
-                      >
+                        >Internal Complaint Committee
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="academic-leadership.html"
-                        >Academic Leadership</a
-                      >
+                      <a href="academic-leadership.html">
+                        Academic Leadership
+                      </a>
                     </li>
                   </ul>
                 </li>
@@ -322,14 +406,14 @@
                           <a>UG & PG</a>
                           <ul>
                             <li class="menu-item">
-                              <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
-                              >
+                              <a href="bachelor-of-dental-surgery.html">
+                                BDS(Bachelor Dental Surgery)
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
-                              >
+                              <a href="master-of-dental-surgery.html">
+                                MDS(Master Dental Surgery)
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -337,14 +421,19 @@
                           <a>Diploma</a>
                           <ul>
                             <li class="menu-item">
-                              <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
-                              >
+                              <a href="dora.html">
+                                Dental Operating <br/> Room Assistant (DORA)
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
-                              >
+                              <a href="dental-mechanic.html">
+                                Dental Mechanic (DM)
+                              </a>
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html">
+                                Dental Hygienist (DH)
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -353,15 +442,15 @@
                     <li class="menu-item">
                       <a
                         href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf"
-                        target="_blank"
-                        >Academic Calendar</a
-                      >
+                        target="_blank">
+                        Academic Calendar
+                      </a>
                     </li>
                     <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
+                      <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
+                          <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="anatomy.html">Anatomy</a>
@@ -398,7 +487,7 @@
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
+                          <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="oral-pathology.html"
@@ -488,6 +577,10 @@
                       <a href="prospectus.html">Prospectus</a>
                     </li>
                     <li class="menu-item">
+                      <a href="dept-of-admission.html"
+                        >Department of Admission</a>
+                    </li>
+                    <li class="menu-item">
                       <a href="admission.html"
                         >Admission Process And Guidelines</a
                       >
@@ -568,12 +661,11 @@
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
                       <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
+                        >News, Awareness & Achievements</a
                       >
                     </li>
                     <li class="menu-item">
@@ -713,7 +805,7 @@
                       >
                     </li>
                     <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                      <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
                     <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
@@ -771,12 +863,12 @@
                           <ul>
                             <li class="menu-item">
                               <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
+                                >BDS(Bachelor Dental Surgery)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
+                                >MDS(Master Dental Surgery)</a
                               >
                             </li>
                           </ul>
@@ -784,14 +876,19 @@
                         <li class="menu-item menu-item-has-children">
                           <a class="sf-with-ul-pre">Diploma</a>
                           <ul>
-                            <li class="menu-item">
+                             <li class="menu-item">
                               <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
+                                >Dental Operating <br/> Room Assistant (DORA)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
+                                >Dental Mechanic (DM)</a
+                              >
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html"
+                                >Dental Hygienist (DH)</a
                               >
                             </li>
                           </ul>
@@ -799,10 +896,10 @@
                       </ul>
                     </li>
                     <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
+                      <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
+                          <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="anatomy.html">Anatomy</a>
@@ -839,7 +936,7 @@
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
+                          <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="oral-pathology.html"
@@ -931,6 +1028,10 @@
                       <a href="prospectus.html">Prospectus</a>
                     </li>
                     <li class="menu-item">
+                      <a href="dept-of-admission.html"
+                        >Department of Admission</a>
+                    </li>
+                    <li class="menu-item">
                       <a href="admission.html"
                         >Admission Process And Guidelines</a
                       >
@@ -1019,12 +1120,11 @@
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
                       <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
+                        >News, Awareness & Achievements</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1103,7 +1203,7 @@
         <div class="gdlr-core-pbf-element">
           <div id="loadingAnimation" class="loading-animation" style="display: none;"></div>
           <div id="errorContainer" class="error-message" style="display: none;"></div>
-          <div id="newsContainer" class="grid-container"></div>
+          <div id="newsContainer" class="news-grid"></div>
           <div id="paginationContainer" class="pagination" style="margin-top: 20px; text-align: center;"></div>
         </div>
       </div>
@@ -1131,9 +1231,9 @@
                       Kerala 679578
                     </p>
                     <p>
-                      <span id="span_1dd7_11">
+                      <!-- <span id="span_1dd7_11">
                         Toll free:<a href="tel:18008430066"> 18008430066</a>
-                      </span><br />
+                      </span><br /> -->
                       <span
                         class="gdlr-core-space-shortcode"
                         id="span_1dd7_12"
@@ -1186,6 +1286,7 @@
                         <a href="dental-mechanic.html">Dental Mechanic</a>
                       </li>
                       <li class="menu-item"><a href="dora.html">DORA</a></li>
+                      <li class="menu-item"><a href="dental-hygienist.html">Dental Hygienist</a></li>
                       <li class="menu-item">
                         <a href="contact-us.html">Contact</a>
                       </li>
@@ -1363,243 +1464,228 @@
       type="text/javascript"
       src="plugins/goodlayers-core/plugins/combine/script.js"
     ></script>
-<script>
-  // Global variables to store pagination state
-  let currentPage = 1;
-  let totalPages = 1;
-  const pageSize = 10;
+    <script>
+      let currentPage = 1;
+      let totalPages = 1;
+      const pageSize = 10;
 
-  // Function to create and append a news item element to the container
-  function createNewsItem(newsData, index) {
-    // Create a new div element with the class "gdlr-core-pbf-element"
-    const newsItemDiv = document.createElement("div");
-    newsItemDiv.className = `gdlr-core-item-list gdlr-core-item-mgb gdlr-core-column-30`;
-    newsItemDiv.style.padding = `0 10px`;
-    const newsDate = new Date(newsData.date);
-    const newsId = newsData.id;
-    
-    // Use news_banner as primary image, fallback to first attachment picture, then default image
-    let img = "upload/clg.jpg";
-    if (newsData.news_banner) {
-      img = newsData.news_banner;
-    } else if (newsData.attachments && newsData.attachments.length > 0 && newsData.attachments[0].picture) {
-      img = newsData.attachments[0].picture;
-    } else {
-      let random = Math.floor(Math.random() * 3) + 1;
-      img = `upload/mdc_pics/mdc${random}.jpg`;
-    }
-    
-    const formattedDate = newsDate.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+      function createNewsItem(newsData, index) {
+        const newsItemDiv = document.createElement("div");
+        newsItemDiv.className = `gdlr-core-item-list gdlr-core-item-mgb gdlr-core-column-30`;
+        newsItemDiv.style.padding = `0 10px`;
+        const newsDate = new Date(newsData.date);
+        const newsId = newsData.id;
+        
+        function getFullImageUrl(url) {
+          if (!url) return null;
+          if (url.startsWith('http')) {
+            return url;
+          }
+          return `https://conext.in${url}`;
+        }
 
-    // Set the HTML content of the news item div based on the provided template
-    newsItemDiv.innerHTML = `
-    <div class="gdlr-core-blog-modern gdlr-core-with-image gdlr-core-hover-overlay-content gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-      <div class="gdlr-core-blog-modern-inner">
-        <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
-            <a class="news_subject" href='news-single-page.html?id=${newsId}'><img class="image_urls" src="${img}" style="height:450px;object-fit:cover" width="1280" height="580" alt=""></a>
-        </div>
-        <div class="gdlr-core-blog-modern-content gdlr-core-center-align">
-          <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 700; letter-spacing: 0px;">
-            <a class="news_subject" href='news-single-page.html?id=${newsId}'>${newsData.subject}</a>
-          </h3>
-          <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-              <a class="news_date" href='news-single-page.html?id=${newsId}'>${formattedDate}</a>
-            </span>
+       let img = "upload/clg.jpg";
+        if (newsData.news_banner) {
+          img = getFullImageUrl(newsData.news_banner);
+        } else if (newsData.attachments && newsData.attachments.length > 0 && newsData.attachments[0].picture) {
+          img = getFullImageUrl(newsData.attachments[0].picture);
+        } else {
+          let random = Math.floor(Math.random() * 3) + 1;
+          img = `upload/mdc_pics/mdc${random}.jpg`;
+        }
+        const formattedDate = newsDate.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+
+        newsItemDiv.innerHTML = `
+        <div class="gdlr-core-blog-modern gdlr-core-with-image gdlr-core-hover-overlay-content gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
+          <div class="gdlr-core-blog-modern-inner">
+            <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
+              <a class="news_subject" href='news-single-page.html?id=${newsId}'>
+                <img class="image_urls" src="${img}" alt="${newsData.subject}">
+              </a>            
+            </div>
+            <div class="gdlr-core-blog-modern-content gdlr-core-center-align">
+              <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 700; letter-spacing: 0px;">
+                <a class="news_subject" href='news-single-page.html?id=${newsId}'>${newsData.subject}</a>
+              </h3>
+              <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
+                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
+                  <a class="news_date" href='news-single-page.html?id=${newsId}'>${formattedDate}</a>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    `;
+        `;
 
-    return newsItemDiv;
-  }
+        return newsItemDiv;
+      }
 
-  // Function to render pagination buttons
-  function renderPagination(totalItems) {
-    totalPages = Math.ceil(totalItems / pageSize);
-    const paginationContainer = document.getElementById("paginationContainer");
-    
-    if (!paginationContainer || totalPages <= 1) {
-      return;
-    }
-    
-    paginationContainer.innerHTML = '';
-    
-    // Previous button
-    const prevButton = document.createElement('button');
-    prevButton.innerHTML = '&laquo;';
-    prevButton.disabled = currentPage === 1;
-    prevButton.addEventListener('click', () => {
-      if (currentPage > 1) {
-        currentPage--;
-        fetchAndRenderNewsItems();
-      }
-    });
-    paginationContainer.appendChild(prevButton);
-    
-    // Page buttons
-    const maxVisibleButtons = 5;
-    let startPage = Math.max(1, currentPage - Math.floor(maxVisibleButtons / 2));
-    let endPage = Math.min(totalPages, startPage + maxVisibleButtons - 1);
-    
-    if (endPage - startPage + 1 < maxVisibleButtons) {
-      startPage = Math.max(1, endPage - maxVisibleButtons + 1);
-    }
-    
-    if (startPage > 1) {
-      const firstButton = document.createElement('button');
-      firstButton.textContent = '1';
-      firstButton.addEventListener('click', () => {
-        currentPage = 1;
-        fetchAndRenderNewsItems();
-      });
-      paginationContainer.appendChild(firstButton);
-      
-      if (startPage > 2) {
-        const ellipsis = document.createElement('span');
-        ellipsis.textContent = '...';
-        paginationContainer.appendChild(ellipsis);
-      }
-    }
-    
-    for (let i = startPage; i <= endPage; i++) {
-      const pageButton = document.createElement('button');
-      pageButton.textContent = i;
-      if (i === currentPage) {
-        pageButton.classList.add('active');
-      }
-      pageButton.addEventListener('click', () => {
-        currentPage = i;
-        fetchAndRenderNewsItems();
-      });
-      paginationContainer.appendChild(pageButton);
-    }
-    
-    if (endPage < totalPages) {
-      if (endPage < totalPages - 1) {
-        const ellipsis = document.createElement('span');
-        ellipsis.textContent = '...';
-        paginationContainer.appendChild(ellipsis);
-      }
-      
-      const lastButton = document.createElement('button');
-      lastButton.textContent = totalPages;
-      lastButton.addEventListener('click', () => {
-        currentPage = totalPages;
-        fetchAndRenderNewsItems();
-      });
-      paginationContainer.appendChild(lastButton);
-    }
-    
-    // Next button
-    const nextButton = document.createElement('button');
-    nextButton.innerHTML = '&raquo;';
-    nextButton.disabled = currentPage === totalPages;
-    nextButton.addEventListener('click', () => {
-      if (currentPage < totalPages) {
-        currentPage++;
-        fetchAndRenderNewsItems();
-      }
-    });
-    paginationContainer.appendChild(nextButton);
-  }
-
-  // Function to fetch data from the API and render news items in a grid
-  function fetchAndRenderNewsItems() {
-    // Replace 'YOUR_API_URL_HERE' with the actual API endpoint
-    const apiUrl = `https://conext.in/news/api/get_org_news_articles/1/?page=${currentPage}`;
-    const loadingAnimation = document.getElementById("loadingAnimation");
-    const newsContainer = document.getElementById("newsContainer");
-    
-    if (loadingAnimation) loadingAnimation.style.display = "block";
-    if (newsContainer) newsContainer.style.display = "none";
-    
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((apiResponse) => {
-        const container = document.getElementById("newsContainer");
+      function renderPagination(totalItems) {
+        totalPages = Math.ceil(totalItems / pageSize);
+        const paginationContainer = document.getElementById("paginationContainer");
         
-        // Check if the response has the expected structure
-        if (!apiResponse || !apiResponse.results || !apiResponse.results.data) {
-            throw new Error('Invalid API response structure');
+        if (!paginationContainer || totalPages <= 1) {
+          return;
         }
         
-        // Clear previous content
-        if (container) container.innerHTML = '';
+        paginationContainer.innerHTML = '';
         
-        // Iterate through the news items array
-        apiResponse.results.data.forEach((item) => {
-            const newsItemElement = createNewsItem(item);
-            if (container) container.appendChild(newsItemElement);
+        const prevButton = document.createElement('button');
+        prevButton.innerHTML = '&laquo;';
+        prevButton.disabled = currentPage === 1;
+        prevButton.addEventListener('click', () => {
+          if (currentPage > 1) {
+            currentPage--;
+            fetchAndRenderNewsItems();
+          }
         });
+        paginationContainer.appendChild(prevButton);
         
-        // Render pagination
-        if (apiResponse.count) {
-          renderPagination(apiResponse.count);
+        const maxVisibleButtons = 5;
+        let startPage = Math.max(1, currentPage - Math.floor(maxVisibleButtons / 2));
+        let endPage = Math.min(totalPages, startPage + maxVisibleButtons - 1);
+        
+        if (endPage - startPage + 1 < maxVisibleButtons) {
+          startPage = Math.max(1, endPage - maxVisibleButtons + 1);
         }
         
-        if (loadingAnimation) loadingAnimation.style.display = "none";
-        if (newsContainer) newsContainer.style.display = "grid"; // Changed to grid to maintain layout
-      })
-      .catch((error) => {
-        console.error("Error fetching data from the API:", error);
-        if (loadingAnimation) loadingAnimation.style.display = "none";
-        
-        // Display error message to user
-        const container = document.getElementById("newsContainer");
-        if (container) {
-          container.innerHTML = '<p style="text-align: center; color: red;">Failed to load news. Please try again later.</p>';
-          container.style.display = "block";
+        if (startPage > 1) {
+          const firstButton = document.createElement('button');
+          firstButton.textContent = '1';
+          firstButton.addEventListener('click', () => {
+            currentPage = 1;
+            fetchAndRenderNewsItems();
+          });
+          paginationContainer.appendChild(firstButton);
+          
+          if (startPage > 2) {
+            const ellipsis = document.createElement('span');
+            ellipsis.textContent = '...';
+            paginationContainer.appendChild(ellipsis);
+          }
         }
-      });
-  }
+        
+        for (let i = startPage; i <= endPage; i++) {
+          const pageButton = document.createElement('button');
+          pageButton.textContent = i;
+          if (i === currentPage) {
+            pageButton.classList.add('active');
+          }
+          pageButton.addEventListener('click', () => {
+            currentPage = i;
+            fetchAndRenderNewsItems();
+          });
+          paginationContainer.appendChild(pageButton);
+        }
+        
+        if (endPage < totalPages) {
+          if (endPage < totalPages - 1) {
+            const ellipsis = document.createElement('span');
+            ellipsis.textContent = '...';
+            paginationContainer.appendChild(ellipsis);
+          }
+          
+          const lastButton = document.createElement('button');
+          lastButton.textContent = totalPages;
+          lastButton.addEventListener('click', () => {
+            currentPage = totalPages;
+            fetchAndRenderNewsItems();
+          });
+          paginationContainer.appendChild(lastButton);
+        }
+        
+        const nextButton = document.createElement('button');
+        nextButton.innerHTML = '&raquo;';
+        nextButton.disabled = currentPage === totalPages;
+        nextButton.addEventListener('click', () => {
+          if (currentPage < totalPages) {
+            currentPage++;
+            fetchAndRenderNewsItems();
+          }
+        });
+        paginationContainer.appendChild(nextButton);
+      }
 
-  // Call the function to fetch and render news items when DOM is loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    fetchAndRenderNewsItems();
-  });
-</script>
+      function fetchAndRenderNewsItems() {
+        const apiUrl = `https://conext.in/news/api/get_org_news_articles/1/?page=${currentPage}`;
+        const loadingAnimation = document.getElementById("loadingAnimation");
+        const newsContainer = document.getElementById("newsContainer");
+        
+        if (loadingAnimation) loadingAnimation.style.display = "block";
+        if (newsContainer) newsContainer.style.display = "none";
+        
+        fetch(apiUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then((apiResponse) => {
+            const container = document.getElementById("newsContainer");
+            
+            if (!apiResponse || !apiResponse.results || !apiResponse.results.data) {
+                throw new Error('Invalid API response structure');
+            }
+            
+            if (container) container.innerHTML = '';
+            
+            apiResponse.results.data.forEach((item) => {
+                const newsItemElement = createNewsItem(item);
+                if (container) container.appendChild(newsItemElement);
+            });
+            
+            if (apiResponse.count) {
+              renderPagination(apiResponse.count);
+            }
+            
+            if (loadingAnimation) loadingAnimation.style.display = "none";
+            if (newsContainer) newsContainer.style.display = "grid"; 
+          })
+          .catch((error) => {
+            console.error("Error fetching data from the API:", error);
+            if (loadingAnimation) loadingAnimation.style.display = "none";
+            
+            const container = document.getElementById("newsContainer");
+            if (container) {
+              container.innerHTML = '<p style="text-align: center; color: red;">Failed to load news. Please try again later.</p>';
+              container.style.display = "block";
+            }
+          });
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        fetchAndRenderNewsItems();
+      });
+    </script>
     <script>
-      // Define the API URL to fetch notification data
       const apiUrlNotification =
         "https://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";
 
-      // Reference to the notification container
       const notificationContainer = document.getElementById(
         "notification-container"
       );
 
-      // Store the notification data and current index
       let notifications = [];
       let currentIndex = 0;
 
-      // Function to fetch and update notification data
       async function fetchAndUpdateNotifications() {
         try {
           const response = await fetch(apiUrlNotification);
           notifications = await response.json();
 
-          // Call the updateNotification function initially
           updateNotification();
 
-          // Set an interval to update notifications every 1.5 seconds
           setInterval(updateNotification, 4500);
         } catch (error) {
           console.error("Error fetching notifications:", error);
         }
       }
 
-      // Function to update the notification text
       function updateNotification() {
         if (notifications.length > 0) {
           const list = notificationContainer;
@@ -1608,7 +1694,6 @@
         }
       }
 
-      // Call the fetchAndUpdateNotifications function initially
       fetchAndUpdateNotifications();
     </script>
     <script type="text/javascript">

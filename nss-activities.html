@@ -129,6 +129,26 @@
           transform: translateY(-100%);
         }
       }
+      #activity-modal {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 999999 !important;
+      }
+
+      #activity-modal #modal-content,
+      #activity-modal > div {
+        z-index: 1000 !important;
+      }
+
+
+
     </style>
   </head>
   <!-- <a
@@ -242,7 +262,7 @@
                       >
                     </li>
                     <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                      <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
                     <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
@@ -296,12 +316,12 @@
                           <ul>
                             <li class="menu-item">
                               <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
+                                >BDS(Bachelor Dental Surgery)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
+                                >MDS(Master Dental Surgery)</a
                               >
                             </li>
                           </ul>
@@ -309,14 +329,19 @@
                         <li class="menu-item menu-item-has-children">
                           <a>Diploma</a>
                           <ul>
-                            <li class="menu-item">
+                             <li class="menu-item">
                               <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
+                                >Dental Operating <br/> Room Assistant (DORA)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
+                                >Dental Mechanic (DM)</a
+                              >
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html"
+                                >Dental Hygienist (DH)</a
                               >
                             </li>
                           </ul>
@@ -337,10 +362,10 @@
                       >
                     </li> -->
                     <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
+                      <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
+                          <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="anatomy.html">Anatomy</a>
@@ -377,7 +402,7 @@
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
+                          <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="oral-pathology.html"
@@ -465,6 +490,10 @@
                   <ul class="sub-menu">
                     <li class="menu-item">
                       <a href="prospectus.html">Prospectus</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="dept-of-admission.html"
+                        >Department of Admission</a>
                     </li>
                     <li class="menu-item">
                       <a href="admission.html"
@@ -570,13 +599,15 @@
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
-                      >
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="/index.html#bulletin">
+                        News, Awareness & Achievements
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="careers.html">Job Openings</a>
@@ -729,7 +760,7 @@
                       >
                     </li>
                     <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                      <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
                     <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
@@ -797,12 +828,12 @@
                           <ul>
                             <li class="menu-item">
                               <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
+                                >BDS(Bachelor Dental Surgery)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
+                                >MDS(Master Dental Surgery)</a
                               >
                             </li>
                           </ul>
@@ -810,14 +841,19 @@
                         <li class="menu-item menu-item-has-children">
                           <a class="sf-with-ul-pre">Diploma</a>
                           <ul>
-                            <li class="menu-item">
+                             <li class="menu-item">
                               <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
+                                >Dental Operating <br/> Room Assistant (DORA)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
+                                >Dental Mechanic (DM)</a
+                              >
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html"
+                                >Dental Hygienist (DH)</a
                               >
                             </li>
                           </ul>
@@ -831,10 +867,10 @@
                       >
                     </li> -->
                     <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
+                      <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
+                          <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="anatomy.html">Anatomy</a>
@@ -871,7 +907,7 @@
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
+                          <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="oral-pathology.html"
@@ -961,6 +997,10 @@
                   <ul class="sub-menu">
                     <li class="menu-item">
                       <a href="prospectus.html">Prospectus</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="dept-of-admission.html"
+                        >Department of Admission</a>
                     </li>
                     <li class="menu-item">
                       <a href="admission.html"
@@ -1074,12 +1114,14 @@
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
                     </li>
                     <li class="menu-item">
                       <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
+                        >News, Awareness & Achievements</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1156,42 +1198,44 @@
       </div>
     </header>
 
-      <div
-        class="kingster-page-title-wrap kingster-style-medium kingster-left-align"
-      >
-        <div class="kingster-header-transparent-substitute"></div>
-        <div class="kingster-page-title-overlay"></div>
-        <div class="kingster-page-title-container kingster-container">
-          <div class="kingster-page-title-content kingster-item-pdlr">
-            <div class="kingster-page-caption">
-              Explore the initiatives driving our institution forward.
-            </div>
-            <h1 class="kingster-page-title">NSS Activities</h1>
+    <div class="kingster-page-title-wrap kingster-style-medium kingster-left-align">
+      <div class="kingster-header-transparent-substitute"></div>
+      <div class="kingster-page-title-overlay"></div>
+      <div class="kingster-page-title-container kingster-container">
+        <div class="kingster-page-title-content kingster-item-pdlr">
+          <div class="kingster-page-caption">
+            Explore the initiatives driving our institution forward.
           </div>
+          <h1 class="kingster-page-title">NSS Activities</h1>
         </div>
       </div>
+    </div>
 
-      <div class="kingster-page-wrapper" id="kingster-page-wrapper" style="padding: 10px; display: flex; flex-direction: column; gap: 10px;" >
-        <h2 style="text-align: center; margin: 20px;">NSS Activities</h2>
-        <div class="nss-activities-images">
-          <img src="assets/Nss Activities/1.jpeg" alt="NSS Activity Image 1" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/2.jpeg" alt="NSS Activity Image 2" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/3.jpeg" alt="NSS Activity Image 3" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/4.jpeg" alt="NSS Activity Image 4" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/5.jpeg" alt="NSS Activity Image 5" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/6.jpeg" alt="NSS Activity Image 6" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/7.jpeg" alt="NSS Activity Image 7" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/8.jpeg" alt="NSS Activity Image 8" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/9.jpeg" alt="NSS Activity Image 9" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/10.jpeg" alt="NSS Activity Image 10" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/11.jpeg" alt="NSS Activity Image 11" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/12.jpeg" alt="NSS Activity Image 12" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/13.jpeg" alt="NSS Activity Image 13" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/14.jpeg" alt="NSS Activity Image 14" style="width: 400px; height: 300px; object-fit: cover;">
-          <img src="assets/Nss Activities/15.jpeg" alt="NSS Activity Image 15" style="width: 400px; height: 300px; object-fit: cover;">
-          <!-- Add more images as needed -->
-        </div>
+    <div class="kingster-page-wrapper" id="kingster-page-wrapper" style="padding: 10px;">
+      <h2 style="text-align: center; margin: 20px;">NSS Activities</h2>
+
+    <div id="activities-container" class="grid"
+        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px;">
+    </div>
+    <div id="activities-pagination" style="text-align:center; margin-top:20px;"></div>
+
+
+    </div>
+
+      <div id="activity-modal" 
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+        background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:99999;">
+      
+      <span id="modal-close" 
+            style="position:absolute; top:20px; right:30px; font-size:32px; font-weight:bold; color:#fff; cursor:pointer; z-index:10000;">
+        &times;
+      </span>
+
+      <div style="background:#fff; padding:20px; border-radius:8px; max-width:800px; width:90%; max-height:90%; overflow:auto; position:relative;">
+        <div id="modal-content"></div>ō
       </div>
+    </div>
+
 
       <footer>
         <div class="kingster-footer-wrapper">
@@ -1214,9 +1258,9 @@
                     Kerala 679578
                   </p>
                   <p>
-                    <span id="span_1dd7_11">
+                    <!-- <span id="span_1dd7_11">
                       Toll free:<a href="tel:18008430066"> 18008430066</a>
-                    </span>
+                    </span> -->
                     <!-- <br> <span id="span_1dd7_11"> Hospital/Clinic:<a href="tel:0494 269720"> 0494 269720, 21</a> </span> | <span id="span_1dd7_11"> <a href="tel:7034555514">+91 7034555514</a></span> -->
                     <br />
                     <span
@@ -1274,6 +1318,7 @@
                       <a href="dental-mechanic.html">Dental Mechanic</a>
                     </li>
                     <li class="menu-item"><a href="dora.html">DORA</a></li>
+                    <li class="menu-item"><a href="dental-hygienist.html">Dental Hygienist</a></li>
                     <li class="menu-item">
                       <a href="contact-us.html">Contact</a>
                     </li>
@@ -1440,7 +1485,6 @@
     <script>
       jQuery(document).ready(function ($) {
         "use strict";
-        //  TESTIMONIALS CAROUSEL HOOK
         $("#customers-testimonials").owlCarousel({
           loop: true,
           center: true,
@@ -1485,36 +1529,29 @@
       };
     </script>
     <script>
-      // Define the API URL to fetch notification data
       const apiUrl =
         "https://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";
 
-      // Reference to the notification container
       const notificationContainer = document.getElementById(
         "notification-container"
       );
 
-      // Store the notification data and current index
       let notifications = [];
       let currentIndex = 0;
 
-      // Function to fetch and update notification data
       async function fetchAndUpdateNotifications() {
         try {
           const response = await fetch(apiUrl);
           notifications = await response.json();
 
-          // Call the updateNotification function initially
           updateNotification();
 
-          // Set an interval to update notifications every 1.5 seconds
           setInterval(updateNotification, 4500);
         } catch (error) {
           console.error("Error fetching notifications:", error);
         }
       }
 
-      // Function to update the notification text
       function updateNotification() {
         if (notifications.length > 0) {
           const list = notificationContainer;
@@ -1523,13 +1560,173 @@
         }
       }
 
-      // Call the fetchAndUpdateNotifications function initially
       fetchAndUpdateNotifications();
     </script>
+
+    <script>
+        const url = "https://conext.in/website_manager/api/mdc/nss_activities_list/";
+        const container = document.getElementById("activities-container");
+        const modal = document.getElementById("activity-modal");
+        const modalContent = document.getElementById("modal-content");
+        const closeBtn = document.getElementById("modal-close");
+
+        let itemsPerPage = 12
+        let currentPage = 1;
+        let activities = [];
+
+        fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          console.log("API response:", data); 
+          if (!data.results || !data.results.status) return;
+
+          activities = data.results.data;  
+          itemsPerPage = data.results.page_size || 12; 
+          displayActivities(currentPage);
+        })
+        .catch(err => console.error("Error loading activities:", err));
+
+      function displayActivities(page) {
+        container.innerHTML = "";
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const pageItems = activities.slice(start, end);
+
+        pageItems.forEach((act) => {
+          const card = document.createElement("div");
+          card.style.border = "1px solid #ddd";
+          card.style.borderRadius = "8px";
+          card.style.overflow = "hidden";
+          card.style.cursor = "pointer";
+          card.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+          card.innerHTML = `
+            <img src="${act.picture}" alt="${act.title}" style="width:100%; height:200px; object-fit:cover;">
+            <div style="padding:10px;">
+              <h3 style="margin:0; font-size:18px; color:#163269;">${act.title}</h3>
+              <p style="margin:5px 0; font-size:14px; color:#555;">${act.description.slice(0,50)}...</p>
+            </div>
+          `;
+          card.addEventListener("click", () => showDetails(act));
+          container.appendChild(card);
+        });
+
+        renderActivitiesPagination();
+      }
+
+      function renderActivitiesPagination() {
+        const pagination = document.getElementById("activities-pagination");
+        pagination.innerHTML = "";
+        const totalPages = Math.ceil(activities.length / itemsPerPage);
+
+        const wrapper = document.createElement("div");
+        wrapper.style.display = "flex";
+        wrapper.style.justifyContent = "center";
+        wrapper.style.gap = "8px";
+        wrapper.style.marginTop = "15px";
+
+        if (currentPage > 1) {
+          const prevBtn = document.createElement("button");
+          prevBtn.textContent = "⟵ Prev";
+          styleButton(prevBtn, false);
+          prevBtn.onclick = () => { currentPage--; displayActivities(currentPage); };
+          wrapper.appendChild(prevBtn);
+        }
+
+        for (let i = 1; i <= totalPages; i++) {
+          const btn = document.createElement("button");
+          btn.textContent = i;
+          styleButton(btn, i === currentPage);
+          btn.onclick = () => { currentPage = i; displayActivities(currentPage); };
+          wrapper.appendChild(btn);
+        }
+
+        if (currentPage < totalPages) {
+          const nextBtn = document.createElement("button");
+          nextBtn.textContent = "Next ⟶";
+          styleButton(nextBtn, false);
+          nextBtn.onclick = () => { currentPage++; displayActivities(currentPage); };
+          wrapper.appendChild(nextBtn);
+        }
+
+        pagination.appendChild(wrapper);
+      }
+
+      function styleButton(btn, isActive) {
+        btn.style.padding = "6px 14px";
+        btn.style.cursor = "pointer";
+        btn.style.background = isActive ? "#3db166" : "#f0f0f0";
+        btn.style.color = isActive ? "#fff" : "#333";
+        btn.style.fontWeight = "600";
+        btn.style.border = "1px solid #ccc";
+        btn.style.borderRadius = "4px";
+        btn.style.transition = "0.3s";
+      }
+
+       function showDetails(act) {
+        let gallery = act.media_folder ? act.media_folder.map(m => m.picture) : [];
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+
+        document.querySelector("header.kingster-header-wrap").style.visibility = "hidden";
+
+        modalContent.innerHTML = `
+          <div style="display:flex; gap:15px; align-items:flex-start;">
+            <div style="flex:1;">
+              <img id="main-image" 
+                  src="${act.picture}" 
+                  alt="${act.title}" 
+                  style="width:100%; max-height:400px; object-fit:cover; border-radius:6px;">
+            </div>
+            <div id="thumbnails" style="display:flex; flex-direction:column; gap:10px; max-height:400px; overflow-y:auto;">
+              ${gallery.map(img => `
+                <img src="${img}" class="thumbnail" 
+                    style="width:100px; height:80px; object-fit:cover; border-radius:4px; cursor:pointer;">
+              `).join("")}
+            </div>
+          </div>
+          <h2 style="margin-top:15px; color:#163269;">${act.title}</h2>
+          <p>${act.description}</p>
+        `;
+
+        const mainImage = modalContent.querySelector("#main-image");
+        const thumbnailsContainer = modalContent.querySelector("#thumbnails");
+
+        thumbnailsContainer.addEventListener("click", e => {
+          if (e.target.classList.contains("thumbnail")) {
+            const clickedSrc = e.target.src;
+            const currentMainSrc = mainImage.src;
+
+            mainImage.src = clickedSrc;
+            e.target.src = currentMainSrc;
+          }
+        });
+
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+
+      closeBtn.onclick = () => {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+        document.querySelector("header.kingster-header-wrap").style.visibility = "visible";
+      };
+      window.onclick = e => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto";
+          document.querySelector("header.kingster-header-wrap").style.visibility = "visible";
+        }
+      };
+
+      displayActivities(currentPage);
+    </script>
+
+
     <script
       type="text/javascript"
       src="plugins/goodlayers-core/include/js/page-builder.js"
     ></script>
+    
     <script type="text/javascript" src="js/jquery/ui/effect.min.js"></script>
     <script type="text/javascript">
       var kingster_script_core = {

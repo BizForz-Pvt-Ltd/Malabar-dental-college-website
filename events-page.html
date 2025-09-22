@@ -57,30 +57,29 @@
         border-radius: 20px;
         display: none;
         position: fixed;
-        top: 50px; /* Add 50px margin from the top */
+        top: 50px; 
         left: 50%;
         transform: translateX(-50%);
-        background-color: #fff; /* Set a semi-transparent background */
+        background-color: #fff; 
         padding: 0px -53px 20px -53px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        z-index: 9999; /* Ensure the popup appears above other elements */
+        z-index: 9999; 
         max-height: calc(
           100vh - 100px
-        ); /* Subtract the 50px top and bottom margins */
+        ); 
         display: flex;
         max-width: 40%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        overflow: hidden; /* Hide any content that exceeds the popup container */
+        overflow: hidden; 
         border: 0px solid #fff;
       }
 
-      /* CSS for the close button inside the popup */
       .close-btn {
         position: absolute;
-        top: 5px; /* Adjust this value to position the close button above the top border */
-        right: 5px; /* Adjust this value to position the close button from the right border */
+        top: 5px; 
+        right: 5px; 
         width: 50px;
         height: 50px;
         background-color: #192f59;
@@ -97,18 +96,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 100%; /* Set the width to match the image width */
-        overflow: hidden; /* Hide any content that exceeds the image width */
+        max-width: 100%; 
+        overflow: hidden; 
       }
 
-      /* CSS for the poster image inside the popup */
       .popup img {
         max-width: 90%;
         max-height: 90%;
-        object-fit: contain; /* Scale the image to fit within the available space without distortion */
+        object-fit: contain; 
       }
 
-      /* CSS for the title inside the popup */
       .popup p {
         margin: 0;
         text-align: center;
@@ -132,8 +129,8 @@
           position: absolute;
           top: 5px;
           right: 15px;
-          font-size: 30px; /* Increase the font size */
-          font-weight: bold; /* Make the font bold */
+          font-size: 30px; 
+          font-weight: bold; 
           cursor: pointer;
         }
       }
@@ -159,26 +156,26 @@
         position: fixed;
         bottom: 30px;
         right: 30px;
-        background-color: #182847; /* WhatsApp green */
+        background-color: #182847; 
         color: #fff;
-        width: 70px; /* Set width and height to the same value for a perfect circle */
+        width: 70px; 
         height: 70px;
-        border-radius: 50%; /* Make the button round */
+        border-radius: 50%; 
         cursor: pointer;
         text-decoration: none;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 24px; /* Adjust the font size for larger text */
+        font-size: 24px; 
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 9999; /* Set a high z-index to appear above other content */
+        z-index: 9999; 
       }
 
-      /* Style for WhatsApp logo */
       .whatsapp-logo {
-        width: 36px; /* Adjust the logo size */
-        height: 36px; /* Adjust the logo size */
+        width: 36px; 
+        height: 36px; 
       }
+
       .notification-list {
         display: inline-block;
         max-height: 20px;
@@ -186,9 +183,11 @@
         position: relative;
         max-height: 20px;
       }
+
       ul.notification-list {
         margin-bottom: 0px !important;
       }
+
       @keyframes marquee-up {
         0% {
           transform: translateY(0);
@@ -201,16 +200,12 @@
   </head>
 
   <body
-    class="home page-template-default page page-id-2039 gdlr-core-body woocommerce-no-js tribe-no-js kingster-body kingster-body-front kingster-full kingster-with-sticky-navigation kingster-blockquote-style-1 gdlr-core-link-to-lightbox"
-  >
-  <div class="kingster-mobile-header-wrap">
+    class="home page-template-default page page-id-2039 gdlr-core-body woocommerce-no-js tribe-no-js kingster-body kingster-body-front kingster-full kingster-with-sticky-navigation kingster-blockquote-style-1 gdlr-core-link-to-lightbox">
+    <div class="kingster-mobile-header-wrap">
     <div
       class="kingster-mobile-header kingster-header-background kingster-style-slide kingster-sticky-mobile-navigation"
-      id="kingster-mobile-header"
-    >
-      <div
-        class="kingster-mobile-header-container kingster-container clearfix"
-      >
+      id="kingster-mobile-header">
+      <div class="kingster-mobile-header-container kingster-container clearfix">
         <div class="kingster-logo kingster-item-pdlr">
           <div class="kingster-logo-inner">
             <a class="" href="index.html"
@@ -257,12 +252,8 @@
             <div
               class="kingster-mm-menu-wrap kingster-navigation-font"
               id="kingster-mobile-menu"
-              data-slide="right"
-            >
+              data-slide="right">
               <ul id="menu-main-navigation" class="m-menu">
-                <!-- <li class="menu-item menu-item-home current-menu-item">
-                <a href="index.html">Home</a>
-              </li> -->
                 <li class="menu-item menu-item-has-children">
                   <a>About HEI</a>
                   <ul class="sub-menu">
@@ -270,19 +261,19 @@
                       <a href="/about-us.html">About Us: Overview</a>
                     </li>
                     <li class="menu-item">
-                      <a href="act-and-statutes-or-moa.html"
-                        >Act and Statutes or MOA</a
-                      >
+                      <a href="act-and-statutes-or-moa.html">
+                        Act and Statutes or MOA
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="institutional-development-plan.html"
-                        >Institutional Development Plan</a
-                      >
+                      <a href="institutional-development-plan.html">
+                        Institutional Development Plan
+                      </a>
                     </li>
                     <li class="menu-item menu-item-has-children">
-                      <a class="sf-with-ul-pre"
-                        >Accreditation/Ranking Status</a
-                      >
+                      <a class="sf-with-ul-pre">
+                        Accreditation/Ranking Status
+                      </a>
                       <ul class="sub-menu">
                           <li class="menu-item">
                             <a href="naac.html">NAAC</a>
@@ -299,12 +290,12 @@
                         </ul>
                     </li>
                     <li class="menu-item">
-                      <a href="recognition-approval.html"
-                        >Recognition/Approval</a
-                      >
+                      <a href="recognition-approval.html">
+                        Recognition/Approval
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                      <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
                     <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
@@ -315,9 +306,9 @@
                   <a>Administration</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="/about-us.html#board-of-directors"
-                        >Board of Management</a
-                      >
+                      <a href="/about-us.html#board-of-directors">
+                        Board of Management
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="/about-us.html#principal-message">Principal</a>
@@ -336,14 +327,14 @@
                       >
                     </li> -->
                     <li class="menu-item">
-                      <a href="internal-complaint-committee.html"
-                        >Internal Complaint Committee</a
-                      >
+                      <a href="internal-complaint-committee.html">
+                        Internal Complaint Committee
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="academic-leadership.html"
-                        >Academic Leadership</a
-                      >
+                      <a href="academic-leadership.html">
+                        Academic Leadership
+                      </a>
                     </li>
                   </ul>
                 </li>
@@ -357,14 +348,14 @@
                           <a>UG & PG</a>
                           <ul>
                             <li class="menu-item">
-                              <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
-                              >
+                              <a href="bachelor-of-dental-surgery.html">
+                                BDS(Bachelor Dental Surgery)
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
-                              >
+                              <a href="master-of-dental-surgery.html">
+                                MDS(Master Dental Surgery)
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -372,14 +363,19 @@
                           <a>Diploma</a>
                           <ul>
                             <li class="menu-item">
-                              <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
-                              >
+                              <a href="dora.html">
+                                Dental Operating <br/> Room Assistant (DORA)
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
-                              >
+                              <a href="dental-mechanic.html">
+                                Dental Mechanic (DM)
+                              </a>
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html">
+                                Dental Hygienist (DH)
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -388,9 +384,9 @@
                     <li class="menu-item">
                       <a
                         href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf"
-                        target="_blank"
-                        >Academic Calendar</a
-                      >
+                        target="_blank">
+                        Academic Calendar
+                      </a>
                     </li>
                  <!-- <li class="menu-item">
                       <a href="/assets/ACADEMICPROSPECTS.pdf" target="_blank"
@@ -399,10 +395,10 @@
                       >
                     </li> -->
                     <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
+                      <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
+                          <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="anatomy.html">Anatomy</a>
@@ -414,93 +410,93 @@
                               <a href="biochemistry.html">Biochemistry</a>
                             </li>
                             <li class="menu-item">
-                              <a href="general-pathology.html"
-                                >General Pathology</a
-                              >
+                              <a href="general-pathology.html">
+                                General Pathology
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="general-microbiology.html"
-                                >General Microbiology</a
-                              >
+                              <a href="general-microbiology.html">
+                                General Microbiology
+                              </a>
                             </li>
                             <li class="menu-item">
                               <a href="pharmacology.html">Pharmacology</a>
                             </li>
                             <li class="menu-item">
-                              <a href="general-medicine.html"
-                                >General Medicine</a
-                              >
+                              <a href="general-medicine.html">
+                                General Medicine
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="general-surgery.html"
-                                >General Surgery</a
-                              >
+                              <a href="general-surgery.html">
+                                General Surgery
+                              </a>
                             </li>
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
+                          <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
-                              <a href="oral-pathology.html"
-                                >Oral Pathology and Microbiology</a
-                              >
+                              <a href="oral-pathology.html">
+                                Oral Pathology and Microbiology
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="public-health.html"
-                                >Public Health Dentistry</a
-                              >
+                              <a href="public-health.html">
+                                Public Health Dentistry
+                              </a>
                             </li>
                             <li class="menu-item">
                               <a href="periodontology.html">Periodontology</a>
                             </li>
                             <li class="menu-item">
-                              <a href="oral-medicine-and-radiology.html"
-                                >Oral Medicine and Radiology</a
-                              >
+                              <a href="oral-medicine-and-radiology.html">
+                                Oral Medicine and Radiology
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="orthodontics.html"
-                                >Orthodontics & Dentofacial Orthopaedics</a
-                              >
+                              <a href="orthodontics.html">
+                                Orthodontics & Dentofacial Orthopaedics
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
-                              >
+                              <a href="oral-and-maxilofacial-surgery.html">
+                                Oral and Maxillofacial Surgery
+                              </a>
                             </li>
                             <li class="menu-item">
                               <a
-                                href="conservative-dentistry-&-edodontics.html"
-                                >Conservative Dentistry & Endodontics</a
-                              >
+                                href="conservative-dentistry-&-edodontics.html">
+                                Conservative Dentistry & Endodontics
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="prosthodontic.html"
-                                >Prosthodontics & Crown and Bridge</a
-                              >
+                              <a href="prosthodontic.html">
+                                Prosthodontics & Crown and Bridge
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="pedodontics.html"
-                                >Pedodontics & Preventive Dentistry</a
-                              >
+                              <a href="pedodontics.html">
+                                Pedodontics & Preventive Dentistry
+                              </a>
                             </li>
                           </ul>
                         </li>
                       </ul>
                     </li>
                     <li class="menu-item">
-                      <a href="naac.html#quick-links-section"
-                        >Internal Quality Assurance Cell (IQAC)</a
-                      >
+                      <a href="naac.html#quick-links-section">
+                        Internal Quality Assurance Cell (IQAC)
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="library.html">Library</a>
                     </li>
                     <li class="menu-item">
-                      <a href="academic-collaborations.html"
-                        >Academic Collaborations</a
-                      >
+                      <a href="academic-collaborations.html">
+                        Academic Collaborations
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="feedbacks.html">Feedbacks</a>
@@ -529,9 +525,14 @@
                       <a href="prospectus.html">Prospectus</a>
                     </li>
                     <li class="menu-item">
-                      <a href="admission.html"
-                        >Admission Process And Guidelines</a
-                      >
+                      <a href="dept-of-admission.html">
+                        Department of Admission
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="admission.html">
+                        Admission Process And Guidelines
+                      </a>
                     </li>
                     <!-- <li class="menu-item">
                       <a href="fee-refund-policy.html">Fee Refund Policy</a>
@@ -542,15 +543,15 @@
                   <a>Research</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="research-and-development.html"
-                        >Research and Development Cell</a
-                      >
+                      <a href="research-and-development.html">
+                        Research and Development Cell
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="incubation-center.html"
-                        >Incubation Center / Start-ups / Entrepreneurship
-                        Cell</a
-                      >
+                      <a href="incubation-center.html">
+                        Incubation Center / Start-ups / Entrepreneurship
+                        Cell
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="central-facilities.html">Central Facilities</a>
@@ -570,22 +571,22 @@
                       <a href="hostel-details.html">Hostel Details</a>
                     </li>
                     <li class="menu-item">
-                      <a href="placement-cell-and-activities.html"
-                        >Placement Cell and Activities</a
-                      >
+                      <a href="placement-cell-and-activities.html">
+                        Placement Cell and Activities
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="index.html#grievance-redressal-cell"
-                        >Student Grievance Redressal Committee (SGRC)</a
-                      >
+                      <a href="index.html#grievance-redressal-cell">
+                        Student Grievance Redressal Committee (SGRC)
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="health-facilities.html">Health Facilities</a>
                     </li>
                     <li class="menu-item">
-                      <a href="internal-complaint-committee.html"
-                        >Internal Complaint Committee</a
-                      >
+                      <a href="internal-complaint-committee.html">
+                        Internal Complaint Committee
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
@@ -624,21 +625,20 @@
                       <a href="rti.html">RTI</a>
                     </li> -->
                     <li class="menu-item">
-                      <a href="circulars-and-notices.html"
-                        >Circulars and Notices</a
-                      >
+                      <a href="circulars-and-notices.html">
+                        Circulars and Notices
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
-                      >
+                      <a href="/index.html#bulletin">
+                        News, Awareness & Achievements
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="careers.html">Job Openings</a>
@@ -680,8 +680,8 @@
           <div class="kingster-top-bar-container-inner clearfix">
             <div class="kingster-top-bar-left kingster-item-pdlr">
               <i class="fa fa-envelope-open-o" id="i_fd84_0"></i>
-              <a href="mailto:info@macity.edu.in">info@macity.edu.in</a
-              ><i class="fa fa-phone" id="i_fd84_1"></i>
+              <a href="mailto:info@macity.edu.in">info@macity.edu.in</a>
+              <i class="fa fa-phone" id="i_fd84_1"></i>
               <a href="tel:+917034555551">+91 7034 55555 1</a>
             </div>
             <div class="kingster-top-bar-right kingster-item-pdlr">
@@ -696,9 +696,9 @@
               <a
                 class="kingster-top-bar-right-button"
                 href="https://www.mdcconnect.in/"
-                target="_blank"
-                >MDC Connect</a
-              >
+                target="_blank">
+                MDC Connect
+              </a>
             </div>
           </div>
         </div>
@@ -707,14 +707,12 @@
 
     <header
       class="kingster-header-wrap kingster-header-style-plain kingster-style-menu-right kingster-sticky-navigation kingster-style-fixed"
-      data-navigation-offset="75px"
-    >
+      data-navigation-offset="75px">
       <div class="kingster-header-background"></div>
       <div class="kingster-header-container kingster-container">
         <div
           style="display: flex; align-items: center"
-          class="kingster-header-container-inner"
-        >
+          class="kingster-header-container-inner">
           <div class="kingster-logo kingster-item-pdlr">
             <div class="kingster-logo-inner">
               <a class="" href="index.html">
@@ -725,90 +723,82 @@
           <div class="kingster-navigation kingster-item-pdlr clearfix">
             <div class="kingster-main-menu" id="kingster-main-menu">
               <ul id="menu-main-navigation-1" class="sf-menu">
-                <li
-                  class="menu-item menu-item-home current-menu-item menu-item-has-children"
-                >
+                <li class="menu-item menu-item-home current-menu-item menu-item-has-children">
                   <a href="index.html">Home</a>
                 </li>
-                <li
-                  class="menu-item menu-item-home menu-item-has-children kingster-normal-menu"
-                >
+                <li class="menu-item menu-item-home menu-item-has-children kingster-normal-menu">
                   <a class="sf-with-ul-pre">About HEI</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
                       <a href="/about-us.html">About Us: Overview</a>
                     </li>
                     <li class="menu-item">
-                      <a href="act-and-statutes-or-moa.html"
-                        >Act and Statutes or MOA</a
-                      >
+                      <a href="act-and-statutes-or-moa.html">
+                        Act and Statutes or MOA
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="institutional-development-plan.html"
-                        >Institutional Development Plan</a
-                      >
+                      <a href="institutional-development-plan.html">
+                        Institutional Development Plan
+                      </a>
                     </li>
-                    <li
-                      class="menu-item menu-item-has-children"
-                      data-size="60"
-                    >
-                      <a class="sf-with-ul-pre"
-                        >Accreditation/Ranking Status</a
-                      >
+                    <li class="menu-item menu-item-has-children" data-size="60">
+                      <a class="sf-with-ul-pre">
+                        Accreditation/Ranking Status
+                      </a>
                       <ul class="sub-menu">
-                         <b>
-                              <li class="menu-item" data-size="60">
-                                <a href="naac.html">NAAC</a>
-                              </li>
-                              <li class="menu-item" data-size="60">
-                                <a
-                                  href="NAAC_Files/NIRF/NIRF_2025.pdf"
-                                  target="_blank"
-                                  >NIRF 2025</a
-                                >
-                              </li>
-                              <li class="menu-item" data-size="60">
-                                <a
-                                  href="NAAC_Files/NIRF/NIRF_2023.pdf"
-                                  target="_blank"
-                                  >NIRF 2023</a
-                                >
-                              </li>
-                              <li class="menu-item" data-size="60">
-                                <a
-                                  href="NAAC_Files/NIRF/NIRF_2022.pdf"
-                                  target="_blank"
-                                  >NIRF 2022</a
-                                >
-                              </li></b
-                            >
+                        <b>
+                          <li class="menu-item" data-size="60">
+                            <a href="naac.html">NAAC</a>
+                          </li>
+                          <li class="menu-item" data-size="60">
+                            <a
+                              href="NAAC_Files/NIRF/NIRF_2025.pdf"
+                              target="_blank">
+                              NIRF 2025
+                            </a>
+                          </li>
+                          <li class="menu-item" data-size="60">
+                            <a
+                              href="NAAC_Files/NIRF/NIRF_2023.pdf"
+                              target="_blank">
+                              NIRF 2023
+                            </a>
+                          </li>
+                          <li class="menu-item" data-size="60">
+                            <a
+                              href="NAAC_Files/NIRF/NIRF_2022.pdf"
+                              target="_blank">
+                              NIRF 2022
+                            </a>
+                          </li>
+                        </b>
                       </ul>
                     </li>
 
                     <li class="menu-item">
-                      <a href="recognition-approval.html"
-                        >Recognition/Approval</a
-                      >
+                      <a href="recognition-approval.html">
+                        Recognition/Approval
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                      <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
                     <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
                     </li>
                   </ul>
                 </li>
-                <li
-                  class="menu-item menu-item-home menu-item-has-children kingster-normal-menu"
-                >
-                  <a href="about-us.html" class="sf-with-ul-pre"
-                    >Administration</a
-                  >
+
+                <li class="menu-item menu-item-home menu-item-has-children kingster-normal-menu">
+                  <a href="about-us.html" class="sf-with-ul-pre">
+                    Administration
+                  </a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="/about-us.html#board-of-directors"
-                        >Board of Management</a
-                      >
+                      <a href="/about-us.html#board-of-directors">
+                        Board of Management
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="/about-us.html#principal-message">Principal</a>
@@ -827,45 +817,40 @@
                       >
                     </li> -->
                     <li class="menu-item">
-                      <a href="internal-complaint-committee.html"
-                        >Internal Complaint Committee</a
-                      >
+                      <a href="internal-complaint-committee.html">
+                        Internal Complaint Committee
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="academic-leadership.html"
-                        >Academic Leadership</a
-                      >
+                      <a href="academic-leadership.html">
+                        Academic Leadership
+                      </a>
                     </li>
                   </ul>
                 </li>
-                <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
-                >
+                <li class="menu-item menu-item-has-children kingster-normal-menu">
                   <a class="sf-with-ul-pre">Academics</a>
                   <ul class="sub-menu">
                     <li class="menu-item" data-size="60">
-                      <a href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf"
-                        >Academic Calendar</a
-                      >
+                      <a href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf">
+                        Academic Calendar
+                      </a>
                     </li>
-                    <li
-                      class="menu-item menu-item-has-children"
-                      data-size="60"
-                    >
+                    <li class="menu-item menu-item-has-children" data-size="60">
                       <a class="sf-with-ul-pre">Academic Programs</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
                           <a class="sf-with-ul-pre">UG & PG</a>
                           <ul>
                             <li class="menu-item">
-                              <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
-                              >
+                              <a href="bachelor-of-dental-surgery.html">
+                                BDS(Bachelor Dental Surgery)
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
-                              >
+                              <a href="master-of-dental-surgery.html">
+                                MDS(Master Dental Surgery)
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -873,14 +858,19 @@
                           <a class="sf-with-ul-pre">Diploma</a>
                           <ul>
                             <li class="menu-item">
-                              <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
-                              >
+                              <a href="dora.html">
+                                Dental Operating <br/> Room Assistant (DORA)
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
-                              >
+                              <a href="dental-mechanic.html">
+                                Dental Mechanic (DM)
+                              </a>
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html">
+                                Dental Hygienist (DH)
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -893,10 +883,10 @@
                       >
                     </li> -->
                     <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
+                      <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
+                          <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="anatomy.html">Anatomy</a>
@@ -908,32 +898,32 @@
                               <a href="biochemistry.html">Biochemistry</a>
                             </li>
                             <li class="menu-item">
-                              <a href="general-pathology.html"
-                                >General Pathology</a
-                              >
+                              <a href="general-pathology.html">
+                                General Pathology
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="general-microbiology.html"
-                                >General Microbiology</a
-                              >
+                              <a href="general-microbiology.html">
+                                General Microbiology
+                              </a>
                             </li>
                             <li class="menu-item">
                               <a href="pharmacology.html">Pharmacology</a>
                             </li>
                             <li class="menu-item">
-                              <a href="general-medicine.html"
-                                >General Medicine</a
-                              >
+                              <a href="general-medicine.html">
+                                General Medicine
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="general-surgery.html"
-                                >General Surgery</a
-                              >
+                              <a href="general-surgery.html">
+                                General Surgery
+                              </a>
                             </li>
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
+                          <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="oral-pathology.html"
@@ -949,52 +939,51 @@
                               <a href="periodontology.html">Periodontology</a>
                             </li>
                             <li class="menu-item">
-                              <a href="oral-medicine-and-radiology.html"
-                                >Oral Medicine and Radiology</a
-                              >
+                              <a href="oral-medicine-and-radiology.html">
+                                Oral Medicine and Radiology
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="orthodontics.html"
-                                >Orthodontics & Dentofacial Orthopaedics</a
-                              >
+                              <a href="orthodontics.html">
+                                Orthodontics & Dentofacial Orthopaedics
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
-                              >
+                              <a href="oral-and-maxilofacial-surgery.html">
+                                Oral and Maxillofacial Surgery
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a
-                                href="conservative-dentistry-&-edodontics.html"
-                                >Conservative Dentistry & Endodontics</a
-                              >
+                              <a href="conservative-dentistry-&-edodontics.html">
+                                Conservative Dentistry & Endodontics
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="prosthodontic.html"
-                                >Prosthodontics & Crown and Bridge</a
-                              >
+                              <a href="prosthodontic.html">
+                                Prosthodontics & Crown and Bridge
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="pedodontics.html"
-                                >Pedodontics & Preventive Dentistry</a
-                              >
+                              <a href="pedodontics.html">
+                                Pedodontics & Preventive Dentistry
+                              </a>
                             </li>
                           </ul>
                         </li>
                       </ul>
                     </li>
                     <li class="menu-item">
-                      <a href="naac.html#quick-links-section"
-                        >Internal Quality Assurance Cell (IQAC)</a
-                      >
+                      <a href="naac.html#quick-links-section">
+                        Internal Quality Assurance Cell (IQAC)
+                      </a>
                     </li>
                     <li class="menu-item" data-size="60">
                       <a href="library.html">Library</a>
                     </li>
                     <li class="menu-item" data-size="60">
-                      <a href="academic-collaborations.html"
-                        >Academic Collaborations</a
-                      >
+                      <a href="academic-collaborations.html">
+                        Academic Collaborations
+                      </a>
                     </li>
                     <li class="menu-item" data-size="60">
                       <a href="feedbacks.html">Feedbacks</a>
@@ -1016,48 +1005,47 @@
                     </li>
                   </ul>
                 </li>
-                <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
-                >
+                <li class="menu-item menu-item-has-children kingster-normal-menu">
                   <a class="sf-with-ul-pre">Admission & Fee</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
                       <a href="prospectus.html">Prospectus</a>
                     </li>
                     <li class="menu-item">
-                      <a href="admission.html"
-                        >Admission Process And Guidelines</a
-                      >
+                      <a href="dept-of-admission.html">
+                        Department of Admission
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="admission.html">
+                        Admission Process And Guidelines
+                      </a>
                     </li>
                     <!-- <li class="menu-item">
                       <a href="fee-refund-policy.html">Fee Refund Policy</a>
                     </li> -->
                   </ul>
                 </li>
-                <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
-                >
+                <li class="menu-item menu-item-has-children kingster-normal-menu">
                   <a class="sf-with-ul-pre">Research</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="research-and-development.html"
-                        >Research and Development Cell</a
-                      >
+                      <a href="research-and-development.html">
+                        Research and Development Cell
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="incubation-center.html"
-                        >Incubation Center / Start-ups / Entrepreneurship
-                        Cell</a
-                      >
+                      <a href="incubation-center.html">
+                        Incubation Center / Start-ups / Entrepreneurship
+                        Cell
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="central-facilities.html">Central Facilities</a>
                     </li>
                   </ul>
                 </li>
-                <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
-                >
+                <li class="menu-item menu-item-has-children kingster-normal-menu">
                   <a class="sf-with-ul-pre">Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
@@ -1070,22 +1058,22 @@
                       <a href="hostel-details.html">Hostel Details</a>
                     </li>
                     <li class="menu-item">
-                      <a href="placement-cell-and-activities.html"
-                        >Placement Cell and Activities</a
-                      >
+                      <a href="placement-cell-and-activities.html">
+                        Placement Cell and Activities
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="index.html#grievance-redressal-cell"
-                        >Student Grievance Redressal Committee (SGRC)</a
-                      >
+                      <a href="index.html#grievance-redressal-cell">
+                        Student Grievance Redressal Committee (SGRC)
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="health-facilities.html">Health Facilities</a>
                     </li>
                     <li class="menu-item">
-                      <a href="internal-complaint-committee.html"
-                        >Internal Complaint Committee</a
-                      >
+                      <a href="internal-complaint-committee.html">
+                        Internal Complaint Committee
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
@@ -1109,9 +1097,7 @@
                     </li> -->
                   </ul>
                 </li>
-                <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
-                >
+                <li class="menu-item menu-item-has-children kingster-normal-menu">
                   <a class="sf-with-ul-pre">Alumni</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
@@ -1128,20 +1114,19 @@
                       <a href="rti.html">RTI</a>
                     </li> -->
                     <li class="menu-item">
-                      <a href="circulars-and-notices.html"
-                        >Circulars and Notices</a
-                      >
+                      <a href="circulars-and-notices.html">
+                        Circulars and Notices
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
                       <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
+                        >News, Awareness & Achievements</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1168,58 +1153,55 @@
                   </li>
                   <li class="menu-item">
                     <a href="contact-us.html">Contact Us</a>
-                  </li></li>
-                      <div class="kingster-main-menu-right-wrap clearfix">
-                        <div
-                          class="kingster-main-menu-search"
-                          id="kingster-top-search"
-                        >
-                          <i class="icon_search"></i>
-                          <span>Search</span>
-                        </div>
-                        <div class="kingster-top-search-wrap">
-                          <div class="kingster-top-search-close"></div>
-                          <div class="kingster-top-search-row">
-                            <div class="kingster-top-search-cell">
-                              <form role="search" method="get" class="search-form" action="search.html">
-                                <input
-                                  type="text"
-                                  class="search-field kingster-title-font"
-                                  placeholder="Search..."
-                                  value=""
-                                  name="q"
-                                />
-                                <div class="kingster-top-search-submit">
-                                  <i class="fa fa-search"></i>
-                                </div>
-                                <input
-                                  type="submit"
-                                  class="search-submit"
-                                  value="Search"
-                                />
-                                <div class="kingster-top-search-close">
-                                  <i class="icon_close"></i>
-                                </div>
-                              </form>
+                  </li>
+                </li>
+                  <div class="kingster-main-menu-right-wrap clearfix">
+                    <div
+                      class="kingster-main-menu-search"
+                      id="kingster-top-search">
+                      <i class="icon_search"></i>
+                      <span>Search</span>
+                    </div>
+                    <div class="kingster-top-search-wrap">
+                      <div class="kingster-top-search-close"></div>
+                      <div class="kingster-top-search-row">
+                        <div class="kingster-top-search-cell">
+                          <form role="search" method="get" class="search-form" action="search.html">
+                            <input
+                              type="text"
+                              class="search-field kingster-title-font"
+                              placeholder="Search..."
+                              value=""
+                              name="q"
+                            />
+                            <div class="kingster-top-search-submit">
+                              <i class="fa fa-search"></i>
                             </div>
-                          </div>
+                            <input
+                              type="submit"
+                              class="search-submit"
+                              value="Search"
+                            />
+                            <div class="kingster-top-search-close">
+                              <i class="icon_close"></i>
+                            </div>
+                          </form>
                         </div>
                       </div>
-                    </li>
-                  </ul>
-
-                  <div
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div
                 class="kingster-navigation-slide-bar"
-                id="kingster-navigation-slide-bar"
-              ></div>
+                id="kingster-navigation-slide-bar">
+              </div>
             </div>
           </div>
         </div>
       </div>
     </header>
-        <div
-          class="kingster-page-title-wrap kingster-style-medium kingster-left-align"
-        >
+        <div class="kingster-page-title-wrap kingster-style-medium kingster-left-align">
           <div class="kingster-header-transparent-substitute"></div>
           <div class="kingster-page-title-overlay"></div>
           <div class="kingster-page-title-container kingster-container">
@@ -1232,19 +1214,17 @@
           <div class="gdlr-core-page-builder-body">
             <div class="gdlr-core-pbf-wrapper">
               <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                <div
-                  class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container"
-                >
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
                   <div class="gdlr-core-pbf-element">
                     <div class="gdlr-core-event-item gdlr-core-item-pdb">
                       <div
                         id="loadingAnimation"
-                        class="loading-animation"
-                      ></div>
+                        class="loading-animation">
+                      </div>
                       <div
                         class="gdlr-core-event-item-holder clearfix"
-                        id="eventContainer"
-                      ></div>
+                        id="eventContainer">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1274,9 +1254,9 @@
                       Kerala 679578
                     </p>
                     <p>
-                      <span id="span_1dd7_11">
+                      <!-- <span id="span_1dd7_11">
                         Toll free:<a href="tel:18008430066"> 18008430066</a>
-                      </span>
+                      </span> -->
                       <!-- <br> <span id="span_1dd7_11"> Hospital/Clinic:<a href="tel:0494 269720"> 0494 269720, 21</a> </span> | <span id="span_1dd7_11"> <a href="tel:7034555514">+91 7034555514</a></span> -->
                       <br />
                       <span
@@ -1300,13 +1280,10 @@
                   </div>
                 </div>
               </div>
-              <div
-                class="kingster-footer-column kingster-item-pdlr kingster-column-15"
-              >
+              <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
                 <div
                   id="gdlr-core-custom-menu-widget-2"
-                  class="widget widget_gdlr-core-custom-menu-widget kingster-widget"
-                >
+                  class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
                   <h3 class="kingster-widget-title">Quick links</h3>
                   <span class="clear"></span>
                   <div class="menu-our-campus-container">
@@ -1331,6 +1308,7 @@
                         <a href="dental-mechanic.html">Dental Mechanic</a>
                       </li>
                       <li class="menu-item"><a href="dora.html">DORA</a></li>
+                      <li class="menu-item"><a href="dental-hygienist.html">Dental Hygienist</a></li>
                       <li class="menu-item">
                         <a href="contact-us.html">Contact</a>
                       </li>
@@ -1530,36 +1508,29 @@
       };
     </script>
     <script>
-      // Define the API URL to fetch notification data
       const apiUrlNotification =
         "https://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";
 
-      // Reference to the notification container
       const notificationContainer = document.getElementById(
         "notification-container"
       );
 
-      // Store the notification data and current index
       let notifications = [];
       let currentIndex = 0;
 
-      // Function to fetch and update notification data
       async function fetchAndUpdateNotifications() {
         try {
           const response = await fetch(apiUrlNotification);
           notifications = await response.json();
 
-          // Call the updateNotification function initially
           updateNotification();
 
-          // Set an interval to update notifications every 1.5 seconds
           setInterval(updateNotification, 4500);
         } catch (error) {
           console.error("Error fetching notifications:", error);
         }
       }
 
-      // Function to update the notification text
       function updateNotification() {
         if (notifications.length > 0) {
           const list = notificationContainer;
@@ -1568,7 +1539,6 @@
         }
       }
 
-      // Call the fetchAndUpdateNotifications function initially
       fetchAndUpdateNotifications();
     </script>
     <script>
@@ -1592,7 +1562,7 @@
 
         const monthFormatter = new Intl.DateTimeFormat("en", {
           month: "short",
-        }); // Use 'short' option
+        }); 
         const monthShortForm = monthFormatter.format(eventDate);
 
         const eventElement = document.createElement("div");
@@ -1604,7 +1574,7 @@
           "clearfix"
         );
 
-        eventElement.style.marginBottom = "45px"; // Set margin-bottom
+        eventElement.style.marginBottom = "45px"; 
 
         const eventImage = document.createElement("img");
         eventImage.classList.add("event_poster");
@@ -1613,16 +1583,13 @@
         eventImage.alt = "";
         eventImage.src = event.event_poster;
 
-        eventImage.style.width = "400px"; // Set image width
-        eventImage.style.height = "500px"; // Set image height
-        eventImage.style.objectFit = "fill"; // Set image object-fit
+        eventImage.style.width = "400px"; 
+        eventImage.style.height = "500px"; 
+        eventImage.style.objectFit = "fill"; 
         eventImage.style.marginBottom = "30px";
         const imageLink = document.createElement("a");
-        // imageLink.href = "#";
         imageLink.appendChild(eventImage);
-        // imageLink.addEventListener("click", function () {
-        //   displayPopup(event.event_poster);
-        // });
+     
 
         const dateContainer = document.createElement("span");
         dateContainer.classList.add(
@@ -1631,11 +1598,11 @@
         );
         const dateSpan = document.createElement("span");
         dateSpan.classList.add("gdlr-core-date", "event_date");
-        dateSpan.textContent = dayOfMonth; // Set formatted date
+        dateSpan.textContent = dayOfMonth; 
         dateContainer.appendChild(dateSpan);
-        const monthSpan = document.createElement("span"); // Create a new span for the month
+        const monthSpan = document.createElement("span"); 
         monthSpan.classList.add("gdlr-core-month", "event_date");
-        monthSpan.textContent = monthShortForm; // Set month
+        monthSpan.textContent = monthShortForm; 
         dateContainer.appendChild(monthSpan);
 
         const contentWrap = document.createElement("div");
@@ -1646,7 +1613,7 @@
         const eventNameLink = document.createElement("a");
         eventNameLink.classList.add("event_name");
         eventName.style.marginBottom = "5px";
-        eventNameLink.textContent = event.event_name; // Set event name
+        eventNameLink.textContent = event.event_name; 
         eventName.appendChild(eventNameLink);
 
         const infoWrap = document.createElement("div");
@@ -1666,7 +1633,6 @@
         );
         conductedBy.innerHTML = `<span class="gdlr-core-tail event_short_descp"><b>By: </b>${event.conducted_by}</span>`;
 
-        // Append all elements
         // infoWrap.appesndChild(shortDescp);
         infoWrap.appendChild(conductedBy);
 
@@ -1690,7 +1656,6 @@
         });
       }
 
-      // Call the renderEvents function to populate the content
       renderEvents();
     </script>
     <script>
@@ -1700,10 +1665,8 @@
         const popupImage = document.getElementById("popupImage");
 
         popupImage.src = posterUrl;
-        // Show the popup
         popupContainer.style.display = "block";
 
-        // Close the popup when the close button is clicked
         closeBtn.addEventListener("click", closePopup);
         showPopupContainer();
       }
@@ -1711,12 +1674,10 @@
         const popupContainer = document.getElementById("popupContainer");
         popupContainer.style.display = "block";
       }
-      // Function to close the popup
       function closePopup() {
         const popupContainer = document.getElementById("popupContainer");
         if (popupContainer.style.display === "block") {
           popupContainer.style.display = "none";
-          // Add a small delay before adding the popup-active class back to the background container to reapply the blur effect
         }
       }
     </script>
