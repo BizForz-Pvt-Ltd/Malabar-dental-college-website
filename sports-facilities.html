@@ -87,6 +87,65 @@
       ul.notification-list {
         margin-bottom: 0px !important;
       }
+      
+      .modal-overlay {
+        display: none; 
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.8);
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+      }
+.modal-content {
+  max-width: 800px;
+  width: 90%;
+  max-height: 85vh;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.modal-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: #182847;
+}
+
+.modal-content p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
+      .modal-close {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 36px;
+        font-weight: bold;
+        color: #fff;
+        cursor: pointer;
+        z-index: 10001;
+      }
+      .modal-close:hover {
+        color: #ddd;
+      }
+
       @keyframes marquee-up {
         0% {
           transform: translateY(0);
@@ -165,9 +224,9 @@
               data-slide="right"
             >
               <ul id="menu-main-navigation" class="m-menu">
-                <!-- <li class="menu-item menu-item-home current-menu-item">
+                <li class="menu-item menu-item-home">
                 <a href="index.html">Home</a>
-              </li> -->
+              </li>
                 <li class="menu-item menu-item-has-children">
                   <a>About HEI</a>
                   <ul class="sub-menu">
@@ -211,9 +270,9 @@
                     <li class="menu-item">
                       <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
@@ -376,7 +435,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -475,14 +534,23 @@
                   <a>Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -501,6 +569,9 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
+                     <li class="menu-item" data-size="60">
+                          <a href="women-cell.html">Women Cell</a>
+                        </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
@@ -546,12 +617,14 @@
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Awareness & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="news-page.html"
+                        >News, Recent Events & Achievements</a
                       >
                     </li>
                     <li class="menu-item">
@@ -596,7 +669,7 @@
               <i class="fa fa-envelope-open-o" id="i_fd84_0"></i>
               <a href="mailto:info@macity.edu.in">info@macity.edu.in</a
               ><i class="fa fa-phone" id="i_fd84_1"></i>
-              <a href="tel:+917034555551">+91 7034 55555 1</a>
+              <a href="tel:+917034555514">+91 7034 55555 1</a>
             </div>
             <div class="kingster-top-bar-right kingster-item-pdlr">
               <ul
@@ -640,7 +713,7 @@
             <div class="kingster-main-menu" id="kingster-main-menu">
               <ul id="menu-main-navigation-1" class="sf-menu">
                 <li
-                  class="menu-item menu-item-home current-menu-item menu-item-has-children"
+                  class="menu-item menu-item-home menu-item-has-children"
                 >
                   <a href="index.html">Home</a>
                 </li>
@@ -707,9 +780,9 @@
                     <li class="menu-item">
                       <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li
@@ -879,7 +952,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -979,19 +1052,28 @@
                   </ul>
                 </li>
                 <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
+                  class="menu-item current-menu-item menu-item-has-children kingster-normal-menu"
                 >
                   <a class="sf-with-ul-pre">Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -1010,6 +1092,9 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
+                     <li class="menu-item" data-size="60">
+                          <a href="women-cell.html">Women Cell</a>
+                        </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
@@ -1059,12 +1144,14 @@
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Awareness & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="news-page.html"
+                        >News, Recent Events & Achievements</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1145,12 +1232,24 @@
           <div class="kingster-page-title-overlay"></div>
           <div class="kingster-page-title-container kingster-container">
             <div class="kingster-page-title-content kingster-item-pdlr">
-              <div class="kingster-page-caption">What we provide at MDCRC</div>
+              <div class="kingster-page-caption">Explore the sports facilities that foster a healthy lifestyle.</div>
               <h1 class="kingster-page-title">Sports Facilities</h1>
             </div>
           </div>
           
         </div>
+
+         <div class="kingster-breadcrumbs">
+        <div class="kingster-breadcrumbs-container kingster-container">
+            <div class="kingster-breadcrumbs-item kingster-item-pdlr"> <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Kingster." href="index.html" class="home"><span property="name">Home</span></a>
+                <meta property="position" content="1">
+                </span>&gt;<span property="itemListElement" typeof="ListItem"><span property="name">Sports Facilities</span>
+                <meta property="position" content="2">
+                </span>
+            </div>
+        </div>
+      </div>
+
         <div class="kingster-page-wrapper" id="kingster-page-wrapper">
           <div class="gdlr-core-page-builder-body">
             <div
@@ -1209,19 +1308,18 @@
                               <div class="gdlr-core-pbf-element">
                                 <div id="facilities-container" class="gdlr-core-blog-item gdlr-core-item-pdb clearfix gdlr-core-style-blog-image"></div>
                                 <div id="facilities-pagination" style="text-align:center; margin-top:20px;"></div>
-                                <div id="image-modal" 
-                                    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-                                            background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
-                                  <div style="position:relative; max-width:90%; max-height:90%; background:#fff; border-radius:8px; overflow:auto;">
-                                    <span id="modal-close" 
-                                          style="position:absolute; top:8px; right:12px; font-size:24px; cursor:pointer; color:#333;">&times;</span>
-                                    <img id="modal-img" src="" alt="" style="width:100%; height:auto; display:block;" />
-                                    <div style="padding:15px;">
-                                      <h3 id="modal-title" style="margin:0; color:#163269;"></h3>
-                                      <p id="modal-desc" style="margin-top:8px; color:#555; font-size:14px;"></p>
-                                    </div>
+                                
+                                <div id="imageModal" class="modal-overlay">
+                                  <span class="modal-close">&times;</span>
+                                  <div class="modal-content">
+                                    <img id="modalImage" src="" alt="Facility Image">
+                                    <h3 id="modalTitle"></h3>
+                                    <p id="modalDesc"></p>
                                   </div>
                                 </div>
+
+
+
 
                               </div>
                             </div>
@@ -1362,7 +1460,10 @@
                       <br />
                       Manoor - Chekanoor Road, <br />
                       Manoor, Edappal, Malappuram, <br />
-                      Kerala 679578
+                      Kerala 679578<br /><br />
+
+              0494 2697020, 21, 22 <br />
+              7034555514
                     </p>
                     <p>
                       <!-- <span id="span_1dd7_11">
@@ -1405,6 +1506,9 @@
                       id="menu-our-campus"
                       class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
                     >
+                    <li class="menu-item">
+                      <a href="about-us.html">Academic Calendar</a>
+                    </li>
                       <li class="menu-item">
                         <a href="about-us.html">About Us</a>
                       </li>
@@ -1535,7 +1639,7 @@
               class="kingster-copyright-container kingster-container clearfix"
             >
               <div class="kingster-copyright-left kingster-item-pdlr">
-                Copyright © 2023 Malabar Dental College |
+                Copyright © 2025 Malabar Dental College |
                 <a style="color: #fff" href="dept_of_IT.html"
                   >Department of IT 💻</a
                 >
@@ -1656,163 +1760,208 @@
       };
     </script>
   
-<script>
-  const itemsPerPage = 12; 
-  let currentPage = 1;
-  let allFacilities = [];
+    <script>
+      const itemsPerPage = 12; 
+      let currentPage = 1;
+      let allFacilities = [];
 
-  fetch("https://conext.in/website_manager/api/mdc/sports_facilities_list/") 
-    .then(res => res.json())
-    .then(data => {
-      if (!data.status) return;
-      allFacilities = data.data;
-      displayPage(currentPage);
-    })
-    .catch(err => console.error("Error loading facilities:", err));
+      fetch("https://conext.in/website_manager/api/mdc/sports_facilities_list/") 
+        .then(res => res.json())
+        .then(data => {
+          if (!data.status) return;
+          allFacilities = data.data;
+          displayPage(currentPage);
+        })
+        .catch(err => console.error("Error loading facilities:", err));
 
-  function displayPage(page) {
-    const container = document.getElementById("facilities-container");
-    container.innerHTML = "";
-    container.style.display = "grid";
-    container.style.gridTemplateColumns = "repeat(auto-fill, minmax(300px, 1fr))";
-    container.style.gap = "25px";
+      function displayPage(page) {
+        const container = document.getElementById("facilities-container");
+        container.innerHTML = "";
+        container.style.display = "grid";
+        container.style.gridTemplateColumns = "repeat(auto-fill, minmax(300px, 1fr))";
+        container.style.gap = "25px";
 
-    const start = (page - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const pageItems = allFacilities.slice(start, end);
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const pageItems = allFacilities.slice(start, end);
 
-    pageItems.forEach(facility => {
-      const description = facility.description || "";
-      const maxLength = 60;
-      const isLong = description.length > maxLength;
-      const shortText = isLong ? description.slice(0, maxLength) + "..." : description;
+        pageItems.forEach(facility => {
+          const description = facility.description || "";
+          const maxLength = 60;
+          const isLong = description.length > maxLength;
+          const shortText = isLong ? description.slice(0, maxLength) + "..." : description;
 
-      const card = document.createElement("div");
-      card.style.border = "1px solid #eee";
-      card.style.borderRadius = "8px";
-      card.style.overflow = "hidden";
-      card.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
-      card.style.background = "#fff";
-      card.style.transition = "transform 0.2s";
-      card.onmouseover = () => card.style.transform = "translateY(-5px)";
-      card.onmouseout = () => card.style.transform = "translateY(0)";
+          const card = document.createElement("div");
+          card.style.border = "1px solid #eee";
+          card.style.borderRadius = "8px";
+          card.style.overflow = "hidden";
+          card.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+          card.style.background = "#fff";
+          card.style.transition = "transform 0.2s";
+          card.classList.add("facility-card");   // add this line
 
-      card.innerHTML = `
-        <div style="width:100%; display:block;">
-          <a class="gdlr-core-lightgallery gdlr-core-js" 
-            href="${facility.picture}" 
-            data-lightbox-group="gdlr-core-img-group"
-            style="display:block; width:100%;">
+          card.onmouseover = () => card.style.transform = "translateY(-5px)";
+          card.onmouseout = () => card.style.transform = "translateY(0)";
+
+          card.innerHTML = `
+            <div style="width:100%; display:block;">
+              <a class="gdlr-core-lightgallery gdlr-core-js" 
+                href="${facility.picture}" 
+                data-lightbox-group="gdlr-core-img-group"
+                style="display:block; width:100%;">
+                
+                <img src="${facility.picture}" alt="${facility.name}" 
+                    style="width:100%; height:220px; object-fit:cover; display:block;" />
+              </a>
+            </div>
             
-            <img src="${facility.picture}" alt="${facility.name}" 
-                style="width:100%; height:220px; object-fit:cover; display:block;" />
-          </a>
-        </div>
-        
-        <div style="padding:15px; text-align:center;">
-          <h3 style="font-size:18px; font-weight:600; margin:0; color:#163269;">
-            ${facility.name}
-          </h3>
-          <p style="font-size:14px; color:#555; margin-top:8px; text-align:left;">
-            <span class="short-text">${shortText}</span>
-            <span class="full-text" style="display:none;">${description}</span>
-            ${isLong ? `<a href="#" class="toggle-text" style="color:#3db166; font-weight:bold; margin-left:5px;">Show More</a>` : ""}
-          </p>
-        </div>
-      `;
+            <div style="padding:15px; text-align:center;">
+              <h3 style="font-size:18px; font-weight:600; margin:0; color:#163269;">
+                ${facility.name}
+              </h3>
+              <p style="font-size:14px; color:#555; margin-top:8px; text-align:left;">
+                <span class="short-text">${shortText}</span>
+                <span class="full-text" style="display:none;">${description}</span>
+                ${isLong ? `<a href="#" class="toggle-text" style="color:#3db166; font-weight:bold; margin-left:5px;">Show More</a>` : ""}
+              </p>
+            </div>
+          `;
 
-      container.appendChild(card);
+          container.appendChild(card);
+        });
+
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalDesc = document.getElementById("modalDesc");
+      const modalClose = document.querySelector(".modal-close");
+
+      document.addEventListener("click", e => {
+      const card = e.target.closest(".facility-card"); // safer
+      if (card && (e.target.tagName === "IMG" || e.target.tagName === "H3" || e.target.tagName === "P")) {
+        e.preventDefault();
+
+        const imgEl = card.querySelector("img");
+        const titleEl = card.querySelector("h3");
+        const descEl = card.querySelector(".full-text");
+
+        modalImg.src = imgEl ? imgEl.src : "";
+        modalTitle.textContent = titleEl ? titleEl.textContent : "";
+        modalDesc.textContent = descEl && descEl.textContent.trim()
+                                  ? descEl.textContent
+                                  : card.querySelector(".short-text").textContent;
+
+        modal.style.display = "flex";
+        document.querySelector("header.kingster-header-wrap").style.visibility = "hidden";
+      }
     });
 
-    renderPagination();
-  }
 
-  function renderPagination() {
-    const pagination = document.getElementById("facilities-pagination");
-    pagination.innerHTML = "";
 
-    const totalPages = Math.ceil(allFacilities.length / itemsPerPage);
+      // Close modal
+      modalClose.addEventListener("click", () => {
+        modal.style.display = "none";
+        document.querySelector("header.kingster-header-wrap").style.visibility = "visible";
+      });
 
-    const wrapper = document.createElement("div");
-    wrapper.style.display = "flex";
-    wrapper.style.justifyContent = "center";
-    wrapper.style.alignItems = "center";
-    wrapper.style.gap = "8px";
+      // Close on outside click
+      window.addEventListener("click", e => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+          document.querySelector("header.kingster-header-wrap").style.visibility = "visible";
+        }
+      });
 
-    if (currentPage > 1) {
-      const prevBtn = document.createElement("button");
-      prevBtn.innerHTML = "⟵ Prev";
-      styleButton(prevBtn, false);
-      prevBtn.onclick = () => {
-        currentPage--;
-        displayPage(currentPage);
-      };
-      wrapper.appendChild(prevBtn);
-    }
 
-    for (let i = 1; i <= totalPages; i++) {
-      const btn = document.createElement("button");
-      btn.textContent = i;
-      styleButton(btn, i === currentPage);
-      btn.onclick = () => {
-        currentPage = i;
-        displayPage(currentPage);
-      };
-      wrapper.appendChild(btn);
-    }
-
-    if (currentPage < totalPages) {
-      const nextBtn = document.createElement("button");
-      nextBtn.innerHTML = "Next ⟶";
-      styleButton(nextBtn, false);
-      nextBtn.onclick = () => {
-        currentPage++;
-        displayPage(currentPage);
-      };
-      wrapper.appendChild(nextBtn);
-    }
-
-    pagination.appendChild(wrapper);
-  }
-
-  function styleButton(btn, isActive) {
-    btn.style.margin = "0";
-    btn.style.padding = "6px 14px";
-    btn.style.cursor = "pointer";
-    btn.style.background = isActive ? "#3db166" : "#f0f0f0";
-    btn.style.color = isActive ? "#fff" : "#333";
-    btn.style.fontWeight = "600";
-    btn.style.border = "1px solid #ccc";
-    btn.style.borderRadius = "4px";
-    btn.style.transition = "0.3s";
-    btn.onmouseover = () => {
-      if (!isActive) btn.style.background = "#ddd";
-    };
-    btn.onmouseout = () => {
-      if (!isActive) btn.style.background = "#f0f0f0";
-    };
-  }
-
-  // Event delegation for show more/less
-  document.addEventListener("click", e => {
-    if (e.target.classList.contains("toggle-text")) {
-      e.preventDefault();
-      const p = e.target.closest("p");
-      const shortText = p.querySelector(".short-text");
-      const fullText = p.querySelector(".full-text");
-
-      if (fullText.style.display === "none") {
-        fullText.style.display = "inline";
-        shortText.style.display = "none";
-        e.target.textContent = " Show Less";
-      } else {
-        fullText.style.display = "none";
-        shortText.style.display = "inline";
-        e.target.textContent = " Show More";
+        renderPagination();
       }
-    }
-  });
-</script>
+
+      function renderPagination() {
+        const pagination = document.getElementById("facilities-pagination");
+        pagination.innerHTML = "";
+
+        const totalPages = Math.ceil(allFacilities.length / itemsPerPage);
+
+        const wrapper = document.createElement("div");
+        wrapper.style.display = "flex";
+        wrapper.style.justifyContent = "center";
+        wrapper.style.alignItems = "center";
+        wrapper.style.gap = "8px";
+
+        if (currentPage > 1) {
+          const prevBtn = document.createElement("button");
+          prevBtn.innerHTML = "⟵ Prev";
+          styleButton(prevBtn, false);
+          prevBtn.onclick = () => {
+            currentPage--;
+            displayPage(currentPage);
+          };
+          wrapper.appendChild(prevBtn);
+        }
+
+        for (let i = 1; i <= totalPages; i++) {
+          const btn = document.createElement("button");
+          btn.textContent = i;
+          styleButton(btn, i === currentPage);
+          btn.onclick = () => {
+            currentPage = i;
+            displayPage(currentPage);
+          };
+          wrapper.appendChild(btn);
+        }
+
+        if (currentPage < totalPages) {
+          const nextBtn = document.createElement("button");
+          nextBtn.innerHTML = "Next ⟶";
+          styleButton(nextBtn, false);
+          nextBtn.onclick = () => {
+            currentPage++;
+            displayPage(currentPage);
+          };
+          wrapper.appendChild(nextBtn);
+        }
+
+        pagination.appendChild(wrapper);
+      }
+
+      function styleButton(btn, isActive) {
+        btn.style.margin = "0";
+        btn.style.padding = "6px 14px";
+        btn.style.cursor = "pointer";
+        btn.style.background = isActive ? "#3db166" : "#f0f0f0";
+        btn.style.color = isActive ? "#fff" : "#333";
+        btn.style.fontWeight = "600";
+        btn.style.border = "1px solid #ccc";
+        btn.style.borderRadius = "4px";
+        btn.style.transition = "0.3s";
+        btn.onmouseover = () => {
+          if (!isActive) btn.style.background = "#ddd";
+        };
+        btn.onmouseout = () => {
+          if (!isActive) btn.style.background = "#f0f0f0";
+        };
+      }
+
+      // Event delegation for show more/less
+      document.addEventListener("click", e => {
+        if (e.target.classList.contains("toggle-text")) {
+          e.preventDefault();
+          const p = e.target.closest("p");
+          const shortText = p.querySelector(".short-text");
+          const fullText = p.querySelector(".full-text");
+
+          if (fullText.style.display === "none") {
+            fullText.style.display = "inline";
+            shortText.style.display = "none";
+            e.target.textContent = " Show Less";
+          } else {
+            fullText.style.display = "none";
+            shortText.style.display = "inline";
+            e.target.textContent = " Show More";
+          }
+        }
+      });
+    </script>
 
     <script type="text/javascript" src="js/plugins.min.js"></script>
     <script type="text/javascript" src="js/isotope.js"></script>

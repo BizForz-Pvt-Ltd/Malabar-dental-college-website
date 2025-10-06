@@ -87,6 +87,44 @@
         margin: 20px auto;
       }
 
+     .pagination {
+  width: 100%;                 /* span full width */
+  display: flex;
+  justify-content: center;      /* center horizontally */
+  align-items: center;
+  gap: 15px;
+  margin: 30px 0 0;             /* top margin only */
+  font-family: Arial, sans-serif;
+  clear: both;                  /* force it below floated content */
+}
+
+
+.pagination button {
+  background-color: #50BD77;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #33804e;
+}
+
+#pageNumber {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
       @keyframes spin {
         0% {
           transform: rotate(0deg);
@@ -253,9 +291,9 @@
                     <li class="menu-item">
                       <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
@@ -418,7 +456,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -517,14 +555,23 @@
                   <a>Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -543,6 +590,9 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
+                     <li class="menu-item" data-size="60">
+                          <a href="women-cell.html">Women Cell</a>
+                        </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
@@ -588,12 +638,14 @@
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Awareness & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="news-page.html"
+                        >News, Recent Events & Achievements</a
                       >
                     </li>
                     <li class="menu-item">
@@ -638,7 +690,7 @@
               <i class="fa fa-envelope-open-o" id="i_fd84_0"></i>
               <a href="mailto:info@macity.edu.in">info@macity.edu.in</a
               ><i class="fa fa-phone" id="i_fd84_1"></i>
-              <a href="tel:+917034555551">+91 7034 55555 1</a>
+              <a href="tel:+917034555514">+91 7034 55555 1</a>
             </div>
             <div class="kingster-top-bar-right kingster-item-pdlr">
               <ul
@@ -749,9 +801,9 @@
                     <li class="menu-item">
                       <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li
@@ -834,8 +886,13 @@
                               >
                             </li>
                             <li class="menu-item">
+                              <a href="dental-hygienist.html"
+                                >Dental Hygienist (DH)</a
+                              >
+                            </li>
+                            <li class="menu-item">
                               <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
+                                >Dental Mechanic (DM)</a
                               >
                             </li>
                           </ul>
@@ -916,7 +973,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -1021,14 +1078,23 @@
                   <a class="sf-with-ul-pre">Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -1047,6 +1113,9 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
+                     <li class="menu-item" data-size="60">
+                          <a href="women-cell.html">Women Cell</a>
+                        </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
@@ -1096,12 +1165,14 @@
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Awareness & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="news-page.html"
+                        >News, Recent Events & Achievements</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1266,6 +1337,11 @@
                       </div>
                     </div>
                   </div>
+                    <div id="pagination" class="pagination">
+                      <button id="prevBtn" onclick="prevPage()">&#8592; Previous</button>
+                      <span id="pageNumber"></span>
+                      <button id="nextBtn" onclick="nextPage()">Next &#8594;</button>
+                    </div>
                 </div>
               </div>
             </div>
@@ -1303,7 +1379,10 @@
                       <br />
                       Manoor - Chekanoor Road, <br />
                       Manoor, Edappal, Malappuram, <br />
-                      Kerala 679578
+                      Kerala 679578<br /><br />
+
+              0494 2697020, 21, 22 <br />
+              7034555514
                     </p>
                     <p>
                       <!-- <span id="span_1dd7_11">
@@ -1346,6 +1425,9 @@
                       id="menu-our-campus"
                       class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
                     >
+                    <li class="menu-item">
+                      <a href="about-us.html">Academic Calendar</a>
+                    </li>
                       <li class="menu-item">
                         <a href="about-us.html">About Us</a>
                       </li>
@@ -1476,7 +1558,7 @@
               class="kingster-copyright-container kingster-container clearfix"
             >
               <div class="kingster-copyright-left kingster-item-pdlr">
-                Copyright © 2023 Malabar Dental College |
+                Copyright © 2025 Malabar Dental College |
                 <a style="color: #fff" href="dept_of_IT.html"
                   >Department of IT 💻</a
                 >
@@ -1541,92 +1623,161 @@
       type="text/javascript"
       src="plugins/goodlayers-core/plugins/combine/script.js"
     ></script>
-    <script>
-      const apiUrl = "https://app.conext.in/mdsu/old_alumni_data/";
+  <script>
+const apiUrl = "http://app.conext.in/mdsu/api/public-alumni/";
+let currentPage = 1;
+let totalPages = 1;
+let itemsPerPage = null; // set dynamically once
 
-      async function fetchEvents() {
-        try {
-          const response = await fetch(apiUrl);
-          const data = await response.json();
-          return data;
-        } catch (error) {
-          console.error("Error fetching data:", error);
-          return [];
-        }
-      }
+async function fetchEvents(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
 
-      function createEventElement(event) {
-        const apiResponse = event.yr_course;
-        const parts = apiResponse.split(" ");
-        const year = parts[0];
-        const course = parts[1].slice(-3);
-        const Name = event.full_name; 
-        const FullName = Name.toUpperCase();
-        const eventElement = document.createElement("div");
-        eventElement.innerHTML = `
-        <div class="gdlr-core-event-item-list gdlr-core-style-widget gdlr-core-item-pdlr clearfix">
-            <span class="gdlr-core-event-item-info gdlr-core-type-start-date-month">
-                <span class="gdlr-core-date" style="font-size:23px">${course}</span>
-                <span class="gdlr-core-month">${year}</span>
-            </span>
-            <div class="gdlr-core-event-item-content-wrap">
-                <h3 class="gdlr-core-event-item-title">
-                    <a class="event_name">${FullName}</a>
-                </h3>
-               <div class="gdlr-core-event-item-info-wrap">
-           
-            <span class="gdlr-core-event-item-info gdlr-core-type-location">
-                <span class="gdlr-core-tail event_location"> <b>Current Status: </b>${event.current_status}</span>
-            </span>
+    nextUrl = data.next;
+    prevUrl = data.previous;
+
+
+    if (itemsPerPage === null && data.results?.length) {
+      itemsPerPage = data.results.length;
+    }
+
+    if (data.count && itemsPerPage) {
+      totalPages = Math.ceil(data.count / itemsPerPage);
+    }
+
+    renderEvents(data.results);
+    updatePagination();
+
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+
+// create alumni card
+function createEventElement(alumni) {
+  const name = alumni.name ? alumni.name.toUpperCase() : "UNKNOWN";
+  const year = alumni.batch_year || "N/A";
+  const course = alumni.course || "N/A";
+  const photo = alumni.profile_pic || "default-avatar.png";
+
+  const eventElement = document.createElement("div");
+  eventElement.innerHTML = `
+    <div class="gdlr-core-event-item-list gdlr-core-style-widget gdlr-core-item-pdlr clearfix">
+      <span class="gdlr-core-event-item-info gdlr-core-type-start-date-month">
+        <span class="gdlr-core-date" style="font-size:23px">${course}</span>
+        <span class="gdlr-core-month">${year}</span>
+      </span>
+
+      <div class="gdlr-core-event-item-content-wrap" 
+           style="display:flex; align-items:center; justify-content:space-between; gap:15px;">
+        <div class="alumni-text">
+          <h3 class="gdlr-core-event-item-title" style="margin:0;">
+            <a class="event_name">${name}</a>
+          </h3>
         </div>
-            </div>
+        <div class="alumni-photo-wrap">
+          <img src="${photo}" alt="${name}" 
+               style="width:60px; height:60px; border-radius:50%; object-fit:cover;" />
         </div>
-    `;
-        return eventElement;
-      }
+      </div>
+    </div>
+  `;
+  return eventElement;
+}
 
-      async function renderEvents() {
-        const columns = [
-          document.getElementById("eventColumn1"),
-          document.getElementById("eventColumn2"),
-          document.getElementById("eventColumn3"),
-        ];
-        const events = await fetchEvents();
+// render current page of alumni
+function renderEvents(events) {
+  const columns = [
+    document.getElementById("eventColumn1"),
+    document.getElementById("eventColumn2"),
+    document.getElementById("eventColumn3"),
+  ];
 
-        if (events.length === 0) {
-          console.log("No events found in the API response.");
-          return;
-        }
+  // clear old content
+  columns.forEach(col => col.innerHTML = "");
 
-        let columnIndex = 0;
-        let rowIndex = 0;
+  let columnIndex = 0;
+  let rowIndex = 0;
 
-        events.forEach((event, index) => {
-          const eventElement = createEventElement(event);
+  events.forEach(event => {
+    const eventElement = createEventElement(event);
 
-          const rowContainer = columns[columnIndex].querySelector(
-            `.row-${rowIndex}`
-          );
-          if (!rowContainer) {
-            const newRow = document.createElement("div");
-            newRow.classList.add(`row-${rowIndex}`);
-            columns[columnIndex].appendChild(newRow);
-            newRow.appendChild(eventElement);
-          } else {
-            rowContainer.appendChild(eventElement);
-          }
+    const rowContainer = columns[columnIndex].querySelector(`.row-${rowIndex}`);
+    if (!rowContainer) {
+      const newRow = document.createElement("div");
+      newRow.classList.add(`row-${rowIndex}`);
+      columns[columnIndex].appendChild(newRow);
+      newRow.appendChild(eventElement);
+    } else {
+      rowContainer.appendChild(eventElement);
+    }
 
-          columnIndex = (columnIndex + 1) % columns.length;
-          if (columnIndex === 0) {
-            rowIndex++;
-          }
-        });
-        document.getElementById("union-events").style.display = "block";
-        document.getElementById("loadingAnimation").style.display = "none";
-      }
+    columnIndex = (columnIndex + 1) % columns.length;
+    if (columnIndex === 0) rowIndex++;
+  });
 
-      renderEvents();
-    </script>
+  document.getElementById("union-events").style.display = "block";
+  document.getElementById("loadingAnimation").style.display = "none";
+}
+
+function updatePagination() {
+  // update pagination info text
+  document.getElementById("pageNumber")?.remove(); 
+  const info = document.createElement("span");
+  info.id = "pageNumber";
+  info.textContent = ` Page ${currentPage} of ${totalPages} `;
+  document.getElementById("pagination").insertBefore(info, document.getElementById("nextBtn"));
+
+  // update prev/next button state
+  document.getElementById("prevBtn").disabled = !prevUrl || currentPage <= 1;
+  document.getElementById("nextBtn").disabled = !nextUrl || currentPage >= totalPages;
+
+  // render numbered buttons
+  const pageNumbersDiv = document.getElementById("pageNumbers");
+  pageNumbersDiv.innerHTML = "";
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    btn.disabled = i === currentPage;
+    btn.onclick = () => goToPage(i);
+    pageNumbersDiv.appendChild(btn);
+  }
+}
+
+
+function goToPage(page) {
+  if (page < 1 || page > totalPages) return;
+  currentPage = page;
+
+  // construct paginated URL manually (API accepts ?page=n)
+  const pageUrl = `${apiUrl}?page=${page}`;
+  fetchEvents(pageUrl);
+}
+
+// button actions
+function nextPage() {
+  if (nextUrl && currentPage < totalPages) {
+    currentPage++;
+    fetchEvents(nextUrl);
+  }
+}
+
+function prevPage() {
+  if (prevUrl && currentPage > 1) {
+    currentPage--;
+    fetchEvents(prevUrl);
+  }
+}
+
+
+// load first page
+fetchEvents(apiUrl);
+</script>
+
+
     <script>
       const apiUrlNotification =
         "https://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";

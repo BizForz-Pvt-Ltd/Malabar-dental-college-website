@@ -97,82 +97,112 @@
         height: 36px;
       }
 
-.kingster-item-pdlr, .gdlr-core-item-pdlr {
-    padding-left: 0px !important;
-    padding-right: 20px;
+/* Reset paddings that caused big gaps */
+.kingster-item-pdlr,
+.gdlr-core-item-pdlr {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
- 
+
+/* Image container spacing */
 .gdlr-core-image-item {
-    margin-bottom: 10px;
+  margin-bottom: 20px;
 }
-.gdlr-core-media-image img {
-  width: 415px;
-  height: 310px;
+
+/* Remove hardcoded fixed sizes – make images fully responsive */
+.gdlr-core-media-image img,
+.first-image-container img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
+  margin: 0 auto 20px auto;
   object-fit: cover;
+  border-radius: 6px;
 }
 
-@media screen and (max-width: 768px) {
-  .gdlr-core-media-image img {
-    width: 210px;
-    height: 210px;
-  }
+/* News grid layout */
+.below-images-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* flexible */
+  gap: 20px; /* space between items */
+  margin: 30px auto;
+  max-width: 1200px; /* keep it centered */
 }
 
-@media screen and (max-width: 480px) {
-  .gdlr-core-media-image img {
-    width: 210px;
-    height: 210px;
-  }
+/* Each news image inside the grid */
+.below-images-container img {
+  width: 100%;
+  height: 220px;            /* fixed height for uniformity */
+  object-fit: cover;        /* crops nicely */
+  border-radius: 6px;
+  display: block;
 }
 
-/* Additional styles */
-.gdlr-core-pbf-wrapper {
-  font-family: 'Arial', sans-serif;
-  color: #333;
+/* Ensure single-column news layout (remove 2-column split) */
+.gdlr-core-container {
+  display: block !important;
+}
+.gdlr-core-column-20,
+.gdlr-core-column-40 {
+  width: 100% !important;
+  float: none !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 auto !important;
 }
 
-.gdlr-core-title-item-title {
+/* News section content centered */
+.first-image-container,
+.news_content,
+.below-images-container,
+.document-list {
+  margin: 0 auto 30px auto;
+  max-width: 900px; /* keeps it centered nicely */
+}
+
+/* Headline styling */
+.news_subject {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 15px;
   color: #182847;
 }
 
-.gdlr-core-port-info {
-  margin-bottom: 15px;
-  display: flex;
+/* News text */
+.news_content {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
 }
 
+/* Info rows (location, date, added by) */
+.gdlr-core-port-info {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
 .gdlr-core-port-info-key {
   min-width: 100px;
   font-weight: 600;
+  color: #182847;
 }
-
 .gdlr-core-port-info-value {
   margin-left: 10px;
+  color: #333;
 }
 
+/* Buttons */
 .gdlr-core-button {
   background-color: #182847;
-  color: white !important;
+  color: #fff !important;
   transition: all 0.3s;
+  border-radius: 4px;
 }
-
 .gdlr-core-button:hover {
   background-color: #3db166;
-}
-
-.news_content {
-  line-height: 1.6;
-}
-
-.image-container {
-  margin-top: 30px;
-}
-
-.first-image-container img {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border-radius: 4px;
 }
 
 /* Document list styles */
@@ -358,9 +388,9 @@
                     <li class="menu-item">
                       <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
@@ -523,7 +553,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -622,14 +652,23 @@
                   <a>Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -648,6 +687,9 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
+                     <li class="menu-item" data-size="60">
+                          <a href="women-cell.html">Women Cell</a>
+                        </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
@@ -696,8 +738,11 @@
                       <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Awareness & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="news-page.html"
+                        >News, Recent Events & Achievements</a
                       >
                     </li>
                     <li class="menu-item">
@@ -742,7 +787,7 @@
               <i class="fa fa-envelope-open-o" id="i_fd84_0"></i>
               <a href="mailto:info@macity.edu.in">info@macity.edu.in</a
               ><i class="fa fa-phone" id="i_fd84_1"></i>
-              <a href="tel:+917034555551">+91 7034 55555 1</a>
+              <a href="tel:+917034555514">+91 7034 55555 1</a>
             </div>
             <div class="kingster-top-bar-right kingster-item-pdlr">
               <ul
@@ -853,9 +898,9 @@
                     <li class="menu-item">
                       <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li
@@ -1025,7 +1070,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -1130,14 +1175,23 @@
                   <a class="sf-with-ul-pre">Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -1156,6 +1210,9 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
+                     <li class="menu-item" data-size="60">
+                          <a href="women-cell.html">Women Cell</a>
+                        </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
@@ -1208,8 +1265,11 @@
                       <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Awareness & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="news-page.html"
+                        >News, Recent Events & Achievements</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1388,7 +1448,10 @@
                     <br />
                     Manoor - Chekanoor Road, <br />
                     Manoor, Edappal, Malappuram, <br />
-                    Kerala 679578
+                    Kerala 679578<br /><br />
+
+              0494 2697020, 21, 22 <br />
+              7034555514
                   </p>
                   <p>
                     <!-- <span id="span_1dd7_11">
@@ -1431,6 +1494,9 @@
                     id="menu-our-campus"
                     class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
                   >
+                  <li class="menu-item">
+                      <a href="about-us.html">Academic Calendar</a>
+                    </li>
                     <li class="menu-item">
                       <a href="about-us.html">About Us</a>
                     </li>
@@ -1561,7 +1627,7 @@
             class="kingster-copyright-container kingster-container clearfix"
           >
             <div class="kingster-copyright-left kingster-item-pdlr">
-              Copyright © 2023 Malabar Dental College | <a  style="color: #fff " href="dept_of_IT.html">Department of IT 💻</a>
+              Copyright © 2025 Malabar Dental College | <a  style="color: #fff " href="dept_of_IT.html">Department of IT 💻</a>
             </div>
             <div class="kingster-copyright-right kingster-item-pdlr">
               <div
@@ -1626,181 +1692,110 @@
       src="plugins/goodlayers-core/plugins/combine/script.js"
     ></script>
     <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function () {
-        function getQueryParameter(name) {
-            const urlSearchParams = new URLSearchParams(window.location.search);
-            return urlSearchParams.get(name);
-        }
+      document.addEventListener("DOMContentLoaded", async function () {
+          function getQueryParameter(name) {
+              const urlSearchParams = new URLSearchParams(window.location.search);
+              return urlSearchParams.get(name);
+          }
 
-        const id = getQueryParameter("id");
-        if (!id) {
-            alert("No news ID provided in URL");
-            return;
-        }
+          const id = getQueryParameter("id");
+          if (!id) {
+              alert("No news ID provided in URL");
+              return;
+          }
 
-        const defaultBanner = "upload/clg.jpg";
+          let data;
+          let isOld = false;
 
-        fetch(`https://conext.in/news/api/single-news-article/${id}`)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+          document.getElementById("loadingAnimation").style.display = "block";
+
+          try {
+              const resp = await fetch(`https://conext.in/news/api/single-news-article/${id}`);
+              if (!resp.ok) throw new Error("New API failed");
+              data = await resp.json();
+          } catch (err) {
+              console.warn("New API failed, trying old API:", err);
+              try {
+                  const resp = await fetch(`https://app.conext.in/news/api/MdcNewsDetiles/?id=${id}`);
+                  if (!resp.ok) throw new Error("Old API also failed");
+                  data = await resp.json();
+                  isOld = true;
+              } catch (err2) {
+                  console.error("Error fetching news:", err2);
+                  document.getElementById("loadingAnimation").style.display = "none";
+                  document.querySelector(".news_content").textContent =
+                      "Failed to load news article. Please try again later.";
+                  return;
+              }
+          }
+
+          document.getElementById("loadingAnimation").style.display = "none";
+
+          const article = isOld
+              ? {
+                    subject: data.news_subject,
+                    date: data.news_date,
+                    location: data.location,
+                    content: data.news_content,
+                    staff: data.staff_name,
+                    images: data.image_urls || [],
                 }
-                return response.json();
-            })
-            .then((response) => {
-                if (!response.status || !response.data) {
-                    throw new Error("Invalid response format");
-                }
-                
-                const data = response.data;
-                document.getElementById('loadingAnimation').style.display = "none";
-                
-                const firstImageContainer = document.querySelector(".first-image-container");
-                const attachmentsContainer = document.querySelector(".below-images-container");
+              : {
+                    subject: data.data.subject,
+                    date: data.data.date,
+                    location: data.data.location,
+                    content: data.data.content,
+                    staff: data.data.added_by_name,
+                    images: [data.data.picture || data.data.news_banner],
+                };
 
-                const bannerImage = data.picture || data.news_banner || defaultBanner;
-                const bannerDiv = document.createElement("div");
-                bannerDiv.className = "gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align";
-                
-                const imageWrapDiv = document.createElement("div");
-                imageWrapDiv.className = "gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-rectangle";
-                imageWrapDiv.style.borderWidth = "0px";
-                
-                const anchorElement = document.createElement("a");
-                anchorElement.className = "gdlr-core-lightgallery gdlr-core-js image_urls";
-                
-                const imageElement = document.createElement("img");
-                imageElement.src = bannerImage;
-                imageElement.className = "default-banner";
-                imageElement.alt = data.subject;
-                
-                anchorElement.appendChild(imageElement);
-                imageWrapDiv.appendChild(anchorElement);
-                bannerDiv.appendChild(imageWrapDiv);
-                firstImageContainer.appendChild(bannerDiv);
+          document.querySelector(".news_subject").textContent = article.subject || "No title";
+          document.querySelector(".type_name").textContent = "News";
+          document.querySelector(".location").textContent = article.location || "Not available";
+          document.querySelector(".news_date").textContent = article.date || "Unknown date";
+          document.querySelector(".staff_name").textContent = article.staff || "Admin";
+          document.querySelector(".news_content").innerHTML = article.content || "No content";
 
-                const documents = data.attachments ? data.attachments.filter(att => att.doc) : [];
-                if (documents.length > 0) {
-                    const documentsHeading = document.createElement("h5");
-                    documentsHeading.className = "gdlr-core-port-info-key gdlr-core-skin-title";
-                    documentsHeading.textContent = "Attachments";
-                    attachmentsContainer.appendChild(documentsHeading);
-                    
-                    const documentListDiv = document.createElement("div");
-                    documentListDiv.className = "document-list";
-                    
-                    documents.forEach(doc => {
-                        const docItemDiv = document.createElement("div");
-                        docItemDiv.className = "document-item";
-                        
-                        const docIcon = document.createElement("i");
-                        docIcon.className = "document-icon fas fa-file-pdf";
-                        
-                        const docName = document.createElement("span");
-                        docName.className = "document-name";
-                        // Extract filename from URL
-                        const fileName = doc.doc.split('/').pop().split('?')[0];
-                        docName.textContent = fileName;
-                        
-                        const downloadLink = document.createElement("a");
-                        downloadLink.href = doc.doc;
-                        downloadLink.className = "download-btn";
-                        downloadLink.target = "_blank";
-                        downloadLink.textContent = "View Document";
-                        
-                        docItemDiv.appendChild(docIcon);
-                        docItemDiv.appendChild(docName);
-                        docItemDiv.appendChild(downloadLink);
-                        documentListDiv.appendChild(docItemDiv);
-                    });
-                    
-                    attachmentsContainer.appendChild(documentListDiv);
-                }
+          const firstImageContainer = document.querySelector(".first-image-container");
+          firstImageContainer.innerHTML = "";
+          if (article.images && article.images.length > 0) {
+              const img = document.createElement("img");
+              img.src = article.images[0];
+              img.alt = article.subject;
+              img.style.width = "100%";
+              img.style.maxHeight = "400px";
+              img.style.objectFit = "cover";
+              firstImageContainer.appendChild(img);
+          }
+      });
+      </script>
 
-                // Populate news details
-                document.querySelector(".news_subject").textContent = data.subject || "No title available";
-                document.querySelector(".type_name").textContent = data.type_name || "News";
-                document.querySelector(".location").textContent = data.location || "Location not specified";
-                
-                // Format date
-                const newsDate = data.date ? new Date(data.date) : null;
-                const formattedDate = newsDate ? 
-                    newsDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : 
-                    "Date not available";
-                document.querySelector(".news_date").textContent = formattedDate;
-                
-                document.querySelector(".staff_name").textContent = data.added_by_name || "Unknown author";
-
-                // Display HTML content safely
-                const newsContent = document.querySelector(".news_content");
-                if (data.content) {
-                    newsContent.innerHTML = data.content;
-                } else {
-                    newsContent.textContent = "No content available";
-                }
-
-                // Set up WhatsApp share button
-                const whatsappButton = document.getElementById("whatsappButton");
-                const shareText = `Check out this news: ${data.subject}\n\n${data.content ? 
-                    data.content.replace(/<[^>]*>/g, "").substring(0, 100) : ''}...\n\nRead more: ${window.location.href}`;
-                whatsappButton.href = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
-
-                // Set up general share button
-                document.getElementById("shareButton").addEventListener("click", function() {
-                    if (navigator.share) {
-                        navigator.share({
-                            title: data.subject,
-                            text: data.content ? data.content.replace(/<[^>]*>/g, "").substring(0, 200) : '',
-                            url: window.location.href
-                        }).catch(err => {
-                            console.log('Error sharing:', err);
-                        });
-                    } else {
-                        // Fallback for browsers that don't support Web Share API
-                        const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
-                        window.open(shareUrl, '_blank');
-                    }
-                });
-            })
-            .catch((error) => {
-                console.error("Error fetching data:", error);
-                document.getElementById('loadingAnimation').style.display = "none";
-                document.querySelector(".news_content").textContent = "Failed to load news article. Please try again later.";
-            });
-    });
 
     </script>
     <script>
-      // Define the API URL to fetch notification data
       const apiUrlNotification =
         "https://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";
 
-      // Reference to the notification container
       const notificationContainer = document.getElementById(
         "notification-container"
       );
 
-      // Store the notification data and current index
       let notifications = [];
       let currentIndex = 0;
 
-      // Function to fetch and update notification data
       async function fetchAndUpdateNotifications() {
         try {
           const response = await fetch(apiUrlNotification);
           notifications = await response.json();
 
-          // Call the updateNotification function initially
           updateNotification();
 
-          // Set an interval to update notifications every 1.5 seconds
           setInterval(updateNotification, 4500);
         } catch (error) {
           console.error("Error fetching notifications:", error);
         }
       }
 
-      // Function to update the notification text
       function updateNotification() {
         if (notifications.length > 0) {
           const list = notificationContainer;
@@ -1809,7 +1804,6 @@
         }
       }
 
-      // Call the fetchAndUpdateNotifications function initially
       fetchAndUpdateNotifications();
     </script>
     <script type="text/javascript">
@@ -1841,7 +1835,6 @@ showDenyButton:true,
 denyButtonText:'Email',
 denyButtonColor:'#7066E0'
 }).then((result) => {
-  /* Read more about isConfirmed, isDenied below */
   if (result.isConfirmed) { const url = window.location.href;
     navigator.clipboard.writeText(url).then(() => {
       Swal.fire("Link copied to clipboard!", "", "success");
@@ -1864,10 +1857,8 @@ const shareDataWhats = {
   text: 'Check out this news: ' + window.location.href, // Message to be shared
 };
 
-// Create a WhatsApp share link
 const whatsappLink = `https://wa.me/?text=${shareDataWhats.text}`;
 
-// Open the link in a new tab
 window.open(whatsappLink, '_blank');
   }
 });
@@ -1876,8 +1867,8 @@ window.open(whatsappLink, '_blank');
   emailButton.addEventListener('click', function () {
 
     const shareData = {
-      subject: 'Check out this news', // Replace with your subject
-      body: 'I thought you might find this news interesting:\n' + window.location.href // Current page URL
+      subject: 'Check out this news', 
+      body: 'I thought you might find this news interesting:\n' + window.location.href
     };
     window.location.href = `mailto:?subject=${encodeURIComponent(shareData.subject)}&body=${encodeURIComponent(shareData.body)}`;
   });
@@ -1915,80 +1906,8 @@ window.open(whatsappLink, '_blank');
     </script>
     <script type="text/javascript" src="js/plugins.min.js"></script>
     <script type="text/javascript" src="js/isotope.js"></script>
-    <script>
-  async function fetchAndPopulateNews() {
-    const apiURL = "http://app.conext.in/news/api/MdcSingleNews/?id=530"; 
 
-    try {
-      document.getElementById("loadingAnimation").style.display = "block";
-
-      const response = await fetch(apiURL);
-      if (!response.ok) throw new Error("Network error");
-
-      const data = await response.json();
-
-      document.getElementById("loadingAnimation").style.display = "none";
-
-      document.querySelector(".news_subject").textContent = data.news_subject;
-
-      document.querySelector(".type_name").textContent = data.type_name || "News";
-
-      document.querySelector(".location").textContent = data.location || "Not available";
-
-      document.querySelector(".news_date").textContent = formatDate(data.news_date);
-
-      document.querySelector(".staff_name").textContent = data.staff_name || "Admin";
-
-      document.querySelector(".news_content").innerHTML = data.news_content || "";
-
-      const firstImageContainer = document.querySelector(".first-image-container");
-      firstImageContainer.innerHTML = "";
-      if (data.image_urls && data.image_urls.length > 0) {
-        const img = document.createElement("img");
-        img.src = data.image_urls[0];
-        img.alt = data.news_subject;
-        img.style.width = "100%";
-        img.style.maxHeight = "400px";
-        img.style.objectFit = "cover";
-        firstImageContainer.appendChild(img);
-      }
-
-      const belowImagesContainer = document.querySelector(".below-images-container");
-      belowImagesContainer.innerHTML = "";
-      if (data.image_urls && data.image_urls.length > 1) {
-        data.image_urls.slice(1).forEach(url => {
-          const img = document.createElement("img");
-          img.src = url;
-          img.alt = "Attachment";
-          img.style.width = "100%";
-          img.style.marginTop = "15px";
-          belowImagesContainer.appendChild(img);
-        });
-      }
-
-      document.getElementById("shareButton").onclick = () => {
-        const shareURL = window.location.href;
-        navigator.clipboard.writeText(shareURL);
-        alert("News link copied: " + shareURL);
-      };
-
-    } catch (err) {
-      console.error("Error fetching news:", err);
-      document.getElementById("loadingAnimation").style.display = "none";
-    }
-  }
-
-  // Format Date
-  function formatDate(inputDate) {
-    if (!inputDate) return "";
-    const date = new Date(inputDate);
-    const options = { year: "numeric", month: "short", day: "numeric" };
-    return date.toLocaleDateString("en-US", options);
-  }
-
-  // Call function
-  fetchAndPopulateNews();
-</script>
+    
 
   </body>
 

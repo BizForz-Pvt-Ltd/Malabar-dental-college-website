@@ -17,66 +17,100 @@
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700%2C400" rel="stylesheet" property="stylesheet" type="text/css" media="all">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CABeeZee%3Aregular%2Citalic&amp;subset=latin%2Clatin-ext%2Cdevanagari&amp;ver=5.0.3' type='text/css' media='all' />
-<style> td,th {
-    text-align: center;
-    vertical-align: middle;
-  }
+<style>
+td, th {
+      text-align: center;
+      vertical-align: middle;
+    }
 
-  background-title .gdlr-core-accordion-item-title, .gdlr-core-accordion-style-background-title-icon .gdlr-core-accordion-item-title, .gdlr-core-toggle-box-style-background-title .gdlr-core-toggle-box-item-title, .gdlr-core-toggle-box-style-background-title-icon .gdlr-core-toggle-box-item-title {
-    color: #192f59;
-}
-.gdlr-core-accordion-style-background-title-icon .gdlr-core-accordion-item-title:before, .gdlr-core-toggle-box-style-background-title-icon .gdlr-core-accordion-item-title:before {
-    color: #192f59;
-}
-  .gdlr-core-accordion-style-background-title .gdlr-core-active .gdlr-core-accordion-item-title, .gdlr-core-accordion-style-background-title-icon .gdlr-core-active .gdlr-core-accordion-item-title, .gdlr-core-toggle-box-style-background-title .gdlr-core-active .gdlr-core-toggle-box-item-title, .gdlr-core-toggle-box-style-background-title-icon .gdlr-core-active .gdlr-core-toggle-box-item-title {
-    background-color: #192f59;
-}
-.video-padding{
-  margin-bottom: 0px!important;
-}
+    background-title .gdlr-core-accordion-item-title, 
+    .gdlr-core-accordion-style-background-title-icon .gdlr-core-accordion-item-title, 
+    .gdlr-core-toggle-box-style-background-title .gdlr-core-toggle-box-item-title, 
+    .gdlr-core-toggle-box-style-background-title-icon .gdlr-core-toggle-box-item-title {
+      color: #192f59;
+    }
 
-        .floating-button {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background-color: #182847; /* WhatsApp green */
-        color: #fff;
-        width: 70px; /* Set width and height to the same value for a perfect circle */
-        height: 70px;
-        border-radius: 50%; /* Make the button round */
-        cursor: pointer;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px; /* Adjust the font size for larger text */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 9999; /* Set a high z-index to appear above other content */
-      }
+    .gdlr-core-accordion-style-background-title-icon .gdlr-core-accordion-item-title:before, 
+    .gdlr-core-toggle-box-style-background-title-icon .gdlr-core-accordion-item-title:before {
+      color: #192f59;
+    }
 
-      /* Style for WhatsApp logo */
-       .whatsapp-logo {
-        width: 36px; /* Adjust the logo size */
-        height: 36px; /* Adjust the logo size */
-      }
-      .notification-list {
-        display: inline-block;
-        max-height: 20px;
-        overflow: hidden;
-        position: relative;
-        max-height: 20px;
-      }
-      ul.notification-list {
-        margin-bottom: 0px !important;
-      }
-      @keyframes marquee-up {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(-100%);
-        }
-      }
+    .gdlr-core-accordion-style-background-title .gdlr-core-active .gdlr-core-accordion-item-title, 
+    .gdlr-core-accordion-style-background-title-icon .gdlr-core-active .gdlr-core-accordion-item-title, 
+    .gdlr-core-toggle-box-style-background-title .gdlr-core-active .gdlr-core-toggle-box-item-title, 
+    .gdlr-core-toggle-box-style-background-title-icon .gdlr-core-active .gdlr-core-toggle-box-item-title {
+      background-color: #192f59;
+    }
+
+    .video-padding {
+      margin-bottom: 0px !important;
+    }
+
+    /* Floating WhatsApp button */
+    .floating-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #182847;
+      color: #fff;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
+    }
+    .whatsapp-logo {
+      width: 36px;
+      height: 36px;
+    }
+
+      /* Fix gap between heading and events list */
+    .gdlr-core-block-item-title-wrap {
+      margin-bottom: 8px !important; /* reduce bottom space under heading */
+    }
+
+    /* Remove extra space under Events by Women Cell heading */
+    .gdlr-core-block-item-title-wrap.events-heading {
+      margin-bottom: 10px !important;  /* tighten gap */
+      padding-bottom: 0 !important;
+    }
+
+    /* Divider should not push events down too much */
+    .gdlr-core-block-item-title-divider {
+      margin-bottom: 6px !important;
+    }
+
+    /* Kill top margin on the event list wrapper */
+    .events-left {
+      margin-top: 30px !important;
+      padding-top: 0 !important;
+    }
+
+    /* First event item shouldn’t add extra spacing */
+    .events-left .gdlr-core-event-item-list:first-child {
+      margin-top: 0 !important;
+    }
+
+
+    .notification-list {
+      display: inline-block;
+      max-height: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+    ul.notification-list {
+      margin-bottom: 0px !important;
+    }
+    @keyframes marquee-up {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-100%); }
+    }
     </style>
   </head>
   <a
@@ -145,9 +179,9 @@
               data-slide="right"
             >
               <ul id="menu-main-navigation" class="m-menu">
-                <!-- <li class="menu-item menu-item-home current-menu-item">
+                <li class="menu-item menu-item-home">
                 <a href="index.html">Home</a>
-              </li> -->
+              </li>
                 <li class="menu-item menu-item-has-children">
                   <a>About HEI</a>
                   <ul class="sub-menu">
@@ -191,9 +225,9 @@
                     <li class="menu-item">
                       <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
@@ -356,7 +390,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -451,18 +485,27 @@
                     </li>
                   </ul>
                 </li>
-                <li class="menu-item menu-item-has-children">
+                <li class="menu-item current-menu-item menu-item-has-children kingster-normal-menu">
                   <a>Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -481,6 +524,9 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
+                     <li class="menu-item" data-size="60">
+                          <a href="women-cell.html">Women Cell</a>
+                        </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
@@ -526,12 +572,14 @@
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Awareness & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="news-page.html"
+                        >News, Recent Events & Achievements</a
                       >
                     </li>
                     <li class="menu-item">
@@ -576,7 +624,7 @@
               <i class="fa fa-envelope-open-o" id="i_fd84_0"></i>
               <a href="mailto:info@macity.edu.in">info@macity.edu.in</a
               ><i class="fa fa-phone" id="i_fd84_1"></i>
-              <a href="tel:+917034555551">+91 7034 55555 1</a>
+              <a href="tel:+917034555514">+91 7034 55555 1</a>
             </div>
             <div class="kingster-top-bar-right kingster-item-pdlr">
               <ul
@@ -620,7 +668,7 @@
             <div class="kingster-main-menu" id="kingster-main-menu">
               <ul id="menu-main-navigation-1" class="sf-menu">
                 <li
-                  class="menu-item menu-item-home current-menu-item menu-item-has-children"
+                  class="menu-item menu-item-home menu-item-has-children"
                 >
                   <a href="index.html">Home</a>
                 </li>
@@ -687,9 +735,9 @@
                     <li class="menu-item">
                       <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li
@@ -859,7 +907,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -959,19 +1007,28 @@
                   </ul>
                 </li>
                 <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
+                  class="menu-item current-menu-item menu-item-has-children kingster-normal-menu"
                 >
                   <a class="sf-with-ul-pre">Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -990,6 +1047,9 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
+                     <li class="menu-item" data-size="60">
+                          <a href="women-cell.html">Women Cell</a>
+                        </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
@@ -1039,12 +1099,14 @@
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Awareness & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="news-page.html"
+                        >News, Recent Events & Achievements</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1161,7 +1223,7 @@
                                                   campus a safe place for girls and women and to address the practical
                                                   issues related to the welfare and equal opportunities for Women
                                                   faculty, staff and students. </p>
-                                                                                                  <p><b>Objective: </b>To Maintain and strengthen the status of Women. To create awareness of
+                                                  <p><b>Objective: </b>To Maintain and strengthen the status of Women. To create awareness of
                                                   feminine potential. To create social awareness about the problems of women
                                                   and in particular regarding gender discrimination.
                                                 </p>
@@ -1185,62 +1247,62 @@
                                                                         <th>&nbsp;SL NO&nbsp;</th>
                                                                         <th>NAME</th>
                                                                         <th>DESIGNATION</th>
-                                                                        <th>DEPARTMENT</th>
+                                                                        <!-- <th>DEPARTMENT</th> -->
                                                                     </tr>
                                                                     <tr>
                                                                         <td>1</td>
-                                                                        <td>Ms Sameerah Ali Bava</td>
-                                                                        <td>Chairperson</td>
-                                                                        <td>Vice Chairperson</td>
+                                                                        <td>Dr. Fathimath Zahra</td>
+                                                                        <td>Presiding Officer</td>
+                                                                        <!-- <td>Vice Chairperson</td> -->
                                                                     </tr>
                                                                     <tr>
                                                                         <td>2</td>
-                                                                        <td>Dr. Asha K.R</td>
-                                                                        <td>Convenor</td>
-                                                                        <td>Reader & HOD, Department <br/>of Biochemistry</td>
+                                                                        <td>Dr. Justin Ninan</td>
+                                                                        <td>Faculty Member</td>
+                                                                        <!-- <td>Reader & HOD, Department <br/>of Biochemistry</td> -->
                                                                     </tr>
                                                                     <tr>
                                                                         <td>3</td>
-                                                                        <td>Dr Meenu Merry C Paul</td>
-                                                                        <td>Member</td>
-                                                                        <td>Principal & Professor,<br> Department of Prosthodontics <br> and Crown & Bridge</td>
+                                                                        <td>Dr. Deepthi Venugopalan</td>
+                                                                        <td>Faculty Member</td>
+                                                                        <!-- <td>Principal & Professor,<br> Department of Prosthodontics <br> and Crown & Bridge</td> -->
                                                                     <tr>
                                                                         <td>4</td>
-                                                                        <td>Dr Chithra P</td>
-                                                                        <td>Member</td>
-                                                                        <td>Reader, Department of Oral<br> Medicine and Radiology</td>
+                                                                        <td>Mr Jinesh K M </td>
+                                                                        <td>Non Teaching Member</td>
+                                                                        <!-- <td>Reader, Department of Oral<br> Medicine and Radiology</td> -->
                                                                     </tr>
                                                                     <tr>
                                                                         <td>5</td>
-                                                                        <td>Dr. Fathimath Zahra</td>
-                                                                        <td>Member</td>
-                                                                        <td>Reader, Department of Oral<br> Medicine and Radiology</td>
+                                                                        <td>Mrs Jini K C</td>
+                                                                        <td>Non Teaching Member</td>
+                                                                        <!-- <td>Reader, Department of Oral<br> Medicine and Radiology</td> -->
                                                                     </tr>
                                                                     <tr>
                                                                         <td>6</td>
-                                                                        <td>Dr. Sruthy S Raj</td>
-                                                                        <td>Member</td>
-                                                                        <td>Sr. Lecturer, Department of  <br>Prosthodontics and Crown & Bridge</td>
+                                                                        <td>Ms Roshni Bushair</td>
+                                                                        <td>NGO Member</td>
+                                                                        <!-- <td>Sr. Lecturer, Department of  <br>Prosthodontics and Crown & Bridge</td> -->
                                                                     </tr>
                                                                     <tr>
                                                                         <td>7</td>
-                                                                        <td>Dr. Jiji V Unni</td>
-                                                                        <td>Member</td>
-                                                                        <td>Sr. Lecturer, Department of Oral<br> Medicine and Radiology</td>
+                                                                        <td>Ms Ardra Shaji </td>
+                                                                        <td>UG Student Member</td>
+                                                                        <!-- <td>Sr. Lecturer, Department of Oral<br> Medicine and Radiology</td> -->
                                                                     </tr>
                                                                     <tr>
                                                                         <td>8</td>
-                                                                        <td>Dr. Anjana Vipal</td>
-                                                                        <td>Member</td>
-                                                                        <td>Lecturer, Department of<br> Public Health Dentistry</td>
+                                                                        <td>Mr Muhammed Shamil P T</td>
+                                                                        <td>UG Student Member</td>
+                                                                        <!-- <td>Lecturer, Department of<br> Public Health Dentistry</td> -->
                                                                     </tr>
                                                                     <tr>
                                                                         <td>9</td>
-                                                                        <td>Dr. Manna S Mathai</td>
-                                                                        <td>Member</td>
-                                                                        <td>Lecturer, Department of<br> Public Health Dentistry</td>
+                                                                        <td>Dr. Shahla</td>
+                                                                        <td>PG Student Member</td>
+                                                                        <!-- <td>Lecturer, Department of<br> Public Health Dentistry</td> -->
                                                                     </tr>
-                                                                    <tr>
+                                                                    <!-- <tr>
                                                                         <td>10</td>
                                                                         <td>Ms. Shahla Parveen</td>
                                                                         <td>Member</td>
@@ -1251,7 +1313,7 @@
                                                                         <td>Ms Sreekala P</td>
                                                                         <td>Member</td>
                                                                         <td>Principal PA, Principal Office</td>
-                                                                    </tr>
+                                                                    </tr> -->
                                                                     
                                                                 </tbody>
                                                             </table>
@@ -1273,9 +1335,9 @@
                                                     <h3 style="font-size: 20px; color: #fff; margin-bottom: 25px;">Contact for Admission</h3>
                                                     <p><span style="color: #3db166; font-size: 16px; font-weight: 600;">Admission Office</span>
                                                      <br><p><span style="font-size: 15px;">Malabar Dental College
-& Research Centre Manoor
-Chekanoor Rd, Mudur P.O Edappal,
-Malappuram, Dt Pin : 679578</span></p>   
+                                                          & Research Centre Manoor
+                                                          Chekanoor Rd, Mudur P.O Edappal,
+                                                          Malappuram, Dt Pin : 679578</span></p>   
                                                      <p><span style="font-size: 15px;">+91 7034555521 , +91 9995333334<br/>info@macity.edu.in</span></p>
                                                     <p><span style="font-size: 16px; color: #3db166;">Mon &#8211; Fri 8:30A.M. &#8211; 4:00P.M.</span> <br>
                                                     <span style="font-size: 16px; color: #3db166;">Sat 8:30A.M. &#8211; 2:00P.M.</span></p> <span class="gdlr-core-space-shortcode" style="margin-top: 40px ;"></span>
@@ -1289,213 +1351,82 @@ Malappuram, Dt Pin : 679578</span></p>
                                     </div>
                                      
                                 </div>
-                                <div id="gdlr-core-video-widget-2" class="widget widget_gdlr-core-video-widget kingster-widget">
-                                        <h3 class="kingster-widget-title video-padding">Program Snapshot</h3><span class="clear"></span>
-                                        <div class="gdlr-core-video-widget gdlr-core-media-image">
-                                           <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cq-u7_mgfA2/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/Cq-u7_mgfA2/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/Cq-u7_mgfA2/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Lipi Madhusudanan (@lipi_sreehari)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
-                                        </div>
+                                <!-- <div id="gdlr-core-video-widget-2" class="widget widget_gdlr-core-video-widget kingster-widget">
+                                    <h3 class="kingster-widget-title video-padding">Program Snapshot</h3><span class="clear"></span>
+                                    <div class="gdlr-core-video-widget gdlr-core-media-image">
+                                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cq-u7_mgfA2/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/Cq-u7_mgfA2/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/Cq-u7_mgfA2/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Lipi Madhusudanan (@lipi_sreehari)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
                                     </div>
+                                </div> -->
                             </div>
-                            <div
-                              class="gdlr-core-block-item-title-wrap gdlr-core-left-align gdlr-core-item-mglr"
-                              style="margin-bottom: 30px"
-                            >
-                              <div
-                                class="gdlr-core-block-item-title-inner clearfix"
-                              >
-                                <h3
-                                  class="gdlr-core-block-item-title"
-                                  style="
-                                    font-size: 22px;
-                                    font-style: normal;
-                                    text-transform: none;
-                                    letter-spacing: 0px;
-                                    color: #182847;
-                                  "
-                                >
-                                  Events by Women Cell
-                                </h3>
-                                <div
-                                  class="gdlr-core-block-item-title-divider"
-                                  style="
-                                    font-size: 22px;
-                                    border-bottom-color: #dcdcdc;
-                                    border-bottom-width: 2px;
-                                  "
-                                ></div>
-                              </div>
-                            </div>
-                  <div class="gdlr-core-pbf-column gdlr-core-column-20">
-                    <div
-                      class="gdlr-core-pbf-column-content-margin gdlr-core-js"
-                      style="
-                        margin: 0px 20px 0px 0px;
-                        padding: 30px 0px 0px 0px;
-                      "
-                    >
-                      <div
-                        class="gdlr-core-pbf-column-content clearfix gdlr-core-js"
-                      >
-                        <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-event-item gdlr-core-item-pdb"
-                            style="padding-bottom: 0px"
-                          >
-                            
-                            <div class="gdlr-core-event-item-holder clearfix">
-                              <div
-                                class="gdlr-core-event-item-list gdlr-core-style-widget gdlr-core-item-pdlr clearfix"
-                                style="margin-bottom: 38px"
-                              >
-                                <span
-                                  class="gdlr-core-event-item-info gdlr-core-type-start-date-month"
-                                  ><span class="gdlr-core-date">03</span
-                                  ><span class="gdlr-core-month"
-                                    >May</span
-                                  ></span
-                                >
-                                <div class="gdlr-core-event-item-content-wrap">
-                                  <h3 class="gdlr-core-event-item-title">
-                                    <a
-                                      >Gender Equality Talk</a
-                                    >
-                                  </h3>
-                                  <div class="gdlr-core-event-item-info-wrap">
-                                    <span
-                                      class="gdlr-core-event-item-info gdlr-core-type-time"
-                                      >
-                                    <span
-                                      class="gdlr-core-event-item-info gdlr-core-type-location"
-                                      ><span class="gdlr-core-head"
-                                        ><i class="icon_pin_alt"></i></span
-                                      ><span class="gdlr-core-tail"
-                                        >Pathfinder Hall</span
-                                      ></span
-                                    >
-                                  </div>
-                                </div>
-                              </div>
-                                    
-                            
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="gdlr-core-pbf-column gdlr-core-column-20">
-                    <div
-                      class="gdlr-core-pbf-column-content-margin gdlr-core-js"
-                      style="
-                        margin: 0px 20px 0px 0px;
-                        padding: 30px 0px 0px 0px;
-                      "
-                    >
-                      <div
-                        class="gdlr-core-pbf-column-content clearfix gdlr-core-js"
-                      >
-                        <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-event-item gdlr-core-item-pdb"
-                            style="padding-bottom: 0px"
-                          >
-                            
-                            <div class="gdlr-core-event-item-holder clearfix">
-                              <div
-                                class="gdlr-core-event-item-list gdlr-core-style-widget gdlr-core-item-pdlr clearfix"
-                                style="margin-bottom: 38px"
-                              >
-                                <span
-                                  class="gdlr-core-event-item-info gdlr-core-type-start-date-month"
-                                  ><span class="gdlr-core-date">08</span
-                                  ><span class="gdlr-core-month"
-                                    >Mar</span
-                                  ></span
-                                >
-                                <div class="gdlr-core-event-item-content-wrap">
-                                  <h3 class="gdlr-core-event-item-title">
-                                    <a
-                                      >Women’s Day Celebration</a
-                                    >
-                                  </h3>
-                                  <div class="gdlr-core-event-item-info-wrap">
-                                    <span
-                                      class="gdlr-core-event-item-info gdlr-core-type-time"
-                                      >
-                                    <span
-                                      class="gdlr-core-event-item-info gdlr-core-type-location"
-                                      ><span class="gdlr-core-head"
-                                        ><i class="icon_pin_alt"></i></span
-                                      ><span class="gdlr-core-tail"
-                                        >College Reception Area</span
-                                      ></span
-                                    >
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="gdlr-core-pbf-column gdlr-core-column-20">
-                    <div
-                      class="gdlr-core-pbf-column-content-margin gdlr-core-js"
-                      style="
-                        margin: 0px 20px 0px 0px;
-                        padding: 30px 0px 0px 0px;
-                      "
-                    >
-                      <div
-                        class="gdlr-core-pbf-column-content clearfix gdlr-core-js"
-                      >
-                        <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-event-item gdlr-core-item-pdb"
-                            style="padding-bottom: 0px"
-                          >
-                            
-                            <div class="gdlr-core-event-item-holder clearfix">
-                              <div
-                                class="gdlr-core-event-item-list gdlr-core-style-widget gdlr-core-item-pdlr clearfix"
-                                style="margin-bottom: 38px"
-                              >
-                                <span
-                                  class="gdlr-core-event-item-info gdlr-core-type-start-date-month"
-                                  ><span class="gdlr-core-date">08</span
-                                  ><span class="gdlr-core-month"
-                                    >Apr</span
-                                  ></span
-                                >
-                                <div class="gdlr-core-event-item-content-wrap">
-                                  <h3 class="gdlr-core-event-item-title">
-                                    <a
-                                      >Adolescent Gynecology</a
-                                    >
-                                  </h3>
-                                  <div class="gdlr-core-event-item-info-wrap">
-                                    <span
-                                      class="gdlr-core-event-item-info gdlr-core-type-time"
-                                      >
-                                    <span
-                                      class="gdlr-core-event-item-info gdlr-core-type-location"
-                                      ><span class="gdlr-core-head"
-                                        ><i class="icon_pin_alt"></i></span
-                                      ><span class="gdlr-core-tail"
-                                        >Pathfinder Hall</span
-                                      ></span
-                                    >
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+<div class="gdlr-core-block-item-title-wrap gdlr-core-left-align gdlr-core-item-mglr events-heading">
+  <div class="gdlr-core-block-item-title-inner clearfix">
+    <h3 class="gdlr-core-block-item-title" style="font-size: 22px; color: #182847;">
+      Events by Women Cell
+    </h3>
+    <div class="gdlr-core-block-item-title-divider" style="border-bottom-color: #dcdcdc; border-bottom-width: 2px;"></div>
+  </div>
+</div>
+
+
+  <!-- ✅ Events list aligned directly under the title -->
+  <div class="events-left">
+    <!-- Event 1 -->
+    <div class="gdlr-core-event-item-list gdlr-core-style-widget gdlr-core-item-pdlr clearfix" style="margin-bottom: 20px;">
+      <span class="gdlr-core-event-item-info gdlr-core-type-start-date-month">
+        <span class="gdlr-core-date">03</span>
+        <span class="gdlr-core-month">May</span>
+      </span>
+      <div class="gdlr-core-event-item-content-wrap">
+        <h3 class="gdlr-core-event-item-title"><a>Gender Equality Talk</a></h3>
+        <div class="gdlr-core-event-item-info-wrap">
+          <span class="gdlr-core-event-item-info gdlr-core-type-location">
+            <span class="gdlr-core-head"><i class="icon_pin_alt"></i></span>
+            <span class="gdlr-core-tail">Pathfinder Hall</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="gdlr-core-event-item-list gdlr-core-style-widget gdlr-core-item-pdlr clearfix" style="margin-bottom: 20px;">
+      <span class="gdlr-core-event-item-info gdlr-core-type-start-date-month">
+        <span class="gdlr-core-date">08</span>
+        <span class="gdlr-core-month">Mar</span>
+      </span>
+      <div class="gdlr-core-event-item-content-wrap">
+        <h3 class="gdlr-core-event-item-title"><a>Women’s Day Celebration</a></h3>
+        <div class="gdlr-core-event-item-info-wrap">
+          <span class="gdlr-core-event-item-info gdlr-core-type-location">
+            <span class="gdlr-core-head"><i class="icon_pin_alt"></i></span>
+            <span class="gdlr-core-tail">College Reception Area</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event 3 -->
+    <div class="gdlr-core-event-item-list gdlr-core-style-widget gdlr-core-item-pdlr clearfix" style="margin-bottom: 20px;">
+      <span class="gdlr-core-event-item-info gdlr-core-type-start-date-month">
+        <span class="gdlr-core-date">08</span>
+        <span class="gdlr-core-month">Apr</span>
+      </span>
+      <div class="gdlr-core-event-item-content-wrap">
+        <h3 class="gdlr-core-event-item-title"><a>Adolescent Gynecology</a></h3>
+        <div class="gdlr-core-event-item-info-wrap">
+          <span class="gdlr-core-event-item-info gdlr-core-type-location">
+            <span class="gdlr-core-head"><i class="icon_pin_alt"></i></span>
+            <span class="gdlr-core-tail">Pathfinder Hall</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+                  
                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1520,7 +1451,10 @@ Malappuram, Dt Pin : 679578</span></p>
                     <br />
                     Manoor - Chekanoor Road, <br />
                     Manoor, Edappal, Malappuram, <br />
-                    Kerala 679578
+                    Kerala 679578<br /><br />
+
+              0494 2697020, 21, 22 <br />
+              7034555514
                   </p>
                   <p>
                     <!-- <span id="span_1dd7_11">
@@ -1694,7 +1628,7 @@ Malappuram, Dt Pin : 679578</span></p>
         <div class="kingster-copyright-wrapper">
           <div class="kingster-copyright-container kingster-container clearfix">
             <div class="kingster-copyright-left kingster-item-pdlr">
-              Copyright © 2023 Malabar Dental College | <a  style="color: #fff " href="dept_of_IT.html">Department of IT 💻</a>
+              Copyright © 2025 Malabar Dental College | <a  style="color: #fff " href="dept_of_IT.html">Department of IT 💻</a>
             </div>
             <div class="kingster-copyright-right kingster-item-pdlr">
               <div
