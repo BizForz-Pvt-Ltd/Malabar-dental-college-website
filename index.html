@@ -453,7 +453,7 @@
             <div class="kingster-mobile-menu">
               <a
                 class="kingster-mm-menu-button kingster-mobile-menu-button kingster-mobile-button-hamburger"
-                href="#kingster-mobile-menu"
+                href="#kingster-mobile-menu" data-slide="right"
                 ><span></span
               ></a>
               <div
@@ -772,12 +772,17 @@
                   <li class="menu-item menu-item-has-children">
                     <a>Information Corner</a>
                     <ul class="sub-menu">
-                      <li class="menu-item">
+                      <!-- <li class="menu-item">
                         <a href="rti.html">RTI</a>
-                      </li>
+                      </li> -->
                       <li class="menu-item">
                         <a href="circulars-and-notices.html">Circulars and Notices</a>
                       </li>
+                      <li class="menu-item">
+                          <a href="mass-media.html"
+                            >MDC in Mass Media</a
+                          >
+                        </li>
                       <li class="menu-item">
                         <a href="announcements.html">Announcements</a>
                       </li>
@@ -1427,6 +1432,11 @@
                         </li> -->
                         <li class="menu-item">
                           <a href="circulars-and-notices.html">Circulars and Notices</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="mass-media.html"
+                            >MDC in Mass Media</a
+                          >
                         </li>
                         <li class="menu-item">
                           <a href="announcements.html">Announcements</a>
@@ -5703,7 +5713,7 @@
   <script>
     const testimonialContainer = document.getElementById("testimonial-slider");
 
-    fetch("https://conext.in/website_manager/api/mdc/latest_testimonials/")
+    fetch("https://conext.in/website_manager/api/mdc/submit_testimonial/")
       .then(response => response.json())
       .then(data => {
         console.log("API Response:", data); 
@@ -5730,7 +5740,7 @@
                     <div class="stars">${stars}</div>
                   </div>
                   <div class="image">
-                    <img src="${item.image_url}" alt="${item.name}" />
+                    <img src="${item.picture}" alt="${item.name}" />
                   </div>
                 </div>
               </div>
@@ -5852,7 +5862,7 @@ sendButton.addEventListener("click", () => {
   if (message) {
     addUserMessage(message);
     userInput.value = "";
-    fetchCategories();
+    fetchCategories(); 
   }
 });
 

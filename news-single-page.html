@@ -97,180 +97,180 @@
         height: 36px;
       }
 
-/* Reset paddings that caused big gaps */
-.kingster-item-pdlr,
-.gdlr-core-item-pdlr {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
+      /* Reset paddings that caused big gaps */
+      .kingster-item-pdlr,
+      .gdlr-core-item-pdlr {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
 
-/* Image container spacing */
-.gdlr-core-image-item {
-  margin-bottom: 20px;
-}
+      /* Image container spacing */
+      .gdlr-core-image-item {
+        margin-bottom: 20px;
+      }
 
-/* Remove hardcoded fixed sizes – make images fully responsive */
-.gdlr-core-media-image img,
-.first-image-container img {
-  display: block;
-  width: 100% !important;
-  height: auto !important;
-  max-width: 100%;
-  margin: 0 auto 20px auto;
-  object-fit: cover;
-  border-radius: 6px;
-}
+      /* Remove hardcoded fixed sizes – make images fully responsive */
+      .gdlr-core-media-image img,
+      .first-image-container img {
+        display: block;
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100%;
+        margin: 0 auto 20px auto;
+        object-fit: cover;
+        border-radius: 6px;
+      }
 
-/* News grid layout */
-.below-images-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* flexible */
-  gap: 20px; /* space between items */
-  margin: 30px auto;
-  max-width: 1200px; /* keep it centered */
-}
+      /* News grid layout */
+      .below-images-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* flexible */
+        gap: 20px; /* space between items */
+        margin: 30px auto;
+        max-width: 1200px; /* keep it centered */
+      }
 
-/* Each news image inside the grid */
-.below-images-container img {
-  width: 100%;
-  height: 220px;            /* fixed height for uniformity */
-  object-fit: cover;        /* crops nicely */
-  border-radius: 6px;
-  display: block;
-}
+      /* Each news image inside the grid */
+      .below-images-container img {
+        width: 100%;
+        height: 220px;            /* fixed height for uniformity */
+        object-fit: cover;        /* crops nicely */
+        border-radius: 6px;
+        display: block;
+      }
 
-/* Ensure single-column news layout (remove 2-column split) */
-.gdlr-core-container {
-  display: block !important;
-}
-.gdlr-core-column-20,
-.gdlr-core-column-40 {
-  width: 100% !important;
-  float: none !important;
-  max-width: 100% !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  margin: 0 auto !important;
-}
+      /* Ensure single-column news layout (remove 2-column split) */
+      .gdlr-core-container {
+        display: block !important;
+      }
+      .gdlr-core-column-20,
+      .gdlr-core-column-40 {
+        width: 100% !important;
+        float: none !important;
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin: 0 auto !important;
+      }
 
-/* News section content centered */
-.first-image-container,
-.news_content,
-.below-images-container,
-.document-list {
-  margin: 0 auto 30px auto;
-  max-width: 900px; /* keeps it centered nicely */
-}
+      /* News section content centered */
+      .first-image-container,
+      .news_content,
+      .below-images-container,
+      .document-list {
+        margin: 0 auto 30px auto;
+        max-width: 900px; /* keeps it centered nicely */
+      }
 
-/* Headline styling */
-.news_subject {
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 15px;
-  color: #182847;
-}
+      /* Headline styling */
+      .news_subject {
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 15px;
+        color: #182847;
+      }
 
-/* News text */
-.news_content {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #444;
-}
+      /* News text */
+      .news_content {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #444;
+      }
 
-/* Info rows (location, date, added by) */
-.gdlr-core-port-info {
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-}
-.gdlr-core-port-info-key {
-  min-width: 100px;
-  font-weight: 600;
-  color: #182847;
-}
-.gdlr-core-port-info-value {
-  margin-left: 10px;
-  color: #333;
-}
+      /* Info rows (location, date, added by) */
+      .gdlr-core-port-info {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+      }
+      .gdlr-core-port-info-key {
+        min-width: 100px;
+        font-weight: 600;
+        color: #182847;
+      }
+      .gdlr-core-port-info-value {
+        margin-left: 10px;
+        color: #333;
+      }
 
-/* Buttons */
-.gdlr-core-button {
-  background-color: #182847;
-  color: #fff !important;
-  transition: all 0.3s;
-  border-radius: 4px;
-}
-.gdlr-core-button:hover {
-  background-color: #3db166;
-}
+      /* Buttons */
+      .gdlr-core-button {
+        background-color: #182847;
+        color: #fff !important;
+        transition: all 0.3s;
+        border-radius: 4px;
+      }
+      .gdlr-core-button:hover {
+        background-color: #3db166;
+      }
 
-/* Document list styles */
-.document-list {
-  margin-top: 20px;
-}
+      /* Document list styles */
+      .document-list {
+        margin-top: 20px;
+      }
 
-.document-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-radius: 4px;
-}
+      .document-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+      }
 
-.document-icon {
-  font-size: 24px;
-  margin-right: 15px;
-  color: #182847;
-}
+      .document-icon {
+        font-size: 24px;
+        margin-right: 15px;
+        color: #182847;
+      }
 
-.document-name {
-  flex-grow: 1;
-  font-weight: 500;
-}
+      .document-name {
+        flex-grow: 1;
+        font-weight: 500;
+      }
 
-.download-btn {
-  background-color: #3db166;
-  color: white;
-  border: none;
-  padding: 5px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 14px;
-}
+      .download-btn {
+        background-color: #3db166;
+        color: white;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+      }
 
-.download-btn:hover {
-  background-color: #2e8b57;
-}
+      .download-btn:hover {
+        background-color: #2e8b57;
+      }
 
-.news-type-badge {
-  background-color: #3db166;
-  color: white;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: bold;
-  display: inline-block;
-  margin-bottom: 10px;
-}
+      .news-type-badge {
+        background-color: #3db166;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
 
-.default-banner {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 20px;
-}
-/* 
+      .default-banner {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+      /* 
 
-.gdlr-core-pbf-element:only-child .gdlr-core-media-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-} */
-</style>
+      .gdlr-core-pbf-element:only-child .gdlr-core-media-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      } */
+      </style>
 
     
   </head>
@@ -729,6 +729,11 @@
                     <li class="menu-item">
                       <a href="circulars-and-notices.html"
                         >Circulars and Notices</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="mass-media.html"
+                        >MDC in Mass Media</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1256,6 +1261,11 @@
                     <li class="menu-item">
                       <a href="circulars-and-notices.html"
                         >Circulars and Notices</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="mass-media.html"
+                        >MDC in Mass Media</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1816,84 +1826,84 @@
         ajax_url: "#",
       };
     </script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
 
-  const shareButton = document.getElementById('shareButton');
+      const shareButton = document.getElementById('shareButton');
 
-  shareButton.addEventListener('click', function () {
-    
-    Swal.fire({
-  title: "Share Options",
-  html: `Choose how you want to share:`,
-showDenyButton:true,
- showCloseButton: true,
-  showCancelButton: true,
-  confirmButtonText: "Copy link",
-  cancelButtonText: "Whatsapp",
-  cancelButtonColor: '#7066E0',
-denyButtonText:'Email',
-denyButtonColor:'#7066E0'
-}).then((result) => {
-  if (result.isConfirmed) { const url = window.location.href;
-    navigator.clipboard.writeText(url).then(() => {
-      Swal.fire("Link copied to clipboard!", "", "success");
-    
-    }).catch((error) => {
-    wal.fire({
-  icon: "error",
-  title: "Oops...",
-  text: `Error copying to clipboard: ${error}`,
-});
+      shareButton.addEventListener('click', function () {
+        
+        Swal.fire({
+          title: "Share Options",
+          html: `Choose how you want to share:`,
+        showDenyButton:true,
+        showCloseButton: true,
+          showCancelButton: true,
+          confirmButtonText: "Copy link",
+          cancelButtonText: "Whatsapp",
+          cancelButtonColor: '#7066E0',
+        denyButtonText:'Email',
+        denyButtonColor:'#7066E0'
+        }).then((result) => {
+      if (result.isConfirmed) { const url = window.location.href;
+        navigator.clipboard.writeText(url).then(() => {
+          Swal.fire("Link copied to clipboard!", "", "success");
+        
+        }).catch((error) => {
+        wal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: `Error copying to clipboard: ${error}`,
     });
-  } else if (result.isDenied){
-     const shareData = {
-      subject: 'Check out this news', // Replace with your subject
-      body: 'I thought you might find this news interesting:\n' + window.location.href // Current page URL
+        });
+      } else if (result.isDenied){
+        const shareData = {
+          subject: 'Check out this news', // Replace with your subject
+          body: 'I thought you might find this news interesting:\n' + window.location.href // Current page URL
+        };
+        window.location.href = `mailto:?subject=${encodeURIComponent(shareData.subject)}&body=${encodeURIComponent(shareData.body)}`;
+      }else if(result.dismiss === Swal.DismissReason.cancel){
+    const shareDataWhats = {
+      text: 'Check out this news: ' + window.location.href, // Message to be shared
     };
-    window.location.href = `mailto:?subject=${encodeURIComponent(shareData.subject)}&body=${encodeURIComponent(shareData.body)}`;
-  }else if(result.dismiss === Swal.DismissReason.cancel){
-const shareDataWhats = {
-  text: 'Check out this news: ' + window.location.href, // Message to be shared
-};
 
-const whatsappLink = `https://wa.me/?text=${shareDataWhats.text}`;
+    const whatsappLink = `https://wa.me/?text=${shareDataWhats.text}`;
 
-window.open(whatsappLink, '_blank');
-  }
-});
-  });
-
-  emailButton.addEventListener('click', function () {
-
-    const shareData = {
-      subject: 'Check out this news', 
-      body: 'I thought you might find this news interesting:\n' + window.location.href
-    };
-    window.location.href = `mailto:?subject=${encodeURIComponent(shareData.subject)}&body=${encodeURIComponent(shareData.body)}`;
-  });
-
-  copyButton.addEventListener('click', function () {
-    const url = window.location.href;
-    navigator.clipboard.writeText(url).then(() => {
-      alert('Link copied to clipboard.');
-    }).catch((error) => {
-      console.error('Error copying to clipboard:', error);
+    window.open(whatsappLink, '_blank');
+      }
     });
-  });
+      });
 
-  closeButton.addEventListener('click', function () {
-    shareModal.style.display = 'none';
-  });
+      emailButton.addEventListener('click', function () {
 
-  window.addEventListener('click', function (event) {
-    if (event.target === shareModal) {
-      shareModal.style.display = 'none';
-    }
-  });
-});
+        const shareData = {
+          subject: 'Check out this news', 
+          body: 'I thought you might find this news interesting:\n' + window.location.href
+        };
+        window.location.href = `mailto:?subject=${encodeURIComponent(shareData.subject)}&body=${encodeURIComponent(shareData.body)}`;
+      });
 
-</script>
+      copyButton.addEventListener('click', function () {
+        const url = window.location.href;
+        navigator.clipboard.writeText(url).then(() => {
+          alert('Link copied to clipboard.');
+        }).catch((error) => {
+          console.error('Error copying to clipboard:', error);
+        });
+      });
+
+      closeButton.addEventListener('click', function () {
+        shareModal.style.display = 'none';
+      });
+
+      window.addEventListener('click', function (event) {
+        if (event.target === shareModal) {
+          shareModal.style.display = 'none';
+        }
+      });
+    });
+
+    </script>
    <script
       type="text/javascript"
       src="plugins/goodlayers-core/include/js/page-builder.js"
