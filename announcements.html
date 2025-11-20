@@ -618,9 +618,14 @@
                     <li class="menu-item">
                       <a href="satelite-clinic.html">Satellite Clinic</a>
                     </li>
-                    <li class="menu-item">
+                      <li class="menu-item">
                       <a href="news-page.html"
-                        >News, Recent Events & Achievements</a
+                        >News & Achievements</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="events.html"
+                        >Recent Events</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1150,9 +1155,14 @@
                     <li class="menu-item">
                       <a href="satelite-clinic.html">Satellite Clinic</a>
                     </li>
-                    <li class="menu-item">
+                      <li class="menu-item">
                       <a href="news-page.html"
-                        >News, Recent Events & Achievements</a
+                        >News & Achievements</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="events.html"
+                        >Recent Events</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1607,20 +1617,18 @@
 
 
 <script>
-  const baseUrl = "https://conext.in/website_manager/api/mdc/notifications_list/?unique_id=97c755e9b1284f80";
+  const baseUrl = "https://conext.in/website_manager/api/mdc/notifications_list/?unique_id=fe6a1df24514443b";
 
   const container = document.getElementById("announcement-sections");
   const modal = document.getElementById("activity-modal");
   const modalContent = document.getElementById("modal-content");
   const closeBtn = document.getElementById("modal-close");
 
-  // Pagination state
   let nextUrl = null;
   let prevUrl = null;
   let currentPage = 1;
   let totalPages = 1;
 
-  // Create pagination container
   const paginationContainer = document.createElement("div");
   paginationContainer.style.textAlign = "center";
   paginationContainer.style.marginTop = "20px";

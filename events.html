@@ -1,78 +1,318 @@
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
-
-<!-- Mirrored from max-themes.net/demos/kingster/kingster/john-hagensy-phd.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Mar 2022 06:34:49 GMT -->
-<head>
-    <meta charset="UTF-8">
+  <!-- Mirrored from max-themes.net/demos/kingster/kingster/course-list-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Mar 2022 06:34:57 GMT -->
+  <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon" />
+    <title>Circulars and Notices | MDCRC</title>
+    <link
+      rel="stylesheet"
+      href="plugins/goodlayers-core/plugins/combine/style.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="plugins/goodlayers-core/include/css/page-builder.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="plugins/revslider/public/assets/css/settings.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style-core.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="css/kingster-style-custom.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:700%2C400"
+      rel="stylesheet"
+      property="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CABeeZee%3Aregular%2Citalic&amp;subset=latin%2Clatin-ext%2Cdevanagari&amp;ver=5.0.3"
+      type="text/css"
+      media="all"
+    />
+   <style>
+  .gdlr-core-course-item-link {
+    display: flex;
+    align-items: center;
+  }
+  .gdlr-core-course-item-logo {
+    width: 30px; /* Adjust the width to your desired value */
+    height: 30px; /* Adjust the height to your desired value */
+  }
+  .gdlr-core-course-item-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .gdlr-core-course-item-title {
+    margin-left: 20px; /* Reset default margin */
+  }
+  .loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3db166;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .gdlr-core-course-item-subtitle {
+    font-size: 14px;
+    color: #888;
+    padding-left: 50px;
+  }
+  .floating-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #182847; /* WhatsApp green */
+    color: #fff;
+    width: 70px; /* Set width and height to the same value for a perfect circle */
+    height: 70px;
+    border-radius: 50%; /* Make the button round */
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px; /* Adjust the font size for larger text */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Set a high z-index to appear above other content */
+  }
+  /* Style for WhatsApp logo */
+  .whatsapp-logo {
+    width: 36px; /* Adjust the logo size */
+    height: 36px; /* Adjust the logo size */
+  }
+  .notification-list {
+    display: inline-block;
+    max-height: 20px;
+    overflow: hidden;
+    position: relative;
+    max-height: 20px;
+  }
+  ul.notification-list {
+    margin-bottom: 0px !important;
+  }
+  
+  /* Updated styles for centered cards with 5 per row - INCREASED WIDTH */
+  .notifications-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    padding: 40px 0;
+    max-width: 1400px; /* Increased from 1200px to 1400px */
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-<title>Principal | MDCRC</title>
+  .notifications-grid > div {
+    background: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    min-height: 350px; /* Added minimum height for better consistency */
+    display: flex;
+    flex-direction: column;
+  }
 
-    <link rel='stylesheet' href='plugins/goodlayers-core/plugins/combine/style.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='plugins/goodlayers-core/include/css/page-builder.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='plugins/revslider/public/assets/css/settings.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='css/style-core.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='css/kingster-style-custom.css' type='text/css' media='all' />
+  .notifications-grid > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
 
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700%2C400" rel="stylesheet" property="stylesheet" type="text/css" media="all">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CABeeZee%3Aregular%2Citalic&amp;subset=latin%2Clatin-ext%2Cdevanagari&amp;ver=5.0.3' type='text/css' media='all' />
+  /* Card content styling for better layout */
+  .notifications-grid > div img,
+  .notifications-grid > div video {
+    width: 100%;
+    height: 220px; /* Increased image height */
+    object-fit: cover;
+    flex-shrink: 0;
+  }
 
-<style>
-          .floating-button {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background-color: #182847; /* WhatsApp green */
-        color: #fff;
-        width: 70px; /* Set width and height to the same value for a perfect circle */
-        height: 70px;
-        border-radius: 50%; /* Make the button round */
-        cursor: pointer;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px; /* Adjust the font size for larger text */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 9999; /* Set a high z-index to appear above other content */
-      }
+  .notifications-grid > div .card-content {
+    padding: 20px; /* Increased padding */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-      /* Style for WhatsApp logo */
-       .whatsapp-logo {
-        width: 36px; /* Adjust the logo size */
-        height: 36px; /* Adjust the logo size */
-      }
-      .notification-list {
-        display: inline-block;
-        max-height: 20px;
-        overflow: hidden;
-        position: relative;
-        max-height: 20px;
-      }
-      ul.notification-list {
-        margin-bottom: 0px !important;
-      }
-      @keyframes marquee-up {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(-100%);
-        }
-      }
-    </style>
+  .notifications-grid > div h3 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    color: #163269;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  .notifications-grid > div p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  /* Pagination styles */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0;
+    padding: 0 20px;
+  }
+
+  .pagination button {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .pagination button:hover {
+    background: #f5f5f5;
+  }
+
+  .pagination button.active {
+    background: #3db166;
+    color: white;
+    border-color: #3db166;
+  }
+
+  .pagination button:disabled {
+    background: #f0f0f0;
+    color: #999;
+    cursor: not-allowed;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1400px) {
+    .notifications-grid {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1200px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .notifications-grid {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 40px 20px;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .notifications-grid {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 40px 20px;
+    }
+    
+    .notifications-grid > div {
+      min-height: 320px;
+    }
+    
+    .notifications-grid > div img,
+    .notifications-grid > div video {
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .notifications-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .notifications-grid > div .card-content {
+      padding: 15px;
+    }
+    
+    .notifications-grid > div h3 {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .notifications-grid {
+      grid-template-columns: 1fr;
+      padding: 40px 20px;
+      gap: 20px;
+    }
+    
+    .notifications-grid > div {
+      min-height: 300px;
+    }
+    
+    .notifications-grid > div img,
+    .notifications-grid > div video {
+      height: 180px;
+    }
+    
+    .pagination {
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    
+    .pagination button {
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+  }
+
+  @keyframes marquee-up {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+</style>
   </head>
-  <a
+  <!-- <a
     href="https://api.whatsapp.com/send?phone=7034555514"
     target="_blank"
     class="floating-button"
   >
     <img src="upload/wsup-logo.png" alt="WhatsApp Logo" class="whatsapp-logo" />
-  </a>
-
-<body class="home page-template-default page page-id-2039 gdlr-core-body woocommerce-no-js tribe-no-js kingster-body kingster-body-front kingster-full  kingster-with-sticky-navigation  kingster-blockquote-style-1 gdlr-core-link-to-lightbox">
+  </a> -->
+  <body
+    class="home page-template-default page page-id-2039 gdlr-core-body woocommerce-no-js tribe-no-js kingster-body kingster-body-front kingster-full kingster-with-sticky-navigation kingster-blockquote-style-1 gdlr-core-link-to-lightbox"
+  >
   <div class="kingster-mobile-header-wrap">
     <div
       class="kingster-mobile-header kingster-header-background kingster-style-slide kingster-sticky-mobile-navigation"
@@ -404,9 +644,9 @@
                       <a href="prospectus.html">Prospectus</a>
                     </li>
                     <li class="menu-item">
-                      <a href="dept-of-admission.html"
-                        >Department of Admission</a>
-                    </li>
+                        <a href="dept-of-admission.html"
+                          >Department of Admission</a>
+                      </li>
                     <li class="menu-item">
                       <a href="admission.html"
                         >Admission Process And Guidelines</a
@@ -508,7 +748,7 @@
                     </li>
                   </ul>
                 </li>
-                <li class="menu-item menu-item-has-children">
+                <li class="menu-item menu-item-has-children current-menu-item">
                   <a>Information Corner</a>
                   <ul class="sub-menu">
                     <!-- <li class="menu-item">
@@ -629,7 +869,7 @@
             <div class="kingster-main-menu" id="kingster-main-menu">
               <ul id="menu-main-navigation-1" class="sf-menu">
                 <li
-                  class="menu-item menu-item-home current-menu-item menu-item-has-children"
+                  class="menu-item menu-item-home menu-item-has-children"
                 >
                   <a href="index.html">Home</a>
                 </li>
@@ -775,7 +1015,7 @@
                         <li class="menu-item menu-item-has-children">
                           <a class="sf-with-ul-pre">Diploma</a>
                           <ul>
-                            <li class="menu-item">
+                             <li class="menu-item">
                               <a href="dora.html"
                                 >Dental Operating <br/> Room Assistant (DORA)</a
                               >
@@ -933,9 +1173,9 @@
                       <a href="prospectus.html">Prospectus</a>
                     </li>
                     <li class="menu-item">
-                      <a href="dept-of-admission.html"
-                        >Department of Admission</a>
-                    </li>
+                        <a href="dept-of-admission.html"
+                          >Department of Admission</a>
+                      </li>
                     <li class="menu-item">
                       <a href="admission.html"
                         >Admission Process And Guidelines</a
@@ -1044,7 +1284,7 @@
                   </ul>
                 </li>
                 <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
+                  class="menu-item current-menu-item menu-item-has-children kingster-normal-menu"
                 >
                   <a class="sf-with-ul-pre">Information Corner</a>
                   <ul class="sub-menu">
@@ -1061,7 +1301,6 @@
                         >MDC in Mass Media</a
                       >
                     </li>
-                    
                     <li class="menu-item">
                       <a href="announcements.html">Announcements</a>
                     </li>
@@ -1154,140 +1393,49 @@
         </div>
       </div>
     </header>
-            <div class="kingster-page-wrapper" id="kingster-page-wrapper">
-                <div class="gdlr-core-page-builder-body">
-                    <div class="gdlr-core-pbf-wrapper " style="padding: 70px 0px 40px 0px;">
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" style="border-width: 0px;">
-                                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="upload/principal2.jpg"><img src="upload/principal.jpg" width="700" height="350"  alt="" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-personnel-info-item gdlr-core-item-pdb gdlr-core-item-pdlr clearfix" style="padding-bottom: 17px ;">
-                                                    <div class="gdlr-core-personnel-info-item-list-wrap">
-                                                        <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-linkedin"></i><a href="https://www.linkedin.com/in/meenu-merry-c-paul-202912195?trk=contact-info">Meenu Merry C Paul</a> </div>
-                                                        <div class="kingster-personnel-info-list kingster-type-location"><i class="kingster-personnel-info-list-icon fa fa-location-arrow"></i>Kerala</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"><a class="gdlr-core-button  gdlr-core-button-solid gdlr-core-button-no-border" href="#" style="font-size: 13px ;padding: 11px 24px 15px 27px;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;"><span class="gdlr-core-content" >Download CV</span><i class="gdlr-core-pos-right fa fa-file-pdf-o"  ></i></a></div>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-40">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="margin: 0px 0px 20px 0px;padding: 0px 0px 0px 0px;">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 34px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;color: #161616 ;">Prof. Dr Meenu Merry C Paul</h3></div><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 20px ;font-style: normal ;color: #6c6c6c ;">Principal</span></div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 6px ;">
 
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align" style="margin-bottom: 55px ;">
-                                                    <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #3db166 ;border-bottom-width: 3px ;"></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 20px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;color: #464646 ;">Biography</h3></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 20px ;">
-                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 17px ;letter-spacing: 0px ;text-transform: none ;">
-                                                        <p>
-                                                            She is an eminent prosthodontist and an excellent academician, having a teaching experience of over 22 years in various undergraduate and post graduate institutions. Her vast knowledge and experience in the field has provided students a strong foundation for their careers. She has been trained in CAD-CAM technology from Sirona Dental Academy, Germany. She is an approved PhD guide of Kerala University of Health Sciences (KUHS) and also co-guide for PhD Scholars in universities outside Kerala. She has guided various research projects of postgraduate students in prosthodontics. She has been the Faculty panelist of Prosthodontics in KOMAR University of Science and Technology, Iraq.<br/><br/> Recently her invention in the field of dentistry has received PATENT from Govt of India, and the same was published in the IPO (Indian Patency Office) journal in 2015 itself. She is the founder member of ISPRP (Indian Society of Prosthodontics - Restorative - Periodontics) and life member of IPS (Indian Prosthodontic Society).
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align" style="margin-bottom: 45px ;">
-                                                    <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #3db166 ;border-bottom-width: 3px ;"></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 20px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;color: #464646 ;">Education</h3></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-icon-list-item gdlr-core-item-pdlr gdlr-core-item-pdb clearfix ">
-                                                    <ul> <li class=" gdlr-core-skin-divider" style="margin-bottom: 13px ;"><span class="gdlr-core-icon-list-icon-wrap" style="margin-top: 4px ;"><i class="gdlr-core-icon-list-icon fa fa-dot-circle-o" style="color: #6b6b6b ;font-size: 16px ;width: 16px ;" ></i></span>
-                                                            <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content" style="font-size: 17px ;text-transform: none ;">BDS - Dr MGR Medical University, Chennai, 1996</span></div>
-                                                        </li>
-                                                    <ul> <li class=" gdlr-core-skin-divider" style="margin-bottom: 13px ;"><span class="gdlr-core-icon-list-icon-wrap" style="margin-top: 4px ;"><i class="gdlr-core-icon-list-icon fa fa-dot-circle-o" style="color: #6b6b6b ;font-size: 16px ;width: 16px ;" ></i></span>
-                                                            <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content" style="font-size: 17px ;text-transform: none ;">MDS - Prosthodontics, Rajiv Gandhi University of Health Sciences, Bengaluru, 2000</span></div>
-                                                        </li>
-
-
-
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gdlr-core-pbf-wrapper " id="div_1dd7_107">
-                        <div class="gdlr-core-pbf-background-wrap" id="div_1dd7_108"></div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container-custom" id="div_1dd7_109">
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-gallery-item gdlr-core-item-pdb clearfix  gdlr-core-gallery-item-style-grid" id="div_1dd7_110">
-                                        <div class="gdlr-core-gallery-item-holder gdlr-core-js-2 clearfix" data-layout="fitrows">
-                                            <!-- <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-10 gdlr-core-column-first gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-0.png" alt="" width="120" height="120" title="banner-1" /></div>
-                                            </div> -->
-                                              <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-10 gdlr-core-column-first gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-1.png" style="padding-top: 20px;" alt="" width="240" height="120" title="banner-1" /></div>
-                                            </div>
-                                            <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-10 gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-2.png" alt="" width="120" height="120" title="banner-2" /></div>
-                                            </div>
-                                            <!-- <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-10 gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-3.png" alt="" width="120" height="120" title="banner-3" /></div>
-                                            </div> -->
-                                            <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-10 gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-4.png" style="padding-top: 25px;" alt="" width="240" height="120" title="banner-4" /></div>
-                                            </div>
-                                             <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-10 gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/dme.png" alt="" style="padding-top:10px;" width="170" height="200" title="banner-4" /></div>
-                                            </div>
-                                             <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-10 gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/aimst.png" alt="" width="110" height="200" title="banner-4" /></div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
+    <div
+        class="kingster-page-title-wrap kingster-style-medium kingster-left-align"
+      >
+        <div class="kingster-header-transparent-substitute"></div>
+        <div class="kingster-page-title-overlay"></div>
+        <div class="kingster-page-title-container kingster-container">
+          <div class="kingster-page-title-content kingster-item-pdlr">
+            <div class="kingster-page-caption">
+              Explore the latest updates and news from our institution.
             </div>
+            <h1 class="kingster-page-title">Circulars and Notices</h1>
+          </div>
+        </div>
+      </div>
 
+        <div class="kingster-breadcrumbs">
+          <div class="kingster-breadcrumbs-container kingster-container">
+              <div class="kingster-breadcrumbs-item kingster-item-pdlr"> <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Kingster." href="index.html" class="home"><span property="name">Home</span></a>
+                  <meta property="position" content="1">
+                  </span>&gt;<span property="itemListElement" typeof="ListItem"><span property="name">Circulars and Notices</span>
+                  <meta property="position" content="2">
+                  </span>
+              </div>
+          </div>
+        </div>
 
-           <footer>
+      <div class="kingster-page-wrapper"  id="kingster-page-wrapper">
+        <div id="notifications-sections"></div>
+        <div id="activity-modal" 
+          style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+          background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:99999;">
+          <span id="modal-close"
+            style="position:absolute; top:20px; right:30px; font-size:32px; font-weight:bold; color:#fff; cursor:pointer; z-index:10000;">
+            &times;
+          </span>
+          <div style="background:#fff; padding:20px; border-radius:8px; max-width:800px; width:90%; max-height:90%; overflow:auto; position:relative;">
+            <div id="modal-content"></div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
         <div class="kingster-footer-wrapper">
           <div class="kingster-footer-container kingster-container clearfix">
             <div
@@ -1478,11 +1626,13 @@
             </div>
           </div>
         </div>
-
         <div class="kingster-copyright-wrapper">
           <div class="kingster-copyright-container kingster-container clearfix">
             <div class="kingster-copyright-left kingster-item-pdlr">
-              Copyright © 2025 Malabar Dental College | <a  style="color: #fff " href="dept_of_IT.html">Department of IT 💻</a>
+              Copyright © 2025 Malabar Dental College |
+              <a style="color: #fff" href="dept_of_IT.html"
+                >Department of IT 💻</a
+              >
             </div>
             <div class="kingster-copyright-right kingster-item-pdlr">
               <div
@@ -1532,26 +1682,55 @@
           </div>
         </div>
       </footer>
-        </div>
     </div>
-
-
-	<script type='text/javascript' src='js/jquery/jquery.js'></script>
-    <script type='text/javascript' src='js/jquery/jquery-migrate.min.js'></script>
-    <script type='text/javascript' src='plugins/goodlayers-core/plugins/combine/script.js'></script>
-    <script type='text/javascript'>
-        var gdlr_core_pbf = {
-            "admin": "",
-            "video": {
-                "width": "640",
-                "height": "360"
+    <script>
+      jQuery(document).ready(function ($) {
+        "use strict";
+        $("#customers-testimonials").owlCarousel({
+          loop: true,
+          center: true,
+          items: 3,
+          margin: 0,
+          autoplay: true,
+          dots: true,
+          autoplayTimeout: 8500,
+          smartSpeed: 450,
+          responsive: {
+            0: {
+              items: 1,
             },
-            "ajax_url": "#"
-        };
+            768: {
+              items: 2,
+            },
+            1170: {
+              items: 3,
+            },
+          },
+        });
+      });
     </script>
-     <script>
-      // Define the API URL to fetch notification data
-      const apiUrlNotification =
+
+    <script type="text/javascript" src="js/jquery/jquery.js"></script>
+    <script
+      type="text/javascript"
+      src="js/jquery/jquery-migrate.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="plugins/goodlayers-core/plugins/combine/script.js"
+    ></script>
+    <script type="text/javascript">
+      var gdlr_core_pbf = {
+        admin: "",
+        video: {
+          width: "640",
+          height: "360",
+        },
+        ajax_url: "#",
+      };
+    </script>
+    <script>
+      const apiUrl =
         "https://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";
 
       // Reference to the notification container
@@ -1566,7 +1745,7 @@
       // Function to fetch and update notification data
       async function fetchAndUpdateNotifications() {
         try {
-          const response = await fetch(apiUrlNotification);
+          const response = await fetch(apiUrl);
           notifications = await response.json();
 
           // Call the updateNotification function initially
@@ -1588,18 +1767,360 @@
         }
       }
 
-      // Call the fetchAndUpdateNotifications function initially
       fetchAndUpdateNotifications();
     </script>
-    <script type='text/javascript' src='plugins/goodlayers-core/include/js/page-builder.js'></script>
-    <script type='text/javascript' src='js/jquery/ui/effect.min.js'></script>
-    <script type='text/javascript'>
-        var kingster_script_core = {
-            "home_url": "index.html"
-        };
-    </script>
-    <script type='text/javascript' src='js/plugins.min.js'></script>
-</body>
 
-<!-- Mirrored from max-themes.net/demos/kingster/kingster/john-hagensy-phd.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Mar 2022 06:34:49 GMT -->
+
+<script>
+const API_URL = "https://conext.in/website_manager/api/mdc/notifications_list/?unique_id=c2b3500cad6b4264";
+const sectionsContainer = document.getElementById("notifications-sections");
+const modal = document.getElementById("activity-modal");
+const modalContent = document.getElementById("modal-content");
+const closeBtn = document.getElementById("modal-close");
+
+// Load all notifications and group by type
+fetch(API_URL)
+  .then(res => res.json())
+  .then(api => {
+    const items = api.results?.data || [];
+    
+    // Group items by notification type
+    const groupedByType = groupNotificationsByType(items);
+    
+    // Create sections for each notification type
+    Object.keys(groupedByType).forEach(typeName => {
+      const typeItems = groupedByType[typeName];
+      
+      // Check if API has pagination info
+      const hasPagination = api.results?.count && api.results?.page_size;
+      
+      if (hasPagination) {
+        // API supports pagination - use API pagination
+        createSectionWithAPIPagination(typeName, API_URL, api.results, typeItems);
+      } else {
+        // No API pagination - use client-side pagination
+        createSectionWithClientPagination(typeName, typeItems);
+      }
+    });
+  })
+  .catch(err => console.error("Error loading notifications:", err));
+
+// Function to group notifications by their type
+function groupNotificationsByType(notifications) {
+  const grouped = {};
+  
+  notifications.forEach(notification => {
+    const typeName = notification.notification_type?.name || "General Notifications";
+    
+    if (!grouped[typeName]) {
+      grouped[typeName] = [];
+    }
+    
+    grouped[typeName].push(notification);
+  });
+  
+  return grouped;
+}
+
+// Function to create section with API pagination
+function createSectionWithAPIPagination(title, baseUrl, apiData, typeItems) {
+  const safeId = title.replace(/\s+/g, "-").toLowerCase();
+  const sectionId = `section-${safeId}`;
+  const gridId = `grid-${safeId}`;
+  const paginationId = `pagination-${safeId}`;
+
+  const section = document.createElement("div");
+  section.id = sectionId;
+  section.style.marginBottom = "60px";
+
+  section.innerHTML = `
+    <h2 style="color:#163269; margin-bottom:30px; text-align:center; font-size:28px; position:relative; display:inline-block; width:100%;">
+      ${title}
+      <div style="position:absolute; bottom:-10px; left:50%; transform:translateX(-50%); width:60px; height:3px; background:#3db166;"></div>
+    </h2>
+    <div class="notifications-grid" id="${gridId}">
+      <div style="grid-column:1/-1; text-align:center; color:#999; padding:40px;">Loading...</div>
+    </div>
+    <div class="pagination" id="${paginationId}"></div>
+  `;
+
+  sectionsContainer.appendChild(section);
+
+  // For API pagination, we need to filter the items by type on the client side
+  // since the API returns all types mixed together
+  const filteredItems = typeItems;
+  createSectionWithClientPagination(title, filteredItems);
+}
+
+// Function to create section with client-side pagination
+function createSectionWithClientPagination(title, activities) {
+  const safeId = title.replace(/\s+/g, "-").toLowerCase();
+  const sectionId = `section-${safeId}`;
+  const gridId = `grid-${safeId}`;
+  const paginationId = `pagination-${safeId}`;
+  const PAGE_SIZE = 10; // Items per page for client-side pagination
+
+  const section = document.createElement("div");
+  section.id = sectionId;
+  section.style.marginBottom = "60px";
+
+  section.innerHTML = `
+    <h2 style="color:#163269; margin-bottom:30px; text-align:center; font-size:28px; position:relative; display:inline-block; width:100%;">
+      ${title}
+      <div style="position:absolute; bottom:-10px; left:50%; transform:translateX(-50%); width:60px; height:3px; background:#3db166;"></div>
+    </h2>
+    <div class="notifications-grid" id="${gridId}"></div>
+    <div class="pagination" id="${paginationId}"></div>
+  `;
+
+  sectionsContainer.appendChild(section);
+
+  let currentPage = 1;
+  
+  function renderClientPaginated(page) {
+    const totalPages = Math.ceil(activities.length / PAGE_SIZE);
+    const start = (page - 1) * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+    const pageItems = activities.slice(start, end);
+
+    renderCards(gridId, pageItems);
+    renderClientPagination(paginationId, totalPages, page, (newPage) => {
+      currentPage = newPage;
+      renderClientPaginated(newPage);
+    });
+  }
+
+  renderClientPaginated(currentPage);
+}
+
+// Function to render client-side pagination
+function renderClientPagination(containerId, totalPages, currentPage, onPageChange) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = "";
+
+  if (totalPages <= 1) return;
+
+  // Previous button
+  if (currentPage > 1) {
+    const prevBtn = document.createElement("button");
+    prevBtn.innerHTML = "⬅";
+    prevBtn.onclick = () => onPageChange(currentPage - 1);
+    container.appendChild(prevBtn);
+  }
+
+  // Page numbers - show limited range around current page
+  const startPage = Math.max(1, currentPage - 2);
+  const endPage = Math.min(totalPages, currentPage + 2);
+
+  // First page and ellipsis
+  if (startPage > 1) {
+    const firstBtn = document.createElement("button");
+    firstBtn.textContent = "1";
+    firstBtn.onclick = () => onPageChange(1);
+    container.appendChild(firstBtn);
+
+    if (startPage > 2) {
+      const ellipsis = document.createElement("span");
+      ellipsis.textContent = "...";
+      ellipsis.style.padding = "8px 12px";
+      container.appendChild(ellipsis);
+    }
+  }
+
+  // Page numbers
+  for (let i = startPage; i <= endPage; i++) {
+    const pageBtn = document.createElement("button");
+    pageBtn.textContent = i;
+    pageBtn.className = i === currentPage ? "active" : "";
+    pageBtn.onclick = () => onPageChange(i);
+    container.appendChild(pageBtn);
+  }
+
+  // Last page and ellipsis
+  if (endPage < totalPages) {
+    if (endPage < totalPages - 1) {
+      const ellipsis = document.createElement("span");
+      ellipsis.textContent = "...";
+      ellipsis.style.padding = "8px 12px";
+      container.appendChild(ellipsis);
+    }
+
+    const lastBtn = document.createElement("button");
+    lastBtn.textContent = totalPages;
+    lastBtn.onclick = () => onPageChange(totalPages);
+    container.appendChild(lastBtn);
+  }
+
+  // Next button
+  if (currentPage < totalPages) {
+    const nextBtn = document.createElement("button");
+    nextBtn.innerHTML = "➡";
+    nextBtn.onclick = () => onPageChange(currentPage + 1);
+    container.appendChild(nextBtn);
+  }
+}
+
+// Function to render cards
+function renderCards(gridId, activities) {
+  const grid = document.getElementById(gridId);
+  grid.innerHTML = "";
+
+  if (!activities.length) {
+    grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; color:#999; padding:40px;">No notifications available</div>`;
+    return;
+  }
+
+  activities.forEach(act => {
+    const card = document.createElement("div");
+    card.style.border = "1px solid #e0e0e0";
+    card.style.borderRadius = "8px";
+    card.style.overflow = "hidden";
+    card.style.cursor = "pointer";
+    card.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+    card.style.background = "#fff";
+    card.style.transition = "all 0.3s ease";
+    
+    // Hover effect
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "translateY(-5px)";
+      card.style.boxShadow = "0 6px 20px rgba(0,0,0,0.15)";
+    });
+    
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "translateY(0)";
+      card.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+    });
+
+    let preview = `<div style="height:200px; background:#f5f5f5;
+                     display:flex; align-items:center; justify-content:center; color:#666;">
+                     No Preview
+                   </div>`;
+
+    if (act.attachments && act.attachments.length > 0) {
+      const file = act.attachments[0];
+      if (file.picture) {
+        preview = `<img src="${file.picture}" 
+                      style="width:100%; height:200px; object-fit:cover;"
+                      onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\\'height:200px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; color:#666;\\'>No Preview</div>'">`;
+      } else if (file.video) {
+        preview = `<div style="height:200px; background:#f5f5f5; display:flex; align-items:center; justify-content:center; color:#666; position:relative;">
+                    <video src="${file.video}" style="width:100%; height:100%; object-fit:cover;" muted></video>
+                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.7); color:white; padding:10px 20px; border-radius:20px;">▶ Play Video</div>
+                   </div>`;
+      } else if (file.document) {
+        preview = `<div style="height:200px; background:#eef6ff; display:flex; align-items:center; justify-content:center; color:#163269; font-weight:bold; font-size:18px;">
+                    📄 Document
+                   </div>`;
+      }
+    }
+
+    const truncatedDescription = act.description ? act.description.slice(0, 100) + '...' : 'No description available';
+
+    card.innerHTML = `
+      ${preview}
+      <div style="padding:15px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; color:#163269; line-height:1.3;">
+          ${act.title || 'Untitled'}
+        </h3>
+        <p style="font-size:14px; color:#555; line-height:1.4; margin-bottom:10px;">
+          ${truncatedDescription}
+        </p>
+      </div>
+    `;
+
+    card.addEventListener("click", () => showDetails(act));
+    grid.appendChild(card);
+  });
+}
+
+// Modal show function
+function showDetails(act) {
+  let attachmentsHtml = "";
+  document.querySelector("header.kingster-header-wrap").style.visibility = "hidden";
+  
+  if (act.attachments && act.attachments.length > 0) {
+    attachmentsHtml = act.attachments.map(file => {
+      let block = "";
+
+      if (file.picture) {
+        block += `
+          <div style="text-align:center; margin-bottom:20px;">
+            <img src="${file.picture}" 
+                 style="max-width:100%; max-height:500px; object-fit:contain; border-radius:6px; display:block; margin:0 auto;"
+                 onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\\'padding:40px; background:#f5f5f5; border-radius:6px; text-align:center; color:#666;\\'>Image not available</div>'">
+          </div>`;
+      }
+      if (file.video) {
+        block += `
+          <div style="text-align:center; margin-bottom:20px;">
+            <video src="${file.video}" 
+                   style="max-width:100%; max-height:400px; border-radius:6px;"
+                   controls>
+            </video>
+          </div>`;
+      }
+      if (file.document) {
+        block += `
+          <div style="text-align:center; margin-bottom:20px;">
+            <a href="${file.document}" target="_blank" 
+               style="display:inline-block; padding:12px 24px; background:#3db166; color:white; text-decoration:none; border-radius:6px; font-weight:bold; margin:10px 0;">
+               📄 Download Document
+            </a>
+          </div>`;
+      }
+
+      return block;
+    }).join("");
+  }
+
+  modalContent.innerHTML = `
+    <h2 style="color:#163269; margin-bottom:20px; font-size:28px; line-height:1.3; border-bottom:2px solid #3db166; padding-bottom:15px;">
+      ${act.title || 'Untitled'}
+    </h2>
+    ${attachmentsHtml}
+    <div style="margin-bottom:20px;">
+      <h3 style="color:#333; margin-bottom:15px; font-size:18px;">Description</h3>
+      <p style="font-size:16px; line-height:1.7; color:#444; text-align:justify;">
+        ${act.description || 'No description available.'}
+      </p>
+    </div>
+  `;
+  modal.style.display = "flex";
+  modal.style.alignItems = "center";
+  modal.style.justifyContent = "center";
+  modal.style.padding = "20px";
+  document.body.style.overflow = "hidden";
+}
+
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+  document.body.style.overflow = "auto";
+  document.querySelector("header.kingster-header-wrap").style.visibility = "visible";
+};
+
+window.onclick = e => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+    document.querySelector("header.kingster-header-wrap").style.visibility = "visible";
+  }
+};
+</script>
+
+
+
+    <script
+      type="text/javascript"
+      src="plugins/goodlayers-core/include/js/page-builder.js"
+    ></script>
+    <script type="text/javascript" src="js/jquery/ui/effect.min.js"></script>
+    <script type="text/javascript">
+      var kingster_script_core = {
+        home_url: "index.html",
+      };
+    </script>
+    <script type="text/javascript" src="js/plugins.min.js"></script>
+  </body>
+
+  <!-- Mirrored from max-themes.net/demos/kingster/kingster/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Mar 2022 06:34:04 GMT -->
 </html>

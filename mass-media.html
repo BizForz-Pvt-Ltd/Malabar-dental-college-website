@@ -49,7 +49,7 @@
       type="text/css"
       media="all"
     />
-    <style>
+     <style>
       .gdlr-core-course-item-link {
         display: flex;
         align-items: center;
@@ -83,6 +83,7 @@
           transform: rotate(360deg);
         }
       }
+      /* Increase left & right spacing for the cards section */
       .gdlr-core-course-item-subtitle {
         font-size: 14px;
         color: #888;
@@ -122,22 +123,53 @@
         margin-bottom: 0px !important;
       }
 
+      /* Updated styles for centered cards with 4 per row */
       #announcement-sections {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+        grid-template-columns: repeat(4, 1fr);
         gap: 30px;
-        padding: 20px;
+        padding: 40px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
       }
 
       #announcement-sections > div {
         background: #fff;
         transition: transform 0.2s, box-shadow 0.2s;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       }
 
       #announcement-sections > div:hover {
         transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
       }
+
+      /* Responsive adjustments */
+      @media (max-width: 1200px) {
+        #announcement-sections {
+          grid-template-columns: repeat(3, 1fr);
+          padding: 40px 20px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        #announcement-sections {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 40px 20px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        #announcement-sections {
+          grid-template-columns: 1fr;
+          padding: 40px 20px;
+        }
+      }
+
       @keyframes marquee-up {
         0% {
           transform: translateY(0);
@@ -620,7 +652,12 @@
                     </li>
                     <li class="menu-item">
                       <a href="news-page.html"
-                        >News, Recent Events & Achievements</a
+                        >News & Achievements</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="events.html"
+                        >Recent Events</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1152,7 +1189,12 @@
                     </li>
                     <li class="menu-item">
                       <a href="news-page.html"
-                        >News, Recent Events & Achievements</a
+                        >News & Achievements</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="events.html"
+                        >Recent Events</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1616,6 +1658,7 @@
   const paginationContainer = document.createElement("div"); 
   paginationContainer.style.textAlign = "center";
   paginationContainer.style.marginTop = "20px";
+  paginationContainer.style.padding = "20px 0";
   container.after(paginationContainer);
 
   let nextUrl = null;
@@ -1652,7 +1695,7 @@
     container.innerHTML = ""; 
 
     if (!activities.length) {
-      container.innerHTML = `<div style="text-align:center; color:#999; padding:40px;">No media coverage available</div>`;
+      container.innerHTML = `<div style="grid-column: 1 / -1; text-align:center; color:#999; padding:40px;">No media coverage available</div>`;
       return;
     }
 
@@ -1663,14 +1706,13 @@
       card.style.overflow = "hidden";
       card.style.cursor = "pointer";
       card.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
-      card.style.marginBottom = "15px";
       card.style.background = "#fff";
       card.style.transition = "all 0.3s ease";
       
       // Hover effect
       card.addEventListener("mouseenter", () => {
-        card.style.transform = "translateY(-2px)";
-        card.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+        card.style.transform = "translateY(-5px)";
+        card.style.boxShadow = "0 6px 20px rgba(0,0,0,0.15)";
       });
       
       card.addEventListener("mouseleave", () => {
