@@ -51,11 +51,11 @@
       type="text/css"
       media="all"
     />
-    <style>
+<style>
       .grid-container {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 0px;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 15px;
       }
 
       .gdlr-core-blog-item {
@@ -63,15 +63,40 @@
         justify-content: center;
       }
 
-      .image_urls {
-        max-height: 450px;
-        object-fit: cover;
+      /* IMPROVED: Dynamic image container for all image types */
+      .image-container {
+        width: 100%;
+        aspect-ratio: 4/3; /* Changed from 16/9 to 4/3 for better portrait support */
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f8f9fa;
+        position: relative;
       }
 
-      @media (max-width: 768px) {
-        .image_urls {
-          max-height: 450px;
-          max-width: 450px !important;
+      .image_urls {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center; /* Ensure focus is on center of image */
+        transition: transform 0.3s ease;
+      }
+
+      /* Special handling for portrait/long images */
+      .image-container.portrait .image_urls {
+        object-fit: contain; /* Show full image for portraits */
+        background: #f8f9fa; /* Add background for contained images */
+      }
+
+      .gdlr-core-item-list:hover .image_urls {
+        transform: scale(1.05);
+      }
+
+      /* Fallback for older browsers */
+      @supports not (aspect-ratio: 4/3) {
+        .image-container {
+          height: 200px;
         }
       }
 
@@ -125,9 +150,11 @@
         position: relative;
         max-height: 20px;
       }
+      
       ul.notification-list {
         margin-bottom: 0px !important;
       }
+      
       @keyframes marquee-up {
         0% {
           transform: translateY(0);
@@ -137,214 +164,295 @@
         }
       }
 
-#newsContainer {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px !important;
-  max-width: 1200px;
-  margin: 15px auto !important;
-  padding: 0 10px !important;
-  box-sizing: border-box;
-  width: 100%;
-}
+      /* Updated for 20 cards */
+      #newsContainer {
+        display: grid !important;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px !important;
+        max-width: 1400px;
+        margin: 20px auto !important;
+        padding: 0 15px !important;
+        box-sizing: border-box;
+        width: 100%;
+      }
 
-/* ===== CARD CONTAINER ===== */
-.gdlr-core-item-list {
-  background: #fff;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s ease;
-  height: 100%;
-  margin-bottom: 0 !important;
-  border: 1px solid #f0f0f0;
-  width: 100% !important; /* Force full width */
-}
+      /* ===== CARD CONTAINER ===== */
+      .gdlr-core-item-list {
+        background: #fff;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+        height: 100%;
+        margin-bottom: 0 !important;
+        border: 1px solid #f0f0f0;
+        width: 100% !important;
+      }
 
-/* ===== IMAGE CONTAINER - FIX THIS ===== */
-.gdlr-core-blog-thumbnail {
-  width: 100% !important;
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+      .gdlr-core-item-list:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transform: translateY(-2px);
+      }
 
-.gdlr-core-blog-thumbnail a {
-  display: block !important;
-  width: 100% !important;
-}
+      /* ===== IMAGE CONTAINER ===== */
+      .gdlr-core-blog-thumbnail {
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
 
-/* ===== IMAGE STYLING - FIXED ===== */
-.image_urls {
-  width: 100% !important;
-  height: 180px !important;
-  object-fit: cover !important;
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-}
+      .gdlr-core-blog-thumbnail a {
+        display: block !important;
+        width: 100% !important;
+        text-decoration: none !important;
+      }
 
-/* ===== CONTENT ===== */
-.gdlr-core-blog-modern-content {
-  padding: 12px 10px !important;
-  text-align: center;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 80px;
-  width: 100% !important;
-}
+      /* Remove all spacing and ensure full width */
+      .gdlr-core-item-list,
+      .gdlr-core-item-mgb,
+      .gdlr-core-blog-modern,
+      .gdlr-core-blog-modern-inner,
+      .gdlr-core-blog-thumbnail,
+      .gdlr-core-blog-modern-content {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: 100% !important;
+      }
 
-.gdlr-core-blog-title {
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+      /* Ensure the parent containers don't limit width */
+      .gdlr-core-pbf-element,
+      .gdlr-core-pbf-section-container,
+      .gdlr-core-pbf-section {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
 
-.gdlr-core-blog-title a {
-  font-size: 15px !important;
-  font-weight: 600;
-  color: #182847;
-  text-decoration: none;
-  line-height: 1.2 !important;
-  margin: 0 !important;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  width: 100% !important;
-}
+      /* Fix the grid item alignment */
+      .gdlr-core-column-30 {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
 
-.gdlr-core-blog-info-wrapper {
-  margin: 5px 0 0 0 !important;
-  font-size: 12px !important;
-  color: #666;
-  line-height: 1.2;
-  width: 100% !important;
-}
+      /* Make sure the blog modern inner fills the space */
+      .gdlr-core-blog-modern-inner {
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
 
-/* Remove all spacing and ensure full width */
-.gdlr-core-item-list,
-.gdlr-core-item-mgb,
-.gdlr-core-blog-modern,
-.gdlr-core-blog-modern-inner,
-.gdlr-core-blog-thumbnail,
-.gdlr-core-blog-modern-content {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  width: 100% !important;
-}
+      /* ===== CONTENT ===== */
+      .gdlr-core-blog-modern-content {
+        padding: 12px 10px !important; /* Increased padding for better spacing */
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 80px; /* Increased min-height */
+        width: 100% !important;
+      }
 
-/* Ensure the parent containers don't limit width */
-.gdlr-core-pbf-element,
-.gdlr-core-pbf-section-container,
-.gdlr-core-pbf-section {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+      .gdlr-core-blog-title {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
 
-/* Fix the grid item alignment */
-.gdlr-core-column-30 {
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+      .gdlr-core-blog-title a {
+        font-size: 14px !important;
+        font-weight: 600;
+        color: #182847;
+        text-decoration: none;
+        line-height: 1.3 !important; /* Improved line height */
+        margin: 0 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Allow 3 lines for better readability */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        width: 100% !important;
+      }
 
-/* Make sure the blog modern inner fills the space */
-.gdlr-core-blog-modern-inner {
-  width: 100% !important;
-  height: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
+      .gdlr-core-blog-info-wrapper {
+        margin: 6px 0 0 0 !important; /* Increased margin */
+        font-size: 12px !important; /* Slightly larger for readability */
+        color: #666;
+        line-height: 1.3;
+        width: 100% !important;
+      }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  #newsContainer {
-    gap: 10px !important;
-  }
-  .image_urls {
-    height: 160px !important;
-  }
-}
+      /* ===== RESPONSIVE DESIGN ===== */
+      
+      /* Large Desktop */
+      @media (min-width: 1400px) {
+        #newsContainer {
+          grid-template-columns: repeat(5, 1fr);
+          gap: 18px !important;
+        }
+      }
 
-@media (max-width: 768px) {
-  #newsContainer {
-    grid-template-columns: 1fr;
-    gap: 8px !important;
-    margin: 10px auto !important;
-  }
-  .image_urls {
-    height: 140px !important;
-  }
-  .gdlr-core-blog-modern-content {
-    padding: 10px 8px !important;
-    min-height: 70px;
-  }
-}
+      /* Standard Desktop */
+      @media (max-width: 1399px) {
+        #newsContainer {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 15px !important;
+        }
+        
+        .gdlr-core-blog-title a {
+          font-size: 14px !important;
+          -webkit-line-clamp: 3;
+        }
+      }
 
-/* Force the grid to use full available space */
-@media (min-width: 769px) {
-  #newsContainer {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-}
+      /* Tablet */
+      @media (max-width: 1024px) {
+        #newsContainer {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 12px !important;
+          padding: 0 12px !important;
+        }
+        
+        .gdlr-core-blog-title a {
+          font-size: 13px !important;
+          -webkit-line-clamp: 3;
+        }
+        
+        .gdlr-core-blog-modern-content {
+          padding: 10px 8px !important;
+          min-height: 75px;
+        }
+        
+        .image-container {
+          aspect-ratio: 4/3;
+        }
+      }
 
-/* Add this to debug - you can remove later */
-.gdlr-core-item-list {
-  background: rgba(59, 177, 102, 0.05) !important; /* Light green for visibility */
-}
+      /* Small Tablet */
+      @media (max-width: 768px) {
+        #newsContainer {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px !important;
+          margin: 15px auto !important;
+          padding: 0 10px !important;
+        }
+        
+        .gdlr-core-blog-title a {
+          font-size: 14px !important;
+          -webkit-line-clamp: 3;
+        }
+        
+        .gdlr-core-blog-modern-content {
+          padding: 12px 10px !important;
+          min-height: 80px;
+        }
+        
+        .gdlr-core-blog-info-wrapper {
+          font-size: 12px !important;
+        }
+        
+        .image-container {
+          aspect-ratio: 4/3;
+        }
+      }
 
-.gdlr-core-blog-thumbnail {
-  background: rgba(24, 40, 71, 0.05) !important; /* Light blue for visibility */
-}
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin: 25px 0 15px 0;
-  flex-wrap: wrap;
-}
+      /* Mobile */
+      @media (max-width: 480px) {
+        #newsContainer {
+          grid-template-columns: 1fr;
+          gap: 12px !important;
+          margin: 15px auto !important;
+          padding: 0 10px !important;
+        }
+        
+        .gdlr-core-blog-title a {
+          font-size: 15px !important;
+          -webkit-line-clamp: 3;
+        }
+        
+        .gdlr-core-blog-modern-content {
+          padding: 14px 12px !important;
+          min-height: 85px;
+        }
+        
+        .gdlr-core-blog-info-wrapper {
+          font-size: 13px !important;
+        }
+        
+        .image-container {
+          aspect-ratio: 4/3;
+        }
+      }
 
-.pagination button {
-  margin: 0 2px;
-  padding: 6px 10px;
-  border: 1px solid #ddd;
-  background-color: #fff;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 13px;
-  min-width: 35px;
-}
+      /* Pagination */
+      .pagination {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0 20px 0;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
 
-.pagination button.active {
-  background-color: #182847;
-  color: white;
-  border-color: #182847;
-}
+      .pagination button {
+        margin: 0;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 14px;
+        min-width: 40px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
 
-.pagination button:hover:not(.active) {
-  background-color: #f0f0f0;
-}
+      .pagination button.active {
+        background-color: #182847;
+        color: white;
+        border-color: #182847;
+        transform: scale(1.05);
+      }
 
-.pagination button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
+      .pagination button:hover:not(.active):not(:disabled) {
+        background-color: #f8f9fa;
+        border-color: #3db166;
+        color: #3db166;
+      }
 
-.pagination span {
-  padding: 6px 4px;
-  color: #666;
-  font-size: 13px;
-}
+      .pagination button:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        transform: none;
+      }
+
+      .pagination span {
+        padding: 8px 6px;
+        color: #666;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Smart image detection for different aspect ratios */
+      @media (max-width: 1024px) {
+        .image-container {
+          aspect-ratio: 3/2; /* Slightly wider on tablets */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .image-container {
+          aspect-ratio: 4/3; /* Back to 4/3 on mobile */
+        }
+      }
     </style>
   </head>
   <a
@@ -1607,10 +1715,11 @@
       type="text/javascript"
       src="plugins/goodlayers-core/plugins/combine/script.js"
     ></script>
+
     <script>
       let currentPage = 1;
       let totalPages = 1;
-      const pageSize = 10;
+      const pageSize = 20;
 
       function createNewsItem(newsData, index) {
   const newsItemDiv = document.createElement("div");
@@ -1651,7 +1760,9 @@
     <div class="gdlr-core-blog-modern-inner">
       <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
         <a class="news_subject" href='news-single-page.html?id=${newsId}'>
-          <img class="image_urls" src="${img}" alt="${title}" loading="lazy">
+          <div class="image-container">
+            <img class="image_urls" src="${img}" alt="${title}" loading="lazy">
+          </div>
         </a>            
       </div>
       <div class="gdlr-core-blog-modern-content gdlr-core-center-align">
@@ -1812,6 +1923,7 @@
         fetchAndRenderNewsItems();
       });
     </script>
+
     <script>
       const apiUrlNotification =
         "https://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";

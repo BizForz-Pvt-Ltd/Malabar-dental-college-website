@@ -1799,6 +1799,9 @@
     container.style.display = "grid";
     container.style.gridTemplateColumns = "repeat(auto-fill, minmax(300px, 1fr))";
     container.style.gap = "25px";
+    container.style.justifyContent = "center";
+    container.style.margin = "0 auto";
+    container.style.maxWidth = "1400px";
 
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
@@ -1892,6 +1895,10 @@
     pagination.innerHTML = "";
 
     const totalPages = Math.ceil(allFacilities.length / itemsPerPage);
+
+     if (totalPages <= 1) {
+        return;
+      }
 
     const wrapper = document.createElement("div");
     wrapper.style.display = "flex";

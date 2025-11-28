@@ -1901,7 +1901,9 @@
         pagination.innerHTML = "";
 
         const totalPages = Math.ceil(allFacilities.length / itemsPerPage);
-
+          if (totalPages <= 1) {
+            return;
+          }
         const wrapper = document.createElement("div");
         wrapper.style.display = "flex";
         wrapper.style.justifyContent = "center";

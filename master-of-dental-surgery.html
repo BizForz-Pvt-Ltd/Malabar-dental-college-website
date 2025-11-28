@@ -1682,76 +1682,150 @@
 
       fetchAndUpdateNotifications();
     </script>
-    <script>
-       fetch("https://conext.in/website_manager/api/mdc/latest_rankholders/") 
-        .then(res => res.json())
-        .then(data => {
-          console.log("Rankholders data:", data);
+<script>
+  fetch("https://conext.in/website_manager/api/mdc/latest_rankholders/") 
+    .then(res => res.json())
+    .then(data => {
+      console.log("Rankholders data:", data);
 
-          const achievers = data.data || [];
+      const achievers = data.data || [];
 
-          const rankList = document.getElementById('rank-list');
-          rankList.innerHTML = ""; 
+      const rankList = document.getElementById('rank-list');
+      rankList.innerHTML = ""; 
 
-          achievers
-          .filter(person => person.course_name === "Master of Dental Surgery")
-          .forEach(person => {
-          const li = document.createElement("li");
-            li.className = "gdlr-core-skin-divider";
-            li.style.marginBottom = "20px";
-            li.style.display = "flex";
-            li.style.alignItems = "flex-start";
-            li.style.gap = "15px";
+      achievers
+      .filter(person => person.course_name === "Master of Dental Surgery")
+      .forEach(person => {
+        const li = document.createElement("li");
+        li.className = "gdlr-core-skin-divider";
+        li.style.marginBottom = "20px";
+        li.style.display = "flex";
+        li.style.alignItems = "center"; // Center align items vertically
+        li.style.gap = "15px";
+        li.style.padding = "15px";
+        li.style.backgroundColor = "#f8f9fa";
+        li.style.borderRadius = "8px";
+        li.style.minHeight = "100px";
 
-            let imgHTML = "";
-            if (person.student_image) {
-              imgHTML = `
-                <div style="flex:0 0 80px;">
-                  <img src="${person.student_image}" alt="${person.name}" 
-                      style="width:80px; height:80px; object-fit:cover; border-radius:50%; box-shadow:0 2px 4px rgba(0,0,0,0.2);">
-                </div>
-              `;
-            }
-
-            const testimonialHTML = person.testimonial 
-              ? `<p style="font-size:13px; margin:8px 0; font-style:italic; color:#555;">"${person.testimonial}"</p>`
-              : "";
-
-            const remarkHTML = person.remarks 
-              ? `<p style="font-size:13px; margin:5px 0; color:#333;"><strong>Remark:</strong> ${person.remarks}</p>`
-              : "";
-
-            li.innerHTML = `
-              ${imgHTML}
-              <div>
-                <span style="font-size: 14px; display:block;">
-                  <strong>${person.name}</strong> (${person.course}) – ${formatRank(person.rank_no)} (${person.year})
-                </span>
-                ${testimonialHTML}
-                ${remarkHTML}
+        let imgHTML = "";
+        if (person.student_image) {
+          imgHTML = `
+            <div style="flex: 0 0 80px; display: flex; align-items: center; justify-content: center;">
+              <img src="${person.student_image}" alt="${person.name}" 
+                  style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; 
+                         border: 3px solid #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </div>
+          `;
+        } else {
+          // Fallback if no image
+          imgHTML = `
+            <div style="flex: 0 0 80px; display: flex; align-items: center; justify-content: center;">
+              <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #0F77BC, #3B9AE3); 
+                         display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;
+                         border: 3px solid #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                ${person.name ? person.name.charAt(0).toUpperCase() : '?'}
               </div>
-            `;
-            rankList.appendChild(li);
-          });
-        })
-        .catch(err => {
-          console.error("Error fetching rankholders:", err);
-        });
-
-        function formatRank(rank) {
-          if (rank == null) return "";
-
-          const num = String(rank).replace(/\D/g, "");  // force it into a string
-          let suffix = "th";
-
-          if (num === "1") suffix = "st";
-          else if (num === "2") suffix = "nd";
-          else if (num === "3") suffix = "rd";
-
-          return `${num}<sup style="font-size: 70%; vertical-align: super;">${suffix}</sup> rank`;
+            </div>
+          `;
         }
 
-    </script>
+        // Build content dynamically
+        const contentDiv = document.createElement("div");
+        contentDiv.style.flex = "1";
+        contentDiv.style.minWidth = "0";
+        
+        // Check if there are testimonials or remarks
+        const hasTestimonial = person.testimonial && person.testimonial.trim() !== "";
+        const hasRemark = person.remarks && person.remarks.trim() !== "";
+        const hasAdditionalContent = hasTestimonial || hasRemark;
+
+        if (!hasAdditionalContent) {
+          // Center the content vertically and horizontally when no testimonials/remarks
+          contentDiv.style.display = "flex";
+          contentDiv.style.alignItems = "center";
+          contentDiv.style.justifyContent = "flex-start";
+          contentDiv.style.height = "100%";
+        } else {
+          contentDiv.style.display = "flex";
+          contentDiv.style.flexDirection = "column";
+          contentDiv.style.justifyContent = "center";
+        }
+
+        // Main info
+        const mainInfo = document.createElement("div");
+        if (!hasAdditionalContent) {
+          // Center aligned when no additional content
+          mainInfo.style.textAlign = "left";
+        }
+        mainInfo.style.fontSize = "16px";
+        mainInfo.innerHTML = `
+          <strong style="color: #1e293b; display: block; margin-bottom: 4px;">${person.name}</strong> 
+          <span style="color: #64748b;">${person.course_name} – ${formatRank(person.rank_no)} (${person.year})</span>
+        `;
+        contentDiv.appendChild(mainInfo);
+
+        // Testimonial (only if exists)
+        if (hasTestimonial) {
+          const testimonial = document.createElement("p");
+          testimonial.style.fontSize = "14px";
+          testimonial.style.margin = "8px 0 4px 0";
+          testimonial.style.fontStyle = "italic";
+          testimonial.style.color = "#555";
+          testimonial.style.lineHeight = "1.4";
+          testimonial.textContent = `"${person.testimonial}"`;
+          contentDiv.appendChild(testimonial);
+        }
+
+        // Remark (only if exists)
+        if (hasRemark) {
+          const remark = document.createElement("p");
+          remark.style.fontSize = "14px";
+          remark.style.margin = "4px 0";
+          remark.style.color = "#333";
+          remark.style.lineHeight = "1.4";
+          remark.innerHTML = `<strong>Remark:</strong> ${person.remarks}`;
+          contentDiv.appendChild(remark);
+        }
+
+        // Add image and content to list item
+        li.innerHTML = imgHTML;
+        li.appendChild(contentDiv);
+        rankList.appendChild(li);
+      });
+
+      // If no data found
+      if (rankList.children.length === 0) {
+        rankList.innerHTML = `
+          <li style="text-align: center; padding: 40px; color: #666; font-style: italic;">
+            No rankholders found for Master of Dental Surgery.
+          </li>
+        `;
+      }
+    })
+    .catch(err => {
+      console.error("Error fetching rankholders:", err);
+      const rankList = document.getElementById('rank-list');
+      rankList.innerHTML = `
+        <li style="color: #666; text-align: center; padding: 40px; background: #f8f9fa; border-radius: 8px;">
+          Unable to load rankholders data. Please try again later.
+        </li>
+      `;
+    });
+
+  function formatRank(rank) {
+    if (rank == null) return "";
+
+    const num = String(rank).replace(/\D/g, "");  // force it into a string
+    let suffix = "th";
+
+    if (num === "1") suffix = "st";
+    else if (num === "2") suffix = "nd";
+    else if (num === "3") suffix = "rd";
+
+    return `${num}<sup style="font-size: 70%; vertical-align: super;">${suffix}</sup> rank`;
+  }
+</script>
+
     <script type='text/javascript' src='js/plugins.min.js'></script>
 </body>
 

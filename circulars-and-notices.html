@@ -1772,7 +1772,7 @@
 
 
 <script>
-const API_URL = "https://conext.in/website_manager/api/mdc/notifications_list/?unique_id=c2b3500cad6b4264";
+const API_URL = "https://conext.in/website_manager/api/mdc/notifications_list/?unique_id=a1bc30afaf1147af";
 const sectionsContainer = document.getElementById("notifications-sections");
 const modal = document.getElementById("activity-modal");
 const modalContent = document.getElementById("modal-content");
@@ -1786,6 +1786,7 @@ fetch(API_URL)
     
     // Group items by notification type
     const groupedByType = groupNotificationsByType(items);
+    
     
     // Create sections for each notification type
     Object.keys(groupedByType).forEach(typeName => {

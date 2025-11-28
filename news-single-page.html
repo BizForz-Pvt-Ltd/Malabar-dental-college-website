@@ -54,6 +54,7 @@
     />
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.min.css" />
     <style>
+      
       .loading-animation {
         border: 4px solid #f3f3f3;
         border-top: 4px solid #3db166;
@@ -98,7 +99,6 @@
       }
 
       /* Reset paddings that caused big gaps */
-      .kingster-item-pdlr,
       .gdlr-core-item-pdlr {
         padding-left: 0 !important;
         padding-right: 0 !important;
@@ -162,6 +162,18 @@
         max-width: 900px; /* keeps it centered nicely */
       }
 
+       .notification-list {
+        display: inline-block;
+        max-height: 20px;
+        overflow: hidden;
+        position: relative;
+        max-height: 20px;
+      }
+      
+      ul.notification-list {
+        margin-bottom: 0px !important;
+      }
+      
       /* Headline styling */
       .news_subject {
         font-size: 26px;
@@ -285,7 +297,7 @@
   <body
     class="home page-template-default page page-id-2039 gdlr-core-body woocommerce-no-js tribe-no-js kingster-body kingster-body-front kingster-full kingster-with-sticky-navigation kingster-blockquote-style-1 gdlr-core-link-to-lightbox"
   >
-  <div class="kingster-mobile-header-wrap">
+   <div class="kingster-mobile-header-wrap">
     <div
       class="kingster-mobile-header kingster-header-background kingster-style-slide kingster-sticky-mobile-navigation"
       id="kingster-mobile-header"
@@ -303,8 +315,7 @@
           <div class="kingster-mobile-menu-right">
             <div
               class="kingster-main-menu-search"
-              id="kingster-mobile-top-search"
-            >
+              id="kingster-mobile-top-search">
               <i class="fa fa-search"></i>
             </div>
             <div class="kingster-top-search-wrap">
@@ -342,9 +353,6 @@
               data-slide="right"
             >
               <ul id="menu-main-navigation" class="m-menu">
-                <!-- <li class="menu-item menu-item-home current-menu-item">
-                <a href="index.html">Home</a>
-              </li> -->
                 <li class="menu-item menu-item-has-children">
                   <a>About HEI</a>
                   <ul class="sub-menu">
@@ -357,14 +365,13 @@
                       >
                     </li>
                     <li class="menu-item">
-                      <a href="institutional-development-plan.html"
-                        >Institutional Development Plan</a
-                      >
+                      <a href="institutional-development-plan.html">
+                        Institutional Development Plan</a>
                     </li>
                     <li class="menu-item menu-item-has-children">
-                      <a class="sf-with-ul-pre"
-                        >Accreditation/Ranking Status</a
-                      >
+                      <a class="sf-with-ul-pre">
+                        Accreditation/Ranking Status
+                      </a>
                       <ul class="sub-menu">
                           <li class="menu-item">
                             <a href="naac.html">NAAC</a>
@@ -381,9 +388,9 @@
                         </ul>
                     </li>
                     <li class="menu-item">
-                      <a href="recognition-approval.html"
-                        >Recognition/Approval</a
-                      >
+                      <a href="recognition-approval.html">
+                        Recognition/Approval
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
@@ -398,8 +405,8 @@
                   <ul class="sub-menu">
                     <li class="menu-item">
                       <a href="/about-us.html#board-of-directors"
-                        >Board of Management</a
-                      >
+                        >Board of Management
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="/about-us.html#principal-message">Principal</a>
@@ -407,25 +414,15 @@
                     <li class="menu-item">
                       <a href="finance-officer.html">Finance Officer</a>
                     </li>
-                  <!-- <li class="menu-item">
-                      <a href="controller-of-examination.html"
-                        >Controller of Examination</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="chief-vigilance-officer.html"
-                        >Chief Vigilance Officer</a
-                      >
-                    </li> -->
                     <li class="menu-item">
                       <a href="internal-complaint-committee.html"
-                        >Internal Complaint Committee</a
-                      >
+                        >Internal Complaint Committee
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="academic-leadership.html"
-                        >Academic Leadership</a
-                      >
+                      <a href="academic-leadership.html">
+                        Academic Leadership
+                      </a>
                     </li>
                   </ul>
                 </li>
@@ -439,14 +436,14 @@
                           <a>UG & PG</a>
                           <ul>
                             <li class="menu-item">
-                              <a href="bachelor-of-dental-surgery.html"
-                                >BDS(Bachelor Dental Surgery)</a
-                              >
+                              <a href="bachelor-of-dental-surgery.html">
+                                BDS(Bachelor Dental Surgery)
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="master-of-dental-surgery.html"
-                                >MDS(Master Dental Surgery)</a
-                              >
+                              <a href="master-of-dental-surgery.html">
+                                MDS(Master Dental Surgery)
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -454,19 +451,19 @@
                           <a>Diploma</a>
                           <ul>
                             <li class="menu-item">
-                              <a href="dora.html"
-                                >Dental Operating <br/> Room Assistant (DORA)</a
-                              >
+                              <a href="dora.html">
+                                Dental Operating <br/> Room Assistant (DORA)
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="dental-mechanic.html"
-                                >Dental Mechanic (DM)</a
-                              >
+                              <a href="dental-mechanic.html">
+                                Dental Mechanic (DM)
+                              </a>
                             </li>
                              <li class="menu-item">
-                              <a href="dental-hygienist.html"
-                                >Dental Hygienist (DH)</a
-                              >
+                              <a href="dental-hygienist.html">
+                                Dental Hygienist (DH)
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -475,16 +472,10 @@
                     <li class="menu-item">
                       <a
                         href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf"
-                        target="_blank"
-                        >Academic Calendar</a
-                      >
+                        target="_blank">
+                        Academic Calendar
+                      </a>
                     </li>
-                 <!-- <li class="menu-item">
-                      <a href="/assets/ACADEMICPROSPECTS.pdf" target="_blank"
-                        >Ordinances pertaining to
-                        <br />Academics/Examinations</a
-                      >
-                    </li> -->
                     <li class="menu-item menu-item-has-children">
                       <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
@@ -624,9 +615,6 @@
                         >Admission Process And Guidelines</a
                       >
                     </li>
-                    <!-- <li class="menu-item">
-                      <a href="fee-refund-policy.html">Fee Refund Policy</a>
-                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
@@ -687,29 +675,12 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
-                     <li class="menu-item" data-size="60">
-                          <a href="women-cell.html">Women Cell</a>
-                        </li>
+                    <li class="menu-item">
+                      <a href="women-cell.html">Women Cell</a>
+                    </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
-                       <!-- <li class="menu-item">
-                      <a href="equal-opportunity-cell.html"
-                        >Equal Opportunity Cell</a
-                      >
-                    </li> -->
-                   <!-- <li class="menu-item">
-                      <a
-                        href="socio-economically-disadvantaged-groups-cell.html"
-                        >Socio-Economically Disadvantaged Groups Cell
-                        (SEDG)</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="facilities-for-differently-abled.html"
-                        >Facilities for Differently-Abled</a
-                      >
-                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
@@ -720,12 +691,9 @@
                     </li>
                   </ul>
                 </li>
-                <li class="menu-item menu-item-has-children">
+                <li class="menu-item current-menu-item menu-item-has-children kingster-normal-menu">
                   <a>Information Corner</a>
                   <ul class="sub-menu">
-                    <!-- <li class="menu-item">
-                      <a href="rti.html">RTI</a>
-                    </li> -->
                     <li class="menu-item">
                       <a href="circulars-and-notices.html"
                         >Circulars and Notices</a
@@ -758,20 +726,6 @@
                     <li class="menu-item">
                       <a href="careers.html">Job Openings</a>
                     </li>
-                    <!-- <li class="menu-item">
-                      <a href="reservation-roaster.html"
-                        >Reservation Roaster</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="study-in-india.html">Study in India</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="admission.html"
-                        >Admission Procedure and Facilities Provided to
-                        International Students</a
-                      >
-                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item">
@@ -841,7 +795,7 @@
             <div class="kingster-main-menu" id="kingster-main-menu">
               <ul id="menu-main-navigation-1" class="sf-menu">
                 <li
-                  class="menu-item menu-item-home current-menu-item menu-item-has-children"
+                  class="menu-item menu-item-home menu-item-has-children"
                 >
                   <a href="index.html">Home</a>
                 </li>
@@ -931,16 +885,6 @@
                     <li class="menu-item">
                       <a href="finance-officer.html">Finance Officer</a>
                     </li>
-                  <!-- <li class="menu-item">
-                      <a href="controller-of-examination.html"
-                        >Controller of Examination</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="chief-vigilance-officer.html"
-                        >Chief Vigilance Officer</a
-                      >
-                    </li> -->
                     <li class="menu-item">
                       <a href="internal-complaint-committee.html"
                         >Internal Complaint Committee</a
@@ -1006,12 +950,6 @@
                         </li>
                       </ul>
                     </li>
-                 <!-- <li class="menu-item">
-                      <a href="/assets/ACADEMICPROSPECTS.pdf" target="_blank"
-                        >Ordinances pertaining to
-                        <br />Academics/Examinations</a
-                      >
-                    </li> -->
                     <li class="menu-item menu-item-has-children">
                       <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
@@ -1153,9 +1091,6 @@
                         >Admission Process And Guidelines</a
                       >
                     </li>
-                    <!-- <li class="menu-item">
-                      <a href="fee-refund-policy.html">Fee Refund Policy</a>
-                    </li> -->
                   </ul>
                 </li>
                 <li
@@ -1220,29 +1155,12 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
-                     <li class="menu-item" data-size="60">
-                          <a href="women-cell.html">Women Cell</a>
-                        </li>
+                    <li class="menu-item">
+                      <a href="women-cell.html">Women Cell</a>
+                    </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
-                       <!-- <li class="menu-item">
-                      <a href="equal-opportunity-cell.html"
-                        >Equal Opportunity Cell</a
-                      >
-                    </li> -->
-                   <!-- <li class="menu-item">
-                      <a
-                        href="socio-economically-disadvantaged-groups-cell.html"
-                        >Socio-Economically Disadvantaged Groups Cell
-                        (SEDG)</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="facilities-for-differently-abled.html"
-                        >Facilities for Differently-Abled</a
-                      >
-                    </li> -->
                   </ul>
                 </li>
                 <li
@@ -1256,13 +1174,10 @@
                   </ul>
                 </li>
                 <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
+                  class="menu-item current-menu-item menu-item-has-children kingster-normal-menu"
                 >
                   <a class="sf-with-ul-pre">Information Corner</a>
                   <ul class="sub-menu">
-                    <!-- <li class="menu-item">
-                      <a href="rti.html">RTI</a>
-                    </li> -->
                     <li class="menu-item">
                       <a href="circulars-and-notices.html"
                         >Circulars and Notices</a
@@ -1295,20 +1210,6 @@
                     <li class="menu-item">
                       <a href="careers.html">Job Openings</a>
                     </li>
-                    <!-- <li class="menu-item">
-                      <a href="reservation-roaster.html"
-                        >Reservation Roaster</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="study-in-india.html">Study in India</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="admission.html"
-                        >Admission Procedure and Facilities Provided to
-                        International Students</a
-                      >
-                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item">
@@ -1318,10 +1219,7 @@
                     <a href="contact-us.html">Contact Us</a>
                   </li></li>
                       <div class="kingster-main-menu-right-wrap clearfix">
-                        <div
-                          class="kingster-main-menu-search"
-                          id="kingster-top-search"
-                        >
+                        <div class="kingster-main-menu-search" id="kingster-top-search">
                           <i class="icon_search"></i>
                           <span>Search</span>
                         </div>
@@ -1355,11 +1253,10 @@
                       </div>
                     </li>
                   </ul>
-
                   <div
-                class="kingster-navigation-slide-bar"
-                id="kingster-navigation-slide-bar"
-              ></div>
+                    class="kingster-navigation-slide-bar"
+                    id="kingster-navigation-slide-bar">
+                  </div>
             </div>
           </div>
         </div>
@@ -1711,7 +1608,21 @@
       type="text/javascript"
       src="plugins/goodlayers-core/plugins/combine/script.js"
     ></script>
-    <script type="text/javascript">
+   <div class="gdlr-core-port-info">
+    <span class="gdlr-core-port-info-key gdlr-core-skin-title">Location</span>
+    <b><span class="gdlr-core-port-info-value location"></span></b>
+</div>
+<div class="gdlr-core-port-info">
+    <span class="gdlr-core-port-info-key gdlr-core-skin-title">Date</span>
+    <b><span class="gdlr-core-port-info-value news_date"></span></b>
+</div>
+<div class="gdlr-core-port-info">
+    <span class="gdlr-core-port-info-key gdlr-core-skin-title">Added By</span>
+    <b><span class="gdlr-core-port-info-value staff_name"></span></b>
+    &nbsp;Via CONNECT
+</div>
+
+<script type="text/javascript">
       document.addEventListener("DOMContentLoaded", async function () {
           function getQueryParameter(name) {
               const urlSearchParams = new URLSearchParams(window.location.search);
@@ -1769,27 +1680,244 @@
                     images: [data.data.picture || data.data.news_banner],
                 };
 
-          document.querySelector(".news_subject").textContent = article.subject || "No title";
-          document.querySelector(".type_name").textContent = "News";
-          document.querySelector(".location").textContent = article.location || "Not available";
-          document.querySelector(".news_date").textContent = article.date || "Unknown date";
-          document.querySelector(".staff_name").textContent = article.staff || "Admin";
-          document.querySelector(".news_content").innerHTML = article.content || "No content";
+          // Populate the title section
+          document.querySelector('.type_name').textContent = "News";
+          document.querySelector('.news_subject').textContent = article.subject || "No title";
 
-          const firstImageContainer = document.querySelector(".first-image-container");
-          firstImageContainer.innerHTML = "";
+          // Populate the location, date, and added by sections
+          document.querySelector('.location').textContent = article.location || "Not available";
+          document.querySelector('.news_date').textContent = article.date || "Unknown date";
+          document.querySelector('.staff_name').textContent = article.staff || "Admin";
+
+          // Create the main layout container
+          const mainContainer = document.createElement('div');
+          mainContainer.className = 'news-main-container';
+          
+          // Create image container for left side
+          const imageContainer = document.createElement('div');
+          imageContainer.className = 'news-image-container';
+          
+          // Create content container for right side
+          const contentContainer = document.createElement('div');
+          contentContainer.className = 'news-content-container';
+
+          // Add image to image container
           if (article.images && article.images.length > 0) {
               const img = document.createElement("img");
               img.src = article.images[0];
               img.alt = article.subject;
-              img.style.width = "100%";
-              img.style.maxHeight = "400px";
-              img.style.objectFit = "cover";
-              firstImageContainer.appendChild(img);
+              img.className = 'news-main-image';
+              imageContainer.appendChild(img);
+          } else {
+              // Add placeholder if no image
+              const placeholder = document.createElement("div");
+              placeholder.className = 'news-image-placeholder';
+              placeholder.innerHTML = '📰';
+              imageContainer.appendChild(placeholder);
           }
-      });
-      </script>
 
+          const contentElement = document.createElement("div");
+          contentElement.className = "news_content";
+          contentElement.innerHTML = article.content || "No content";
+
+          // Assemble content container
+          contentContainer.appendChild(contentElement);
+
+          // Assemble main container
+          mainContainer.appendChild(imageContainer);
+          mainContainer.appendChild(contentContainer);
+
+          // Replace the existing content with new layout
+          const existingContainer = document.querySelector('.first-image-container').parentElement;
+          existingContainer.innerHTML = '';
+          existingContainer.appendChild(mainContainer);
+
+          // Add CSS for the new layout
+          const style = document.createElement('style');
+          style.textContent = `
+              .news-main-container {
+                  display: flex;
+                  gap: 30px;
+                  max-width: 1200px;
+                  margin: 0 auto;
+                  padding: 20px;
+                  align-items: flex-start;
+              }
+
+              .news-image-container {
+                  flex: 0 0 40%;
+                  max-width: 500px;
+              }
+
+              .news-content-container {
+                  flex: 1;
+                  min-width: 0;
+              }
+
+              .news-main-image {
+                  width: 100%;
+                  height: auto;
+                  max-height: 400px;
+                  object-fit: contain;
+                  object-position: top center;
+                  border-radius: 8px;
+                  background: #f8f9fa;
+                  display: block;
+              }
+
+              .news-image-placeholder {
+                  width: 100%;
+                  height: 300px;
+                  background: #f8f9fa;
+                  border-radius: 8px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 60px;
+                  color: #ccc;
+              }
+
+              .news_content {
+                  font-size: 16px;
+                  line-height: 1.7;
+                  color: #444;
+              }
+
+              .news_content p {
+                  margin-bottom: 15px;
+              }
+
+              .news_content img {
+                  max-width: 100%;
+                  height: auto;
+                  border-radius: 6px;
+                  margin: 10px 0;
+              }
+
+              /* Style for the title section */
+              .gdlr-core-title-item {
+                  margin-bottom: 20px;
+              }
+
+              .gdlr-core-title-item-title-wrap {
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  flex-wrap: wrap;
+              }
+
+              .news-type-badge {
+                  background-color: #3db166;
+                  color: white;
+                  padding: 4px 12px;
+                  border-radius: 4px;
+                  font-size: 12px;
+                  font-weight: bold;
+                  display: inline-block;
+                  text-transform: uppercase;
+                  letter-spacing: 0.5px;
+              }
+
+              .gdlr-core-title-item-title {
+                  color: #182847;
+                  margin: 0 !important;
+                  flex: 1;
+                  min-width: 0;
+              }
+
+              /* Style for the info section */
+              .gdlr-core-port-info {
+                  margin-bottom: 12px;
+                  display: flex;
+                  align-items: center;
+                  padding: 8px 0;
+              }
+
+              .gdlr-core-port-info:last-child {
+                  border-bottom: none;
+              }
+
+              .gdlr-core-port-info-key {
+                  min-width: 100px;
+                  font-weight: 600;
+                  color: #182847;
+                  font-size: 14px;
+              }
+
+              .gdlr-core-port-info-value {
+                  margin-left: 10px;
+                  color: #333;
+                  font-size: 14px;
+              }
+
+              /* Container for all sections */
+              .news-header-section {
+                  max-width: 1200px;
+                  margin: 0 auto;
+                  padding: 20px 20px 0 20px;
+              }
+
+              /* Responsive design */
+              @media (max-width: 768px) {
+                  .news-main-container {
+                      flex-direction: column;
+                      gap: 20px;
+                      padding: 15px;
+                  }
+
+                  .news-image-container {
+                      flex: none;
+                      max-width: 100%;
+                  }
+
+                  .news-main-image {
+                      max-height: 300px;
+                  }
+
+                  .gdlr-core-title-item-title-wrap {
+                      flex-direction: column;
+                      align-items: flex-start;
+                      gap: 10px;
+                  }
+
+                  .gdlr-core-port-info {
+                      flex-direction: column;
+                      align-items: flex-start;
+                      gap: 5px;
+                      padding: 10px 0;
+                  }
+
+                  .gdlr-core-port-info-key {
+                      min-width: auto;
+                  }
+
+                  .gdlr-core-port-info-value {
+                      margin-left: 0;
+                  }
+
+                  .news-header-section {
+                      padding: 15px 15px 0 15px;
+                  }
+              }
+
+              @media (max-width: 480px) {
+                  .news-main-container {
+                      padding: 10px;
+                      gap: 15px;
+                  }
+
+                  .news_content {
+                      font-size: 15px;
+                  }
+
+                  .news-header-section {
+                      padding: 10px 10px 0 10px;
+                  }
+              }
+          `;
+          document.head.appendChild(style);
+      });
+</script>
 
     </script>
     <script>

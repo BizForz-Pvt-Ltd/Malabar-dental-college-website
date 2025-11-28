@@ -347,6 +347,37 @@
       .counter-text-color {
         color: #fff !important;
       }
+      /* Read More button styling */
+.read-more-btn {
+  color: #3db166;
+  border: none;
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.read-more-btn:hover {
+  color: #2e8b57;
+  transform: translateY(-2px);
+  background: transparent;
+  text-decoration: none;
+}
+
+/* For better mobile experience */
+@media (max-width: 768px) {
+  .read-more-btn {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
 
       #tab-container {
       display: flex;
@@ -5778,20 +5809,46 @@
       const highlights = data.data || data;
 
       let imagesHTML = "";
-      let titlesHTML = '<div class="gdlr-core-tab-item-title-wrap clearfix gdlr-core-title-font">';
-      let contentsHTML = '<div class="gdlr-core-tab-item-content-wrap clearfix">';
+        let titlesHTML = '<div class="gdlr-core-tab-item-title-wrap clearfix gdlr-core-title-font" style="font-size: 14px;">';
+        let contentsHTML = '<div class="gdlr-core-tab-item-content-wrap clearfix">';
 
       highlights.forEach((item, index) => {
         const id = item.id || index;
         const imgUrl = item.image;
+        const contentArray = Array.isArray(item.content) ? item.content : [item.description || ""];
+        const allContent = contentArray.join(' ');
+        const wordCount = allContent.split(/\s+/).filter(word => word.length > 0).length;
+        const needsReadMore = wordCount > 75;
+        
+        // Split content for preview (first 70 words) and full content
+        const getPreviewContent = (contentArray) => {
+          if (!needsReadMore) return contentArray;
+          
+          const allText = contentArray.join(' ');
+          const words = allText.split(/\s+/);
+          const previewWords = words.slice(0, 75);
+          const remainingWords = words.slice(75);
+          
+          // Reconstruct paragraphs for preview
+          let previewText = previewWords.join(' ');
+          previewText += '...'; // Add ellipsis
+          return [previewText];
+        };
+
+        const getFullContent = (contentArray) => {
+          if (!needsReadMore) return contentArray;
+          return contentArray;
+        };
+
+        const previewContent = getPreviewContent(contentArray);
+        const fullContent = getFullContent(contentArray);
 
         imagesHTML += `
           <div class="gdlr-core-tab-item-image ${index === 0 ? "gdlr-core-active" : ""}" 
               data-tab-id="${id}">
-            <img src="${imgUrl}" alt="${item.title}" style="width:100%; height:315px; object-fit:cover;">
+            <img src="${imgUrl}" alt="${item.title}" style="width:100%; height:500px; object-fit:cover;">
           </div>
         `;
-
 
         titlesHTML += `
           <div class="gdlr-core-tab-item-title ${index === 0 ? "gdlr-core-active" : ""}" 
@@ -5803,17 +5860,29 @@
         contentsHTML += `
           <div class="gdlr-core-tab-item-content ${index === 0 ? "gdlr-core-active" : ""}" 
                data-tab-id="${id}">
-            <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top">
-              <div class="gdlr-core-title-item-title-wrap">
-                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title">
-                  ${item.tab_title}
-                  <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
-                </h3>
+            <div class="content-layout">
+              <div class="text-section">
+                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top">
+                  <div class="gdlr-core-title-item-title-wrap">
+                    <h4 class=" gdlr-core-skin-title">
+                      ${item.tab_title}
+                      <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                    </h4>
+                  </div>
+                </div>
+                <div class="content-preview">
+                  ${previewContent.map(p => `<p>${p}</p>`).join("")}
+                </div>
+                ${needsReadMore ? `
+                  <div class="content-full" style="display: none;">
+                    ${fullContent.map(p => `<p>${p}</p>`).join("")}
+                  </div>
+                  <button class="read-more-btn" data-content-id="${id}" style="margin-top: 8px;">
+                    Read More
+                  </button>
+                ` : ''}
               </div>
             </div>
-            ${Array.isArray(item.content) 
-              ? item.content.map(p => `<p>${p}</p>`).join("") 
-              : `<p>${item.description || ""}</p>`}
           </div>
         `;
       });
@@ -5824,12 +5893,13 @@
       imageContainer.innerHTML = imagesHTML;
       wrapper.innerHTML = titlesHTML + contentsHTML;
 
-      document.querySelectorAll(".gdlr-core-tab-item-title").forEach(title => {
-        title.addEventListener("click", () => {
-          const id = title.getAttribute("data-tab-id");
+      // Add click event to both titles and images
+      document.querySelectorAll(".gdlr-core-tab-item-title, .gdlr-core-tab-item-image").forEach(element => {
+        element.addEventListener("click", () => {
+          const id = element.getAttribute("data-tab-id");
 
           document.querySelectorAll(".gdlr-core-tab-item-title").forEach(t => t.classList.remove("gdlr-core-active"));
-          title.classList.add("gdlr-core-active");
+          document.querySelector(`.gdlr-core-tab-item-title[data-tab-id="${id}"]`).classList.add("gdlr-core-active");
 
           document.querySelectorAll(".gdlr-core-tab-item-image").forEach(img => img.classList.remove("gdlr-core-active"));
           document.querySelector(`.gdlr-core-tab-item-image[data-tab-id="${id}"]`).classList.add("gdlr-core-active");
@@ -5838,6 +5908,28 @@
           document.querySelector(`.gdlr-core-tab-item-content[data-tab-id="${id}"]`).classList.add("gdlr-core-active");
         });
       });
+
+// Add Read More functionality
+document.querySelectorAll('.read-more-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const contentId = this.getAttribute('data-content-id');
+    const contentElement = document.querySelector(`.gdlr-core-tab-item-content[data-tab-id="${contentId}"]`);
+    const previewElement = contentElement.querySelector('.content-preview');
+    const fullElement = contentElement.querySelector('.content-full');
+    
+    if (this.textContent === 'Read More') {
+      // Show full content
+      previewElement.style.display = 'none';
+      fullElement.style.display = 'block';
+      this.textContent = 'Read Less';
+    } else {
+      // Show preview content
+      previewElement.style.display = 'block';
+      fullElement.style.display = 'none';
+      this.textContent = 'Read More';
+    }
+  });
+});
     })
     .catch(err => console.error("Error loading highlights:", err));
 });

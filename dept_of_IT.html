@@ -1317,7 +1317,7 @@
                                                           <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr">
                                                               <div class="gdlr-core-title-item-title-wrap clearfix">
                                                                   <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 27px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;">Er. Mohammed Jaseem</h3>
-                                                              </div><span style="color: #3db166;font-size: 22px;" class=" gdlr-core-info-font"><b>IT Manager</b></span>
+                                                              </div><span style="color: #3db166;font-size: 22px;" class=" gdlr-core-info-font"><b>Director of Engineering</b></span>
                                                           </div>
                                                       </div>
                                                       <div class="gdlr-core-pbf-element">
@@ -1373,7 +1373,6 @@
                                   </div>
                                 </div>
                                       <div id="team-container" class="gdlr-core-pbf-wrapper"></div>
-
                                   </div> 
                               </div>
                             </div>
@@ -1557,9 +1556,8 @@
             "home_url": "index.html"
         };
     </script>
-    <div id="team-container"></div>
 
-  <script>
+<script>
   function renderMember(member) {
     const col = document.createElement("div");
     col.className = "gdlr-core-pbf-column gdlr-core-column-20";
@@ -1614,13 +1612,17 @@
 
     staff = [...staff, ...manualMembers];
 
-    staff = staff.filter(m => !m.designation.toLowerCase().includes("i t manager"));
-
+    staff = staff.filter(m => {
+      const designation = m.designation.toLowerCase();
+      return !designation.includes("director of engineering") && 
+             !designation.includes("Director of Engineering") &&
+             !designation.includes("it manager");
+    });
 
     // Custom order for staff
     const designationOrder = [
-      "front-end lead",
       "system admin",
+      "front-end lead",
       "graphic designer",
       "digital marketing executive",
       "full - stack developer",
@@ -1628,7 +1630,6 @@
       "jr. front-end developer",
     ];
 
-    // All members (no IT manager special case)
     const others = [...staff];
 
     others.sort((a, b) => {
@@ -1665,8 +1666,6 @@
       console.error("Error fetching staff:", err);
     });
 </script>
-
-  </script>
 
       <script>
         const element = document.getElementById('dep-title');

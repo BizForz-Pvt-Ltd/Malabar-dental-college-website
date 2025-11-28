@@ -1671,130 +1671,213 @@
 
       fetchAndUpdateNotifications();
     </script>
-    <script>
-      const leadersData = {
-        admissionHead: [
-          {
-            name: "Dr. Chithra Prasanna",
-            designation: "Head of Admission",
-            image: "https://connectv2s3.s3.ap-south-1.amazonaws.com/users/picture/53e6c93e-1b69-42bf-aa95-6a2281490a4d.jpeg"
-          }
-        ],
-        admissionAssociate: [
-          {
-            name: "JINI SURENDRAN",
-            designation: "Head Clerk",
-            image: "https://connectv2s3.s3.ap-south-1.amazonaws.com/users/picture/2d6785d7-728a-49d0-9332-95006b6cb6e4.jpeg"
-          }
-        ],
-        admissionAssistant: [
-          {
-            name: "DRISHYA.K.S",
-            designation: "Admission Assistant",
-            image: "https://connectv2s3.s3.ap-south-1.amazonaws.com/users/picture/bd39f8ad-00c7-4b5a-80b6-7ce55d7d0e8c.jpeg"
-          }
-        ]
-      };
-  function createCard(person, fixedWidth = false) {
+<script>
+  const leadersData = {
+    admissionHead: [
+      {
+        name: "Dr. Chithra Prasanna",
+        designation: "Head of Admission",
+        image: "https://connectv2s3.s3.ap-south-1.amazonaws.com/users/picture/53e6c93e-1b69-42bf-aa95-6a2281490a4d.jpeg"
+      }
+    ],
+    admissionAssociate: [
+      {
+        name: "JINI SURENDRAN",
+        designation: "Head Clerk",
+        image: "https://connectv2s3.s3.ap-south-1.amazonaws.com/users/picture/2d6785d7-728a-49d0-9332-95006b6cb6e4.jpeg"
+      }
+    ],
+    admissionAssistant: [
+      {
+        name: "DRISHYA.K.S",
+        designation: "Admission Assistant",
+        image: "https://connectv2s3.s3.ap-south-1.amazonaws.com/users/picture/bd39f8ad-00c7-4b5a-80b6-7ce55d7d0e8c.jpeg"
+      }
+    ]
+  };
+
+  function createCard(person, isHead = false) {
     const div = document.createElement("div");
-    div.style.border = "1px solid #ddd";
-    div.style.borderRadius = "8px";
-    div.style.overflow = "hidden";
-    div.style.boxShadow = "0 4px 10px rgba(0,0,0,0.1)";
     div.style.textAlign = "center";
-    div.style.width = fixedWidth ? "280px" : "220px";
+    div.style.width = isHead ? "280px" : "240px";
     div.style.display = "flex";
     div.style.flexDirection = "column";
     div.style.alignItems = "center";
-    div.style.padding = "12px";
-    div.style.height = "340px";
-    div.style.background = "#fff";
-
-    // Image wrapper
-    const imgWrapper = document.createElement("div");
-    imgWrapper.style.width = "100%";
-    imgWrapper.style.height = "260px";
-    imgWrapper.style.overflow = "hidden";
-    imgWrapper.style.display = "flex";
-    imgWrapper.style.alignItems = "center";
-    imgWrapper.style.justifyContent = "center";
+    div.style.padding = "0";
+    div.style.background = "transparent";
+    div.style.transition = "all 0.3s ease";
+    div.style.position = "relative";
+    
+    // Hover effect
+    div.addEventListener("mouseenter", () => {
+      div.style.transform = "translateY(-5px)";
+    });
+    
+    div.addEventListener("mouseleave", () => {
+      div.style.transform = "translateY(0)";
+    });
 
     const img = document.createElement("img");
     img.src = person.image;
     img.alt = person.name;
-    img.style.width = "100%";
-    img.style.height = "100%";
+    img.style.width = isHead ? "300px" : "250px";
+    img.style.height = isHead ? "300px" : "250px";
     img.style.objectFit = "cover";
-    imgWrapper.appendChild(img);
+    img.style.borderRadius = "2%";
+    img.style.transition = "all 0.3s ease";
+    img.style.boxShadow = "0 8px 25px rgba(0,0,0,0.15)";
+    
+    // Image hover effect
+    img.addEventListener("mouseenter", () => {
+      img.style.transform = "scale(1.05)";
+      img.style.boxShadow = "0 12px 30px rgba(0,0,0,0.2)";
+    });
+    
+    img.addEventListener("mouseleave", () => {
+      img.style.transform = "scale(1)";
+      img.style.boxShadow = "0 8px 25px rgba(0,0,0,0.15)";
+    });
 
-    // Info
+    // Info section
     const info = document.createElement("div");
-    info.style.marginTop = "10px";
+    info.style.marginTop = "20px";
+    info.style.padding = "0";
+    info.style.width = "100%";
 
     const h3 = document.createElement("h3");
     h3.textContent = person.name;
-    h3.style.margin = "6px 0";
-    h3.style.fontSize = "16px";
+    h3.style.margin = "0 0 8px 0";
+    h3.style.fontSize = isHead ? "18px" : "16px";
     h3.style.fontWeight = "600";
+    h3.style.color = "#1e293b";
+    h3.style.lineHeight = "1.3";
 
     const p = document.createElement("p");
     p.textContent = person.designation;
     p.style.margin = "0";
-    p.style.fontSize = "14px";
-    p.style.color = "#555";
+    p.style.fontSize = isHead ? "14px" : "13px";
+    p.style.color = "black";
+    p.style.fontWeight = "500";
+    p.style.lineHeight = "1.4";
+
+    // Add decorative element for head
+    if (isHead) {
+      const badge = document.createElement("div");
+      badge.style.position = "absolute";
+      badge.style.top = "10px";
+      badge.style.right = "10px";
+      badge.style.background = "linear-gradient(135deg, #0F77BC, #3B9AE3)";
+      badge.style.color = "white";
+      badge.style.padding = "4px 10px";
+      badge.style.borderRadius = "12px";
+      badge.style.fontSize = "11px";
+      badge.style.fontWeight = "600";
+      badge.textContent = "HEAD";
+      badge.style.zIndex = "10";
+    }
 
     info.appendChild(h3);
     info.appendChild(p);
 
-    div.appendChild(imgWrapper);
+    div.appendChild(img);
     div.appendChild(info);
 
     return div;
   }
 
-  function renderSection(container, title, people, fixedWidth = false, twoLineTitle = false) {
-    // Title outside cards
-    const sectionTitle = document.createElement("h3");
+  function renderSection(container, title, people, isHeadSection = false, twoLineTitle = false) {
+    // Section container
+    const section = document.createElement("div");
+    section.style.marginBottom = "60px";
+
+    // Title with better styling
+    const sectionTitle = document.createElement("h2");
     sectionTitle.textContent = title;
     sectionTitle.style.textAlign = "center";
-    sectionTitle.style.margin = "30px 0 15px";
-    sectionTitle.style.color = "#222";
-    sectionTitle.style.whiteSpace = twoLineTitle ? "pre-line" : "normal"; // allows breaking into 2 lines
-    container.appendChild(sectionTitle);
+    sectionTitle.style.margin = "40px 0 35px";
+    sectionTitle.style.color = "#1e293b";
+    sectionTitle.style.fontSize = isHeadSection ? "28px" : "24px";
+    sectionTitle.style.fontWeight = "700";
+    sectionTitle.style.whiteSpace = twoLineTitle ? "pre-line" : "normal";
+    sectionTitle.style.lineHeight = "1.3";
+    
+    // Changed head section title color to black
+    if (isHeadSection) {
+      sectionTitle.style.color = "black";
+      sectionTitle.style.background = "none";
+      sectionTitle.style.webkitTextFillColor = "black";
+    } else {
+      sectionTitle.style.background = "linear-gradient(135deg, #475569, #64748b)";
+      sectionTitle.style.backgroundClip = "text";
+      sectionTitle.style.webkitBackgroundClip = "text";
+      sectionTitle.style.webkitTextFillColor = "transparent";
+    }
 
-    // Card wrapper
+    // Card wrapper with better spacing
     const wrapper = document.createElement("div");
     wrapper.style.display = "flex";
     wrapper.style.justifyContent = "center";
-    wrapper.style.gap = "30px";
+    wrapper.style.gap = isHeadSection ? "50px" : "40px";
     wrapper.style.flexWrap = "wrap";
+    wrapper.style.alignItems = "flex-start";
 
     people.forEach(person => {
-      wrapper.appendChild(createCard(person, fixedWidth));
+      wrapper.appendChild(createCard(person, isHeadSection));
     });
 
-    container.appendChild(wrapper);
+    section.appendChild(sectionTitle);
+    section.appendChild(wrapper);
+    container.appendChild(section);
   }
 
   function renderLeaders() {
     const container = document.getElementById("leaders-section");
+    container.style.padding = "40px 20px";
+    container.style.background = "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)";
+    container.style.minHeight = "100vh";
 
-    // Head of Admission with 2-line title
+    // Main title
+    const mainTitle = document.createElement("h1");
+    mainTitle.textContent = "Admission Leadership Team";
+    mainTitle.style.textAlign = "center";
+    mainTitle.style.fontSize = "36px";
+    mainTitle.style.fontWeight = "600";
+    mainTitle.style.color = "black"; 
+    mainTitle.style.marginBottom = "50px";
+    container.appendChild(mainTitle);
+
+    // Head of Admission section
     renderSection(
       container,
-      "Head of Admission\nand Student Affairs", // forces line break
+      "Head of Admission\nand Student Affairs",
       leadersData.admissionHead,
       true,
       true
     );
 
-    // Combine Head Clerk + Admission Assistant into one row
+    // Combined team section
     const combined = [...leadersData.admissionAssociate, ...leadersData.admissionAssistant];
-    renderSection(container, "Admission Team", combined);
+    renderSection(
+      container,
+      "Admission Team",
+      combined,
+      false
+    );
+
+    // Add some decorative elements
+    const style = document.createElement('style');
+    style.textContent = `
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+      * {
+        font-family: 'Inter', sans-serif;
+      }
+    `;
+    document.head.appendChild(style);
   }
 
   renderLeaders();
-  </script>
+</script>
+
 
     <script
       type="text/javascript"
