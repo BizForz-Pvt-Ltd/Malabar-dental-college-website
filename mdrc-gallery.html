@@ -131,6 +131,35 @@
         animation: spin 2s linear infinite;
         margin: 20px auto;
       }
+ #pagination {
+  text-align: center;
+  margin: 30px 0;
+  clear: both; /* prevent float issues from theme */
+}
+
+#pagination button {
+  min-width: 40px; /* ensures space for 2-digit numbers */
+  padding: 6px 14px;
+  margin: 0 4px;
+  cursor: pointer;
+  background: #f0f0f0;
+  color: #333;
+  font-weight: 600;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+#pagination button:hover {
+  background: #ddd;
+}
+
+#pagination button.active {
+  background: #3db166;
+  color: #fff;
+  border-color: #3db166;
+}
+
 
       @keyframes spin {
         0% {
@@ -299,9 +328,9 @@
               data-slide="right"
             >
               <ul id="menu-main-navigation" class="m-menu">
-                <!-- <li class="menu-item menu-item-home current-menu-item">
+                <li class="menu-item menu-item-home ">
                 <a href="index.html">Home</a>
-              </li> -->
+              </li>
                 <li class="menu-item menu-item-has-children">
                   <a>About HEI</a>
                   <ul class="sub-menu">
@@ -343,11 +372,11 @@
                       >
                     </li>
                     <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                      <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
@@ -397,12 +426,12 @@
                           <ul>
                             <li class="menu-item">
                               <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
+                                >BDS(Bachelor Dental Surgery)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
+                                >MDS(Master Dental Surgery)</a
                               >
                             </li>
                           </ul>
@@ -410,14 +439,19 @@
                         <li class="menu-item menu-item-has-children">
                           <a>Diploma</a>
                           <ul>
-                            <li class="menu-item">
+                           <li class="menu-item">
                               <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
+                                >Dental Operating <br/> Room Assistant (DORA)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
+                                >Dental Mechanic (DM)</a
+                              >
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html"
+                                >Dental Hygienist (DH)</a
                               >
                             </li>
                           </ul>
@@ -438,10 +472,10 @@
                       >
                     </li> -->
                     <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
+                      <a class="sf-with-ul-pre"a>Departments</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
+                          <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="anatomy.html">Anatomy</a>
@@ -478,7 +512,7 @@
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
+                          <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="oral-pathology.html"
@@ -505,7 +539,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -568,6 +602,10 @@
                       <a href="prospectus.html">Prospectus</a>
                     </li>
                     <li class="menu-item">
+                      <a href="dept-of-admission.html"
+                        >Department of Admission</a>
+                    </li>
+                    <li class="menu-item">
                       <a href="admission.html"
                         >Admission Process And Guidelines</a
                       >
@@ -600,14 +638,23 @@
                   <a>Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -626,6 +673,9 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
+                     <li class="menu-item" data-size="60">
+                          <a href="women-cell.html">Women Cell</a>
+                        </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
@@ -668,15 +718,27 @@
                       >
                     </li>
                     <li class="menu-item">
+                      <a href="mass-media.html"
+                        >MDC in Mass Media</a
+                      >
+                    </li>
+                    <li class="menu-item">
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                     <li class="menu-item">
+                      <a href="news-page.html"
+                        >News & Achievements</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="events.html"
+                        >Recent Events</a
                       >
                     </li>
                     <li class="menu-item">
@@ -698,7 +760,7 @@
                     </li> -->
                   </ul>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item current-menu-item kingster-normal-menu">
                   <a href="mdrc-gallery.html">Gallery</a>
                 </li>
                 <li class="menu-item">
@@ -721,7 +783,7 @@
               <i class="fa fa-envelope-open-o" id="i_fd84_0"></i>
               <a href="mailto:info@macity.edu.in">info@macity.edu.in</a
               ><i class="fa fa-phone" id="i_fd84_1"></i>
-              <a href="tel:+917034555551">+91 7034 55555 1</a>
+              <a href="tel:+917034555514">+91 7034 55555 1</a>
             </div>
             <div class="kingster-top-bar-right kingster-item-pdlr">
               <ul
@@ -765,7 +827,7 @@
             <div class="kingster-main-menu" id="kingster-main-menu">
               <ul id="menu-main-navigation-1" class="sf-menu">
                 <li
-                  class="menu-item menu-item-home current-menu-item menu-item-has-children"
+                  class="menu-item menu-item-home menu-item-has-children"
                 >
                   <a href="index.html">Home</a>
                 </li>
@@ -830,11 +892,11 @@
                       >
                     </li>
                     <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                      <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li
@@ -898,12 +960,12 @@
                           <ul>
                             <li class="menu-item">
                               <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
+                                >BDS(Bachelor Dental Surgery)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
+                                >MDS(Master Dental Surgery)</a
                               >
                             </li>
                           </ul>
@@ -911,14 +973,19 @@
                         <li class="menu-item menu-item-has-children">
                           <a class="sf-with-ul-pre">Diploma</a>
                           <ul>
-                            <li class="menu-item">
+                             <li class="menu-item">
                               <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
+                                >Dental Operating <br/> Room Assistant (DORA)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
+                                >Dental Mechanic (DM)</a
+                              >
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html"
+                                >Dental Hygienist (DH)</a
                               >
                             </li>
                           </ul>
@@ -932,10 +999,10 @@
                       >
                     </li> -->
                     <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
+                      <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
+                          <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="anatomy.html">Anatomy</a>
@@ -972,7 +1039,7 @@
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
+                          <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="oral-pathology.html"
@@ -999,7 +1066,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -1064,6 +1131,10 @@
                       <a href="prospectus.html">Prospectus</a>
                     </li>
                     <li class="menu-item">
+                      <a href="dept-of-admission.html"
+                        >Department of Admission</a>
+                    </li>
+                    <li class="menu-item">
                       <a href="admission.html"
                         >Admission Process And Guidelines</a
                       >
@@ -1100,14 +1171,23 @@
                   <a class="sf-with-ul-pre">Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -1126,6 +1206,9 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
+                     <li class="menu-item" data-size="60">
+                          <a href="women-cell.html">Women Cell</a>
+                        </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
@@ -1172,15 +1255,27 @@
                       >
                     </li>
                     <li class="menu-item">
+                      <a href="mass-media.html"
+                        >MDC in Mass Media</a
+                      >
+                    </li>
+                    <li class="menu-item">
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                     <li class="menu-item">
+                      <a href="news-page.html"
+                        >News & Achievements</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="events.html"
+                        >Recent Events</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1202,7 +1297,7 @@
                     </li> -->
                   </ul>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item current-menu-item kingster-normal-menu">
                     <a href="mdrc-gallery.html">Gallery</a>
                   </li>
                   <li class="menu-item">
@@ -1255,7 +1350,17 @@
           </div>
         </div>
       </div>
-    </header>        <div id="popupContainer" class="popup-container">
+    </header>      
+     <div class="kingster-breadcrumbs">
+          <div class="kingster-breadcrumbs-container kingster-container">
+              <div class="kingster-breadcrumbs-item kingster-item-pdlr"> <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Kingster." href="index.html" class="home"><span property="name">Home</span></a>
+                  <meta property="position" content="1">
+                  </span>&gt;<span property="itemListElement" typeof="ListItem"><span property="name">Gallery</span>
+                  <meta property="position" content="2">
+                  </span>
+              </div>
+          </div>  
+    <div id="popupContainer" class="popup-container">
           <div class="popup-content">
             <button class="popup-close" onclick="closePopup()">&times;</button>
             <!-- Close button (cross) -->
@@ -1271,8 +1376,7 @@
 
         <div
           class="kingster-page-title-wrap kingster-style-medium kingster-center-align"
-          style="margin-bottom: 40px"
-        ></div>
+          style="margin-bottom: 40px"></div>
         <div class="kingster-page-wrapper" id="kingster-page-wrapper">
           <div class="gdlr-core-page-builder-body">
             <div
@@ -1292,7 +1396,7 @@
                       class="gdlr-core-button gdlr-core-button-solid gdlr-core-button-no-border"
                       href="add-your-memories.html"
                     >
-                      <span class="gdlr-core-content">Add Images</span>
+                      <span class="gdlr-core-content" style="color: #ffffff;">Add Images</span>
                     </a>
                   </div>
                   <div class="gdlr-core-pbf-element">
@@ -1305,6 +1409,8 @@
                         class="loading-animation"
                       ></div>
                       <div id="portfolio-container" style="display: none"></div>
+                      <div id="pagination" ></div>
+
                       <div
                         class="gdlr-core-portfolio-item-holder gdlr-core-js-2 clearfix"
                         data-layout="masonry"
@@ -2084,12 +2190,15 @@
                       <br />
                       Manoor - Chekanoor Road, <br />
                       Manoor, Edappal, Malappuram, <br />
-                      Kerala 679578
+                      Kerala 679578<br /><br />
+
+              0494 2697020, 21, 22 <br />
+              7034555514
                     </p>
                     <p>
-                      <span id="span_1dd7_11">
+                      <!-- <span id="span_1dd7_11">
                         Toll free:<a href="tel:18008430066"> 18008430066</a>
-                      </span>
+                      </span> -->
                       <!-- <br> <span id="span_1dd7_11"> Hospital/Clinic:<a href="tel:0494 269720"> 0494 269720, 21</a> </span> | <span id="span_1dd7_11"> <a href="tel:7034555514">+91 7034555514</a></span> -->
                       <br />
                       <span
@@ -2127,6 +2236,9 @@
                       id="menu-our-campus"
                       class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
                     >
+                    <li class="menu-item">
+                      <a href="about-us.html">Academic Calendar</a>
+                    </li>
                       <li class="menu-item">
                         <a href="about-us.html">About Us</a>
                       </li>
@@ -2144,6 +2256,7 @@
                         <a href="dental-mechanic.html">Dental Mechanic</a>
                       </li>
                       <li class="menu-item"><a href="dora.html">DORA</a></li>
+                      <li class="menu-item"><a href="dental-hygienist.html">Dental Hygienist</a></li>
                       <li class="menu-item">
                         <a href="contact-us.html">Contact</a>
                       </li>
@@ -2256,7 +2369,7 @@
               class="kingster-copyright-container kingster-container clearfix"
             >
               <div class="kingster-copyright-left kingster-item-pdlr">
-                Copyright © 2023 Malabar Dental College |
+                Copyright © 2025 Malabar Dental College |
                 <a style="color: #fff" href="dept_of_IT.html"
                   >Department of IT 💻</a
                 >
@@ -2333,11 +2446,7 @@
     </script>
     <script type="text/javascript">
       function redirectToAddImage() {
-        // Close the popup first
         closePopup();
-        // Set a flag in local storage to indicate that the user has clicked "Yes"
-
-        // Redirect to the desired page
         window.location.href = "add-your-memories.html";
       }
 
@@ -2345,89 +2454,157 @@
         document.getElementById("popupContainer").style.display = "none";
       }
 
-      // Show the popup on page load if it hasn't been closed before
       window.onload = function () {
         document.getElementById("popupContainer").style.display = "block";
       };
     </script>
 
     <script>
-      // Function to fetch data from the API
+      const itemsPerPage = 15; // number of images per page
+      let currentPage = 1;
+      let allPictures = []; // store all images here
+
       function fetchDataFromApi() {
         loadingAnimation.style.display = "block";
         document.getElementById("portfolio-container").style.display = "none";
+
         fetch("https://app.conext.in/Events/gallery/")
           .then((response) => response.json())
           .then((data) => {
-            displayData(data);
+            // Flatten all pictures into one array with metadata
+            allPictures = data.flatMap((item) =>
+              item.pictures.map((picture) => ({
+                title: item.title,
+                full_name: item.full_name,
+                added_on: item.added_on,
+                uploaded_image_url: picture.uploaded_image_url,
+              }))
+            );
+
+            displayPage(currentPage);
             loadingAnimation.style.display = "none";
-            document.getElementById("portfolio-container").style.display =
-              "block";
+            document.getElementById("portfolio-container").style.display = "block";
           })
           .catch((error) => {
             loadingAnimation.style.display = "none";
             console.error("Error fetching data:", error);
           });
       }
+
       function formatDate(date) {
-        timestamp = date;
-        const parsedDate = new Date(timestamp);
-
+        const parsedDate = new Date(date);
         const options = { day: "numeric", month: "long", year: "numeric" };
-        const formattedDate = parsedDate.toLocaleDateString("en-US", options);
-        return formattedDate;
+        return parsedDate.toLocaleDateString("en-US", options);
       }
-      // Function to dynamically display data in reverse order
-      function displayData(items) {
-        const portfolioContainer = document.getElementById(
-          "portfolio-container"
-        );
 
-        // Reverse the items array to display the most recent images first
-        // items.reverse();
+      function displayPage(page) {
+        const portfolioContainer = document.getElementById("portfolio-container");
+        portfolioContainer.innerHTML = ""; // clear previous items
 
-        items.forEach((item, index) => {
-          // const isMultipleOf3 = index % 3 === 0;
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const pageItems = allPictures.slice(start, end);
+
+        pageItems.forEach((item) => {
           const columnNumber = 20;
-          console.log(columnNumber, "column number");
-
-          item.pictures.forEach((picture) => {
-            const portfolioItem = document.createElement("div");
-            portfolioItem.className = `gdlr-core-item-list  gdlr-core-item-mgb gdlr-core-column-${columnNumber}`;
-            portfolioItem.innerHTML = `
-              <div class="gdlr-core-portfolio-metro" style="margin:0 10px;">
-                <div class="gdlr-core-portfolio-thumbnail gdlr-core-media-image gdlr-core-style-title-icon gdlr-core-metro-rvpdlr">
-                  <div class="gdlr-core-portfolio-thumbnail-image-wrap gdlr-core-zoom-on-hover">
-                    <div class="image-gallery">
-                      <img class="uploaded_image_url" src="${
-                        picture.uploaded_image_url
-                      }" alt="" style="opacity: 1; height:400px;object-fit: cover; transition: opacity 0.3s ease;" />
-                    </div>
-                    <span class="gdlr-core-image-overlay gdlr-core-portfolio-overlay gdlr-core-image-overlay-center-icon gdlr-core-js">
-                      <span class="gdlr-core-image-overlay-content">
-                        <span class="gdlr-core-portfolio-title gdlr-core-title-font" style=" margin-top: -25px; font-size: 18px; font-weight: 600; letter-spacing: 0px; text-transform: none;">
-                          <a class="title">${item.title}</a>
-                        </span>
-                        <span class="gdlr-core-lightgallery gdlr-core-js full_name" data-lightbox-group="gdlr-core-img-group-1" style="margin-top: -25px;">By: ${
-                          item.full_name
-                        }</span><br/>
-                        <span class="gdlr-core-lightgallery gdlr-core-js full_name" data-lightbox-group="gdlr-core-img-group-1" style="margin-top: -25px;">Uploaded On: ${formatDate(
-                          item.added_on
-                        )}</span>
+          const portfolioItem = document.createElement("div");
+          portfolioItem.className = `gdlr-core-item-list gdlr-core-item-mgb gdlr-core-column-${columnNumber}`;
+          portfolioItem.innerHTML = `
+            <div class="gdlr-core-portfolio-metro" style="margin:0 10px;">
+              <div class="gdlr-core-portfolio-thumbnail gdlr-core-media-image gdlr-core-style-title-icon gdlr-core-metro-rvpdlr">
+                <div class="gdlr-core-portfolio-thumbnail-image-wrap gdlr-core-zoom-on-hover">
+                  <div class="image-gallery">
+                    <img class="uploaded_image_url" src="${item.uploaded_image_url}" alt="" 
+                      style="opacity: 1; height:400px; object-fit: cover; transition: opacity 0.3s ease;" />
+                  </div>
+                  <span class="gdlr-core-image-overlay gdlr-core-portfolio-overlay gdlr-core-image-overlay-center-icon gdlr-core-js">
+                    <span class="gdlr-core-image-overlay-content">
+                      <span class="gdlr-core-portfolio-title gdlr-core-title-font" 
+                        style="margin-top:-25px; font-size:18px; font-weight:600; letter-spacing:0; text-transform:none;">
+                        <a class="title">${item.title}</a>
+                      </span>
+                      <span class="gdlr-core-lightgallery gdlr-core-js full_name" style="margin-top:-25px;">
+                        By: ${item.full_name}
+                      </span><br/>
+                      <span class="gdlr-core-lightgallery gdlr-core-js full_name" style="margin-top:-25px;">
+                        Uploaded On: ${formatDate(item.added_on)}
                       </span>
                     </span>
-                  </div>
+                  </span>
                 </div>
               </div>
-            `;
-            portfolioContainer.appendChild(portfolioItem);
-          });
+            </div>
+          `;
+          portfolioContainer.appendChild(portfolioItem);
         });
+
+        renderPagination();
       }
 
-      // Call the function to fetch and display data when the DOM is loaded
+    function renderPagination() {
+  const pagination = document.getElementById("pagination");
+  pagination.innerHTML = "";
+
+  const totalPages = Math.ceil(allPictures.length / itemsPerPage);
+
+  // Prev button
+  if (currentPage > 1) {
+    const prevBtn = document.createElement("button");
+    prevBtn.textContent = "⟵ Prev";
+    prevBtn.onclick = () => {
+      currentPage--;
+      displayPage(currentPage);
+    };
+    pagination.appendChild(prevBtn);
+  }
+
+  // Page buttons
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    if (i === currentPage) btn.classList.add("active");
+    btn.onclick = () => {
+      currentPage = i;
+      displayPage(currentPage);
+    };
+    pagination.appendChild(btn);
+  }
+
+  // Next button
+  if (currentPage < totalPages) {
+    const nextBtn = document.createElement("button");
+    nextBtn.textContent = "Next ⟶";
+    nextBtn.onclick = () => {
+      currentPage++;
+      displayPage(currentPage);
+    };
+    pagination.appendChild(nextBtn);
+  }
+}
+
+
+  // helper to style buttons consistently
+  function styleButton(btn, isActive) {
+    btn.style.margin = "0";
+    btn.style.padding = "6px 14px";
+    btn.style.cursor = "pointer";
+    btn.style.background = isActive ? "#3db166" : "#f0f0f0";
+    btn.style.color = isActive ? "#fff" : "#333";
+    btn.style.fontWeight = "600";
+    btn.style.border = "1px solid #ccc";
+    btn.style.borderRadius = "4px";
+    btn.style.transition = "0.3s";
+    btn.onmouseover = () => {
+      if (!isActive) btn.style.background = "#ddd";
+    };
+    btn.onmouseout = () => {
+      if (!isActive) btn.style.background = "#f0f0f0";
+    };
+  }
+
       document.addEventListener("DOMContentLoaded", fetchDataFromApi);
     </script>
+
     <script>
       // Define the API URL to fetch notification data
       const apiUrlNotification =

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
-  <!-- Mirrored from max-themes.net/demos/kingster/kingster/course-list-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Mar 2022 06:34:57 GMT -->
+  <!-- Mirrored from max-themes.net/demos/kingster/kingster/portfolio-3-columns.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Mar 2022 06:34:18 GMT -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon" />
-    <title>Central Facilities</title>
+
+    <title>Central Facilities | MDCRC</title>
+
     <link
       rel="stylesheet"
       href="plugins/goodlayers-core/plugins/combine/style.css"
@@ -36,6 +38,7 @@
       type="text/css"
       media="all"
     />
+
     <link
       href="https://fonts.googleapis.com/css?family=Playfair+Display:700%2C400"
       rel="stylesheet"
@@ -50,44 +53,6 @@
       media="all"
     />
     <style>
-      .gdlr-core-course-item-link {
-        display: flex;
-        align-items: center;
-      }
-      .gdlr-core-course-item-logo {
-        width: 30px; /* Adjust the width to your desired value */
-        height: 30px; /* Adjust the height to your desired value */
-      }
-      .gdlr-core-course-item-logo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .gdlr-core-course-item-title {
-        margin-left: 20px; /* Reset default margin */
-      }
-      .loader {
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #3db166;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        animation: spin 2s linear infinite;
-        margin: 20px auto;
-      }
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-      .gdlr-core-course-item-subtitle {
-        font-size: 14px;
-        color: #888;
-        padding-left: 50px;
-      }
       .floating-button {
         position: fixed;
         bottom: 30px;
@@ -106,6 +71,7 @@
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 9999; /* Set a high z-index to appear above other content */
       }
+
       /* Style for WhatsApp logo */
       .whatsapp-logo {
         width: 36px; /* Adjust the logo size */
@@ -121,6 +87,63 @@
       ul.notification-list {
         margin-bottom: 0px !important;
       }
+         .modal-overlay {
+        display: none; 
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.8);
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+      }
+.modal-content {
+  max-width: 800px;
+  width: 90%;
+  max-height: 85vh;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.modal-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: #182847;
+}
+
+.modal-content p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
+     .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10001;
+  }
+  .modal-close:hover {
+    color: #ddd;
+  }
       @keyframes marquee-up {
         0% {
           transform: translateY(0);
@@ -131,13 +154,14 @@
       }
     </style>
   </head>
-  <!-- <a
+  <a
     href="https://api.whatsapp.com/send?phone=7034555514"
     target="_blank"
     class="floating-button"
   >
     <img src="upload/wsup-logo.png" alt="WhatsApp Logo" class="whatsapp-logo" />
-  </a> -->
+  </a>
+
   <body
     class="home page-template-default page page-id-2039 gdlr-core-body woocommerce-no-js tribe-no-js kingster-body kingster-body-front kingster-full kingster-with-sticky-navigation kingster-blockquote-style-1 gdlr-core-link-to-lightbox"
   >
@@ -198,9 +222,9 @@
               data-slide="right"
             >
               <ul id="menu-main-navigation" class="m-menu">
-                <!-- <li class="menu-item menu-item-home current-menu-item">
+                <li class="menu-item menu-item-home">
                 <a href="index.html">Home</a>
-              </li> -->
+              </li>
                 <li class="menu-item menu-item-has-children">
                   <a>About HEI</a>
                   <ul class="sub-menu">
@@ -242,11 +266,11 @@
                       >
                     </li>
                     <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                      <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
@@ -296,12 +320,12 @@
                           <ul>
                             <li class="menu-item">
                               <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
+                                >BDS(Bachelor Dental Surgery)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
+                                >MDS(Master Dental Surgery)</a
                               >
                             </li>
                           </ul>
@@ -309,14 +333,19 @@
                         <li class="menu-item menu-item-has-children">
                           <a>Diploma</a>
                           <ul>
-                            <li class="menu-item">
+                             <li class="menu-item">
                               <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
+                                >Dental Operating <br/> Room Assistant (DORA)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
+                                >Dental Mechanic (DM)</a
+                              >
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html"
+                                >Dental Hygienist (DH)</a
                               >
                             </li>
                           </ul>
@@ -330,17 +359,17 @@
                         >Academic Calendar</a
                       >
                     </li>
-                    <!-- <li class="menu-item">
+                 <!-- <li class="menu-item">
                       <a href="/assets/ACADEMICPROSPECTS.pdf" target="_blank"
                         >Ordinances pertaining to
                         <br />Academics/Examinations</a
                       >
                     </li> -->
                     <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
+                      <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
+                          <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="anatomy.html">Anatomy</a>
@@ -377,7 +406,7 @@
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
+                          <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="oral-pathology.html"
@@ -404,7 +433,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -467,6 +496,10 @@
                       <a href="prospectus.html">Prospectus</a>
                     </li>
                     <li class="menu-item">
+                      <a href="dept-of-admission.html"
+                        >Department of Admission</a>
+                    </li>
+                    <li class="menu-item">
                       <a href="admission.html"
                         >Admission Process And Guidelines</a
                       >
@@ -476,7 +509,7 @@
                     </li> -->
                   </ul>
                 </li>
-                <li class="menu-item menu-item-has-children">
+                <li class="menu-item current-menu-item menu-item-has-children kingster-normal-menu">
                   <a>Research</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
@@ -499,14 +532,23 @@
                   <a>Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -525,6 +567,9 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
+                     <li class="menu-item" data-size="60">
+                          <a href="women-cell.html">Women Cell</a>
+                        </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
@@ -567,15 +612,27 @@
                       >
                     </li>
                     <li class="menu-item">
+                      <a href="mass-media.html"
+                        >MDC in Mass Media</a
+                      >
+                    </li>
+                    <li class="menu-item">
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                     <li class="menu-item">
+                      <a href="news-page.html"
+                        >News & Achievements</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="events.html"
+                        >Recent Events</a
                       >
                     </li>
                     <li class="menu-item">
@@ -620,7 +677,7 @@
               <i class="fa fa-envelope-open-o" id="i_fd84_0"></i>
               <a href="mailto:info@macity.edu.in">info@macity.edu.in</a
               ><i class="fa fa-phone" id="i_fd84_1"></i>
-              <a href="tel:+917034555551">+91 7034 55555 1</a>
+              <a href="tel:+917034555514">+91 7034 55555 1</a>
             </div>
             <div class="kingster-top-bar-right kingster-item-pdlr">
               <ul
@@ -664,7 +721,7 @@
             <div class="kingster-main-menu" id="kingster-main-menu">
               <ul id="menu-main-navigation-1" class="sf-menu">
                 <li
-                  class="menu-item menu-item-home current-menu-item menu-item-has-children"
+                  class="menu-item menu-item-home menu-item-has-children"
                 >
                   <a href="index.html">Home</a>
                 </li>
@@ -729,11 +786,11 @@
                       >
                     </li>
                     <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                      <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li
@@ -797,12 +854,12 @@
                           <ul>
                             <li class="menu-item">
                               <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
+                                >BDS(Bachelor Dental Surgery)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
+                                >MDS(Master Dental Surgery)</a
                               >
                             </li>
                           </ul>
@@ -812,12 +869,17 @@
                           <ul>
                             <li class="menu-item">
                               <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
+                                >Dental Operating <br/> Room Assistant (DORA)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
+                                >Dental Mechanic (DM)</a
+                              >
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html"
+                                >Dental Hygienist (DH)</a
                               >
                             </li>
                           </ul>
@@ -831,10 +893,10 @@
                       >
                     </li> -->
                     <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
+                      <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
+                          <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="anatomy.html">Anatomy</a>
@@ -871,7 +933,7 @@
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
+                          <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="oral-pathology.html"
@@ -898,7 +960,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -963,6 +1025,10 @@
                       <a href="prospectus.html">Prospectus</a>
                     </li>
                     <li class="menu-item">
+                      <a href="dept-of-admission.html"
+                        >Department of Admission</a>
+                    </li>
+                    <li class="menu-item">
                       <a href="admission.html"
                         >Admission Process And Guidelines</a
                       >
@@ -973,7 +1039,7 @@
                   </ul>
                 </li>
                 <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
+                  class="menu-item current-menu-item menu-item-has-children kingster-normal-menu"
                 >
                   <a class="sf-with-ul-pre">Research</a>
                   <ul class="sub-menu">
@@ -999,14 +1065,23 @@
                   <a class="sf-with-ul-pre">Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -1025,6 +1100,9 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
+                     <li class="menu-item" data-size="60">
+                          <a href="women-cell.html">Women Cell</a>
+                        </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
@@ -1071,15 +1149,27 @@
                       >
                     </li>
                     <li class="menu-item">
+                      <a href="mass-media.html"
+                        >MDC in Mass Media</a
+                      >
+                    </li>
+                    <li class="menu-item">
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                     <li class="menu-item">
+                      <a href="news-page.html"
+                        >News & Achievements</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="events.html"
+                        >Recent Events</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1155,295 +1245,468 @@
         </div>
       </div>
     </header>
-
-      <div
-        class="kingster-page-title-wrap kingster-style-medium kingster-left-align"
-      >
-        <div class="kingster-header-transparent-substitute"></div>
-        <div class="kingster-page-title-overlay"></div>
-        <div class="kingster-page-title-container kingster-container">
-          <div class="kingster-page-title-content kingster-item-pdlr">
-            <div class="kingster-page-caption">
-              Explore the facilities that support our community.
+        <div
+          class="kingster-page-title-wrap kingster-style-medium kingster-center-align"
+        >
+          <div class="kingster-header-transparent-substitute"></div>
+          <div class="kingster-page-title-overlay"></div>
+          <div class="kingster-page-title-container kingster-container">
+            <div class="kingster-page-title-content kingster-item-pdlr">
+              <div class="kingster-page-caption">Explore the facilities that support our community.</div>
+              <h1 class="kingster-page-title">Central Facilities</h1>
             </div>
-            <h1 class="kingster-page-title">Central Facilities</h1>
           </div>
         </div>
+      <div class="kingster-breadcrumbs">
+        <div class="kingster-breadcrumbs-container kingster-container">
+            <div class="kingster-breadcrumbs-item kingster-item-pdlr"> <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Kingster." href="index.html" class="home"><span property="name">Home</span></a>
+                <meta property="position" content="1">
+                </span>&gt;<span property="itemListElement" typeof="ListItem"><span property="name">Central Facilities</span>
+                <meta property="position" content="2">
+                </span>
+            </div>
+        </div>
       </div>
-
-      <div class="kingster-page-wrapper" id="kingster-page-wrapper"></div>
-
-      <footer>
-        <div class="kingster-footer-wrapper">
-          <div class="kingster-footer-container kingster-container clearfix">
+        <div class="kingster-page-wrapper" id="kingster-page-wrapper">
+          <div class="gdlr-core-page-builder-body">
             <div
-              class="kingster-footer-column kingster-item-pdlr kingster-column-15"
+              class="gdlr-core-pbf-wrapper"
+              style="padding: 50px 0px 30px 0px"
             >
-              <div id="text-2" class="widget widget_text kingster-widget">
-                <div class="textwidget">
-                  <p>
-                    <img width="250" src="upload/footer-logo.png" alt="" />
-                    <br />
-                    <span
-                      class="gdlr-core-space-shortcode"
-                      id="span_1dd7_10"
-                    ></span>
-                    <br />
-                    Manoor - Chekanoor Road, <br />
-                    Manoor, Edappal, Malappuram, <br />
-                    Kerala 679578
-                  </p>
-                  <p>
-                    <span id="span_1dd7_11">
-                      Toll free:<a href="tel:18008430066"> 18008430066</a>
-                    </span>
-                    <!-- <br> <span id="span_1dd7_11"> Hospital/Clinic:<a href="tel:0494 269720"> 0494 269720, 21</a> </span> | <span id="span_1dd7_11"> <a href="tel:7034555514">+91 7034555514</a></span> -->
-                    <br />
-                    <span
-                      class="gdlr-core-space-shortcode"
-                      id="span_1dd7_12"
-                    ></span>
-
-                    <br />
-                    <a id="a_1dd7_8" href="mailto:admin@kingsteruni.edu"
-                      >info@macity.edu.in</a
-                    >
-                  </p>
-                  <div
-                    class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-left-align"
-                  >
+              <div class="gdlr-core-pbf-background-wrap"></div>
+              <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
+                <div
+                  class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container"
+                >
+                  <div class="gdlr-core-pbf-element">
                     <div
-                      class="gdlr-core-divider-line gdlr-core-skin-divider"
-                      id="div_1dd7_111"
-                    ></div>
+                      class="gdlr-core-portfolio-item gdlr-core-item-pdb clearfix gdlr-core-portfolio-item-style-grid"
+                      style="padding-bottom: 10px"
+                    >
+                      <div
+                        class="gdlr-core-block-item-title-wrap gdlr-core-left-align gdlr-core-item-mglr"
+                        style="margin-bottom: 40px"
+                      >
+                        <div class="gdlr-core-block-item-title-inner clearfix">
+                          <h3
+                            class="gdlr-core-block-item-title"
+                            style="
+                              font-size: 24px;
+                              font-style: normal;
+                              text-transform: none;
+                              letter-spacing: 0px;
+                              color: #163269;
+                            "
+                          >
+                            Central Facilities
+                          </h3>
+                          <div
+                            class="gdlr-core-block-item-title-divider"
+                            style="font-size: 24px; border-bottom-width: 2px"
+                          ></div>
+                        </div>
+                        
+                      </div>
+
+                      <div class="gdlr-core-portfolio-item-holder gdlr-core-js-2 filter-container clearfix" data-layout="fitrows">
+                        <div class="gdlr-core-page-builder-body">
+                          <div class="gdlr-core-pbf-section">
+                            <div class="gdlr-core-pbf-section-container gdlr-core-container clearfix">
+                              <div class="gdlr-core-pbf-element">
+                                <div id="facilities-container" class="gdlr-core-blog-item gdlr-core-item-pdb clearfix gdlr-core-style-blog-image"></div>
+                                  <div id="facilities-pagination" style="text-align:center; margin-top:20px;"></div>
+                                  <div id="imageModal" class="modal" 
+                                      style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+                                              background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
+                                    
+                                    <!-- Close button stays outside -->
+                                    <span class="modal-close">&times;</span>
+
+                                    <div style="background:#fff; padding:30px; max-width:700px; width:90%; 
+                                                border-radius:10px; position:relative;">
+                                      <img id="modalImage" src="" 
+                                          style="width:100%; height:auto; border-radius:8px; margin-bottom:20px;" />
+                                      <h2 id="modalTitle" 
+                                          style="margin:0 0 15px; font-size:24px; color:#163269;"></h2>
+                                      <p id="modalDesc" style="font-size:16px; color:#555; line-height:1.6;"></p>
+                                    </div>
+                                  </div>
+
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div
-              class="kingster-footer-column kingster-item-pdlr kingster-column-15"
-            >
+            <div class="gdlr-core-pbf-wrapper" id="div_1dd7_107">
               <div
-                id="gdlr-core-custom-menu-widget-2"
-                class="widget widget_gdlr-core-custom-menu-widget kingster-widget"
+                class="gdlr-core-pbf-background-wrap"
+                id="div_1dd7_108"
+              ></div>
+              <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
+                <div
+                  class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container-custom"
+                  id="div_1dd7_109"
+                >
+                  <div class="gdlr-core-pbf-element">
+                    <div
+                      class="gdlr-core-gallery-item gdlr-core-item-pdb clearfix gdlr-core-gallery-item-style-grid"
+                      id="div_1dd7_110"
+                    >
+                      <div
+                        class="gdlr-core-gallery-item-holder gdlr-core-js-2 clearfix"
+                        data-layout="fitrows"
+                      >
+                        <!-- <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-10 gdlr-core-column-first gdlr-core-item-pdlr gdlr-core-item-mgb">
+                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-0.png" alt="" width="120" height="120" title="banner-1" /></div>
+                                            </div> -->
+                        <div
+                          class="gdlr-core-item-list gdlr-core-gallery-column gdlr-core-column-10 gdlr-core-column-first gdlr-core-item-pdlr gdlr-core-item-mgb"
+                        >
+                          <div
+                            class="gdlr-core-gallery-list gdlr-core-media-image"
+                          >
+                            <img
+                              src="upload/banner-1.png"
+                              style="padding-top: 20px"
+                              alt=""
+                              width="240"
+                              height="120"
+                              title="banner-1"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="gdlr-core-item-list gdlr-core-gallery-column gdlr-core-column-10 gdlr-core-item-pdlr gdlr-core-item-mgb"
+                        >
+                          <div
+                            class="gdlr-core-gallery-list gdlr-core-media-image"
+                          >
+                            <img
+                              src="upload/banner-2.png"
+                              alt=""
+                              width="120"
+                              height="120"
+                              title="banner-2"
+                            />
+                          </div>
+                        </div>
+                        <!-- <div
+                          class="gdlr-core-item-list gdlr-core-gallery-column gdlr-core-column-10 gdlr-core-item-pdlr gdlr-core-item-mgb"
+                        >
+                          <div
+                            class="gdlr-core-gallery-list gdlr-core-media-image"
+                          >
+                            <img
+                              src="upload/banner-3.png"
+                              alt=""
+                              width="120"
+                              height="120"
+                              title="banner-3"
+                            />
+                          </div>
+                        </div> -->
+                        <div class="gdlr-core-item-list gdlr-core-gallery-column gdlr-core-column-10 gdlr-core-item-pdlr gdlr-core-item-mgb">
+                          <div class="gdlr-core-gallery-list gdlr-core-media-image">
+                            <img
+                              src="upload/banner-4.png"
+                              style="padding-top: 25px"
+                              alt=""
+                              width="240"
+                              height="120"
+                              title="banner-4"
+                            />
+                          </div>
+                        </div>
+                        <div class="gdlr-core-item-list gdlr-core-gallery-column gdlr-core-column-10 gdlr-core-item-pdlr gdlr-core-item-mgb">
+                          <div class="gdlr-core-gallery-list gdlr-core-media-image">
+                            <img
+                              src="upload/dme.png"
+                              alt=""
+                              style="padding-top: 10px"
+                              width="170"
+                              height="200"
+                              title="banner-4"/>
+                          </div>
+                        </div>
+                        <div class="gdlr-core-item-list gdlr-core-gallery-column gdlr-core-column-10 gdlr-core-item-pdlr gdlr-core-item-mgb">
+                          <div class="gdlr-core-gallery-list gdlr-core-media-image">
+                            <img
+                              src="upload/aimst.png"
+                              alt=""
+                              width="110"
+                              height="200"
+                              title="banner-4"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          <div class="kingster-footer-wrapper">
+            <div class="kingster-footer-container kingster-container clearfix">
+              <div
+                class="kingster-footer-column kingster-item-pdlr kingster-column-15"
               >
-                <h3 class="kingster-widget-title">Quick links</h3>
-                <span class="clear"></span>
-                <div class="menu-our-campus-container">
-                  <ul
-                    id="menu-our-campus"
-                    class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
-                  >
+                <div id="text-2" class="widget widget_text kingster-widget">
+                  <div class="textwidget">
+                    <p>
+                      <img width="250" src="upload/footer-logo.png" alt="" />
+                      <br />
+                      <span
+                        class="gdlr-core-space-shortcode"
+                        id="span_1dd7_10"
+                      ></span>
+                      <br />
+                      Manoor - Chekanoor Road, <br />
+                      Manoor, Edappal, Malappuram, <br />
+                      Kerala 679578<br /><br />
+
+              0494 2697020, 21, 22 <br />
+              7034555514
+                    </p>
+                    <p>
+                      <!-- <span id="span_1dd7_11">
+                        Toll free:<a href="tel:18008430066"> 18008430066</a>
+                      </span> -->
+                      <!-- <br> <span id="span_1dd7_11"> Hospital/Clinic:<a href="tel:0494 269720"> 0494 269720, 21</a> </span> | <span id="span_1dd7_11"> <a href="tel:7034555514">+91 7034555514</a></span> -->
+                      <br />
+                      <span
+                        class="gdlr-core-space-shortcode"
+                        id="span_1dd7_12"
+                      ></span>
+
+                      <br />
+                      <a id="a_1dd7_8" href="mailto:admin@kingsteruni.edu"
+                        >info@macity.edu.in</a
+                      >
+                    </p>
+                    <div
+                      class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-left-align"
+                    >
+                      <div
+                        class="gdlr-core-divider-line gdlr-core-skin-divider"
+                        id="div_1dd7_111"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="kingster-footer-column kingster-item-pdlr kingster-column-15"
+              >
+                <div
+                  id="gdlr-core-custom-menu-widget-2"
+                  class="widget widget_gdlr-core-custom-menu-widget kingster-widget"
+                >
+                  <h3 class="kingster-widget-title">Quick links</h3>
+                  <span class="clear"></span>
+                  <div class="menu-our-campus-container">
+                    <ul
+                      id="menu-our-campus"
+                      class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
+                    >
                     <li class="menu-item">
                       <a href="about-us.html">Academic Calendar</a>
                     </li>
-                    <li class="menu-item">
-                      <a href="about-us.html">About Us</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="bachelor-of-dental-surgery.html"
-                        >Bachelor of Dental Surgery</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="master-of-dental-surgery.html"
-                        >Master of Dental Surgery</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="dental-mechanic.html">Dental Mechanic</a>
-                    </li>
-                    <li class="menu-item"><a href="dora.html">DORA</a></li>
-                    <li class="menu-item">
-                      <a href="contact-us.html">Contact</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div
-              class="kingster-footer-column kingster-item-pdlr kingster-column-15"
-            >
-              <div
-                id="gdlr-core-custom-menu-widget-3"
-                class="widget widget_gdlr-core-custom-menu-widget kingster-widget"
-              >
-                <h3 class="kingster-widget-title">Social Life</h3>
-                <span class="clear"></span>
-                <div class="menu-campus-life-container">
-                  <ul
-                    id="menu-campus-life"
-                    class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
-                  >
-                    <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://www.instagram.com/malabar_dental_college/"
-                        >Instagram</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://www.facebook.com/malabarAcademicCity/"
-                        >Facebook</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://in.linkedin.com/school/malabar-dental-college-&-research-center/"
-                        >LinkedIn</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://www.youtube.com/@malabardentalcollege8050"
-                        >Youtube</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://goo.gl/maps/mqi1nkPswEPLQjzv6"
-                        >Google</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div
-              class="kingster-footer-column kingster-item-pdlr kingster-column-15"
-            >
-              <div
-                id="gdlr-core-custom-menu-widget-4"
-                class="widget widget_gdlr-core-custom-menu-widget kingster-widget"
-              >
-                <h3 class="kingster-widget-title">Location</h3>
-                <span class="clear"></span>
-                <div class="mapouter">
-                  <div class="gmap_canvas">
-                    <iframe
-                      class="gmap_iframe"
-                      frameborder="0"
-                      scrolling="no"
-                      marginheight="0"
-                      marginwidth="0"
-                      src="https://maps.google.com/maps?width=271&amp;height=281&amp;hl=en&amp;q=malabar dental college manoor&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                    ></iframe
-                    ><a href="https://thepasswordgame.com/"
-                      >The Password Game</a
-                    >
+                      <li class="menu-item">
+                        <a href="about-us.html">About Us</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="bachelor-of-dental-surgery.html"
+                          >Bachelor of Dental Surgery</a
+                        >
+                      </li>
+                      <li class="menu-item">
+                        <a href="master-of-dental-surgery.html"
+                          >Master of Dental Surgery</a
+                        >
+                      </li>
+                      <li class="menu-item">
+                        <a href="dental-mechanic.html">Dental Mechanic</a>
+                      </li>
+                      <li class="menu-item"><a href="dora.html">DORA</a></li>
+                      <li class="menu-item"><a href="dental-hygienist.html">Dental Hygienist</a></li>
+                      <li class="menu-item">
+                        <a href="contact-us.html">Contact</a>
+                      </li>
+                    </ul>
                   </div>
-                  <style>
-                    .mapouter {
-                      position: relative;
-                      text-align: right;
-                      width: 271px;
-                      height: 281px;
-                    }
-                    .gmap_canvas {
-                      overflow: hidden;
-                      background: none !important;
-                      width: 271px;
-                      height: 281px;
-                    }
-                    .gmap_iframe {
-                      width: 271px !important;
-                      height: 281px !important;
-                    }
-                  </style>
+                </div>
+              </div>
+              <div
+                class="kingster-footer-column kingster-item-pdlr kingster-column-15"
+              >
+                <div
+                  id="gdlr-core-custom-menu-widget-3"
+                  class="widget widget_gdlr-core-custom-menu-widget kingster-widget"
+                >
+                  <h3 class="kingster-widget-title">Social Life</h3>
+                  <span class="clear"></span>
+                  <div class="menu-campus-life-container">
+                    <ul
+                      id="menu-campus-life"
+                      class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
+                    >
+                      <li class="menu-item">
+                        <a
+                          target="_blank"
+                          href="https://www.instagram.com/malabar_dental_college/"
+                          >Instagram</a
+                        >
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          target="_blank"
+                          href="https://www.facebook.com/malabarAcademicCity/"
+                          >Facebook</a
+                        >
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          target="_blank"
+                          href="https://in.linkedin.com/school/malabar-dental-college-&-research-center/"
+                          >LinkedIn</a
+                        >
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          target="_blank"
+                          href="https://www.youtube.com/@malabardentalcollege8050"
+                          >Youtube</a
+                        >
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          target="_blank"
+                          href="https://goo.gl/maps/mqi1nkPswEPLQjzv6"
+                          >Google</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="kingster-footer-column kingster-item-pdlr kingster-column-15"
+              >
+                <div
+                  id="gdlr-core-custom-menu-widget-4"
+                  class="widget widget_gdlr-core-custom-menu-widget kingster-widget"
+                >
+                  <h3 class="kingster-widget-title">Location</h3>
+                  <span class="clear"></span>
+                  <div class="mapouter">
+                    <div class="gmap_canvas">
+                      <iframe
+                        class="gmap_iframe"
+                        frameborder="0"
+                        scrolling="no"
+                        marginheight="0"
+                        marginwidth="0"
+                        src="https://maps.google.com/maps?width=271&amp;height=281&amp;hl=en&amp;q=malabar dental college manoor&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                      ></iframe
+                      ><a href="https://thepasswordgame.com/"
+                        >The Password Game</a
+                      >
+                    </div>
+                    <style>
+                      .mapouter {
+                        position: relative;
+                        text-align: right;
+                        width: 271px;
+                        height: 281px;
+                      }
+                      .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        width: 271px;
+                        height: 281px;
+                      }
+                      .gmap_iframe {
+                        width: 271px !important;
+                        height: 281px !important;
+                      }
+                    </style>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="kingster-copyright-wrapper">
-          <div class="kingster-copyright-container kingster-container clearfix">
-            <div class="kingster-copyright-left kingster-item-pdlr">
-              Copyright © 2023 Malabar Dental College |
-              <a style="color: #fff" href="dept_of_IT.html"
-                >Department of IT 💻</a
-              >
-            </div>
-            <div class="kingster-copyright-right kingster-item-pdlr">
-              <div
-                class="gdlr-core-social-network-item gdlr-core-item-pdb gdlr-core-none-align"
-                id="div_1dd7_112"
-                style="color: #3db166"
-              >
-                <a
-                  href="https://www.facebook.com/malabarAcademicCity/"
-                  target="_blank"
-                  class="gdlr-core-social-network-icon"
-                  style="color: #3db166"
-                  title="facebook"
-                >
-                  <i class="fa fa-facebook"></i>
-                </a>
-                <a
-                  href="https://goo.gl/maps/mqi1nkPswEPLQjzv6"
-                  target="_blank"
-                  class="gdlr-core-social-network-icon"
-                  style="color: #3db166"
-                  title="google-plus"
-                >
-                  <i class="fa fa-google-plus"></i>
-                </a>
-                <a
-                  href="https://in.linkedin.com/school/malabar-dental-college-&-research-center/"
-                  target="_blank"
-                  class="gdlr-core-social-network-icon"
-                  style="color: #3db166"
-                  title="linkedin"
-                >
-                  <i class="fa fa-linkedin"></i>
-                </a>
 
-                <a
-                  href="https://www.instagram.com/malabar_dental_college/"
-                  target="_blank"
-                  class="gdlr-core-social-network-icon"
-                  style="color: #3db166"
-                  title="instagram"
+          <div class="kingster-copyright-wrapper">
+            <div
+              class="kingster-copyright-container kingster-container clearfix"
+            >
+              <div class="kingster-copyright-left kingster-item-pdlr">
+                Copyright © 2025 Malabar Dental College |
+                <a style="color: #fff" href="dept_of_IT.html"
+                  >Department of IT 💻</a
                 >
-                  <i class="fa fa-instagram"></i>
-                </a>
+              </div>
+              <div class="kingster-copyright-right kingster-item-pdlr">
+                <div
+                  class="gdlr-core-social-network-item gdlr-core-item-pdb gdlr-core-none-align"
+                  id="div_1dd7_112"
+                  style="color: #3db166"
+                >
+                  <a
+                    href="https://www.facebook.com/malabarAcademicCity/"
+                    target="_blank"
+                    class="gdlr-core-social-network-icon"
+                    style="color: #3db166"
+                    title="facebook"
+                  >
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <a
+                    href="https://goo.gl/maps/mqi1nkPswEPLQjzv6"
+                    target="_blank"
+                    class="gdlr-core-social-network-icon"
+                    style="color: #3db166"
+                    title="google-plus"
+                  >
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                  <a
+                    href="https://in.linkedin.com/school/malabar-dental-college-&-research-center/"
+                    target="_blank"
+                    class="gdlr-core-social-network-icon"
+                    style="color: #3db166"
+                    title="linkedin"
+                  >
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/malabar_dental_college/"
+                    target="_blank"
+                    class="gdlr-core-social-network-icon"
+                    style="color: #3db166"
+                    title="instagram"
+                  >
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
-    <script>
-      jQuery(document).ready(function ($) {
-        "use strict";
-        //  TESTIMONIALS CAROUSEL HOOK
-        $("#customers-testimonials").owlCarousel({
-          loop: true,
-          center: true,
-          items: 3,
-          margin: 0,
-          autoplay: true,
-          dots: true,
-          autoplayTimeout: 8500,
-          smartSpeed: 450,
-          responsive: {
-            0: {
-              items: 1,
-            },
-            768: {
-              items: 2,
-            },
-            1170: {
-              items: 3,
-            },
-          },
-        });
-      });
-    </script>
 
     <script type="text/javascript" src="js/jquery/jquery.js"></script>
     <script
@@ -1466,7 +1729,7 @@
     </script>
     <script>
       // Define the API URL to fetch notification data
-      const apiUrl =
+      const apiUrlNotification =
         "https://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";
 
       // Reference to the notification container
@@ -1481,7 +1744,7 @@
       // Function to fetch and update notification data
       async function fetchAndUpdateNotifications() {
         try {
-          const response = await fetch(apiUrl);
+          const response = await fetch(apiUrlNotification);
           notifications = await response.json();
 
           // Call the updateNotification function initially
@@ -1516,8 +1779,213 @@
         home_url: "index.html",
       };
     </script>
+<script>
+  const itemsPerPage = 12; 
+  let currentPage = 1;
+  let allFacilities = [];
+
+  fetch("https://conext.in/website_manager/api/mdc/facilities_list/?fac_type_unique_id=d2e2d5c0258e46bf") 
+    .then(res => res.json())
+    .then(data => {
+      if (!data.status) return;
+      allFacilities = data.data;
+      displayPage(currentPage);
+    })
+    .catch(err => console.error("Error loading facilities:", err));
+
+  function displayPage(page) {
+    const container = document.getElementById("facilities-container");
+    container.innerHTML = "";
+    container.style.display = "grid";
+    container.style.gridTemplateColumns = "repeat(auto-fill, minmax(300px, 1fr))";
+    container.style.gap = "25px";
+    container.style.justifyContent = "center";
+    container.style.margin = "0 auto";
+    container.style.maxWidth = "1400px";
+
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const pageItems = allFacilities.slice(start, end);
+
+    pageItems.forEach(facility => {
+      const description = facility.description || "";
+      const maxLength = 60;
+      const isLong = description.length > maxLength;
+      const shortText = isLong ? description.slice(0, maxLength) + "..." : description;
+
+      const card = document.createElement("div");
+      card.style.border = "1px solid #eee";
+      card.style.borderRadius = "8px";
+      card.style.overflow = "hidden";
+      card.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+      card.style.background = "#fff";
+      card.style.transition = "transform 0.2s";
+      card.classList.add("facility-card"); // important for modal
+      card.onmouseover = () => card.style.transform = "translateY(-5px)";
+      card.onmouseout = () => card.style.transform = "translateY(0)";
+
+      card.innerHTML = `
+        <div style="width:100%; display:block;">
+          <img src="${facility.picture}" alt="${facility.name}" 
+              style="width:100%; height:220px; object-fit:cover; display:block;" />
+        </div>
+        
+        <div style="padding:15px; text-align:center;">
+          <h3 style="font-size:18px; font-weight:600; margin:0; color:#163269;">
+            ${facility.name}
+          </h3>
+          <p style="font-size:14px; color:#555; margin-top:8px; text-align:left;">
+            <span class="short-text">${shortText}</span>
+            <span class="full-text" style="display:none;">${description}</span>
+            ${isLong ? `<a href="#" class="toggle-text" style="color:#3db166; font-weight:bold; margin-left:5px;">Show More</a>` : ""}
+          </p>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+
+    // Modal references
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalClose = document.querySelector(".modal-close");
+
+    // Open modal on click
+    document.addEventListener("click", e => {
+      const card = e.target.closest(".facility-card");
+      if (card && (e.target.tagName === "IMG" || e.target.tagName === "H3" || e.target.tagName === "P")) {
+        e.preventDefault();
+
+        const imgEl = card.querySelector("img");
+        const titleEl = card.querySelector("h3");
+        const descEl = card.querySelector(".full-text");
+
+        modalImg.src = imgEl ? imgEl.src : "";
+        modalTitle.textContent = titleEl ? titleEl.textContent : "";
+        modalDesc.textContent = descEl && descEl.textContent.trim()
+                                  ? descEl.textContent
+                                  : card.querySelector(".short-text").textContent;
+
+        modal.style.display = "flex";
+        document.querySelector("header.kingster-header-wrap").style.visibility = "hidden";
+      }
+    });
+
+    // Close modal
+    modalClose.addEventListener("click", () => {
+      modal.style.display = "none";
+      document.querySelector("header.kingster-header-wrap").style.visibility = "visible";
+    });
+
+    // Close on outside click
+    window.addEventListener("click", e => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        document.querySelector("header.kingster-header-wrap").style.visibility = "visible";
+      }
+    });
+
+    renderPagination();
+  }
+
+  function renderPagination() {
+    const pagination = document.getElementById("facilities-pagination");
+    pagination.innerHTML = "";
+
+    const totalPages = Math.ceil(allFacilities.length / itemsPerPage);
+
+     if (totalPages <= 1) {
+        return;
+      }
+
+    const wrapper = document.createElement("div");
+    wrapper.style.display = "flex";
+    wrapper.style.justifyContent = "center";
+    wrapper.style.alignItems = "center";
+    wrapper.style.gap = "8px";
+
+    if (currentPage > 1) {
+      const prevBtn = document.createElement("button");
+      prevBtn.innerHTML = "⟵ Prev";
+      styleButton(prevBtn, false);
+      prevBtn.onclick = () => {
+        currentPage--;
+        displayPage(currentPage);
+      };
+      wrapper.appendChild(prevBtn);
+    }
+
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      styleButton(btn, i === currentPage);
+      btn.onclick = () => {
+        currentPage = i;
+        displayPage(currentPage);
+      };
+      wrapper.appendChild(btn);
+    }
+
+    if (currentPage < totalPages) {
+      const nextBtn = document.createElement("button");
+      nextBtn.innerHTML = "Next ⟶";
+      styleButton(nextBtn, false);
+      nextBtn.onclick = () => {
+        currentPage++;
+        displayPage(currentPage);
+      };
+      wrapper.appendChild(nextBtn);
+    }
+
+    pagination.appendChild(wrapper);
+  }
+
+  function styleButton(btn, isActive) {
+    btn.style.margin = "0";
+    btn.style.padding = "6px 14px";
+    btn.style.cursor = "pointer";
+    btn.style.background = isActive ? "#3db166" : "#f0f0f0";
+    btn.style.color = isActive ? "#fff" : "#333";
+    btn.style.fontWeight = "600";
+    btn.style.border = "1px solid #ccc";
+    btn.style.borderRadius = "4px";
+    btn.style.transition = "0.3s";
+    btn.onmouseover = () => {
+      if (!isActive) btn.style.background = "#ddd";
+    };
+    btn.onmouseout = () => {
+      if (!isActive) btn.style.background = "#f0f0f0";
+    };
+  }
+
+  // Show more/less toggle
+  document.addEventListener("click", e => {
+    if (e.target.classList.contains("toggle-text")) {
+      e.preventDefault();
+      const p = e.target.closest("p");
+      const shortText = p.querySelector(".short-text");
+      const fullText = p.querySelector(".full-text");
+
+      if (fullText.style.display === "none") {
+        fullText.style.display = "inline";
+        shortText.style.display = "none";
+        e.target.textContent = " Show Less";
+      } else {
+        fullText.style.display = "none";
+        shortText.style.display = "inline";
+        e.target.textContent = " Show More";
+      }
+    }
+  });
+</script>
+
+
+
     <script type="text/javascript" src="js/plugins.min.js"></script>
+    <script type="text/javascript" src="js/isotope.js"></script>
   </body>
 
-  <!-- Mirrored from max-themes.net/demos/kingster/kingster/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Mar 2022 06:34:04 GMT -->
+  <!-- Mirrored from max-themes.net/demos/kingster/kingster/portfolio-3-columns.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Mar 2022 06:34:23 GMT -->
 </html>

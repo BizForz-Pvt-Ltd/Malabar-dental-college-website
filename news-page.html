@@ -51,123 +51,408 @@
       type="text/css"
       media="all"
     />
-    <style>
+<style>
       .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0px;
-  }
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 15px;
+      }
 
-  /* Ensure each news item is centered in its column */
-  .gdlr-core-blog-item {
-    display: flex;
-    justify-content: center;
-  }
+      .gdlr-core-blog-item {
+        display: flex;
+        justify-content: center;
+      }
 
-  /* CSS to style the images with max height and cover */
-  .image_urls {
-    max-height: 450px;
-    object-fit: cover;
-  }
+      /* IMPROVED: Dynamic image container for all image types */
+      .image-container {
+        width: 100%;
+        aspect-ratio: 4/3; /* Changed from 16/9 to 4/3 for better portrait support */
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f8f9fa;
+        position: relative;
+      }
 
-  /* Media query for smaller screen sizes to adjust image height */
-  @media (max-width: 768px) {
-    .image_urls {
-      max-height: 450px;
-      max-width: 450px !important;
-    }
-  }
-  .loading-animation {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #3db166;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 2s linear infinite;
-    margin: 20px auto;
-  }
+      .image_urls {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center; /* Ensure focus is on center of image */
+        transition: transform 0.3s ease;
+      }
 
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  .floating-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #182847; /* WhatsApp green */
-    color: #fff;
-    width: 70px; /* Set width and height to the same value for a perfect circle */
-    height: 70px;
-    border-radius: 50%; /* Make the button round */
-    cursor: pointer;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px; /* Adjust the font size for larger text */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 9999; /* Set a high z-index to appear above other content */
-  }
+      /* Special handling for portrait/long images */
+      .image-container.portrait .image_urls {
+        object-fit: contain; /* Show full image for portraits */
+        background: #f8f9fa; /* Add background for contained images */
+      }
 
-  /* Style for WhatsApp logo */
-  .whatsapp-logo {
-    width: 36px; /* Adjust the logo size */
-    height: 36px; /* Adjust the logo size */
-  }
-  .notification-list {
-    display: inline-block;
-    max-height: 20px;
-    overflow: hidden;
-    position: relative;
-    max-height: 20px;
-  }
-  ul.notification-list {
-    margin-bottom: 0px !important;
-  }
-  @keyframes marquee-up {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-100%);
-    }
-  }
+      .gdlr-core-item-list:hover .image_urls {
+        transform: scale(1.05);
+      }
+
+      /* Fallback for older browsers */
+      @supports not (aspect-ratio: 4/3) {
+        .image-container {
+          height: 200px;
+        }
+      }
+
+      .loading-animation {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3db166;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 2s linear infinite;
+        margin: 20px auto;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .floating-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #182847; 
+        color: #fff;
+        width: 70px; 
+        height: 70px;
+        border-radius: 50%; 
+        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+      }
+
+      .whatsapp-logo {
+        width: 36px; 
+        height: 36px; 
+      }
   
-  /* Pagination styles */
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .pagination button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  .pagination button.active {
-    background-color: #182847;
-    color: white;
-    border-color: #182847;
-  }
-  
-  .pagination button:hover:not(.active) {
-    background-color: #ddd;
-  }
-  
-  .pagination button:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
+      .notification-list {
+        display: inline-block;
+        max-height: 20px;
+        overflow: hidden;
+        position: relative;
+        max-height: 20px;
+      }
+      
+      ul.notification-list {
+        margin-bottom: 0px !important;
+      }
+      
+      @keyframes marquee-up {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-100%);
+        }
+      }
+
+      /* Updated for 20 cards */
+      #newsContainer {
+        display: grid !important;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px !important;
+        max-width: 1400px;
+        margin: 20px auto !important;
+        padding: 0 15px !important;
+        box-sizing: border-box;
+        width: 100%;
+      }
+
+      /* ===== CARD CONTAINER ===== */
+      .gdlr-core-item-list {
+        background: #fff;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+        height: 100%;
+        margin-bottom: 0 !important;
+        border: 1px solid #f0f0f0;
+        width: 100% !important;
+      }
+
+      .gdlr-core-item-list:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transform: translateY(-2px);
+      }
+
+      /* ===== IMAGE CONTAINER ===== */
+      .gdlr-core-blog-thumbnail {
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .gdlr-core-blog-thumbnail a {
+        display: block !important;
+        width: 100% !important;
+        text-decoration: none !important;
+      }
+
+      /* Remove all spacing and ensure full width */
+      .gdlr-core-item-list,
+      .gdlr-core-item-mgb,
+      .gdlr-core-blog-modern,
+      .gdlr-core-blog-modern-inner,
+      .gdlr-core-blog-thumbnail,
+      .gdlr-core-blog-modern-content {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: 100% !important;
+      }
+
+      /* Ensure the parent containers don't limit width */
+      .gdlr-core-pbf-element,
+      .gdlr-core-pbf-section-container,
+      .gdlr-core-pbf-section {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      /* Fix the grid item alignment */
+      .gdlr-core-column-30 {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      /* Make sure the blog modern inner fills the space */
+      .gdlr-core-blog-modern-inner {
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+
+      /* ===== CONTENT ===== */
+      .gdlr-core-blog-modern-content {
+        padding: 12px 10px !important; /* Increased padding for better spacing */
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 80px; /* Increased min-height */
+        width: 100% !important;
+      }
+
+      .gdlr-core-blog-title {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .gdlr-core-blog-title a {
+        font-size: 14px !important;
+        font-weight: 600;
+        color: #182847;
+        text-decoration: none;
+        line-height: 1.3 !important; /* Improved line height */
+        margin: 0 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Allow 3 lines for better readability */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        width: 100% !important;
+      }
+
+      .gdlr-core-blog-info-wrapper {
+        margin: 6px 0 0 0 !important; /* Increased margin */
+        font-size: 12px !important; /* Slightly larger for readability */
+        color: #666;
+        line-height: 1.3;
+        width: 100% !important;
+      }
+
+      /* ===== RESPONSIVE DESIGN ===== */
+      
+      /* Large Desktop */
+      @media (min-width: 1400px) {
+        #newsContainer {
+          grid-template-columns: repeat(5, 1fr);
+          gap: 18px !important;
+        }
+      }
+
+      /* Standard Desktop */
+      @media (max-width: 1399px) {
+        #newsContainer {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 15px !important;
+        }
+        
+        .gdlr-core-blog-title a {
+          font-size: 14px !important;
+          -webkit-line-clamp: 3;
+        }
+      }
+
+      /* Tablet */
+      @media (max-width: 1024px) {
+        #newsContainer {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 12px !important;
+          padding: 0 12px !important;
+        }
+        
+        .gdlr-core-blog-title a {
+          font-size: 13px !important;
+          -webkit-line-clamp: 3;
+        }
+        
+        .gdlr-core-blog-modern-content {
+          padding: 10px 8px !important;
+          min-height: 75px;
+        }
+        
+        .image-container {
+          aspect-ratio: 4/3;
+        }
+      }
+
+      /* Small Tablet */
+      @media (max-width: 768px) {
+        #newsContainer {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px !important;
+          margin: 15px auto !important;
+          padding: 0 10px !important;
+        }
+        
+        .gdlr-core-blog-title a {
+          font-size: 14px !important;
+          -webkit-line-clamp: 3;
+        }
+        
+        .gdlr-core-blog-modern-content {
+          padding: 12px 10px !important;
+          min-height: 80px;
+        }
+        
+        .gdlr-core-blog-info-wrapper {
+          font-size: 12px !important;
+        }
+        
+        .image-container {
+          aspect-ratio: 4/3;
+        }
+      }
+
+      /* Mobile */
+      @media (max-width: 480px) {
+        #newsContainer {
+          grid-template-columns: 1fr;
+          gap: 12px !important;
+          margin: 15px auto !important;
+          padding: 0 10px !important;
+        }
+        
+        .gdlr-core-blog-title a {
+          font-size: 15px !important;
+          -webkit-line-clamp: 3;
+        }
+        
+        .gdlr-core-blog-modern-content {
+          padding: 14px 12px !important;
+          min-height: 85px;
+        }
+        
+        .gdlr-core-blog-info-wrapper {
+          font-size: 13px !important;
+        }
+        
+        .image-container {
+          aspect-ratio: 4/3;
+        }
+      }
+
+      /* Pagination */
+      .pagination {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0 20px 0;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .pagination button {
+        margin: 0;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 14px;
+        min-width: 40px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .pagination button.active {
+        background-color: #182847;
+        color: white;
+        border-color: #182847;
+        transform: scale(1.05);
+      }
+
+      .pagination button:hover:not(.active):not(:disabled) {
+        background-color: #f8f9fa;
+        border-color: #3db166;
+        color: #3db166;
+      }
+
+      .pagination button:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        transform: none;
+      }
+
+      .pagination span {
+        padding: 8px 6px;
+        color: #666;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Smart image detection for different aspect ratios */
+      @media (max-width: 1024px) {
+        .image-container {
+          aspect-ratio: 3/2; /* Slightly wider on tablets */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .image-container {
+          aspect-ratio: 4/3; /* Back to 4/3 on mobile */
+        }
+      }
     </style>
   </head>
   <a
@@ -199,8 +484,7 @@
           <div class="kingster-mobile-menu-right">
             <div
               class="kingster-main-menu-search"
-              id="kingster-mobile-top-search"
-            >
+              id="kingster-mobile-top-search">
               <i class="fa fa-search"></i>
             </div>
             <div class="kingster-top-search-wrap">
@@ -250,14 +534,13 @@
                       >
                     </li>
                     <li class="menu-item">
-                      <a href="institutional-development-plan.html"
-                        >Institutional Development Plan</a
-                      >
+                      <a href="institutional-development-plan.html">
+                        Institutional Development Plan</a>
                     </li>
                     <li class="menu-item menu-item-has-children">
-                      <a class="sf-with-ul-pre"
-                        >Accreditation/Ranking Status</a
-                      >
+                      <a class="sf-with-ul-pre">
+                        Accreditation/Ranking Status
+                      </a>
                       <ul class="sub-menu">
                           <li class="menu-item">
                             <a href="naac.html">NAAC</a>
@@ -274,16 +557,16 @@
                         </ul>
                     </li>
                     <li class="menu-item">
-                      <a href="recognition-approval.html"
-                        >Recognition/Approval</a
-                      >
+                      <a href="recognition-approval.html">
+                        Recognition/Approval
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                      <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
@@ -291,8 +574,8 @@
                   <ul class="sub-menu">
                     <li class="menu-item">
                       <a href="/about-us.html#board-of-directors"
-                        >Board of Management</a
-                      >
+                        >Board of Management
+                      </a>
                     </li>
                     <li class="menu-item">
                       <a href="/about-us.html#principal-message">Principal</a>
@@ -302,13 +585,13 @@
                     </li>
                     <li class="menu-item">
                       <a href="internal-complaint-committee.html"
-                        >Internal Complaint Committee</a
-                      >
+                        >Internal Complaint Committee
+                      </a>
                     </li>
                     <li class="menu-item">
-                      <a href="academic-leadership.html"
-                        >Academic Leadership</a
-                      >
+                      <a href="academic-leadership.html">
+                        Academic Leadership
+                      </a>
                     </li>
                   </ul>
                 </li>
@@ -322,14 +605,14 @@
                           <a>UG & PG</a>
                           <ul>
                             <li class="menu-item">
-                              <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
-                              >
+                              <a href="bachelor-of-dental-surgery.html">
+                                BDS(Bachelor Dental Surgery)
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
-                              >
+                              <a href="master-of-dental-surgery.html">
+                                MDS(Master Dental Surgery)
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -337,14 +620,19 @@
                           <a>Diploma</a>
                           <ul>
                             <li class="menu-item">
-                              <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
-                              >
+                              <a href="dora.html">
+                                Dental Operating <br/> Room Assistant (DORA)
+                              </a>
                             </li>
                             <li class="menu-item">
-                              <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
-                              >
+                              <a href="dental-mechanic.html">
+                                Dental Mechanic (DM)
+                              </a>
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html">
+                                Dental Hygienist (DH)
+                              </a>
                             </li>
                           </ul>
                         </li>
@@ -353,15 +641,15 @@
                     <li class="menu-item">
                       <a
                         href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf"
-                        target="_blank"
-                        >Academic Calendar</a
-                      >
+                        target="_blank">
+                        Academic Calendar
+                      </a>
                     </li>
                     <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
+                      <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
+                          <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="anatomy.html">Anatomy</a>
@@ -398,7 +686,7 @@
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
+                          <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="oral-pathology.html"
@@ -425,7 +713,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -488,6 +776,10 @@
                       <a href="prospectus.html">Prospectus</a>
                     </li>
                     <li class="menu-item">
+                      <a href="dept-of-admission.html"
+                        >Department of Admission</a>
+                    </li>
+                    <li class="menu-item">
                       <a href="admission.html"
                         >Admission Process And Guidelines</a
                       >
@@ -517,14 +809,23 @@
                   <a>Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -544,6 +845,9 @@
                       >
                     </li>
                     <li class="menu-item">
+                      <a href="women-cell.html">Women Cell</a>
+                    </li>
+                    <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
                   </ul>
@@ -556,7 +860,7 @@
                     </li>
                   </ul>
                 </li>
-                <li class="menu-item menu-item-has-children">
+                <li class="menu-item current-menu-item menu-item-has-children kingster-normal-menu">
                   <a>Information Corner</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
@@ -565,15 +869,27 @@
                       >
                     </li>
                     <li class="menu-item">
+                      <a href="mass-media.html"
+                        >MDC in Mass Media</a
+                      >
+                    </li>
+                    <li class="menu-item">
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                     <li class="menu-item">
+                      <a href="news-page.html"
+                        >News & Achievements</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="events.html"
+                        >Recent Events</a
                       >
                     </li>
                     <li class="menu-item">
@@ -604,7 +920,7 @@
               <i class="fa fa-envelope-open-o" id="i_fd84_0"></i>
               <a href="mailto:info@macity.edu.in">info@macity.edu.in</a
               ><i class="fa fa-phone" id="i_fd84_1"></i>
-              <a href="tel:+917034555551">+91 7034 55555 1</a>
+              <a href="tel:+917034555514">+91 7034 55555 1</a>
             </div>
             <div class="kingster-top-bar-right kingster-item-pdlr">
               <ul
@@ -648,7 +964,7 @@
             <div class="kingster-main-menu" id="kingster-main-menu">
               <ul id="menu-main-navigation-1" class="sf-menu">
                 <li
-                  class="menu-item menu-item-home current-menu-item menu-item-has-children"
+                  class="menu-item menu-item-home menu-item-has-children"
                 >
                   <a href="index.html">Home</a>
                 </li>
@@ -713,11 +1029,11 @@
                       >
                     </li>
                     <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                      <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li
@@ -771,12 +1087,12 @@
                           <ul>
                             <li class="menu-item">
                               <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
+                                >BDS(Bachelor Dental Surgery)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
+                                >MDS(Master Dental Surgery)</a
                               >
                             </li>
                           </ul>
@@ -784,14 +1100,19 @@
                         <li class="menu-item menu-item-has-children">
                           <a class="sf-with-ul-pre">Diploma</a>
                           <ul>
-                            <li class="menu-item">
+                             <li class="menu-item">
                               <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
+                                >Dental Operating <br/> Room Assistant (DORA)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
+                                >Dental Mechanic (DM)</a
+                              >
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html"
+                                >Dental Hygienist (DH)</a
                               >
                             </li>
                           </ul>
@@ -799,10 +1120,10 @@
                       </ul>
                     </li>
                     <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
+                      <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
+                          <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="anatomy.html">Anatomy</a>
@@ -839,7 +1160,7 @@
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
+                          <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="oral-pathology.html"
@@ -866,7 +1187,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -931,6 +1252,10 @@
                       <a href="prospectus.html">Prospectus</a>
                     </li>
                     <li class="menu-item">
+                      <a href="dept-of-admission.html"
+                        >Department of Admission</a>
+                    </li>
+                    <li class="menu-item">
                       <a href="admission.html"
                         >Admission Process And Guidelines</a
                       >
@@ -964,14 +1289,23 @@
                   <a class="sf-with-ul-pre">Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -991,6 +1325,9 @@
                       >
                     </li>
                     <li class="menu-item">
+                      <a href="women-cell.html">Women Cell</a>
+                    </li>
+                    <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
                   </ul>
@@ -1006,7 +1343,7 @@
                   </ul>
                 </li>
                 <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
+                  class="menu-item current-menu-item menu-item-has-children kingster-normal-menu"
                 >
                   <a class="sf-with-ul-pre">Information Corner</a>
                   <ul class="sub-menu">
@@ -1016,15 +1353,27 @@
                       >
                     </li>
                     <li class="menu-item">
+                      <a href="mass-media.html"
+                        >MDC in Mass Media</a
+                      >
+                    </li>
+                    <li class="menu-item">
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                     <li class="menu-item">
+                      <a href="news-page.html"
+                        >News & Achievements</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="events.html"
+                        >Recent Events</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1039,10 +1388,7 @@
                     <a href="contact-us.html">Contact Us</a>
                   </li></li>
                       <div class="kingster-main-menu-right-wrap clearfix">
-                        <div
-                          class="kingster-main-menu-search"
-                          id="kingster-top-search"
-                        >
+                        <div class="kingster-main-menu-search" id="kingster-top-search">
                           <i class="icon_search"></i>
                           <span>Search</span>
                         </div>
@@ -1076,11 +1422,10 @@
                       </div>
                     </li>
                   </ul>
-
                   <div
-                class="kingster-navigation-slide-bar"
-                id="kingster-navigation-slide-bar"
-              ></div>
+                    class="kingster-navigation-slide-bar"
+                    id="kingster-navigation-slide-bar">
+                  </div>
             </div>
           </div>
         </div>
@@ -1103,7 +1448,7 @@
         <div class="gdlr-core-pbf-element">
           <div id="loadingAnimation" class="loading-animation" style="display: none;"></div>
           <div id="errorContainer" class="error-message" style="display: none;"></div>
-          <div id="newsContainer" class="grid-container"></div>
+          <div id="newsContainer" class="news-grid"></div>
           <div id="paginationContainer" class="pagination" style="margin-top: 20px; text-align: center;"></div>
         </div>
       </div>
@@ -1128,12 +1473,15 @@
                       <br />
                       Manoor - Chekanoor Road, <br />
                       Manoor, Edappal, Malappuram, <br />
-                      Kerala 679578
+                      Kerala 679578<br /><br />
+
+              0494 2697020, 21, 22 <br />
+              7034555514
                     </p>
                     <p>
-                      <span id="span_1dd7_11">
+                      <!-- <span id="span_1dd7_11">
                         Toll free:<a href="tel:18008430066"> 18008430066</a>
-                      </span><br />
+                      </span><br /> -->
                       <span
                         class="gdlr-core-space-shortcode"
                         id="span_1dd7_12"
@@ -1169,6 +1517,9 @@
                       id="menu-our-campus"
                       class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
                     >
+                    <li class="menu-item">
+                      <a href="about-us.html">Academic Calendar</a>
+                    </li>
                       <li class="menu-item">
                         <a href="about-us.html">About Us</a>
                       </li>
@@ -1186,6 +1537,7 @@
                         <a href="dental-mechanic.html">Dental Mechanic</a>
                       </li>
                       <li class="menu-item"><a href="dora.html">DORA</a></li>
+                      <li class="menu-item"><a href="dental-hygienist.html">Dental Hygienist</a></li>
                       <li class="menu-item">
                         <a href="contact-us.html">Contact</a>
                       </li>
@@ -1298,7 +1650,7 @@
               class="kingster-copyright-container kingster-container clearfix"
             >
               <div class="kingster-copyright-left kingster-item-pdlr">
-                Copyright © 2023 Malabar Dental College |
+                Copyright © 2025 Malabar Dental College |
                 <a style="color: #fff" href="dept_of_IT.html"
                   >Department of IT 💻</a
                 >
@@ -1363,243 +1715,239 @@
       type="text/javascript"
       src="plugins/goodlayers-core/plugins/combine/script.js"
     ></script>
-<script>
-  // Global variables to store pagination state
-  let currentPage = 1;
-  let totalPages = 1;
-  const pageSize = 10;
 
-  // Function to create and append a news item element to the container
-  function createNewsItem(newsData, index) {
-    // Create a new div element with the class "gdlr-core-pbf-element"
-    const newsItemDiv = document.createElement("div");
-    newsItemDiv.className = `gdlr-core-item-list gdlr-core-item-mgb gdlr-core-column-30`;
-    newsItemDiv.style.padding = `0 10px`;
-    const newsDate = new Date(newsData.date);
-    const newsId = newsData.id;
-    
-    // Use news_banner as primary image, fallback to first attachment picture, then default image
-    let img = "upload/clg.jpg";
-    if (newsData.news_banner) {
-      img = newsData.news_banner;
-    } else if (newsData.attachments && newsData.attachments.length > 0 && newsData.attachments[0].picture) {
-      img = newsData.attachments[0].picture;
-    } else {
-      let random = Math.floor(Math.random() * 3) + 1;
-      img = `upload/mdc_pics/mdc${random}.jpg`;
-    }
-    
-    const formattedDate = newsDate.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+    <script>
+      let currentPage = 1;
+      let totalPages = 1;
+      const pageSize = 20;
 
-    // Set the HTML content of the news item div based on the provided template
-    newsItemDiv.innerHTML = `
-    <div class="gdlr-core-blog-modern gdlr-core-with-image gdlr-core-hover-overlay-content gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-      <div class="gdlr-core-blog-modern-inner">
-        <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
-            <a class="news_subject" href='news-single-page.html?id=${newsId}'><img class="image_urls" src="${img}" style="height:450px;object-fit:cover" width="1280" height="580" alt=""></a>
-        </div>
-        <div class="gdlr-core-blog-modern-content gdlr-core-center-align">
-          <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 700; letter-spacing: 0px;">
-            <a class="news_subject" href='news-single-page.html?id=${newsId}'>${newsData.subject}</a>
-          </h3>
-          <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-              <a class="news_date" href='news-single-page.html?id=${newsId}'>${formattedDate}</a>
-            </span>
+      function createNewsItem(newsData, index) {
+  const newsItemDiv = document.createElement("div");
+  newsItemDiv.className = `gdlr-core-item-list gdlr-core-item-mgb gdlr-core-column-30`;
+  
+  const newsDate = new Date(newsData.date);
+  const newsId = newsData.id;
+  
+  function getFullImageUrl(url) {
+    if (!url) return null;
+    if (url.startsWith('http')) return url;
+    return `https://conext.in${url}`;
+  }
+
+  let img = "upload/clg.jpg";
+  if (newsData.news_banner) {
+    img = getFullImageUrl(newsData.news_banner);
+  } else if (newsData.attachments && newsData.attachments.length > 0 && newsData.attachments[0].picture) {          
+    img = getFullImageUrl(newsData.attachments[0].picture);
+  } else {
+    let random = Math.floor(Math.random() * 3) + 1;
+    img = `upload/mdc_pics/mdc${random}.jpg`;
+  }
+  
+  const formattedDate = newsDate.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short", // Shorter month name
+    day: "numeric",
+  });
+
+  // Truncate long titles
+  const title = newsData.subject.length > 60 
+    ? newsData.subject.substring(0, 60) + '...' 
+    : newsData.subject;
+
+  newsItemDiv.innerHTML = `
+  <div class="gdlr-core-blog-modern gdlr-core-with-image gdlr-core-hover-overlay-content gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
+    <div class="gdlr-core-blog-modern-inner">
+      <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
+        <a class="news_subject" href='news-single-page.html?id=${newsId}'>
+          <div class="image-container">
+            <img class="image_urls" src="${img}" alt="${title}" loading="lazy">
           </div>
+        </a>            
+      </div>
+      <div class="gdlr-core-blog-modern-content gdlr-core-center-align">
+        <h3 class="gdlr-core-blog-title gdlr-core-skin-title">
+          <a class="news_subject" href='news-single-page.html?id=${newsId}'>${title}</a>
+        </h3>
+        <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
+          <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
+            📅 ${formattedDate}
+          </span>
         </div>
       </div>
     </div>
-    `;
+  </div>
+  `;
 
-    return newsItemDiv;
-  }
+  return newsItemDiv;
+}
 
-  // Function to render pagination buttons
-  function renderPagination(totalItems) {
-    totalPages = Math.ceil(totalItems / pageSize);
-    const paginationContainer = document.getElementById("paginationContainer");
-    
-    if (!paginationContainer || totalPages <= 1) {
-      return;
-    }
-    
-    paginationContainer.innerHTML = '';
-    
-    // Previous button
-    const prevButton = document.createElement('button');
-    prevButton.innerHTML = '&laquo;';
-    prevButton.disabled = currentPage === 1;
-    prevButton.addEventListener('click', () => {
-      if (currentPage > 1) {
-        currentPage--;
-        fetchAndRenderNewsItems();
-      }
-    });
-    paginationContainer.appendChild(prevButton);
-    
-    // Page buttons
-    const maxVisibleButtons = 5;
-    let startPage = Math.max(1, currentPage - Math.floor(maxVisibleButtons / 2));
-    let endPage = Math.min(totalPages, startPage + maxVisibleButtons - 1);
-    
-    if (endPage - startPage + 1 < maxVisibleButtons) {
-      startPage = Math.max(1, endPage - maxVisibleButtons + 1);
-    }
-    
-    if (startPage > 1) {
-      const firstButton = document.createElement('button');
-      firstButton.textContent = '1';
-      firstButton.addEventListener('click', () => {
-        currentPage = 1;
-        fetchAndRenderNewsItems();
-      });
-      paginationContainer.appendChild(firstButton);
-      
-      if (startPage > 2) {
-        const ellipsis = document.createElement('span');
-        ellipsis.textContent = '...';
-        paginationContainer.appendChild(ellipsis);
-      }
-    }
-    
-    for (let i = startPage; i <= endPage; i++) {
-      const pageButton = document.createElement('button');
-      pageButton.textContent = i;
-      if (i === currentPage) {
-        pageButton.classList.add('active');
-      }
-      pageButton.addEventListener('click', () => {
-        currentPage = i;
-        fetchAndRenderNewsItems();
-      });
-      paginationContainer.appendChild(pageButton);
-    }
-    
-    if (endPage < totalPages) {
-      if (endPage < totalPages - 1) {
-        const ellipsis = document.createElement('span');
-        ellipsis.textContent = '...';
-        paginationContainer.appendChild(ellipsis);
-      }
-      
-      const lastButton = document.createElement('button');
-      lastButton.textContent = totalPages;
-      lastButton.addEventListener('click', () => {
-        currentPage = totalPages;
-        fetchAndRenderNewsItems();
-      });
-      paginationContainer.appendChild(lastButton);
-    }
-    
-    // Next button
-    const nextButton = document.createElement('button');
-    nextButton.innerHTML = '&raquo;';
-    nextButton.disabled = currentPage === totalPages;
-    nextButton.addEventListener('click', () => {
-      if (currentPage < totalPages) {
-        currentPage++;
-        fetchAndRenderNewsItems();
-      }
-    });
-    paginationContainer.appendChild(nextButton);
-  }
-
-  // Function to fetch data from the API and render news items in a grid
-  function fetchAndRenderNewsItems() {
-    // Replace 'YOUR_API_URL_HERE' with the actual API endpoint
-    const apiUrl = `https://conext.in/news/api/get_org_news_articles/1/?page=${currentPage}`;
-    const loadingAnimation = document.getElementById("loadingAnimation");
-    const newsContainer = document.getElementById("newsContainer");
-    
-    if (loadingAnimation) loadingAnimation.style.display = "block";
-    if (newsContainer) newsContainer.style.display = "none";
-    
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((apiResponse) => {
-        const container = document.getElementById("newsContainer");
+      function renderPagination(totalItems) {
+        totalPages = Math.ceil(totalItems / pageSize);
+        const paginationContainer = document.getElementById("paginationContainer");
         
-        // Check if the response has the expected structure
-        if (!apiResponse || !apiResponse.results || !apiResponse.results.data) {
-            throw new Error('Invalid API response structure');
+        if (!paginationContainer || totalPages <= 1) {
+          return;
         }
         
-        // Clear previous content
-        if (container) container.innerHTML = '';
+        paginationContainer.innerHTML = '';
         
-        // Iterate through the news items array
-        apiResponse.results.data.forEach((item) => {
-            const newsItemElement = createNewsItem(item);
-            if (container) container.appendChild(newsItemElement);
+        const prevButton = document.createElement('button');
+        prevButton.innerHTML = '&laquo;';
+        prevButton.disabled = currentPage === 1;
+        prevButton.addEventListener('click', () => {
+          if (currentPage > 1) {
+            currentPage--;
+            fetchAndRenderNewsItems();
+          }
         });
+        paginationContainer.appendChild(prevButton);
         
-        // Render pagination
-        if (apiResponse.count) {
-          renderPagination(apiResponse.count);
+        const maxVisibleButtons = 5;
+        let startPage = Math.max(1, currentPage - Math.floor(maxVisibleButtons / 2));
+        let endPage = Math.min(totalPages, startPage + maxVisibleButtons - 1);
+        
+        if (endPage - startPage + 1 < maxVisibleButtons) {
+          startPage = Math.max(1, endPage - maxVisibleButtons + 1);
         }
         
-        if (loadingAnimation) loadingAnimation.style.display = "none";
-        if (newsContainer) newsContainer.style.display = "grid"; // Changed to grid to maintain layout
-      })
-      .catch((error) => {
-        console.error("Error fetching data from the API:", error);
-        if (loadingAnimation) loadingAnimation.style.display = "none";
-        
-        // Display error message to user
-        const container = document.getElementById("newsContainer");
-        if (container) {
-          container.innerHTML = '<p style="text-align: center; color: red;">Failed to load news. Please try again later.</p>';
-          container.style.display = "block";
+        if (startPage > 1) {
+          const firstButton = document.createElement('button');
+          firstButton.textContent = '1';
+          firstButton.addEventListener('click', () => {
+            currentPage = 1;
+            fetchAndRenderNewsItems();
+          });
+          paginationContainer.appendChild(firstButton);
+          
+          if (startPage > 2) {
+            const ellipsis = document.createElement('span');
+            ellipsis.textContent = '...';
+            paginationContainer.appendChild(ellipsis);
+          }
         }
-      });
-  }
+        
+        for (let i = startPage; i <= endPage; i++) {
+          const pageButton = document.createElement('button');
+          pageButton.textContent = i;
+          if (i === currentPage) {
+            pageButton.classList.add('active');
+          }
+          pageButton.addEventListener('click', () => {
+            currentPage = i;
+            fetchAndRenderNewsItems();
+          });
+          paginationContainer.appendChild(pageButton);
+        }
+        
+        if (endPage < totalPages) {
+          if (endPage < totalPages - 1) {
+            const ellipsis = document.createElement('span');
+            ellipsis.textContent = '...';
+            paginationContainer.appendChild(ellipsis);
+          }
+          
+          const lastButton = document.createElement('button');
+          lastButton.textContent = totalPages;
+          lastButton.addEventListener('click', () => {
+            currentPage = totalPages;
+            fetchAndRenderNewsItems();
+          });
+          paginationContainer.appendChild(lastButton);
+        }
+        
+        const nextButton = document.createElement('button');
+        nextButton.innerHTML = '&raquo;';
+        nextButton.disabled = currentPage === totalPages;
+        nextButton.addEventListener('click', () => {
+          if (currentPage < totalPages) {
+            currentPage++;
+            fetchAndRenderNewsItems();
+          }
+        });
+        paginationContainer.appendChild(nextButton);
+      }
 
-  // Call the function to fetch and render news items when DOM is loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    fetchAndRenderNewsItems();
-  });
-</script>
+      function fetchAndRenderNewsItems() {
+        const apiUrl = `https://conext.in/news/api/get_org_news_articles/1/?page=${currentPage}`;
+        const loadingAnimation = document.getElementById("loadingAnimation");
+        const newsContainer = document.getElementById("newsContainer");
+        
+        if (loadingAnimation) loadingAnimation.style.display = "block";
+        if (newsContainer) newsContainer.style.display = "none";
+        
+        fetch(apiUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then((apiResponse) => {
+            const container = document.getElementById("newsContainer");
+            
+            if (!apiResponse || !apiResponse.results || !apiResponse.results.data) {
+                throw new Error('Invalid API response structure');
+            }
+            
+            if (container) container.innerHTML = '';
+            
+
+            apiResponse.results.data.forEach((item) => {
+              console.log(item);
+              
+                const newsItemElement = createNewsItem(item);
+                if (container) container.appendChild(newsItemElement);
+            });
+            
+            if (apiResponse.count) {
+              renderPagination(apiResponse.count);
+            }
+            
+            if (loadingAnimation) loadingAnimation.style.display = "none";
+            if (newsContainer) newsContainer.style.display = "grid"; 
+          })
+          .catch((error) => {
+            console.error("Error fetching data from the API:", error);
+            if (loadingAnimation) loadingAnimation.style.display = "none";
+            
+            const container = document.getElementById("newsContainer");
+            if (container) {
+              container.innerHTML = '<p style="text-align: center; color: red;">Failed to load news. Please try again later.</p>';
+              container.style.display = "block";
+            }
+          });
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        fetchAndRenderNewsItems();
+      });
+    </script>
+
     <script>
-      // Define the API URL to fetch notification data
       const apiUrlNotification =
         "https://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";
 
-      // Reference to the notification container
       const notificationContainer = document.getElementById(
         "notification-container"
       );
 
-      // Store the notification data and current index
       let notifications = [];
       let currentIndex = 0;
 
-      // Function to fetch and update notification data
       async function fetchAndUpdateNotifications() {
         try {
           const response = await fetch(apiUrlNotification);
           notifications = await response.json();
 
-          // Call the updateNotification function initially
           updateNotification();
 
-          // Set an interval to update notifications every 1.5 seconds
           setInterval(updateNotification, 4500);
         } catch (error) {
           console.error("Error fetching notifications:", error);
         }
       }
 
-      // Function to update the notification text
       function updateNotification() {
         if (notifications.length > 0) {
           const list = notificationContainer;
@@ -1608,7 +1956,6 @@
         }
       }
 
-      // Call the fetchAndUpdateNotifications function initially
       fetchAndUpdateNotifications();
     </script>
     <script type="text/javascript">

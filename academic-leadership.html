@@ -1,649 +1,405 @@
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
-  <!-- Mirrored from max-themes.net/demos/kingster/kingster/course-list-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Mar 2022 06:34:57 GMT -->
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon" />
     <title>Academic Leadership</title>
-    <link
-      rel="stylesheet"
-      href="plugins/goodlayers-core/plugins/combine/style.css"
-      type="text/css"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      href="plugins/goodlayers-core/include/css/page-builder.css"
-      type="text/css"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      href="plugins/revslider/public/assets/css/settings.css"
-      type="text/css"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      href="css/style-core.css"
-      type="text/css"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      href="css/kingster-style-custom.css"
-      type="text/css"
-      media="all"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Playfair+Display:700%2C400"
-      rel="stylesheet"
-      property="stylesheet"
-      type="text/css"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CABeeZee%3Aregular%2Citalic&amp;subset=latin%2Clatin-ext%2Cdevanagari&amp;ver=5.0.3"
-      type="text/css"
-      media="all"
-    />
-    <style>
-      .gdlr-core-course-item-link {
-        display: flex;
-        align-items: center;
-      }
-      .gdlr-core-course-item-logo {
-        width: 30px; /* Adjust the width to your desired value */
-        height: 30px; /* Adjust the height to your desired value */
-      }
-      .gdlr-core-course-item-logo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .gdlr-core-course-item-title {
-        margin-left: 20px; /* Reset default margin */
-      }
-      .loader {
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #3db166;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        animation: spin 2s linear infinite;
-        margin: 20px auto;
-      }
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
+    <link rel="stylesheet" href="plugins/goodlayers-core/plugins/combine/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="plugins/goodlayers-core/include/css/page-builder.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="plugins/revslider/public/assets/css/settings.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/style-core.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/kingster-style-custom.css" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700%2C400" rel="stylesheet" property="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CABeeZee%3Aregular%2Citalic&amp;subset=latin%2Clatin-ext%2Cdevanagari&amp;ver=5.0.3" type="text/css" media="all" />
+<style>
+        /* Academic Leadership Page Specific Styles */
+        .leadership-page-wrapper {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        100% {
-          transform: rotate(360deg);
+        
+        .leadership-section {
+            margin: 40px 0;
+            padding: 30px 0;
         }
-      }
-      .gdlr-core-course-item-subtitle {
-        font-size: 14px;
-        color: #888;
-        padding-left: 50px;
-      }
-      .floating-button {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background-color: #182847; /* WhatsApp green */
-        color: #fff;
-        width: 70px; /* Set width and height to the same value for a perfect circle */
-        height: 70px;
-        border-radius: 50%; /* Make the button round */
-        cursor: pointer;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px; /* Adjust the font size for larger text */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 9999; /* Set a high z-index to appear above other content */
-      }
-      /* Style for WhatsApp logo */
-      .whatsapp-logo {
-        width: 36px; /* Adjust the logo size */
-        height: 36px; /* Adjust the logo size */
-      }
-      .notification-list {
-        display: inline-block;
-        max-height: 20px;
-        overflow: hidden;
-        position: relative;
-        max-height: 20px;
-      }
-      ul.notification-list {
-        margin-bottom: 0px !important;
-      }
-      @keyframes marquee-up {
-        0% {
-          transform: translateY(0);
+        
+        .leadership-section:first-child {
+            margin-top: 10px;
         }
-        100% {
-          transform: translateY(-100%);
+        
+        .leadership-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #182847;
+            font-size: 36px;
+            font-weight: 700;
+            position: relative;
         }
-      }
+        
+        .leadership-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #3db166;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        
+        .leadership-subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #182847;
+            font-size: 28px;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .leadership-subtitle:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #3db166;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        
+        .leadership-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .leadership-card {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .leadership-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .leadership-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        
+        .leadership-info {
+            padding: 0 5px;
+        }
+        
+        .leadership-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #182847;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+        
+        .leadership-designation {
+            font-size: 15px;
+            color: #3db166;
+            font-weight: 500;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+        
+        .leadership-department {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.3;
+        }
+        
+        /* Principal Section Styles */
+        .principal-section {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 50px;
+            margin: 40px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 10px;
+        }
+        
+        .principal-image-container {
+            flex: 0 0 auto;
+        }
+        
+        .principal-image {
+            width: 300px;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .principal-info {
+            max-width: 550px;
+            text-align: left;
+            flex: 1;
+        }
+        
+        .principal-name {
+            font-size: 30px;
+            color: #182847;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .principal-designation {
+            font-size: 22px;
+            color: #3db166;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .principal-department {
+            font-size: 16px;
+            color: #332e2e;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .principal-bio {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #444;
+        }
+        
+        .toggle-text {
+            color: #3db166;
+            font-weight: 600;
+            cursor: pointer;
+            margin-left: 5px;
+            text-decoration: underline;
+        }
+        
+        .toggle-text:hover {
+            color: #2a8c4f;
+        }
+        
+        /* Section dividers */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+            margin: 40px 0;
+        }
+        
+        /* Associate Deans - 2 persons with larger gap */
+        #associate-deans-container.leadership-container {
+            gap: 80px;
+            justify-content: center;
+        }
+        
+        #associate-deans-container .leadership-card {
+            width: 320px;
+        }
+        
+        /* Assistant Deans - 4 persons with adjusted gap */
+        #assistant-deans-container.leadership-container {
+            gap: 25px;
+            justify-content: center;
+        }
+        
+        #assistant-deans-container .leadership-card {
+            width: 270px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            #assistant-deans-container .leadership-card {
+                width: 280px;
+            }
+            
+            #associate-deans-container .leadership-card {
+                width: 300px;
+            }
+        }
+        
+        @media (max-width: 1100px) {
+            .principal-section {
+                gap: 35px;
+                padding: 35px;
+            }
+            
+            .principal-image {
+                width: 280px;
+                height: 550px;
+            }
+            
+            #assistant-deans-container .leadership-card {
+                width: 250px;
+            }
+            
+            #associate-deans-container .leadership-card {
+                width: 280px;
+            }
+            
+            #associate-deans-container.leadership-container {
+                gap: 60px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .principal-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+                padding: 30px 25px;
+            }
+            
+            .principal-info {
+                text-align: center;
+            }
+            
+            .principal-image {
+                width: 250px;
+                height: 320px;
+            }
+            
+            #assistant-deans-container.leadership-container {
+                gap: 25px;
+            }
+            
+            #associate-deans-container.leadership-container {
+                gap: 50px;
+            }
+            
+            #assistant-deans-container .leadership-card {
+                width: 280px;
+            }
+            
+            #associate-deans-container .leadership-card {
+                width: 280px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .leadership-page-wrapper {
+                padding: 20px 15px;
+            }
+            
+            .leadership-section {
+                margin: 30px 0;
+                padding: 20px 0;
+            }
+            
+            .leadership-title {
+                font-size: 30px;
+                margin-bottom: 30px;
+            }
+            
+            .leadership-subtitle {
+                font-size: 24px;
+                margin-bottom: 25px;
+            }
+            
+            .leadership-card {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .principal-section {
+                padding: 25px 20px;
+                margin: 30px 0;
+            }
+            
+            .principal-name {
+                font-size: 26px;
+            }
+            
+            .principal-designation {
+                font-size: 20px;
+            }
+            
+            .section-divider {
+                margin: 30px 0;
+            }
+            
+            #assistant-deans-container .leadership-card {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            #associate-deans-container .leadership-card {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            #associate-deans-container.leadership-container {
+                gap: 40px;
+            }
+            
+            #assistant-deans-container.leadership-container {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            /* For 2 cards on mobile - reduce gap */
+            #associate-deans-container.leadership-container {
+                gap: 30px;
+            }
+            
+            /* For 4 cards on mobile - stack vertically with normal gap */
+            #assistant-deans-container.leadership-container {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .leadership-page-wrapper {
+                padding: 15px 10px;
+            }
+            
+            .leadership-section {
+                margin: 25px 0;
+                padding: 15px 0;
+            }
+            
+            .leadership-title {
+                font-size: 26px;
+            }
+            
+            .leadership-subtitle {
+                font-size: 22px;
+            }
+            
+            .principal-section {
+                padding: 20px 15px;
+            }
+            
+            .principal-image {
+                width: 220px;
+                height: 280px;
+            }
+            
+            #associate-deans-container.leadership-container {
+                gap: 25px;
+            }
+            
+            #assistant-deans-container.leadership-container {
+                gap: 15px;
+            }
+        }
     </style>
-  </head>
-  <!-- <a
-    href="https://api.whatsapp.com/send?phone=7034555514"
-    target="_blank"
-    class="floating-button"
-  >
-    <img src="upload/wsup-logo.png" alt="WhatsApp Logo" class="whatsapp-logo" />
-  </a> -->
-  <body
-    class="home page-template-default page page-id-2039 gdlr-core-body woocommerce-no-js tribe-no-js kingster-body kingster-body-front kingster-full kingster-with-sticky-navigation kingster-blockquote-style-1 gdlr-core-link-to-lightbox"
-  >
-  <div class="kingster-mobile-header-wrap">
-    <div
-      class="kingster-mobile-header kingster-header-background kingster-style-slide kingster-sticky-mobile-navigation"
-      id="kingster-mobile-header"
-    >
-      <div
-        class="kingster-mobile-header-container kingster-container clearfix"
-      >
-        <div class="kingster-logo kingster-item-pdlr">
-          <div class="kingster-logo-inner">
-            <a class="" href="index.html"
-              ><img src="upload/logo.png" alt=""
-            /></a>
-          </div>
-        </div>
-          <div class="kingster-mobile-menu-right">
-            <div
-              class="kingster-main-menu-search"
-              id="kingster-mobile-top-search"
-            >
-              <i class="fa fa-search"></i>
-            </div>
-            <div class="kingster-top-search-wrap">
-              <div class="kingster-top-search-close"></div>
-              <div class="kingster-top-search-row">
-                <div class="kingster-top-search-cell">
-                  <form role="search" method="get" class="search-form" action="search.html">
-                    <input
-                    type="text"
-                    class="search-field kingster-title-font"
-                    placeholder="Search..."
-                    value=""
-                    name="q"
-                  />
-                  <div class="kingster-top-search-submit">
-                      <i class="fa fa-search"></i>
-                    </div>
-                    <input type="submit" class="search-submit" value="Search" />
-                    <div class="kingster-top-search-close">
-                      <i class="icon_close"></i>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="kingster-mobile-menu">
-              <a
-              class="kingster-mm-menu-button kingster-mobile-menu-button kingster-mobile-button-hamburger"
-              href="#kingster-mobile-menu"
-              ><span></span
-            ></a>
-            <div
-              class="kingster-mm-menu-wrap kingster-navigation-font"
-              id="kingster-mobile-menu"
-              data-slide="right"
-            >
-              <ul id="menu-main-navigation" class="m-menu">
-                <!-- <li class="menu-item menu-item-home current-menu-item">
-                <a href="index.html">Home</a>
-              </li> -->
-                <li class="menu-item menu-item-has-children">
-                  <a>About HEI</a>
-                  <ul class="sub-menu">
-                    <li class="menu-item">
-                      <a href="/about-us.html">About Us: Overview</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="act-and-statutes-or-moa.html"
-                        >Act and Statutes or MOA</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="institutional-development-plan.html"
-                        >Institutional Development Plan</a
-                      >
-                    </li>
-                    <li class="menu-item menu-item-has-children">
-                      <a class="sf-with-ul-pre"
-                        >Accreditation/Ranking Status</a
-                      >
-                      <ul class="sub-menu">
-                          <li class="menu-item">
-                            <a href="naac.html">NAAC</a>
-                          </li>
-                          <li class="menu-item">
-                            <a href="NAAC_Files/NIRF/NIRF_2025.pdf" target="_blank">NIRF 2025</a>
-                          </li>
-                          <li class="menu-item">
-                            <a href="NAAC_Files/NIRF/NIRF_2023.pdf" target="_blank">NIRF 2023</a>
-                          </li>
-                          <li class="menu-item">
-                            <a href="NAAC_Files/NIRF/NIRF_2022.pdf" target="_blank">NIRF 2022</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                      <a href="recognition-approval.html"
-                        >Recognition/Approval</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="menu-item menu-item-has-children">
-                  <a>Administration</a>
-                  <ul class="sub-menu">
-                    <li class="menu-item">
-                      <a href="/about-us.html#board-of-directors"
-                        >Board of Management</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="/about-us.html#principal-message">Principal</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="finance-officer.html">Finance Officer</a>
-                    </li>
-                  <!-- <li class="menu-item">
-                      <a href="controller-of-examination.html"
-                        >Controller of Examination</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="chief-vigilance-officer.html"
-                        >Chief Vigilance Officer</a
-                      >
-                    </li> -->
-                    <li class="menu-item">
-                      <a href="internal-complaint-committee.html"
-                        >Internal Complaint Committee</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="academic-leadership.html"
-                        >Academic Leadership</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li class="menu-item menu-item-has-children">
-                  <a>Academics</a>
-                  <ul class="sub-menu">
-                    <li class="menu-item menu-item-has-children">
-                      <a>Academic Programs</a>
-                      <ul class="sub-menu">
-                        <li class="menu-item menu-item-has-children">
-                          <a>UG & PG</a>
-                          <ul>
-                            <li class="menu-item">
-                              <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
-                              >
-                            </li>
-                          </ul>
-                        </li>
-                        <li class="menu-item menu-item-has-children">
-                          <a>Diploma</a>
-                          <ul>
-                            <li class="menu-item">
-                              <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
-                              >
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="menu-item">
-                      <a
-                        href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf"
-                        target="_blank"
-                        >Academic Calendar</a
-                      >
-                    </li>
-                 <!-- <li class="menu-item">
-                      <a href="/assets/ACADEMICPROSPECTS.pdf" target="_blank"
-                        >Ordinances pertaining to
-                        <br />Academics/Examinations</a
-                      >
-                    </li> -->
-                    <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
-                      <ul class="sub-menu">
-                        <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
-                          <ul class="sub-menu">
-                            <li class="menu-item">
-                              <a href="anatomy.html">Anatomy</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="physiology.html">Physiology</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="biochemistry.html">Biochemistry</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="general-pathology.html"
-                                >General Pathology</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="general-microbiology.html"
-                                >General Microbiology</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="pharmacology.html">Pharmacology</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="general-medicine.html"
-                                >General Medicine</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="general-surgery.html"
-                                >General Surgery</a
-                              >
-                            </li>
-                          </ul>
-                        </li>
-                        <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
-                          <ul class="sub-menu">
-                            <li class="menu-item">
-                              <a href="oral-pathology.html"
-                                >Oral Pathology and Microbiology</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="public-health.html"
-                                >Public Health Dentistry</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="periodontology.html">Periodontology</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="oral-medicine-and-radiology.html"
-                                >Oral Medicine and Radiology</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="orthodontics.html"
-                                >Orthodontics & Dentofacial Orthopaedics</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a
-                                href="conservative-dentistry-&-edodontics.html"
-                                >Conservative Dentistry & Endodontics</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="prosthodontic.html"
-                                >Prosthodontics & Crown and Bridge</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="pedodontics.html"
-                                >Pedodontics & Preventive Dentistry</a
-                              >
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="menu-item">
-                      <a href="naac.html#quick-links-section"
-                        >Internal Quality Assurance Cell (IQAC)</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="library.html">Library</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="academic-collaborations.html"
-                        >Academic Collaborations</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="feedbacks.html">Feedbacks</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="journals.html">Journals</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="admission.html">Admission</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="code-of-conduct.html">Code of Conduct</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="facilities.html">Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="awards.html">Awards</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="menu-item menu-item-has-children">
-                  <a>Admission & Fee</a>
-                  <ul class="sub-menu">
-                    <li class="menu-item">
-                      <a href="prospectus.html">Prospectus</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="admission.html"
-                        >Admission Process And Guidelines</a
-                      >
-                    </li>
-                    <!-- <li class="menu-item">
-                      <a href="fee-refund-policy.html">Fee Refund Policy</a>
-                    </li> -->
-                  </ul>
-                </li>
-                <li class="menu-item menu-item-has-children">
-                  <a>Research</a>
-                  <ul class="sub-menu">
-                    <li class="menu-item">
-                      <a href="research-and-development.html"
-                        >Research and Development Cell</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="incubation-center.html"
-                        >Incubation Center / Start-ups / Entrepreneurship
-                        Cell</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="central-facilities.html">Central Facilities</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="menu-item menu-item-has-children">
-                  <a>Student Life</a>
-                  <ul class="sub-menu">
-                    <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="placement-cell-and-activities.html"
-                        >Placement Cell and Activities</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="index.html#grievance-redressal-cell"
-                        >Student Grievance Redressal Committee (SGRC)</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="health-facilities.html">Health Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="internal-complaint-committee.html"
-                        >Internal Complaint Committee</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
-                    </li>
-                       <!-- <li class="menu-item">
-                      <a href="equal-opportunity-cell.html"
-                        >Equal Opportunity Cell</a
-                      >
-                    </li> -->
-                   <!-- <li class="menu-item">
-                      <a
-                        href="socio-economically-disadvantaged-groups-cell.html"
-                        >Socio-Economically Disadvantaged Groups Cell
-                        (SEDG)</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="facilities-for-differently-abled.html"
-                        >Facilities for Differently-Abled</a
-                      >
-                    </li> -->
-                  </ul>
-                </li>
-                <li class="menu-item menu-item-has-children">
-                  <a>Alumni</a>
-                  <ul class="sub-menu">
-                    <li class="menu-item">
-                      <a href="alumni.html">Alumni Association</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="menu-item menu-item-has-children">
-                  <a>Information Corner</a>
-                  <ul class="sub-menu">
-                    <!-- <li class="menu-item">
-                      <a href="rti.html">RTI</a>
-                    </li> -->
-                    <li class="menu-item">
-                      <a href="circulars-and-notices.html"
-                        >Circulars and Notices</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="announcements.html">Announcements</a>
-                    </li>
-                    <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
-                    </li>
-                    <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="careers.html">Job Openings</a>
-                    </li>
-                    <!-- <li class="menu-item">
-                      <a href="reservation-roaster.html"
-                        >Reservation Roaster</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="study-in-india.html">Study in India</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="admission.html"
-                        >Admission Procedure and Facilities Provided to
-                        International Students</a
-                      >
-                    </li> -->
-                  </ul>
-                </li>
-                <li class="menu-item">
-                  <a href="mdrc-gallery.html">Gallery</a>
-                </li>
-                <li class="menu-item">
-                  <a href="contact-us.html">Contact Us</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+</head>
+<body class="home page-template-default page page-id-2039 gdlr-core-body woocommerce-no-js tribe-no-js kingster-body kingster-body-front kingster-full kingster-with-sticky-navigation kingster-blockquote-style-1 gdlr-core-link-to-lightbox">
+    <!-- Header and Navigation (unchanged) -->
+    <div class="kingster-mobile-header-wrap">
+        <!-- Mobile header content -->
     </div>
-  </div>
-  <div class="kingster-body-outer-wrapper">
-    <div class="kingster-body-wrapper clearfix kingster-with-frame">
-      <div class="kingster-top-bar">
-        <div class="kingster-top-bar-background"></div>
-        <div class="kingster-top-bar-container kingster-container">
-          <div class="kingster-top-bar-container-inner clearfix">
-            <div class="kingster-top-bar-left kingster-item-pdlr">
-              <i class="fa fa-envelope-open-o" id="i_fd84_0"></i>
-              <a href="mailto:info@macity.edu.in">info@macity.edu.in</a
-              ><i class="fa fa-phone" id="i_fd84_1"></i>
-              <a href="tel:+917034555551">+91 7034 55555 1</a>
-            </div>
-            <div class="kingster-top-bar-right kingster-item-pdlr">
-              <ul
-                class="notification-list kingster-top-bar-right-menu notification"
-                id="notification-container"
-              >
-                Loading...
-              </ul>
-
-              <div class="kingster-top-bar-right-social"></div>
-              <a
-                class="kingster-top-bar-right-button"
-                href="https://www.mdcconnect.in/"
-                target="_blank"
-                >MDC Connect</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <header
+    
+    <div class="kingster-body-outer-wrapper">
+        <div class="kingster-body-wrapper clearfix kingster-with-frame">
+<header
       class="kingster-header-wrap kingster-header-style-plain kingster-style-menu-right kingster-sticky-navigation kingster-style-fixed"
       data-navigation-offset="75px"
     >
@@ -664,7 +420,7 @@
             <div class="kingster-main-menu" id="kingster-main-menu">
               <ul id="menu-main-navigation-1" class="sf-menu">
                 <li
-                  class="menu-item menu-item-home current-menu-item menu-item-has-children"
+                  class="menu-item menu-item-home menu-item-has-children"
                 >
                   <a href="index.html">Home</a>
                 </li>
@@ -729,11 +485,11 @@
                       >
                     </li>
                     <li class="menu-item">
-                      <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                      <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                     </li>
-                    <li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="audited-accounts.html">Audited Accounts</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <li
@@ -777,7 +533,7 @@
                   </ul>
                 </li>
                 <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
+                  class="menu-item current-menu-item menu-item-has-children kingster-normal-menu"
                 >
                   <a class="sf-with-ul-pre">Academics</a>
                   <ul class="sub-menu">
@@ -797,12 +553,12 @@
                           <ul>
                             <li class="menu-item">
                               <a href="bachelor-of-dental-surgery.html"
-                                >BDS (Bachelor Dental Surgery)</a
+                                >BDS(Bachelor Dental Surgery)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="master-of-dental-surgery.html"
-                                >MDS (Master Dental Surgery)</a
+                                >MDS(Master Dental Surgery)</a
                               >
                             </li>
                           </ul>
@@ -810,14 +566,19 @@
                         <li class="menu-item menu-item-has-children">
                           <a class="sf-with-ul-pre">Diploma</a>
                           <ul>
-                            <li class="menu-item">
+                             <li class="menu-item">
                               <a href="dora.html"
-                                >Dental Operating Room Assistant (DORA)</a
+                                >Dental Operating <br/> Room Assistant (DORA)</a
                               >
                             </li>
                             <li class="menu-item">
                               <a href="dental-mechanic.html"
-                                >dental mechanic (DM)</a
+                                >Dental Mechanic (DM)</a
+                              >
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html"
+                                >Dental Hygienist (DH)</a
                               >
                             </li>
                           </ul>
@@ -831,10 +592,10 @@
                       >
                     </li> -->
                     <li class="menu-item menu-item-has-children">
-                      <a>Departments</a>
+                      <a class="sf-with-ul-pre">Departments</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>Basic Science Departments</a>
+                          <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="anatomy.html">Anatomy</a>
@@ -871,7 +632,7 @@
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
-                          <a>Dental Departments</a>
+                          <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
                             <li class="menu-item">
                               <a href="oral-pathology.html"
@@ -898,7 +659,7 @@
                             </li>
                             <li class="menu-item">
                               <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral and Maxillofacial Surgery</a
+                                >Oral & Maxillofacial Surgery</a
                               >
                             </li>
                             <li class="menu-item">
@@ -963,11 +724,15 @@
                       <a href="prospectus.html">Prospectus</a>
                     </li>
                     <li class="menu-item">
+                      <a href="dept-of-admission.html"
+                        >Department of Admission</a>
+                    </li>
+                    <li class="menu-item">
                       <a href="admission.html"
                         >Admission Process And Guidelines</a
                       >
                     </li>
-                    <!--<li class="menu-item">
+                    <!-- <li class="menu-item">
                       <a href="fee-refund-policy.html">Fee Refund Policy</a>
                     </li> -->
                   </ul>
@@ -999,14 +764,23 @@
                   <a class="sf-with-ul-pre">Student Life</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="sports-facilities.html">Sports Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="nss-activities.html">NSS</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="hostel-details.html">Hostel Details</a>
-                    </li>
+                        <a href="sports-facilities.html">Sports Facilities</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="mdcrc-scholarship.html">Scholarships</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="nss-activities.html">NSS</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="hostel-details.html">Hostel Details</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="students-union.html">Students Union</a>
+                      </li>
                     <li class="menu-item">
                       <a href="placement-cell-and-activities.html"
                         >Placement Cell and Activities</a
@@ -1025,6 +799,9 @@
                         >Internal Complaint Committee</a
                       >
                     </li>
+                     <li class="menu-item" data-size="60">
+                          <a href="women-cell.html">Women Cell</a>
+                        </li>
                     <li class="menu-item">
                       <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
                     </li>
@@ -1071,15 +848,27 @@
                       >
                     </li>
                     <li class="menu-item">
+                      <a href="mass-media.html"
+                        >MDC in Mass Media</a
+                      >
+                    </li>
+                    <li class="menu-item">
                       <a href="announcements.html">Announcements</a>
                     </li>
                     <li class="menu-item">
-                                              <a href="/index.html#newsletterColumn">Newsletters</a>
-
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
                     </li>
                     <li class="menu-item">
-                      <a href="/index.html#bulletin"
-                        >News, Recent Events & Achievements</a
+                      <a href="satelite-clinic.html">Satellite Clinic</a>
+                    </li>
+                     <li class="menu-item">
+                      <a href="news-page.html"
+                        >News & Achievements</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="events.html"
+                        >Recent Events</a
                       >
                     </li>
                     <li class="menu-item">
@@ -1154,414 +943,396 @@
           </div>
         </div>
       </div>
-    </header>
-
-      <div
-        class="kingster-page-title-wrap kingster-style-medium kingster-left-align"
-      >
-        <div class="kingster-header-transparent-substitute"></div>
-        <div class="kingster-page-title-overlay"></div>
-        <div class="kingster-page-title-container kingster-container">
-          <div class="kingster-page-title-content kingster-item-pdlr">
-            <div class="kingster-page-caption">
-              Discover the academic leadership that shapes our institution.
-            </div>
-            <h1 class="kingster-page-title">Academic Leadership</h1>
-          </div>
-        </div>
-      </div>
-
-      <div class="kingster-page-wrapper" id="kingster-page-wrapper" style="padding: 10px;">
-        <h2 style="text-align: center; margin: 20px;">Academic Leadership</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-          <div style="border: 1px solid #ddd; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-            <img src="upload/principal3.jpg" alt="Leader Image" style="width: 100%; height: 500px; object-fit: cover;">
-            <div style="padding: 15px; text-align: center;">
-              <h3>Dr. Pradeep Kumar C</h3>
-              <p>Principal</p>
-            </div>
-          </div>
-          <div style="border: 1px solid #ddd; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-            <img src="upload/vice-principal1.jpeg" alt="Leader Image" style="width: 100%; height: 500px; object-fit: cover;">
-            <div style="padding: 15px; text-align: center;">
-              <h3>Dr. Uthkal M P</h3>
-              <p>Vice Principal</p>
-            </div>
-          </div>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;margin-top: 50px;  gap: 10px; ">
-          <div>
-            <h3 style="text-align: center; margin-bottom: 20px;">UG Studies Coordinator</h3>
-            <div style="border: 1px solid #ddd; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-              <img src="upload/prosthodontics-3.jpg" alt="Leader Image" style="width: 100%; height: 500px; object-fit: cover;">
-              <div style="padding: 15px; text-align: center;">
-                <h3>Dr. Justin Ninan</h3>
-                <p>Reader</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h3 style="text-align: center; margin-bottom: 20px;">PG Studies Coordinator</h3>
-            <div style="border: 1px solid #ddd; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-                <img src="upload/Reshma rajan.JPG" alt="Leader Image" style="width: 450px; height: 500px; object-fit: cover;">
-              <div style="padding: 15px; text-align: center;">
-                <h3>Dr. Reshma Rajan</h3>
-                <p>Professor</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-          
-        </div> -->
-      </div>
-
-      <footer>
-        <div class="kingster-footer-wrapper">
-          <div class="kingster-footer-container kingster-container clearfix">
-            <div
-              class="kingster-footer-column kingster-item-pdlr kingster-column-15"
-            >
-              <div id="text-2" class="widget widget_text kingster-widget">
-                <div class="textwidget">
-                  <p>
-                    <img width="250" src="upload/footer-logo.png" alt="" />
-                    <br />
-                    <span
-                      class="gdlr-core-space-shortcode"
-                      id="span_1dd7_10"
-                    ></span>
-                    <br />
-                    Manoor - Chekanoor Road, <br />
-                    Manoor, Edappal, Malappuram, <br />
-                    Kerala 679578
-                  </p>
-                  <p>
-                    <span id="span_1dd7_11">
-                      Toll free:<a href="tel:18008430066"> 18008430066</a>
-                    </span>
-                    <!-- <br> <span id="span_1dd7_11"> Hospital/Clinic:<a href="tel:0494 269720"> 0494 269720, 21</a> </span> | <span id="span_1dd7_11"> <a href="tel:7034555514">+91 7034555514</a></span> -->
-                    <br />
-                    <span
-                      class="gdlr-core-space-shortcode"
-                      id="span_1dd7_12"
-                    ></span>
-
-                    <br />
-                    <a id="a_1dd7_8" href="mailto:admin@kingsteruni.edu"
-                      >info@macity.edu.in</a
-                    >
-                  </p>
-                  <div
-                    class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-left-align"
-                  >
-                    <div
-                      class="gdlr-core-divider-line gdlr-core-skin-divider"
-                      id="div_1dd7_111"
-                    ></div>
-                  </div>
+    </header>            
+            <!-- Page Title Section -->
+            <div class="kingster-page-title-wrap kingster-style-medium kingster-left-align">
+                <div class="kingster-header-transparent-substitute"></div>
+                <div class="kingster-page-title-overlay"></div>
+                <div class="kingster-page-title-container kingster-container">
+                    <div class="kingster-page-title-content kingster-item-pdlr">
+                        <div class="kingster-page-caption">
+                            Discover the academic leadership that shapes our institution.
+                        </div>
+                        <h1 class="kingster-page-title">Academic Leadership</h1>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div
-              class="kingster-footer-column kingster-item-pdlr kingster-column-15"
-            >
-              <div
-                id="gdlr-core-custom-menu-widget-2"
-                class="widget widget_gdlr-core-custom-menu-widget kingster-widget"
-              >
-                <h3 class="kingster-widget-title">Quick links</h3>
-                <span class="clear"></span>
-                <div class="menu-our-campus-container">
-                  <ul
-                    id="menu-our-campus"
-                    class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
-                  >
-                    <li class="menu-item">
-                      <a href="about-us.html">Academic Calendar</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="about-us.html">About Us</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="bachelor-of-dental-surgery.html"
-                        >Bachelor of Dental Surgery</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="master-of-dental-surgery.html"
-                        >Master of Dental Surgery</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="dental-mechanic.html">Dental Mechanic</a>
-                    </li>
-                    <li class="menu-item"><a href="dora.html">DORA</a></li>
-                    <li class="menu-item">
-                      <a href="contact-us.html">Contact</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div
-              class="kingster-footer-column kingster-item-pdlr kingster-column-15"
-            >
-              <div
-                id="gdlr-core-custom-menu-widget-3"
-                class="widget widget_gdlr-core-custom-menu-widget kingster-widget"
-              >
-                <h3 class="kingster-widget-title">Social Life</h3>
-                <span class="clear"></span>
-                <div class="menu-campus-life-container">
-                  <ul
-                    id="menu-campus-life"
-                    class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
-                  >
-                    <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://www.instagram.com/malabar_dental_college/"
-                        >Instagram</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://www.facebook.com/malabarAcademicCity/"
-                        >Facebook</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://in.linkedin.com/school/malabar-dental-college-&-research-center/"
-                        >LinkedIn</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://www.youtube.com/@malabardentalcollege8050"
-                        >Youtube</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://goo.gl/maps/mqi1nkPswEPLQjzv6"
-                        >Google</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div
-              class="kingster-footer-column kingster-item-pdlr kingster-column-15"
-            >
-              <div
-                id="gdlr-core-custom-menu-widget-4"
-                class="widget widget_gdlr-core-custom-menu-widget kingster-widget"
-              >
-                <h3 class="kingster-widget-title">Location</h3>
-                <span class="clear"></span>
-                <div class="mapouter">
-                  <div class="gmap_canvas">
-                    <iframe
-                      class="gmap_iframe"
-                      frameborder="0"
-                      scrolling="no"
-                      marginheight="0"
-                      marginwidth="0"
-                      src="https://maps.google.com/maps?width=271&amp;height=281&amp;hl=en&amp;q=malabar dental college manoor&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                    ></iframe
-                    ><a href="https://thepasswordgame.com/"
-                      >The Password Game</a
-                    >
-                  </div>
-                  <style>
-                    .mapouter {
-                      position: relative;
-                      text-align: right;
-                      width: 271px;
-                      height: 281px;
-                    }
-                    .gmap_canvas {
-                      overflow: hidden;
-                      background: none !important;
-                      width: 271px;
-                      height: 281px;
-                    }
-                    .gmap_iframe {
-                      width: 271px !important;
-                      height: 281px !important;
-                    }
-                  </style>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="kingster-copyright-wrapper">
-          <div class="kingster-copyright-container kingster-container clearfix">
-            <div class="kingster-copyright-left kingster-item-pdlr">
-              Copyright © 2023 Malabar Dental College |
-              <a style="color: #fff" href="dept_of_IT.html"
-                >Department of IT 💻</a
-              >
-            </div>
-            <div class="kingster-copyright-right kingster-item-pdlr">
-              <div
-                class="gdlr-core-social-network-item gdlr-core-item-pdb gdlr-core-none-align"
-                id="div_1dd7_112"
-                style="color: #3db166"
-              >
-                <a
-                  href="https://www.facebook.com/malabarAcademicCity/"
-                  target="_blank"
-                  class="gdlr-core-social-network-icon"
-                  style="color: #3db166"
-                  title="facebook"
-                >
-                  <i class="fa fa-facebook"></i>
-                </a>
-                <a
-                  href="https://goo.gl/maps/mqi1nkPswEPLQjzv6"
-                  target="_blank"
-                  class="gdlr-core-social-network-icon"
-                  style="color: #3db166"
-                  title="google-plus"
-                >
-                  <i class="fa fa-google-plus"></i>
-                </a>
-                <a
-                  href="https://in.linkedin.com/school/malabar-dental-college-&-research-center/"
-                  target="_blank"
-                  class="gdlr-core-social-network-icon"
-                  style="color: #3db166"
-                  title="linkedin"
-                >
-                  <i class="fa fa-linkedin"></i>
-                </a>
 
-                <a
-                  href="https://www.instagram.com/malabar_dental_college/"
-                  target="_blank"
-                  class="gdlr-core-social-network-icon"
-                  style="color: #3db166"
-                  title="instagram"
-                >
-                  <i class="fa fa-instagram"></i>
-                </a>
-              </div>
+            <!-- Breadcrumbs -->
+            <div class="kingster-breadcrumbs">
+                <div class="kingster-breadcrumbs-container kingster-container">
+                    <div class="kingster-breadcrumbs-item kingster-item-pdlr">
+                        <span property="itemListElement" typeof="ListItem">
+                            <a property="item" typeof="WebPage" title="Go to Kingster." href="index.html" class="home">
+                                <span property="name">Home</span>
+                            </a>
+                            <meta property="position" content="1">
+                        </span>
+                        &gt;
+                        <span property="itemListElement" typeof="ListItem">
+                            <span property="name">Academic Leadership</span>
+                            <meta property="position" content="2">
+                        </span>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <!-- Main Content -->
+            <div class="kingster-page-wrapper leadership-page-wrapper" id="kingster-page-wrapper">
+                <h1 class="leadership-title">Academic Leadership</h1>
+                
+                <!-- Principal Section -->
+                <div id="principal-section" class="leadership-section">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Associate Deans Section -->
+                <div id="associate-deans-section" class="leadership-section">
+                    <h2 class="leadership-subtitle">Associate Deans</h2>
+                    <div id="associate-deans-container" class="leadership-container associate-deans-container">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Assistant Deans Section -->
+                <div id="assistant-deans-section" class="leadership-section">
+                    <h2 class="leadership-subtitle">Assistant Deans</h2>
+                    <div id="assistant-deans-container" class="leadership-container">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <div class="kingster-footer-wrapper">
+                    <div class="kingster-footer-container kingster-container clearfix">
+                        <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+                            <div id="text-2" class="widget widget_text kingster-widget">
+                                <div class="textwidget">
+                                    <p>
+                                        <img width="250" src="upload/footer-logo.png" alt="" />
+                                        <br />
+                                        <span class="gdlr-core-space-shortcode" id="span_1dd7_10"></span>
+                                        <br />
+                                        Manoor - Chekanoor Road, <br />
+                                        Manoor, Edappal, Malappuram, <br />
+                                        Kerala 679578<br /><br />
+                                        0494 2697020, 21, 22 <br />
+                                        7034555514
+                                    </p>
+                                    <p>
+                                        <br />
+                                        <span class="gdlr-core-space-shortcode" id="span_1dd7_12"></span>
+                                        <br />
+                                        <a id="a_1dd7_8" href="mailto:info@macity.edu.in">info@macity.edu.in</a>
+                                    </p>
+                                    <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-left-align">
+                                        <div class="gdlr-core-divider-line gdlr-core-skin-divider" id="div_1dd7_111"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+                            <div id="gdlr-core-custom-menu-widget-2" class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
+                                <h3 class="kingster-widget-title">Quick links</h3>
+                                <span class="clear"></span>
+                                <div class="menu-our-campus-container">
+                                    <ul id="menu-our-campus" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+                                        <li class="menu-item">
+                                            <a href="about-us.html">Academic Calendar</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="about-us.html">About Us</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="bachelor-of-dental-surgery.html">Bachelor of Dental Surgery</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="master-of-dental-surgery.html">Master of Dental Surgery</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="dental-mechanic.html">Dental Mechanic</a>
+                                        </li>
+                                        <li class="menu-item"><a href="dora.html">DORA</a></li>
+                                        <li class="menu-item"><a href="dental-hygienist.html">Dental Hygienist</a></li>
+                                        <li class="menu-item">
+                                            <a href="contact-us.html">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+                            <div id="gdlr-core-custom-menu-widget-3" class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
+                                <h3 class="kingster-widget-title">Social Life</h3>
+                                <span class="clear"></span>
+                                <div class="menu-campus-life-container">
+                                    <ul id="menu-campus-life" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+                                        <li class="menu-item">
+                                            <a target="_blank" href="https://www.instagram.com/malabar_dental_college/">Instagram</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a target="_blank" href="https://www.facebook.com/malabarAcademicCity/">Facebook</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a target="_blank" href="https://in.linkedin.com/school/malabar-dental-college-&-research-center/">LinkedIn</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a target="_blank" href="https://www.youtube.com/@malabardentalcollege8050">Youtube</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a target="_blank" href="https://goo.gl/maps/mqi1nkPswEPLQjzv6">Google</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+                            <div id="gdlr-core-custom-menu-widget-4" class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
+                                <h3 class="kingster-widget-title">Location</h3>
+                                <span class="clear"></span>
+                                <div class="mapouter">
+                                    <div class="gmap_canvas">
+                                        <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=271&amp;height=281&amp;hl=en&amp;q=malabar dental college manoor&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                                        <a href="https://thepasswordgame.com/">The Password Game</a>
+                                    </div>
+                                    <style>
+                                        .mapouter {
+                                            position: relative;
+                                            text-align: right;
+                                            width: 271px;
+                                            height: 281px;
+                                        }
+                                        .gmap_canvas {
+                                            overflow: hidden;
+                                            background: none !important;
+                                            width: 271px;
+                                            height: 281px;
+                                        }
+                                        .gmap_iframe {
+                                            width: 271px !important;
+                                            height: 281px !important;
+                                        }
+                                    </style>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kingster-copyright-wrapper">
+                    <div class="kingster-copyright-container kingster-container clearfix">
+                        <div class="kingster-copyright-left kingster-item-pdlr">
+                            Copyright © 2025 Malabar Dental College |
+                            <a style="color: #fff" href="dept_of_IT.html">Department of IT 💻</a>
+                        </div>
+                        <div class="kingster-copyright-right kingster-item-pdlr">
+                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb gdlr-core-none-align" id="div_1dd7_112" style="color: #3db166">
+                                <a href="https://www.facebook.com/malabarAcademicCity/" target="_blank" class="gdlr-core-social-network-icon" style="color: #3db166" title="facebook">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="https://goo.gl/maps/mqi1nkPswEPLQjzv6" target="_blank" class="gdlr-core-social-network-icon" style="color: #3db166" title="google-plus">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                                <a href="https://in.linkedin.com/school/malabar-dental-college-&-research-center/" target="_blank" class="gdlr-core-social-network-icon" style="color: #3db166" title="linkedin">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="https://www.instagram.com/malabar_dental_college/" target="_blank" class="gdlr-core-social-network-icon" style="color: #3db166" title="instagram">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
-      </footer>
     </div>
-    <script>
-      jQuery(document).ready(function ($) {
-        "use strict";
-        //  TESTIMONIALS CAROUSEL HOOK
-        $("#customers-testimonials").owlCarousel({
-          loop: true,
-          center: true,
-          items: 3,
-          margin: 0,
-          autoplay: true,
-          dots: true,
-          autoplayTimeout: 8500,
-          smartSpeed: 450,
-          responsive: {
-            0: {
-              items: 1,
-            },
-            768: {
-              items: 2,
-            },
-            1170: {
-              items: 3,
-            },
-          },
-        });
-      });
-    </script>
 
+    <!-- JavaScript -->
     <script type="text/javascript" src="js/jquery/jquery.js"></script>
-    <script
-      type="text/javascript"
-      src="js/jquery/jquery-migrate.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="plugins/goodlayers-core/plugins/combine/script.js"
-    ></script>
-    <script type="text/javascript">
-      var gdlr_core_pbf = {
-        admin: "",
-        video: {
-          width: "640",
-          height: "360",
-        },
-        ajax_url: "#",
-      };
-    </script>
-    <script>
-      // Define the API URL to fetch notification data
-      const apiUrl =
-        "https://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";
-
-      // Reference to the notification container
-      const notificationContainer = document.getElementById(
-        "notification-container"
-      );
-
-      // Store the notification data and current index
-      let notifications = [];
-      let currentIndex = 0;
-
-      // Function to fetch and update notification data
-      async function fetchAndUpdateNotifications() {
-        try {
-          const response = await fetch(apiUrl);
-          notifications = await response.json();
-
-          // Call the updateNotification function initially
-          updateNotification();
-
-          // Set an interval to update notifications every 1.5 seconds
-          setInterval(updateNotification, 4500);
-        } catch (error) {
-          console.error("Error fetching notifications:", error);
+    <script type="text/javascript" src="js/jquery/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="plugins/goodlayers-core/plugins/combine/script.js"></script>
+    
+        <script>
+        // Function to create leadership cards with names outside
+        function createLeadershipCard(person) {
+            const card = document.createElement("div");
+            card.className = "leadership-card";
+            
+            // Image
+            const img = document.createElement("img");
+            img.src = person.picture;
+            img.alt = person.name;
+            img.className = "leadership-image";
+            
+            // Info container
+            const info = document.createElement("div");
+            info.className = "leadership-info";
+            
+            // Name
+            const name = document.createElement("h4");
+            name.className = "leadership-name";
+            name.textContent = person.name;
+            
+            // Designation
+            const designation = document.createElement("p");
+            designation.className = "leadership-designation";
+            designation.textContent = person.designation;
+            
+            // Department (if available)
+            if (person.department) {
+                const department = document.createElement("p");
+                department.className = "leadership-department";
+                department.textContent = person.department;
+                info.appendChild(department);
+            }
+            
+            // Assemble card
+            info.appendChild(name);
+            info.appendChild(designation);
+            
+            card.appendChild(img);
+            card.appendChild(info);
+            
+            return card;
         }
-      }
-
-      // Function to update the notification text
-      function updateNotification() {
-        if (notifications.length > 0) {
-          const list = notificationContainer;
-          list.innerHTML = `<li>${notifications[currentIndex].notification}</li>`;
-          currentIndex = (currentIndex + 1) % notifications.length;
+        
+        // Function to render principal section
+        function renderPrincipal(principal) {
+        const container = document.getElementById("principal-section");
+        container.innerHTML = "";
+        
+        const principalSection = document.createElement("div");
+        principalSection.className = "principal-section";
+        
+        // Image container
+        const imgContainer = document.createElement("div");
+        imgContainer.className = "principal-image-container";
+        
+        const img = document.createElement("img");
+        img.src = principal.picture;
+        img.alt = principal.name;
+        img.className = "principal-image";
+        
+        imgContainer.appendChild(img);
+        
+        // Info container
+        const infoContainer = document.createElement("div");
+        infoContainer.className = "principal-info";
+        
+        const name = document.createElement("h2");
+        name.className = "principal-name";
+        name.textContent = principal.name;
+        
+        const designation = document.createElement("h3");
+        designation.className = "principal-designation";
+        designation.textContent = principal.designation;
+        
+        const department = document.createElement("p");
+        department.className = "principal-department";
+        department.textContent = principal.department || "";
+        
+        const bio = document.createElement("div");
+        bio.className = "principal-bio";
+        
+        const bioText = principal.bio || "";
+        const maxLength = 300;
+        const isLong = bioText.length > maxLength;
+        const shortText = isLong ? bioText.slice(0, maxLength) + "..." : bioText;
+        
+        bio.innerHTML = `
+            <span class="short-text">${shortText}</span>
+            <span class="full-text" style="display:none;">${bioText}</span>
+            ${isLong ? `<a href="#" class="toggle-text">Show More</a>` : ""}
+        `;
+        
+        // Assemble principal section
+        infoContainer.appendChild(name);
+        infoContainer.appendChild(designation);
+        infoContainer.appendChild(department);
+        infoContainer.appendChild(bio);
+        
+        principalSection.appendChild(imgContainer);
+        principalSection.appendChild(infoContainer);
+        
+        container.appendChild(principalSection);
+        
+        // Add toggle functionality for bio
+        if (isLong) {
+            const toggleLink = bio.querySelector(".toggle-text");
+            toggleLink.addEventListener("click", function(e) {
+                e.preventDefault();
+                const shortTextEl = bio.querySelector(".short-text");
+                const fullTextEl = bio.querySelector(".full-text");
+                
+                if (fullTextEl.style.display === "none") {
+                    fullTextEl.style.display = "inline";
+                    shortTextEl.style.display = "none";
+                    toggleLink.textContent = "Show Less";
+                } else {
+                    fullTextEl.style.display = "none";
+                    shortTextEl.style.display = "inline";
+                    toggleLink.textContent = "Show More";
+                }
+            });
         }
-      }
-
-      // Call the fetchAndUpdateNotifications function initially
-      fetchAndUpdateNotifications();
+    }
+        
+        // Function to render leadership groups
+        function renderLeadershipGroup(containerId, people) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = "";
+            
+            if (people && people.length > 0) {
+                people.forEach(person => {
+                    const card = createLeadershipCard(person);
+                    container.appendChild(card);
+                });
+            } else {
+                container.innerHTML = "<p style='text-align: center; width: 100%; color: #666;'>Information coming soon.</p>";
+            }
+        }
+        
+        // Fetch and render leadership data
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("https://conext.in/website_manager/api/mdc/academic_leaderships/")
+                .then(res => res.json())
+                .then(data => {
+                    console.log("Leaders data:", data);
+                    
+                    const leaders = data.data[0];
+                    
+                    // Render principal
+                    if (leaders.principal) {
+                        renderPrincipal(leaders.principal);
+                    }
+                    
+                    // Render associate deans
+                    if (leaders.associate_deans && leaders.associate_deans.length > 0) {
+                        renderLeadershipGroup("associate-deans-container", leaders.associate_deans);
+                    }
+                    
+                    // Render assistant deans
+                    if (leaders.assistant_associate_deans && leaders.assistant_associate_deans.length > 0) {
+                        renderLeadershipGroup("assistant-deans-container", leaders.assistant_associate_deans);
+                    }
+                })
+                .catch(err => {
+                    console.error("Error fetching leaders:", err);
+                    
+                    // Display error messages
+                    document.getElementById("principal-section").innerHTML = 
+                        "<p style='text-align: center; padding: 40px; color: #666;'>Unable to load leadership information at this time. Please try again later.</p>";
+                });
+        });
     </script>
-    <script
-      type="text/javascript"
-      src="plugins/goodlayers-core/include/js/page-builder.js"
-    ></script>
+    
+    <script type="text/javascript" src="plugins/goodlayers-core/include/js/page-builder.js"></script>
     <script type="text/javascript" src="js/jquery/ui/effect.min.js"></script>
-    <script type="text/javascript">
-      var kingster_script_core = {
-        home_url: "index.html",
-      };
-    </script>
     <script type="text/javascript" src="js/plugins.min.js"></script>
-  </body>
-
-  <!-- Mirrored from max-themes.net/demos/kingster/kingster/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Mar 2022 06:34:04 GMT -->
+</body>
 </html>

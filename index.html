@@ -343,9 +343,84 @@
           transform: translateY(-100%);
         }
       }
+
       .counter-text-color {
         color: #fff !important;
       }
+      /* Read More button styling */
+.read-more-btn {
+  color: #3db166;
+  border: none;
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.read-more-btn:hover {
+  color: #2e8b57;
+  transform: translateY(-2px);
+  background: transparent;
+  text-decoration: none;
+}
+
+/* For better mobile experience */
+@media (max-width: 768px) {
+  .read-more-btn {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+      #tab-container {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    #tab-images {
+      flex: 0 0 40%;
+    }
+
+    #tab-wrapper {
+      flex: 1;
+    }
+
+    .gdlr-core-tab-item-image {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+      display: none; /* hide inactive */
+    }
+
+    .gdlr-core-tab-item-image.gdlr-core-active {
+      display: block; /* only show the active image */
+    }
+
+    .gdlr-core-tab-item-image-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      display: block;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+    }
+
+
+
     </style>
   </head>
   <a
@@ -409,7 +484,7 @@
             <div class="kingster-mobile-menu">
               <a
                 class="kingster-mm-menu-button kingster-mobile-menu-button kingster-mobile-button-hamburger"
-                href="#kingster-mobile-menu"
+                href="#kingster-mobile-menu" data-slide="right"
                 ><span></span
               ></a>
               <div
@@ -418,14 +493,14 @@
                 data-slide="right"
               >
                 <ul id="menu-main-navigation" class="m-menu">
-                  <!-- <li class="menu-item menu-item-home current-menu-item">
+                  <li class="menu-item menu-item-home current-menu-item">
                     <a href="index.html">Home</a>
-                  </li> -->
+                  </li>
                   <li class="menu-item menu-item-has-children">
                     <a>About HEI</a>
                     <ul class="sub-menu">
                       <li class="menu-item">
-                        <a href="/about-us.html">About Us: Overview</a>
+                        <a href="about-us.html">About Us: Overview</a>
                       </li>
                       <li class="menu-item">
                         <a href="act-and-statutes-or-moa.html">Act and Statutes or MOA</a>
@@ -454,11 +529,11 @@
                         <a href="recognition-approval.html">Recognition/Approval</a>
                       </li>
                       <li class="menu-item">
-                        <a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a>
+                        <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
                       </li>
-                      <li class="menu-item">
+                      <!-- <li class="menu-item">
                         <a href="audited-accounts.html">Audited Accounts</a>
-                      </li>
+                      </li> -->
                     </ul>
                   </li>
                   <li class="menu-item menu-item-has-children">
@@ -498,29 +573,34 @@
                             <ul>
                               <li class="menu-item">
                                 <a href="bachelor-of-dental-surgery.html"
-                                  >BDS (Bachelor Dental Surgery)</a
+                                  >BDS(Bachelor Dental Surgery)</a
                                 >
                               </li>
                               <li class="menu-item">
                                 <a href="master-of-dental-surgery.html"
-                                  >MDS (Master Dental Surgery)</a
+                                  >MDS(Master Dental Surgery)</a
                                 >
                               </li>
                             </ul>
                           </li>
                           <li class="menu-item menu-item-has-children">
                             <a>Diploma</a>
-                            <ul>
-                              <li class="menu-item">
-                                <a href="dora.html"
-                                  >Dental Operating Room Assistant (DORA)</a
-                                >
-                              </li>
-                              <li class="menu-item">
-                                <a href="dental-mechanic.html"
-                                  >dental mechanic (DM)</a
-                                >
-                              </li>
+                            <ul class="sub-menu">
+                               <li class="menu-item">
+                              <a href="dora.html"
+                                >Dental Operating <br/> Room Assistant (DORA)</a
+                              >
+                            </li>
+                            <li class="menu-item">
+                              <a href="dental-mechanic.html"
+                                >Dental Mechanic (DM)</a
+                              >
+                            </li>
+                             <li class="menu-item">
+                              <a href="dental-hygienist.html"
+                                >Dental Hygienist (DH)</a
+                              >
+                            </li>
                             </ul>
                           </li>
                         </ul>
@@ -528,14 +608,14 @@
                       <li class="menu-item">
                         <a href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf" target="_blank">Academic Calendar</a>
                       </li>
-                                            <!-- <li class="menu-item">
+                      <!-- <li class="menu-item">
                         <a href="/assets/ACADEMICPROSPECTS.pdf" target="_blank">Ordinances pertaining to <br>Academics/Examinations</a>
                       </li> -->
                       <li class="menu-item menu-item-has-children">
-                        <a>Departments</a>
+                        <a class="sf-with-ul-pre">Departments</a>
                         <ul class="sub-menu">
                           <li class="menu-item menu-item-has-children">
-                            <a>Basic Science Departments</a>
+                            <a class="sf-with-ul-pre">Basic Science Departments</a>
                             <ul class="sub-menu">
                               <li class="menu-item">
                                 <a href="anatomy.html">Anatomy</a>
@@ -564,7 +644,7 @@
                             </ul>
                           </li>
                           <li class="menu-item menu-item-has-children">
-                            <a>Dental Departments</a>
+                            <a class="sf-with-ul-pre">Dental Departments</a>
                             <ul class="sub-menu">
                               <li class="menu-item">
                                 <a href="oral-pathology.html">Oral Pathology and Microbiology</a>
@@ -582,7 +662,7 @@
                                 <a href="orthodontics.html">Orthodontics & Dentofacial Orthopaedics</a>
                               </li>
                               <li class="menu-item">
-                                <a href="oral-and-maxilofacial-surgery.html">Oral and Maxillofacial Surgery</a>
+                                <a href="oral-and-maxilofacial-surgery.html">Oral & Maxillofacial Surgery</a>
                               </li>
                               <li class="menu-item">
                                 <a href="conservative-dentistry-&-edodontics.html">Conservative Dentistry & Endodontics</a>
@@ -637,6 +717,10 @@
                         <a href="prospectus.html">Prospectus</a>
                       </li>
                       <li class="menu-item">
+                        <a href="dept-of-admission.html"
+                          >Department of Admission</a>
+                      </li>
+                      <li class="menu-item">
                         <a href="admission.html">Admission Process And Guidelines</a>
                       </li>
                       <!-- <li class="menu-item">
@@ -664,7 +748,9 @@
                       <li class="menu-item">
                         <a href="sports-facilities.html">Sports Facilities</a>
                       </li>
-                      <li class="menu-item"><a href="clubs.html">Clubs</a></li>
+                      <li class="menu-item">
+                        <a href="clubs.html">Clubs</a>
+                      </li>
                       <li class="menu-item">
                         <a href="mdcrc-scholarship.html">Scholarships</a>
                       </li>
@@ -690,7 +776,7 @@
                         <a href="internal-complaint-committee.html">Internal Complaint Committee</a>
                       </li>
                       <li class="menu-item">
-                        <a href="women-cell.html">Womens Cell</a>
+                        <a href="women-cell.html">Women Cell</a>
                       </li>
                       <li class="menu-item">
                         <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
@@ -717,24 +803,36 @@
                   <li class="menu-item menu-item-has-children">
                     <a>Information Corner</a>
                     <ul class="sub-menu">
-                      <li class="menu-item">
+                      <!-- <li class="menu-item">
                         <a href="rti.html">RTI</a>
-                      </li>
+                      </li> -->
                       <li class="menu-item">
                         <a href="circulars-and-notices.html">Circulars and Notices</a>
                       </li>
                       <li class="menu-item">
+                          <a href="mass-media.html"
+                            >MDC in Mass Media</a
+                          >
+                        </li>
+                      <li class="menu-item">
                         <a href="announcements.html">Announcements</a>
                       </li>
                       <li class="menu-item">
-                        <a href="#newsletterColumn">Newsletters</a>
-                      </li>
+                      <a href="/index.html#newsletterColumn">Newsletters</a>
+                    </li>
                       <li class="menu-item">
                         <a href="satelite-clinic.html">Satellite Clinic</a>
                       </li>
-                      <li class="menu-item">
-                        <a href="news-page.html">News, Recent Events & Achievements</a>
-                      </li>
+                       <li class="menu-item">
+                      <a href="news-page.html"
+                        >News & Achievements</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="events.html"
+                        >Recent Events</a
+                      >
+                    </li>
                       <li class="menu-item">
                         <a href="job-openings.html">Job Openings</a>
                       </li>
@@ -745,7 +843,7 @@
                         <a href="study-in-india.html">Study in India</a>
                       </li>
                       <li class="menu-item">
-                                                  <a href="admission.html">Admission Procedure and Facilities Provided to International Students</a>
+                        <a href="admission.html">Admission Procedure and Facilities Provided to International Students</a>
                       </li> -->
                     </ul>
                   </li>
@@ -819,7 +917,7 @@
                           </li>
                           <li class="menu-item">
                             <a href="oral-and-maxilofacial-surgery.html"
-                              >Oral and Maxillofacial Surgery</a
+                              >Oral & Maxillofacial Surgery</a
                             >
                           </li>
                           <li class="menu-item">
@@ -908,7 +1006,7 @@
                 <i class="fa fa-envelope-open-o" id="i_fd84_0"></i>
                 <a href="mailto:info@macity.edu.in">info@macity.edu.in</a
                 ><i class="fa fa-phone" id="i_fd84_1"></i>
-                <a href="tel:+917034555551">+91 7034 55555 1</a>
+                <a href="tel:+917034555521">+91 7034 555521 </a>
               </div>
               <div class="kingster-top-bar-right kingster-item-pdlr">
                 <ul
@@ -954,7 +1052,7 @@
                       class="menu-item menu-item-home current-menu-item menu-item-has-children"
                     > -->
                     <li
-                      class="menu-item menu-item-home menu-item-has-children"
+                      class="menu-item menu-item-home current-menu-item menu-item-has-children"
                     >
                       <a href="index.html">Home</a>
                       <!-- jassy commented 
@@ -971,7 +1069,7 @@
                         >About HEI</a
                       >
                           <ul class="sub-menu">
-                            <li class="menu-item"><a href="/about-us.html">About Us: Overview</a></li>
+                            <li class="menu-item"><a href="about-us.html">About Us: Overview</a></li>
                             <li class="menu-item"><a href="act-and-statutes-or-moa.html">Act and Statutes or MOA</a></li>
                             <li class="menu-item"><a href="institutional-development-plan.html">Institutional Development Plan</a></li>
                             <li
@@ -1009,8 +1107,8 @@
                           </ul>
                         </li>
                         <li class="menu-item"><a href="recognition-approval.html">Recognition/Approval</a></li>
-                        <li class="menu-item"><a href="NAAC_Files/AQAR(22-23).pdf" target="_blank">Annual Reports</a></li>
-                        <li class="menu-item"><a href="audited-accounts.html">Audited Accounts</a></li>
+                        <li class="menu-item"><a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a></li>
+                        <!-- <li class="menu-item"><a href="audited-accounts.html">Audited Accounts</a></li> -->
                         </ul>
                     </li>
                     <li
@@ -1129,12 +1227,12 @@
                                 <ul>
                                   <li class="menu-item">
                                     <a href="bachelor-of-dental-surgery.html"
-                                      >BDS (Bachelor Dental Surgery)</a
+                                      >BDS(Bachelor Dental Surgery)</a
                                     >
                                   </li>
                                   <li class="menu-item">
                                     <a href="master-of-dental-surgery.html"
-                                      >MDS (Master Dental Surgery)</a
+                                      >MDS(Master Dental Surgery)</a
                                     >
                                   </li>
                                 </ul>
@@ -1142,14 +1240,19 @@
                               <li class="menu-item menu-item-has-children">
                                 <a class="sf-with-ul-pre">Diploma</a>
                                 <ul>
-                                  <li class="menu-item">
+                                  <li class="menu-item ">
                                     <a href="dora.html"
-                                      >Dental Operating Room Assistant (DORA)</a
+                                      >Dental Operating <br/> Room Assistant (DORA)</a
                                     >
                                   </li>
                                   <li class="menu-item">
                                     <a href="dental-mechanic.html"
-                                      >dental mechanic (DM)</a
+                                      >Dental Mechanic(DM)</a
+                                    >
+                                  </li>
+                                  <li class="menu-item">
+                                    <a href="dental-hygienist.html"
+                                      >Dental Hygienist(DH)</a
                                     >
                                   </li>
                                 </ul>
@@ -1160,10 +1263,10 @@
                             <a href="/assets/ACADEMICPROSPECTS.pdf" target="_blank">Ordinances pertaining to <br>Academics/Examinations</a>
                           </li>   -->  
                           <li class="menu-item menu-item-has-children">
-                            <a>Departments</a>
+                            <a class="sf-with-ul-pre">Departments</a>
                             <ul class="sub-menu">
                               <li class="menu-item menu-item-has-children">
-                                <a>Basic Science Departments</a>
+                                <a class="sf-with-ul-pre">Basic Science Departments</a>
                                 <ul class="sub-menu">
                                   <li class="menu-item">
                                     <a href="anatomy.html">Anatomy</a>
@@ -1192,7 +1295,7 @@
                                 </ul>
                               </li>
                               <li class="menu-item menu-item-has-children">
-                                <a>Dental Departments</a>
+                                <a class="sf-with-ul-pre">Dental Departments</a>
                                 <ul class="sub-menu">
                                   <li class="menu-item">
                                     <a href="oral-pathology.html">Oral Pathology and Microbiology</a>
@@ -1210,7 +1313,7 @@
                                     <a href="orthodontics.html">Orthodontics & Dentofacial Orthopaedics</a>
                                   </li>
                                   <li class="menu-item">
-                                    <a href="oral-and-maxilofacial-surgery.html">Oral and Maxillofacial Surgery</a>
+                                    <a href="oral-and-maxilofacial-surgery.html">Oral & Maxillofacial Surgery</a>
                                   </li>
                                   <li class="menu-item">
                                     <a href="conservative-dentistry-&-edodontics.html">Conservative Dentistry & Endodontics</a>
@@ -1267,6 +1370,10 @@
                       <ul class="sub-menu">
                         <li class="menu-item">
                           <a href="prospectus.html">Prospectus</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="dept-of-admission.html"
+                            >Department of Admission</a>
                         </li>
                         <li class="menu-item">
                           <a href="admission.html">Admission Process And Guidelines</a>
@@ -1330,7 +1437,7 @@
                           <a href="internal-complaint-committee.html">Internal Complaint Committee</a>
                         </li>
                         <li class="menu-item" data-size="60">
-                          <a href="women-cell.html">Womens Cell</a>
+                          <a href="women-cell.html">Women Cell</a>
                         </li>
                         <li class="menu-item">
                           <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
@@ -1365,6 +1472,11 @@
                           <a href="circulars-and-notices.html">Circulars and Notices</a>
                         </li>
                         <li class="menu-item">
+                          <a href="mass-media.html"
+                            >MDC in Mass Media</a
+                          >
+                        </li>
+                        <li class="menu-item">
                           <a href="announcements.html">Announcements</a>
                         </li>
                         <li class="menu-item">
@@ -1373,9 +1485,16 @@
                         <li class="menu-item">
                           <a href="satelite-clinic.html">Satellite Clinic</a>
                         </li>  
-                        <li class="menu-item">
-                          <a href="news-page.html">News, Recent Events & Achievements</a>
-                        </li>
+                         <li class="menu-item">
+                      <a href="news-page.html"
+                        >News & Achievements</a
+                      >
+                    </li>
+                    <li class="menu-item">
+                      <a href="events.html"
+                        >Recent Events</a
+                      >
+                    </li>
                         <li class="menu-item">
                           <a href="job-openings.html">Job Openings</a>
                         </li>
@@ -1534,14 +1653,9 @@
                 style="background-color: #192f59"
               ></div>
               <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                <div
-                  class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full-no-space"
-                >
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full-no-space">
                   <div class="gdlr-core-pbf-element">
-                    <div
-                      class="gdlr-core-revolution-slider-item gdlr-core-item-pdlr gdlr-core-item-pdb"
-                      style="padding-bottom: 0px"
-                    >
+                    <div class="gdlr-core-revolution-slider-item gdlr-core-item-pdlr gdlr-core-item-pdb" style="padding-bottom: 0px">
                       <div
                         id="rev_slider_1_1_wrapper"
                         class="rev_slider_wrapper fullwidthbanner-container"
@@ -1552,14 +1666,12 @@
                           padding: 0px;
                           margin-top: 0px;
                           margin-bottom: 0px;
-                        "
-                      >
+                        ">
                         <div
                           id="rev_slider_1_1"
                           class="rev_slider fullwidthabanner"
                           style="display: none"
-                          data-version="5.4.8"
-                        >
+                          data-version="5.4.8">
                           <ul>
                             <li
                               data-index="rs-3"
@@ -1584,8 +1696,7 @@
                               data-param8=""
                               data-param9=""
                               data-param10=""
-                              data-description=""
-                            >
+                              data-description="">
                               <img
                                 src="upload/slider-image.png"
                                 alt=""
@@ -1623,10 +1734,9 @@
                                   color: #ffffff;
                                   letter-spacing: 0px;
                                   font-family: Poppins;
-                                "
-                              >
+                                ">
                                 NAAC Accredited, Top Ranked Dental College in
-                                KUHS
+                                KUHS                      
                               </div>
                               <div
                                 class="tp-caption tp-shape tp-shapewrapper tp-resizeme"
@@ -1648,8 +1758,8 @@
                                   z-index: 6;
                                   background-color: rgba(24, 36, 59, 0);
                                   border-radius: 3px 3px 3px 3px;
-                                "
-                              ></div>
+                                ">
+                                </div>
                               <div
                                 class="tp-caption tp-resizeme"
                                 id="slide-3-layer-2"
@@ -1680,6 +1790,7 @@
                               >
                                 Malabar Dental College<br />& Research Centre
                               </div>
+                              
                               <!-- <div class="tp-caption   tp-resizeme" id="slide-3-layer-3" data-x="423" data-y="center" data-voffset="-51" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":360,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 8; white-space: nowrap; font-size: 66px; line-height: 55px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Playfair Display;">Dental college</div> -->
                               <div
                                 class="tp-caption rev-btn rev-hiddenicon"
@@ -1719,11 +1830,435 @@
                                 "
                               >
                                 <a
-                                  href="upload/MDC Prospectus.pdf"
+                                  href="https://www.instagram.com/malabar_dental_college/"
                                   target="_blank"
-                                  >Take a tour</a
-                                >
+                                  >Take a tour
+                                </a>
                               </div>
+                            </li>
+                            <li
+                              data-index="rs-3"
+                              data-transition="fade"
+                              data-slotamount="default"
+                              data-hideafterloop="0"
+                              data-hideslideonmobile="off"
+                              data-easein="default"
+                              data-easeout="default"
+                              data-masterspeed="300"
+                              data-thumb="upload/KUHS.jpg"
+                              data-rotate="0"
+                              data-saveperformance="off"
+                              data-title="Slide"
+                              data-param1=""
+                              data-param2=""
+                              data-param3=""
+                              data-param4=""
+                              data-param5=""
+                              data-param6=""
+                              data-param7=""
+                              data-param8=""
+                              data-param9=""
+                              data-param10=""
+                              data-description=""
+                            >
+                              <img
+                                src="upload/KUHS.jpg"
+                                alt=""
+                                title="slider-1-2"
+                                width="1800"
+                                height="1119"
+                                data-bgposition="center center"
+                                data-bgfit="cover"
+                                data-bgrepeat="no-repeat"
+                                class="rev-slidebg"
+                                data-no-retina
+                              />
+                              <div
+                                class="tp-caption tp-resizeme"
+                                id="slide-3-layer-1"
+                                data-x="38"
+                                data-y="center"
+                                data-voffset="-146"
+                                data-width="['auto']"
+                                data-height="['auto']"
+                                data-type="text"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":0,"speed":300,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 5;
+                                  white-space: nowrap;
+                                  font-size: 33px;
+                                  line-height: 33px;
+                                  font-weight: 300;
+                                  color: #ffffff;
+                                  letter-spacing: 0px;
+                                  font-family: Poppins;
+                                "
+                              ></div>
+                              <div
+                                class="tp-caption tp-shape tp-shapewrapper tp-resizeme"
+                                id="slide-3-layer-4"
+                                data-x="33"
+                                data-y="center"
+                                data-voffset="-44"
+                                data-width="['830']"
+                                data-height="['118']"
+                                data-type="shape"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 6;
+                                  background-color: rgba(24, 36, 59, 0.9);
+                                  border-radius: 3px 3px 3px 3px;
+                                "
+                              ></div>
+                              <div
+                                class="tp-caption tp-resizeme"
+                                id="slide-3-layer-2"
+                                data-x="55"
+                                data-y="center"
+                                data-voffset="-52"
+                                data-width="['auto']"
+                                data-height="['auto']"
+                                data-type="text"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":360,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 7;
+                                  white-space: nowrap;
+                                  font-size: 88px;
+                                  line-height: 88px;
+                                  font-weight: 700;
+                                  color: #ffffff;
+                                  letter-spacing: 0px;
+                                  font-family: Playfair Display;
+                                "
+                              ></div>
+                              <div
+                                class="tp-caption tp-resizeme"
+                                id="slide-3-layer-3"
+                                data-x="423"
+                                data-y="center"
+                                data-voffset="-51"
+                                data-width="['auto']"
+                                data-height="['auto']"
+                                data-type="text"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":360,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 8;
+                                  white-space: nowrap;
+                                  font-size: 66px;
+                                  line-height: 55px;
+                                  font-weight: 400;
+                                  color: #ffffff;
+                                  letter-spacing: 0px;
+                                  font-family: Playfair Display;
+                                "
+                              ></div>
+                            </li>
+                            <li
+                              data-index="rs-3"
+                              data-transition="fade"
+                              data-slotamount="default"
+                              data-hideafterloop="0"
+                              data-hideslideonmobile="off"
+                              data-easein="default"
+                              data-easeout="default"
+                              data-masterspeed="300"
+                              data-thumb="upload/neetmds.jpg"
+                              data-rotate="0"
+                              data-saveperformance="off"
+                              data-title="Slide"
+                              data-param1=""
+                              data-param2=""
+                              data-param3=""
+                              data-param4=""
+                              data-param5=""
+                              data-param6=""
+                              data-param7=""
+                              data-param8=""
+                              data-param9=""
+                              data-param10=""
+                              data-description=""
+                            >
+                              <img
+                                src="upload/neetmds.jpg"
+                                alt="slider 3"
+                                title="slider-1-2"
+                                width="1800"
+                                height="1119"
+                                data-bgposition="center center"
+                                data-bgfit="cover"
+                                data-bgrepeat="no-repeat"
+                                class="rev-slidebg"
+                                data-no-retina
+                              />
+                              <div
+                                class="tp-caption tp-resizeme"
+                                id="slide-3-layer-1"
+                                data-x="38"
+                                data-y="center"
+                                data-voffset="-146"
+                                data-width="['auto']"
+                                data-height="['auto']"
+                                data-type="text"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":0,"speed":300,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 5;
+                                  white-space: nowrap;
+                                  font-size: 33px;
+                                  line-height: 33px;
+                                  font-weight: 300;
+                                  color: #ffffff;
+                                  letter-spacing: 0px;
+                                  font-family: Poppins;
+                                "
+                              ></div>
+                              <div
+                                class="tp-caption tp-shape tp-shapewrapper tp-resizeme"
+                                id="slide-3-layer-4"
+                                data-x="33"
+                                data-y="center"
+                                data-voffset="-44"
+                                data-width="['830']"
+                                data-height="['118']"
+                                data-type="shape"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 6;
+                                  background-color: rgba(24, 36, 59, 0.9);
+                                  border-radius: 3px 3px 3px 3px;
+                                "
+                              ></div>
+                              <div
+                                class="tp-caption tp-resizeme"
+                                id="slide-3-layer-2"
+                                data-x="55"
+                                data-y="center"
+                                data-voffset="-52"
+                                data-width="['auto']"
+                                data-height="['auto']"
+                                data-type="text"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":360,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 7;
+                                  white-space: nowrap;
+                                  font-size: 88px;
+                                  line-height: 88px;
+                                  font-weight: 700;
+                                  color: #ffffff;
+                                  letter-spacing: 0px;
+                                  font-family: Playfair Display;
+                                "
+                              ></div>
+                              <div
+                                class="tp-caption tp-resizeme"
+                                id="slide-3-layer-3"
+                                data-x="423"
+                                data-y="center"
+                                data-voffset="-51"
+                                data-width="['auto']"
+                                data-height="['auto']"
+                                data-type="text"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":360,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 8;
+                                  white-space: nowrap;
+                                  font-size: 66px;
+                                  line-height: 55px;
+                                  font-weight: 400;
+                                  color: #ffffff;
+                                  letter-spacing: 0px;
+                                  font-family: Playfair Display;
+                                "
+                              ></div>
+                            </li>
+                            
+                            <li
+                              data-index="rs-3"
+                              data-transition="fade"
+                              data-slotamount="default"
+                              data-hideafterloop="0"
+                              data-hideslideonmobile="off"
+                              data-easein="default"
+                              data-easeout="default"
+                              data-masterspeed="300"
+                              data-thumb="upload/dist-holders.jpg"
+                              data-rotate="0"
+                              data-saveperformance="off"
+                              data-title="Slide"
+                              data-param1=""
+                              data-param2=""
+                              data-param3=""
+                              data-param4=""
+                              data-param5=""
+                              data-param6=""
+                              data-param7=""
+                              data-param8=""
+                              data-param9=""
+                              data-param10=""
+                              data-description=""
+                            >
+                              <img
+                                src="upload/dist-holders.jpg"
+                                alt=""
+                                title="slider-1-2"
+                                width="1800"
+                                height="1119"
+                                data-bgposition="center center"
+                                data-bgfit="cover"
+                                data-bgrepeat="no-repeat"
+                                class="rev-slidebg"
+                                data-no-retina
+                              />
+                              <div
+                                class="tp-caption tp-resizeme"
+                                id="slide-3-layer-1"
+                                data-x="38"
+                                data-y="center"
+                                data-voffset="-146"
+                                data-width="['auto']"
+                                data-height="['auto']"
+                                data-type="text"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":0,"speed":300,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 5;
+                                  white-space: nowrap;
+                                  font-size: 33px;
+                                  line-height: 33px;
+                                  font-weight: 300;
+                                  color: #ffffff;
+                                  letter-spacing: 0px;
+                                  font-family: Poppins;
+                                "
+                              ></div>
+                              <div
+                                class="tp-caption tp-shape tp-shapewrapper tp-resizeme"
+                                id="slide-3-layer-4"
+                                data-x="33"
+                                data-y="center"
+                                data-voffset="-44"
+                                data-width="['830']"
+                                data-height="['118']"
+                                data-type="shape"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 6;
+                                  background-color: rgba(24, 36, 59, 0.9);
+                                  border-radius: 3px 3px 3px 3px;
+                                "
+                              ></div>
+                              <div
+                                class="tp-caption tp-resizeme"
+                                id="slide-3-layer-2"
+                                data-x="55"
+                                data-y="center"
+                                data-voffset="-52"
+                                data-width="['auto']"
+                                data-height="['auto']"
+                                data-type="text"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":360,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 7;
+                                  white-space: nowrap;
+                                  font-size: 88px;
+                                  line-height: 88px;
+                                  font-weight: 700;
+                                  color: #ffffff;
+                                  letter-spacing: 0px;
+                                  font-family: Playfair Display;
+                                "
+                              ></div>
+                              <div
+                                class="tp-caption tp-resizeme"
+                                id="slide-3-layer-3"
+                                data-x="423"
+                                data-y="center"
+                                data-voffset="-51"
+                                data-width="['auto']"
+                                data-height="['auto']"
+                                data-type="text"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":360,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 8;
+                                  white-space: nowrap;
+                                  font-size: 66px;
+                                  line-height: 55px;
+                                  font-weight: 400;
+                                  color: #ffffff;
+                                  letter-spacing: 0px;
+                                  font-family: Playfair Display;
+                                "
+                              ></div>
                             </li>
                             <li
                               data-index="rs-3"
@@ -2007,6 +2542,7 @@
                                 "
                               ></div>
                             </li>
+                            
 
                             <li
                               data-index="rs-1"
@@ -2399,17 +2935,12 @@
                 ></div>
               </div>
               <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                <div
-                  class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container-custom"
-                >
-                  <div
-                    class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first"
-                  >
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container-custom">
+                  <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
                     <div
                       class="gdlr-core-pbf-column-content-margin gdlr-core-js"
                       id="div_1dd7_14"
-                      data-sync-height="height-1"
-                    >
+                      data-sync-height="height-1">
                       <div class="gdlr-core-pbf-background-wrap">
                         <div
                           class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js"
@@ -2424,55 +2955,40 @@
                   </div>
                   <div
                     class="gdlr-core-pbf-column gdlr-core-column-30"
-                    id="gdlr-core-column-4"
-                  >
+                    id="gdlr-core-column-4">
                     <div
                       class="gdlr-core-pbf-column-content-margin gdlr-core-js"
                       id="div_1dd7_16"
-                      data-sync-height="height-1"
-                    >
+                      data-sync-height="height-1">
                       <div class="gdlr-core-pbf-background-wrap">
                         <div
                           class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js"
                           id="div_1dd7_17"
-                          data-parallax-speed="0.1"
-                        ></div>
+                          data-parallax-speed="0.1"></div>
                       </div>
-                      <div
-                        class="gdlr-core-pbf-column-content clearfix gdlr-core-js gdlr-core-sync-height-content"
-                      >
+                      <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js gdlr-core-sync-height-content">
                         <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr"
-                            id="div_1dd7_18"
-                          >
-                            <div
-                              class="gdlr-core-title-item-title-wrap clearfix"
-                            >
-                              <h3
-                                class="gdlr-core-title-item-title gdlr-core-skin-title"
-                                id="h3_1dd7_4"
-                              >
-                                Apply for Admission 2023
+                          <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" id="div_1dd7_18">
+                            <div class="gdlr-core-title-item-title-wrap clearfix">
+                              <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" id="h3_1dd7_4">
+                                Apply for Admission 2025
                               </h3>
                             </div>
                             <span
                               class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption"
                               id="span_1dd7_0"
                               >BDS, MDS, DORA/Dental Nursing,<br />
-                              Dental Mechanics.</span
-                            >
+                              Dental Mechanics, Dental Hygienist.
+                            </span>
                           </div>
                         </div>
                         <div class="gdlr-core-pbf-element">
                           <div
                             class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"
-                            id="div_1dd7_19"
-                          >
+                            id="div_1dd7_19">
                             <div
                               class="gdlr-core-text-box-item-content"
-                              id="div_1dd7_20"
-                            >
+                              id="div_1dd7_20">
                               <p>
                                 We don’t just give students an education and
                                 experiences that set them up for success in a
@@ -2484,17 +3000,15 @@
                           </div>
                         </div>
                         <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"
-                          >
+                          <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
                             <a
                               class="gdlr-core-button gdlr-core-button-solid gdlr-core-button-no-border"
                               href="apply-to-malabar.html"
                               id="a_1dd7_0"
-                              ><span class="gdlr-core-content"
+                              >
+                              <span class="gdlr-core-content"
                                 >Apply Now</span
-                              ></a
-                            >
+                              ></a>
                           </div>
                         </div>
                       </div>
@@ -2512,27 +3026,13 @@
                 ></div>
               </div>
               <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                <div
-                  class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container"
-                >
-                  <div
-                    class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first"
-                  >
-                    <div
-                      class="gdlr-core-pbf-column-content-margin gdlr-core-js"
-                    >
-                      <div
-                        class="gdlr-core-pbf-column-content clearfix gdlr-core-js"
-                      >
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                  <div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first">
+                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js">
+                      <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
                         <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"
-                            id="div_1dd7_23"
-                          >
-                            <div
-                              class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-rectangle"
-                              id="div_1dd7_24"
-                            >
+                          <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" id="div_1dd7_23">
+                            <div class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-rectangle" id="div_1dd7_24">
                               <img
                                 src="upload/footer-logo.png"
                                 alt=""
@@ -2544,18 +3044,10 @@
                           </div>
                         </div>
                         <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr"
-                            id="div_1dd7_25"
-                          >
-                            <div
-                              class="gdlr-core-title-item-title-wrap clearfix"
-                            >
-                              <h3
-                                class="gdlr-core-title-item-title gdlr-core-skin-title"
-                                id="h3_1dd7_5"
-                              >
-                                About Our College
+                          <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" id="div_1dd7_25">
+                            <div class="gdlr-core-title-item-title-wrap clearfix">
+                              <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" id="h3_1dd7_5">
+                                About Us
                               </h3>
                             </div>
                           </div>
@@ -2564,26 +3056,16 @@
                     </div>
                   </div>
                   <div class="gdlr-core-pbf-column gdlr-core-column-40">
-                    <div
-                      class="gdlr-core-pbf-column-content-margin gdlr-core-js"
-                    >
-                      <div
-                        class="gdlr-core-pbf-column-content clearfix gdlr-core-js"
-                      >
+                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" >
+                      <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
                         <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"
-                            id="div_1dd7_26"
-                          >
-                            <div
-                              class="gdlr-core-text-box-item-content"
-                              id="div_1dd7_27"
-                            >
+                          <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" id="div_1dd7_26">
+                            <div class="gdlr-core-text-box-item-content" id="div_1dd7_27">
                               <p>
                                 MDCRC is specifically designed for all dental
                                 care aspirants who want to land in the
                                 profession of dental care with smart and quality
-                                education.
+                                education. North Kerala's first NAAC accredited Dental Institution.
                               </p>
                             </div>
                           </div>
@@ -2601,15 +3083,15 @@
                                 This educational institution was started in 2007
                                 under the University of Calicut. In 2010, it was
                                 truly blessed to come under the aegis of Kerala
-                                University of Health Science, Thrissur. The
+                                University of Health Sciences, Thrissur. The
                                 beautiful campus situated near to the banks of
                                 Bharathapuzha adds to the beauty of the campus,
                                 which spreads over 25 acres of land. Its lush
                                 green and pollution-free campus is well designed
                                 and graciously equipped with all modern
-                                facilities. MDC offers academic programs from
+                                facilities. MDCRC offers academic programs from
                                 undergraduate to postgraduate program in seven
-                                specialties. Collectively, our students and
+                                specialties. The institution also offers Diploma courses in three streams and PhD in five specialities.  Collectively, our students and
                                 residents also benefit from the skills and
                                 experience of our highly devoted faculty, and a
                                 rich collaborative environment.
@@ -2748,6 +3230,7 @@
                                 <a
                                   class="gdlr-core-column-service-read-more gdlr-core-info-font"
                                   id="a_1dd7_2"
+                                  href=""
                                   >Learn More</a
                                 >
                               </div>
@@ -3529,7 +4012,7 @@
                       >
                         <a
                           class="gdlr-core-lightgallery gdlr-core-js"
-                          href="https://www.youtube.com/watch?v=BSrgyMV1w-E"
+                          href="https://youtu.be/500DiHMDvHM"
                           ><img
                             src="upload/icon-play.png"
                             alt=""
@@ -3583,9 +4066,7 @@
               </div>
 
               <div class="gdlr-core-column gdlr-core-column-20">
-                <div
-                  class="gdlr-core-flipbox-item gdlr-core-item-pdlr gdlr-core-item-pdb"
-                >
+                <div class="gdlr-core-flipbox-item gdlr-core-item-pdlr gdlr-core-item-pdb">
                   <div class="gdlr-core-flipbox gdlr-core-js">
                     <div
                       class="gdlr-core-flipbox-front gdlr-core-js gdlr-core-left-align gdlr-core-flipbox-type-outer"
@@ -3604,11 +4085,10 @@
                         <div
                           class="gdlr-core-flipbox-item-image gdlr-core-media-image"
                         >
-                          <h4 style="text-align: center">Latest Awards</h4>
+                          <h4 style="text-align: center">News</h4>
                           <h2
                             class="gdlr-core-flipbox-item-title news_subject award1-title"
                           >
-                            Best Employee Award
                           </h2>
                         </div>
 
@@ -3666,18 +4146,15 @@
                         <div
                           class="gdlr-core-flipbox-item-image gdlr-core-media-image"
                         >
-                          <h4 style="text-align: center">Latest Awards</h4>
+                          <h4 style="text-align: center">News</h4>
                           <h2
                             class="gdlr-core-flipbox-item-title news_subject award2-title"
                           ></h2>
                         </div>
 
-                        <div
-                          class="gdlr-core-flipbox-item-content"
-                          style="font-size: 16px"
-                        >
-                          <a href="latest-awards.html"
-                            ><img
+                        <div class="gdlr-core-flipbox-item-content" style="font-size: 16px">
+                          <a href="latest-awards.html">
+                            <img
                               class="image_urls award2-image"
                               src="http://app.conext.in/media/news_images/1e5c05ec-914a-43b2-91de-a9a05c66f99b_IBWFsg7.jpeg"
                               style="
@@ -3733,7 +4210,7 @@
                         <div
                           class="gdlr-core-flipbox-item-image gdlr-core-media-image"
                         >
-                          <h4 style="text-align: center">Latest Workshops</h4>
+                          <h4 style="text-align: center">Awareness</h4>
                           <h2
                             class="gdlr-core-flipbox-item-title news_subject workshop1-title"
                           ></h2>
@@ -3791,7 +4268,7 @@
                         <div
                           class="gdlr-core-flipbox-item-image gdlr-core-media-image"
                         >
-                          <h4 style="text-align: center">Latest Workshops</h4>
+                          <h4 style="text-align: center">Awareness</h4>
                           <h2
                             class="gdlr-core-flipbox-item-title news_subject workshop2-title"
                           ></h2>
@@ -3858,7 +4335,7 @@
                           class="gdlr-core-flipbox-item-image gdlr-core-media-image"
                         >
                           <h4 style="text-align: center">
-                            Latest Publications
+                            Achievements
                           </h4>
                           <h2
                             class="gdlr-core-flipbox-item-title news_subject publication1-title"
@@ -3918,7 +4395,7 @@
                           class="gdlr-core-flipbox-item-image gdlr-core-media-image"
                         >
                           <h4 style="text-align: center">
-                            Latest Publications
+                            Achievements
                           </h4>
                           <h2
                             class="gdlr-core-flipbox-item-title news_subject publication2-title"
@@ -3971,179 +4448,18 @@
             <div class="gdlr-core-pbf-wrapper" id="div_1dd7_79">
               <div class="gdlr-core-pbf-background-wrap" id="div_1dd7_80"></div>
               <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                <div
-                  class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container"
-                >
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
                   <div class="gdlr-core-pbf-element">
-                    <div
-                      class="gdlr-core-tab-item gdlr-core-js gdlr-core-item-pdb gdlr-core-left-align gdlr-core-tab-style1-horizontal gdlr-core-item-pdlr"
-                    >
-                      <div
-                        class="gdlr-core-tab-item-content-image-wrap clearfix"
-                      >
-                        <div
-                          class="gdlr-core-tab-item-image gdlr-core-active"
-                          data-tab-id="1"
-                        >
-                          <a class="gdlr-core-lightgallery gdlr-core-js">
-                            <span
-                              class="gdlr-core-tab-item-image-background"
-                              id="span_1dd7_1"
-                            ></span>
-                          </a>
-                        </div>
-                        <div class="gdlr-core-tab-item-image" data-tab-id="2">
-                          <a class="gdlr-core-lightgallery gdlr-core-js">
-                            <span
-                              class="gdlr-core-tab-item-image-background"
-                              id="span_1dd7_2"
-                            ></span>
-                          </a>
-                        </div>
-                        <div class="gdlr-core-tab-item-image" data-tab-id="3">
-                          <a class="gdlr-core-lightgallery gdlr-core-js">
-                            <span
-                              class="gdlr-core-tab-item-image-background"
-                              id="span_1dd7_3"
-                            ></span>
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="gdlr-core-tab-item-wrap">
-                        <div
-                          class="gdlr-core-tab-item-title-wrap clearfix gdlr-core-title-font"
-                        >
-                          <div
-                            class="gdlr-core-tab-item-title gdlr-core-active"
-                            data-tab-id="1"
-                          >
-                            Benefits
-                          </div>
-                          <div class="gdlr-core-tab-item-title" data-tab-id="2">
-                            Best Campus Life
-                          </div>
-                          <div class="gdlr-core-tab-item-title" data-tab-id="3">
-                            Alumni
-                          </div>
-                        </div>
-                        <div class="gdlr-core-tab-item-content-wrap clearfix">
-                          <div
-                            class="gdlr-core-tab-item-content gdlr-core-active"
-                            data-tab-id="1"
-                          >
-                            <div
-                              class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top"
-                            >
-                              <div class="gdlr-core-title-item-title-wrap">
-                                <h3
-                                  class="gdlr-core-title-item-title gdlr-core-skin-title"
-                                  id="h3_1dd7_24"
-                                >
-                                  Why Choose MDCRC?<span
-                                    class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"
-                                  ></span>
-                                </h3>
-                              </div>
-                            </div>
-                            <p>
-                              Malabar Dental College is a pollution free, serene
-                              and a beautiful campus, have highly experienced
-                              and professionally excellent facilities. The
-                              visionary management, support of academicians and
-                              men of eminence helps the students to excel in
-                              their studies.
-                            </p>
-                            <p>
-                              Salient features include the following and much
-                              more !<br />
-
-                              Fully fledged laboratory and OPD with modern
-                              equipments. Aesthetically designed college campus
-                              and tempting infrastructure. Separate hostel
-                              facilities for boys and girls. Round – the – clock
-                              power and water supply.
-                            </p>
-                          </div>
-                          <div
-                            class="gdlr-core-tab-item-content"
-                            data-tab-id="2"
-                          >
-                            <div
-                              class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top"
-                            >
-                              <div class="gdlr-core-title-item-title-wrap">
-                                <h3
-                                  class="gdlr-core-title-item-title gdlr-core-skin-title"
-                                  id="h3_1dd7_25"
-                                >
-                                  What we offer?<span
-                                    class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"
-                                  ></span>
-                                </h3>
-                              </div>
-                            </div>
-                            <p>
-                              Malabar Dental College is one of those colleges
-                              where you get to enjoy the natural greenery in
-                              serenity. The best thing about this college is,
-                              everything is available in its full capacity in
-                              one single square building, which makes it easier
-                              to walk through the department. The central
-                              courtyard is the main attraction with a mini-
-                              stage and grass lawn, where most of the program
-                              are held in open sunlight.
-                            </p>
-                            <p>
-                              The college provides 2 playground where the
-                              football team and other players meet. Its vast and
-                              very close to the boys hostel which is very
-                              convenient for them. One of the main attractions
-                              of the college is the water filled quarry which is
-                              a sight to behold and calming to the eyes and
-                              soul. The college is definitely a second home to
-                              the students because the campus has always made a
-                              homely feel.
-                            </p>
-                          </div>
-                          <div
-                            class="gdlr-core-tab-item-content"
-                            data-tab-id="3"
-                          >
-                            <div
-                              class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top"
-                            >
-                              <div class="gdlr-core-title-item-title-wrap">
-                                <h3
-                                  class="gdlr-core-title-item-title gdlr-core-skin-title"
-                                  id="h3_1dd7_26"
-                                >
-                                  Future with us<span
-                                    class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"
-                                  ></span>
-                                </h3>
-                              </div>
-                            </div>
-                            <p>
-                              The alumni association of Malabar dental college
-                              was started in the year 2015 with an inauguration
-                              ceremony held in malabar dental college. The
-                              members decided to name the alumni association as
-                              “Darpan”. Since then, the alumni association is
-                              very active in the institution and conducts yearly
-                              get together and meetings.
-                            </p>
-                            <p>
-                              The malabar dental college alumni which was formed
-                              with the intention of maintaining the bond always
-                              proved their love and commitment to the
-                              institution and we are sure this will only
-                              increase as more students become alumni because of
-                              the commitment of the institute to provide quality
-                              to all its students from day one.
-                            </p>
-                          </div>
-                        </div>
+                     <div class="gdlr-core-pbf-element" style="padding-bottom: 50px">
+                      <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" 
+                        style=" font-size: 34; display: flex; text-align: center; text-transform: none; align-items: center; justify-content: center;">
+                        Our Highlights
+                      </h>
+                    </div>
+                    <div class="gdlr-core-tab-item gdlr-core-js gdlr-core-item-pdb gdlr-core-left-align gdlr-core-tab-style1-horizontal gdlr-core-item-pdlr">
+                      <div id="tab-container">
+                        <div id="tab-images"></div>
+                        <div id="tab-wrapper"></div>
                       </div>
                     </div>
                   </div>
@@ -4154,8 +4470,7 @@
               class="gdlr-core-pbf-wrapper"
               style="padding: 90px 0px 95px 0px"
               data-skin="Counter HP color"
-              id="gdlr-core-wrapper-4"
-            >
+              id="gdlr-core-wrapper-4">
               <div class="gdlr-core-pbf-background-wrap">
                 <div
                   class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js"
@@ -4311,8 +4626,7 @@
                   </div>
                   <div
                     class="gdlr-core-pbf-column gdlr-core-column-15"
-                    id="gdlr-core-column-58330"
-                  >
+                    id="gdlr-core-column-58330">
                     <div
                       class="gdlr-core-pbf-column-content-margin gdlr-core-js"
                     >
@@ -4358,236 +4672,21 @@
                 </div>
               </div>
             </div>
-            <div style="margin-top: 70px; margin-bottom: 50px">
-              <h3
-                class="gdlr-core-title-item-title gdlr-core-skin-title"
-                style="
-                  font-size: 34;
-                  display: flex;
-                  text-align: center;
-                  text-transform: none;
-                  align-items: center;
-                  justify-content: center;
-                "
-              >
-                Student Testimonials
-              </h3>
+
+            <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 40px; text-align:center;">
+              <div class="gdlr-core-pbf-element">
+                <div class="gdlr-core-title-item-title-wrap clearfix">
+                  <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="text-transform:none; text-align:center;  margin-top: 30px;">
+                    Student Testimonials
+                  </h3>
+                </div>
+              </div>
             </div>
+
+
             <div class="wrapper" style="padding-bottom: 30px">
               <div class="slider-container">
-                <div class="slider gdlr-core-pbf-wrapper-content gdlr-core-js">
-                  <div class="testimonial">
-                    <div class="box">
-                      <i class="fas fa-quote-left quote"></i>
-                      <p>
-                        As a second-year BDS student at Malabar Dental College
-                        in Kerala, my experience has been exceptional. The
-                        college offers excellent infrastructure, supportive
-                        faculties, and well-maintained labs. Though patient
-                        opportunities had some limitations, the college took
-                        steps to improve by organizing dental camps and health
-                        programs. Hostel facilities are commendable, and
-                        extracurricular activities are actively supported. I
-                        look forward to creating more cherished memories at this
-                        esteemed institution.
-                      </p>
-                      <div class="content">
-                        <div class="info">
-                          <div class="name">Nora C Pulayath</div>
-                          <div class="job">Student</div>
-                          <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                          </div>
-                        </div>
-                        <div class="image">
-                          <img src="upload/testimonial5.jpg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="testimonial">
-                    <div class="box">
-                      <i class="fas fa-quote-left quote"></i>
-                      <p>
-                        The college has one of the best infrastructure and
-                        facilities in the city. The college hospital which is
-                        affordable for the public gives the students relevant
-                        field exposure and internship opportunities which helps
-                        them to excel in academics. Frequently organised
-                        festivities and events will be the perfect gateway for
-                        your colourful campus life .
-                      </p>
-                      <div class="content">
-                        <div class="info">
-                          <div class="name">Dr. Sneha T.E</div>
-                          <div class="job">Student</div>
-                          <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                          </div>
-                        </div>
-                        <div class="image">
-                          <img src="upload/testimonial1.jpg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="testimonial">
-                    <div class="box">
-                      <i class="fas fa-quote-left quote"></i>
-                      <p>
-                        MDC has provided me with a number of opportunities to
-                        grow and explore my skills. Grateful to be taught under
-                        such renowed teaching faculties and their guidance has
-                        really helped me in my practice.
-                      </p>
-                      <div class="content">
-                        <div class="info">
-                          <div class="name">Dr. Vismaya</div>
-                          <div class="job">Student</div>
-                          <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                          </div>
-                        </div>
-                        <div class="image">
-                          <img src="upload/testimonial3.jpg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="testimonial">
-                    <div class="box">
-                      <i class="fas fa-quote-left quote"></i>
-                      <p>
-                        My experience at Malabar Dental College has been nothing
-                        short of extraordinary. The faculties are not only
-                        highly knowledgeable but also incredibly supportive and
-                        approachable. They are always willing to go the extra
-                        mile to ensure that students grasp the concepts
-                        thoroughly. Apart from academics, Malabar Dental College
-                        also focuses on holistic development. There are numerous
-                        extracurricular activities, and events that are
-                        conducted by college union which allow students to
-                        nurture their talents.
-                      </p>
-                      <div class="content">
-                        <div class="info">
-                          <div class="name">Akash Suresh</div>
-                          <div class="job">Student</div>
-                          <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                          </div>
-                        </div>
-                        <div class="image">
-                          <img src="upload/testimonial4.jpg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="testimonial">
-                    <div class="box">
-                      <i class="fas fa-quote-left quote"></i>
-                      <p>
-                        I’m really happy and proud to be a former student of
-                        this institution which was a turning point in my life.
-                        Really proud of the teachers who were of great support
-                        and guidance.
-                      </p>
-                      <div class="content">
-                        <div class="info">
-                          <div class="name">Dr. Neema K</div>
-                          <div class="job">Student</div>
-                          <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                          </div>
-                        </div>
-                        <div class="image">
-                          <img src="upload/testimonial2.jpg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="testimonial">
-                    <div class="box">
-                      <i class="fas fa-quote-left quote"></i>
-                      <p>
-                        I am currently pursuing my first year BDS at Malabar
-                        Dental College in Malappuram,Kerala.From the moment I
-                        stepped into the college,I was greeted with a warm and
-                        welcoming ambience that made it feel like my second
-                        home.This institution has provided me with a positive
-                        and enriching experience during my first year of bds.The
-                        friendly staff,down to earth faculty,comfortable
-                        senior-junior dynamics and very well equipped and modern
-                        laboratory facilities have all contributed to making
-                        this institution a remarkable place for learning and
-                        personal growth.
-                      </p>
-                      <div class="content">
-                        <div class="info">
-                          <div class="name">Saliha Hassan</div>
-                          <div class="job">Student</div>
-                          <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                          </div>
-                        </div>
-                        <div class="image">
-                          <img src="upload/testimonial6.jpg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="testimonial">
-                    <div class="box">
-                      <i class="fas fa-quote-left quote"></i>
-                      <p>
-                        The infrastructure is the main highlight of this
-                        college. The college campus has a peaceful ambience. MDC
-                        provides quality education ,opportunity to learn and
-                        inculcate new skills.
-                      </p>
-                      <div class="content">
-                        <div class="info">
-                          <div class="name">Aliya Jacob</div>
-                          <div class="job">Student</div>
-                          <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                          </div>
-                        </div>
-                        <div class="image">
-                          <img src="upload/testimonial7.jpg" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="slider gdlr-core-pbf-wrapper-content gdlr-core-js" id="testimonial-slider">
                 </div>
               </div>
             </div>
@@ -4651,26 +4750,13 @@
                       id="div_1dd7_85"
                       data-sync-height="height-column"
                       data-sync-height-center
-                    >
-                      <div
-                        class="gdlr-core-pbf-background-wrap"
-                        id="div_1dd7_86"
-                      ></div>
-                      <div
-                        class="gdlr-core-pbf-column-content clearfix gdlr-core-js gdlr-core-sync-height-content"
                       >
+                      <div class="gdlr-core-pbf-background-wrap" id="div_1dd7_86"></div>
+                      <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js gdlr-core-sync-height-content">
                         <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr"
-                            id="div_1dd7_87"
-                          >
-                            <div
-                              class="gdlr-core-title-item-title-wrap clearfix"
-                            >
-                              <h3
-                                class="gdlr-core-title-item-title gdlr-core-skin-title"
-                                id="h3_1dd7_29"
-                              >
+                          <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" id="div_1dd7_87">
+                            <div class="gdlr-core-title-item-title-wrap clearfix">
+                              <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" id="h3_1dd7_29">
                                 Postgraduate
                               </h3>
                             </div>
@@ -4694,27 +4780,13 @@
                       data-sync-height-center
                     >
                       <div class="gdlr-core-pbf-background-wrap">
-                        <div
-                          class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js"
-                          id="div_1dd7_89"
-                          data-parallax-speed="0"
-                        ></div>
+                        <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" id="div_1dd7_89" data-parallax-speed="0"></div>
                       </div>
-                      <div
-                        class="gdlr-core-pbf-column-content clearfix gdlr-core-js gdlr-core-sync-height-content"
-                      >
+                      <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js gdlr-core-sync-height-content">
                         <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr"
-                            id="div_1dd7_90"
-                          >
-                            <div
-                              class="gdlr-core-title-item-title-wrap clearfix"
-                            >
-                              <h3
-                                class="gdlr-core-title-item-title gdlr-core-skin-title"
-                                id="h3_1dd7_30"
-                              >
+                          <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" id="div_1dd7_90">
+                            <div class="gdlr-core-title-item-title-wrap clearfix">
+                              <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" id="h3_1dd7_30">
                                 Scholarships & Financial AID
                               </h3>
                             </div>
@@ -4733,35 +4805,22 @@
                 </div>
               </div>
             </div>
-            <div
-              class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container"
-              style="padding: 60px 0px"
-            >
+            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container" style="padding: 60px 0px">
               <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                <div
-                  class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full"
-                >
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full">
                   <div class="gdlr-core-pbf-element">
-                    <div
-                      class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr"
-                      style="padding-bottom: 40px"
-                    >
+                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 40px">
                       <div class="gdlr-core-title-item-title-wrap clearfix">
                         <a href="https://www.mdcrc.edu.in/mdrc-gallery">
-                          <h3
-                            class="gdlr-core-title-item-title gdlr-core-skin-title"
-                            style="text-transform: none"
-                          >
-                            Mdcrc Gallery
-                          </h3></a
-                        >
+                          <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="text-transform: none">
+                            MDCRC Gallery
+                          </h3></a>
                         <div class="gdlr-core-pbf-element">
                           <a
                             href="https://www.mdcrc.edu.in/mdrc-gallery"
                             class=""
                             style="margin-top: 20px; font-size: larger"
-                            >Visit Gallery Page</a
-                          >
+                            >Visit Gallery Page</a>
                         </div>
                       </div>
                     </div>
@@ -4775,33 +4834,16 @@
                 </div>
               </div>
             </div>
-            <div
-              class="gdlr-core-pbf-wrapper"
-              style="padding-bottom: 150px"
-              id="div_1dd7_91"
-            >
+            <div class="gdlr-core-pbf-wrapper" style="padding-bottom: 150px" id="div_1dd7_91">
               <div class="gdlr-core-pbf-background-wrap"></div>
               <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
-                <div
-                  class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container"
-                >
-                  <div
-                    class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first"
-                  >
-                    <div
-                      class="gdlr-core-pbf-column-content-margin gdlr-core-js"
-                    >
-                      <div
-                        class="gdlr-core-pbf-column-content clearfix gdlr-core-js"
-                      >
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                  <div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first">
+                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js">
+                      <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
                         <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align"
-                          >
-                            <div
-                              class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-round"
-                              id="div_1dd7_92"
-                            >
+                          <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align">
+                            <div class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-round" id="div_1dd7_92">
                               <img
                                 src="upload/events_main.jpg"
                                 width="700"
@@ -4812,23 +4854,14 @@
                           </div>
                         </div>
                         <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr"
-                          >
-                            <div
-                              class="gdlr-core-title-item-title-wrap clearfix"
-                            >
-                              <h3
-                                class="gdlr-core-title-item-title gdlr-core-skin-title"
-                                id="h3_1dd7_31"
-                              >
+                          <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr">
+                            <div class="gdlr-core-title-item-title-wrap clearfix">
+                              <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" id="h3_1dd7_31">
                                 Campus Events
                               </h3>
                             </div>
-                            <span
-                              class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption"
-                              id="span_1dd7_8"
-                              >Experience the most memorable and entertaining
+                            <span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" id="span_1dd7_8">
+                              Experience the most memorable and entertaining
                               event series at the <b>MDCRC</b>. Stay updated
                               with our upcoming events and don't miss out!
                             </span>
@@ -5096,10 +5129,11 @@
                               <span class="gdlr-core-content"
                                 >Anti-Sexual-Harassment / Internal complaint commitee </span
                               ></a
-                            ><a
+                            >
+                            <a
                               class="gdlr-core-button gdlr-core-button-solid gdlr-core-button-no-border"
                               target="_blank"
-                              href="https://www.mdcconnect.in/grievance"
+                              href="NAAC_Files/274,- NOTICE--ANTI-RAGGING COMMITTEE AND SQUAD.pdf"
                               style="
                                 font-size: 14px;
                                 font-weight: 700;
@@ -5111,10 +5145,13 @@
                                 -webkit-border-radius: 2px;
                                 background: #3db166;
                               "
-                              ><span class="gdlr-core-content"
-                                >Anti-Ragging</span
-                              ></a
-                            ><a
+                            >
+                              <span class="gdlr-core-content">
+                                Anti-Ragging
+                              </span>
+                            </a>
+
+                              <a
                               class="gdlr-core-button gdlr-core-button-solid gdlr-core-button-no-border"
                               target="_blank"
                               href="https://www.mdcconnect.in/grievance"
@@ -5329,12 +5366,12 @@
 </div> -->
 
 <!-- Chatbot Icon -->
-<div id="chatbotIcon" style="position: fixed; bottom: 90px; right: 20px; background-color: #1D4ED8; color: white; padding: 16px; border-radius: 50%; cursor: pointer; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); z-index: 1000;">
-  <i class="fa fa-comments" style="font-size: 1.5em;" aria-label="Chatbot"></i>
-</div>
+  <div id="chatbotIcon" style="position: fixed; bottom: 90px; right: 20px; background-color: #1D4ED8; color: white; padding: 16px; border-radius: 50%; cursor: pointer; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); z-index: 1000;">
+    <i class="fa fa-comments" style="font-size: 1.5em;" aria-label="Chatbot"></i>
+  </div>
 
 <!-- Chat Sidebar (Hidden initially) -->
-<div id="chatSidebar" style="display: none; position: fixed; bottom: 5px; right: 5px; width: 305px; height: 500px; background-color: #fff; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); z-index: 1999;">
+  <div id="chatSidebar" style="display: none; position: fixed; bottom: 5px; right: 5px; width: 305px; height: 500px; background-color: #fff; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); z-index: 1999;">
     <button id="closeChat" style="position: absolute; top: 14px; right: 14px; color: #6B7280; background: none; border: none; font-size: 18px; cursor: pointer; z-index: 100;">
       ❌
     </button>
@@ -5373,12 +5410,15 @@
               <br />
               Manoor - Chekanoor Road, <br />
               Manoor, Edappal, Malappuram, <br />
-              Kerala 679578
+              Kerala 679578 <br /><br />
+
+              0494 2697020, 21, 22 <br />
+              7034555514
             </p>
             <p>
-              <span id="span_1dd7_11">
+              <!-- <span id="span_1dd7_11">
                 Toll free:<a href="tel:18008430066"> 18008430066</a>
-              </span>
+              </span> -->
               <!-- <br> <span id="span_1dd7_11"> Hospital/Clinic:<a href="tel:0494 269720"> 0494 269720, 21</a> </span> | <span id="span_1dd7_11"> <a href="tel:7034555514">+91 7034555514</a></span> -->
               <br />
               <span
@@ -5417,7 +5457,7 @@
               class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
             >
               <li class="menu-item">
-                <a href="about-us.html">Academic Calendar</a>
+                <a href="aca">Academic Calendar</a>
               </li>
 
               <li class="menu-item">
@@ -5437,6 +5477,7 @@
                 <a href="dental-mechanic.html">Dental Mechanic</a>
               </li>
               <li class="menu-item"><a href="dora.html">DORA</a></li>
+              <li class="menu-item"><a href="dental-hygienist.html">Dental Hygienist</a></li>
               <li class="menu-item">
                 <a href="contact-us.html">Contact</a>
               </li>
@@ -5547,7 +5588,7 @@
   <div class="kingster-copyright-wrapper">
     <div class="kingster-copyright-container kingster-container clearfix">
       <div class="kingster-copyright-left kingster-item-pdlr">
-        Copyright © 2023 Malabar Dental College |
+        Copyright © 2025 Malabar Dental College |
         <a style="color: #fff" href="dept_of_IT.html"
           >Department of IT 💻</a
         >
@@ -5713,6 +5754,188 @@
       } /*]]>*/
     </script>
 
+
+  <script>
+    const testimonialContainer = document.getElementById("testimonial-slider");
+
+    fetch("https://conext.in/website_manager/api/mdc/submit_testimonial/")
+      .then(response => response.json())
+      .then(data => {
+        console.log("API Response:", data); 
+
+        const testimonials = data.data || data; 
+
+        testimonials.forEach(item => {
+          let stars = "";
+          for (let i = 0; i < 5; i++) {
+            stars += i < item.star_rating
+              ? `<i class="fas fa-star"></i>`
+              : `<i class="far fa-star"></i>`;
+          }
+
+          const testimonialHTML = `
+            <div class="testimonial">
+              <div class="box">
+                <i class="fas fa-quote-left quote"></i>
+                <p>${item.testimonial}</p>
+                <div class="content">
+                  <div class="info">
+                    <div class="name">${item.name}</div>
+                    <div class="job">${item.designation}</div>
+                    <div class="stars">${stars}</div>
+                  </div>
+                  <div class="image">
+                    <img src="${item.picture}" alt="${item.name}" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+
+          testimonialContainer.innerHTML += testimonialHTML;
+        });
+      })
+      .catch(error => console.error("Error fetching testimonials:", error));
+  </script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const imageContainer = document.getElementById("tab-images");
+  const wrapper = document.getElementById("tab-wrapper");
+
+  fetch("https://conext.in/website_manager/api/mdc/latest_highlights/")
+    .then(res => res.json())
+    .then(data => {
+      const highlights = data.data || data;
+
+      let imagesHTML = "";
+        let titlesHTML = '<div class="gdlr-core-tab-item-title-wrap clearfix gdlr-core-title-font" style="font-size: 14px;">';
+        let contentsHTML = '<div class="gdlr-core-tab-item-content-wrap clearfix">';
+
+      highlights.forEach((item, index) => {
+        const id = item.id || index;
+        const imgUrl = item.image;
+        const contentArray = Array.isArray(item.content) ? item.content : [item.description || ""];
+        const allContent = contentArray.join(' ');
+        const wordCount = allContent.split(/\s+/).filter(word => word.length > 0).length;
+        const needsReadMore = wordCount > 75;
+        
+        // Split content for preview (first 70 words) and full content
+        const getPreviewContent = (contentArray) => {
+          if (!needsReadMore) return contentArray;
+          
+          const allText = contentArray.join(' ');
+          const words = allText.split(/\s+/);
+          const previewWords = words.slice(0, 75);
+          const remainingWords = words.slice(75);
+          
+          // Reconstruct paragraphs for preview
+          let previewText = previewWords.join(' ');
+          previewText += '...'; // Add ellipsis
+          return [previewText];
+        };
+
+        const getFullContent = (contentArray) => {
+          if (!needsReadMore) return contentArray;
+          return contentArray;
+        };
+
+        const previewContent = getPreviewContent(contentArray);
+        const fullContent = getFullContent(contentArray);
+
+        imagesHTML += `
+          <div class="gdlr-core-tab-item-image ${index === 0 ? "gdlr-core-active" : ""}" 
+              data-tab-id="${id}">
+            <img src="${imgUrl}" alt="${item.title}" style="width:100%; height:500px; object-fit:cover;">
+          </div>
+        `;
+
+        titlesHTML += `
+          <div class="gdlr-core-tab-item-title ${index === 0 ? "gdlr-core-active" : ""}" 
+              data-tab-id="${id}">
+            ${item.title}
+          </div>
+        `;
+
+        contentsHTML += `
+          <div class="gdlr-core-tab-item-content ${index === 0 ? "gdlr-core-active" : ""}" 
+               data-tab-id="${id}">
+            <div class="content-layout">
+              <div class="text-section">
+                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top">
+                  <div class="gdlr-core-title-item-title-wrap">
+                    <h4 class=" gdlr-core-skin-title">
+                      ${item.tab_title}
+                      <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                    </h4>
+                  </div>
+                </div>
+                <div class="content-preview">
+                  ${previewContent.map(p => `<p>${p}</p>`).join("")}
+                </div>
+                ${needsReadMore ? `
+                  <div class="content-full" style="display: none;">
+                    ${fullContent.map(p => `<p>${p}</p>`).join("")}
+                  </div>
+                  <button class="read-more-btn" data-content-id="${id}" style="margin-top: 8px;">
+                    Read More
+                  </button>
+                ` : ''}
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      titlesHTML += "</div>";
+      contentsHTML += "</div>";
+
+      imageContainer.innerHTML = imagesHTML;
+      wrapper.innerHTML = titlesHTML + contentsHTML;
+
+      // Add click event to both titles and images
+      document.querySelectorAll(".gdlr-core-tab-item-title, .gdlr-core-tab-item-image").forEach(element => {
+        element.addEventListener("click", () => {
+          const id = element.getAttribute("data-tab-id");
+
+          document.querySelectorAll(".gdlr-core-tab-item-title").forEach(t => t.classList.remove("gdlr-core-active"));
+          document.querySelector(`.gdlr-core-tab-item-title[data-tab-id="${id}"]`).classList.add("gdlr-core-active");
+
+          document.querySelectorAll(".gdlr-core-tab-item-image").forEach(img => img.classList.remove("gdlr-core-active"));
+          document.querySelector(`.gdlr-core-tab-item-image[data-tab-id="${id}"]`).classList.add("gdlr-core-active");
+
+          document.querySelectorAll(".gdlr-core-tab-item-content").forEach(c => c.classList.remove("gdlr-core-active"));
+          document.querySelector(`.gdlr-core-tab-item-content[data-tab-id="${id}"]`).classList.add("gdlr-core-active");
+        });
+      });
+
+// Add Read More functionality
+document.querySelectorAll('.read-more-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const contentId = this.getAttribute('data-content-id');
+    const contentElement = document.querySelector(`.gdlr-core-tab-item-content[data-tab-id="${contentId}"]`);
+    const previewElement = contentElement.querySelector('.content-preview');
+    const fullElement = contentElement.querySelector('.content-full');
+    
+    if (this.textContent === 'Read More') {
+      // Show full content
+      previewElement.style.display = 'none';
+      fullElement.style.display = 'block';
+      this.textContent = 'Read Less';
+    } else {
+      // Show preview content
+      previewElement.style.display = 'block';
+      fullElement.style.display = 'none';
+      this.textContent = 'Read More';
+    }
+  });
+});
+    })
+    .catch(err => console.error("Error loading highlights:", err));
+});
+</script>
+
+
 <!-- <script>
 const chatbotIcon = document.getElementById("chatbotIcon");
 const chatSidebar = document.getElementById("chatSidebar");
@@ -5745,7 +5968,7 @@ sendButton.addEventListener("click", () => {
   if (message) {
     addUserMessage(message);
     userInput.value = "";
-    fetchCategories();
+    fetchCategories(); 
   }
 });
 
@@ -5872,32 +6095,29 @@ function addBotMessage(message) {
   
 
    <script>
-// Open chat sidebar when the icon is clicked
 document.getElementById("chatbotIcon").addEventListener("click", function() {
   var chatSidebar = document.getElementById("chatSidebar");
   var floatingButton = document.querySelector(".floating-button");
   if (chatSidebar.style.display === "none" || chatSidebar.style.display === "") {
     chatSidebar.style.display = "block";
-    floatingButton.style.zIndex = ""; // Remove z-index from floating button when sidebar is open
+    floatingButton.style.zIndex = ""; 
   } else {
     chatSidebar.style.display = "none";
-    floatingButton.style.zIndex = "1000"; // Restore z-index for floating button when sidebar is closed
+    floatingButton.style.zIndex = "1000"; 
   }
 });
 
-// Close chat sidebar when the close button is clicked
 document.getElementById("closeChat").addEventListener("click", function() {
   var chatSidebar = document.getElementById("chatSidebar");
   var floatingButton = document.querySelector(".floating-button");
   chatSidebar.style.display = "none";
-  floatingButton.style.zIndex = "1000"; // Restore z-index for floating button when sidebar is closed
+  floatingButton.style.zIndex = "1000"; 
 });
 
-// Send a message when the send button is clicked or enter key is pressed
 document.getElementById("sendMessage").addEventListener("click", sendMessage);
 document.getElementById("userMessage").addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
-    event.preventDefault(); // Prevent default to avoid any form submission
+    event.preventDefault(); 
     sendMessage();
   }
 });
@@ -5925,11 +6145,10 @@ function sendMessage() {
 
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
-    // Fetch categories from the bot API and display them with a greeting
     fetch('https://conext.in/chat_bot/api/get_categories_by_org/1/')
       .then(response => response.json())
       .then(data => {
-        chatMessages.removeChild(typingElement); // Remove typing indicator
+        chatMessages.removeChild(typingElement); 
         const welcomeMessage = document.createElement("div");
         welcomeMessage.className = "chat-message bot";
         welcomeMessage.innerHTML = "Hello! 👋 Welcome to Connect Bot";
@@ -5937,8 +6156,8 @@ function sendMessage() {
 
         const categoryMessage = document.createElement("div");
         categoryMessage.className = "chat-message bot";
-        categoryMessage.innerHTML = "Please choose a category &#x2B07;"; // with this emoji arrow below
-        categoryMessage.style.backgroundColor = "gray"; // Set a separate background color
+        categoryMessage.innerHTML = "Please choose a category &#x2B07;"; 
+        categoryMessage.style.backgroundColor = "gray";
         categoryMessage.style.color = "white";
         chatMessages.appendChild(categoryMessage);
 
@@ -5947,7 +6166,7 @@ function sendMessage() {
             const categoryDiv = document.createElement("div");
             categoryDiv.className = "chat-message bot";
             categoryDiv.textContent = category.category_name;
-            categoryDiv.style.cursor = "pointer"; // Add cursor pointer
+            categoryDiv.style.cursor = "pointer";
             categoryDiv.onclick = () => {
               selectCategory(category.id, category.category_name);
             };
@@ -5959,7 +6178,7 @@ function sendMessage() {
           noCategoryDiv.textContent = "No categories available.";
           chatMessages.appendChild(noCategoryDiv);
         }
-        chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
       })
       .catch(error => console.error('Error fetching categories:', error));
   }
@@ -6420,7 +6639,6 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
     </script>
 
     <script>
-      // Function to fetch data from the API
       async function fetchPopupData() {
         try {
           const response = await fetch(
@@ -6428,7 +6646,6 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
           );
           const data = await response.json();
           return data[0];
-          // Assuming the API returns an array with a single object as shown in the response
         } catch (error) {
           console.error("Error fetching data from the API:", error);
           const popupContainer = document.getElementById("popupContainer");
@@ -6437,20 +6654,15 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
         }
       }
 
-      // Function to create and display the popup
       function displayPopup(posterUrl) {
         const popupContainer = document.getElementById("popupContainer");
         const closeBtn = document.getElementById("closeBtn");
         const popupImage = document.getElementById("popupImage");
 
-        // Check if posterUrl and title are not null before showing the popup
         if (posterUrl) {
-          // Set the content for the popup
           popupImage.src = posterUrl;
-          // Show the popup
           popupContainer.style.display = "block";
 
-          // Close the popup when the close button is clicked
           closeBtn.addEventListener("click", closePopup);
           showPopupContainer();
         }
@@ -6459,60 +6671,48 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
         const popupContainer = document.getElementById("popupContainer");
         popupContainer.style.display = "block";
       }
-      // Function to close the popup
       function closePopup() {
         const popupContainer = document.getElementById("popupContainer");
         if (popupContainer.style.display === "block") {
           popupContainer.style.display = "none";
-          // Add a small delay before adding the popup-active class back to the background container to reapply the blur effect
         }
       }
 
-      // Function to be called when the home page is loaded
       async function loadHomePage() {
         try {
-          // Fetch data from the API
           const { poster, title } = await fetchPopupData();
 
-          // Get the reference to the background container
-
-          // Display the popup with the fetched data (if available)
           displayPopup(poster, title);
         } catch (error) {
           console.error("Error loading the popup:", error);
         }
       }
 
-      // Load the home page and trigger the popup on DOMContentLoaded
       document.addEventListener("DOMContentLoaded", loadHomePage);
     </script>
 
     <script>
-      // Function to format date as "JULY 07, 2023"
       function formatDate(dateString) {
         const options = { year: "numeric", month: "long", day: "numeric" };
         const date = new Date(dateString);
         return date.toLocaleDateString("en-US", options).toUpperCase();
       }
 
-      // Function to set the href attribute
       function setHrefAttribute(element, id) {
         element.href = `news-single-page.html?id=${id}`;
       }
 
-      // Fetch API data
       fetch("https://conext.in/news/api/get_org_news_articles/1/")
         .then((response) => response.json())
         .then((data) => {
           if (data.results.data.length > 0) {
             
-            const newsItem = data.results.data[0]; // Assuming you want to update with the first item in the API response
+            const newsItem = data.results.data[0]; 
             const imageUrl = newsItem.picture || "upload/clg.jpg";
             const newsDate = formatDate(newsItem.date);
             const newsSubject = newsItem.subject;
             const id = newsItem.id;
 
-            // Update the image, date, and news subject
             const imageElement = document.querySelector(".image_urls");
             imageElement.src = imageUrl;
             setHrefAttribute(imageElement.closest("a"), id);
@@ -6532,19 +6732,15 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
     </script>
 
     <script>
-      // Function to format date as "JULY 07, 2023"
       function formatDate(dateString) {
         const options = { year: "numeric", month: "long", day: "numeric" };
         const date = new Date(dateString);
         return date.toLocaleDateString("en-US", options).toUpperCase();
       }
 
-      // Function to update the HTML with API response data for the next three responses
       function updateHTMLWithAPIResponse(apiResponse) {
-        // Get the next three items (ignore the first response)
         const nextThreeItems = apiResponse.slice(1, 4);
 
-        // Update the first three divs with their data
         const itemDivs = document.querySelectorAll(
           ".gdlr-core-item-list.gdlr-core-blog-widget.gdlr-core-item-mglr"
         );
@@ -6564,13 +6760,11 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
         });
       }
 
-      // Fetch API data
       fetch("https://conext.in/news/api/get_org_news_articles/1/")
         .then((response) => response.json())
         .then((data) => {
           
           if (data.results.data.length >= 4) {
-            // Update the HTML with API response data for the next three responses
             updateHTMLWithAPIResponse(data.results.data);
           }
         })
@@ -6872,131 +7066,187 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
       } /*]]>*/
     </script>
   </body>
-  <!-- For Awards -->
+
   <script>
-    async function fetchAndPopulateAwards() {
-      const apiURL = "http://app.conext.in/news/api/MdcLatestAwards/";
-      try {
-        const response = await fetch(apiURL);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        const filteredData = data.filter((item) => item.image_urls.length > 0);
-        populateAwardsHTML(filteredData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+  async function fetchAndPopulateAwards() {
+    const apiURL = "https://conext.in/website_manager/api/mdc/bulletin_posts/?type=7";
+    try {
+      const response = await fetch(apiURL);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
       }
+      const result = await response.json();
+
+      const filteredData = result.data
+        .filter(item => item.news_banner || (item.attachments && item.attachments.length > 0))
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      populateAwardsHTML(filteredData);
+    } catch (error) {
+      console.error("Error fetching data:", error);
     }
+  }
 
-    function populateAwardsHTML(data) {
-      console.log(data[0].image_urls[0], "award1");
-      console.log(data[1].image_urls[0], "award2");
-      if (data.length >= 2) {
-        document.querySelector(".award1-title").textContent =
-          data[0].news_subject;
-        document.querySelector(
-          ".award1-date"
-        ).textContent = `Date: ${formatDate(data[0].news_date)}`;
-        document.querySelector(".award1-image").src = data[0].image_urls[0];
+  function populateAwardsHTML(data) {
+    if (data.length >= 2) {
+      document.querySelector(".award1-title").textContent = data[0].subject;
+      document.querySelector(".award1-date").textContent = `Date: ${formatDate(data[0].date)}`;
+      document.querySelector(".award1-image").src = data[0].news_banner || (data[0].attachments[0]?.picture || "");
 
-        document.querySelector(".award2-title").textContent =
-          data[1].news_subject;
-        document.querySelector(
-          ".award2-date"
-        ).textContent = `Date: ${formatDate(data[1].news_date)}`;
-        document.querySelector(".award2-image").src = data[1].image_urls[0];
-      }
+      document.querySelector(".award2-title").textContent = data[1].subject;
+      document.querySelector(".award2-date").textContent = `Date: ${formatDate(data[1].date)}`;
+      document.querySelector(".award2-image").src = data[1].news_banner || (data[1].attachments[0]?.picture || "");
     }
+  }
 
-    function formatDate(inputDate) {
-      const date = new Date(inputDate);
-      const options = { year: "numeric", month: "short", day: "numeric" };
-      return date.toLocaleDateString("en-US", options);
-    }
+  function formatDate(inputDate) {
+    const date = new Date(inputDate);
+    const options = { year: "numeric", month: "short", day: "numeric" };
+    return date.toLocaleDateString("en-US", options);
+  }
 
-    fetchAndPopulateAwards();
-  </script>
+  fetchAndPopulateAwards();
+</script>
 
-  <!-- For Workshops -->
+
   <script>
-    async function fetchAndPopulateWorkshops() {
-      const apiURL = "http://app.conext.in/news/api/conference_workshopsAll/";
-      try {
-        const response = await fetch(apiURL);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        const filteredData = data.filter((item) => item.image_urls.length > 0);
-        populateWorkshopsHTML(filteredData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+  async function fetchAndPopulateWorkshops() {
+    const apiURL = "https://conext.in/website_manager/api/mdc/bulletin_posts/?type=8";
+    try {
+      const response = await fetch(apiURL);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
       }
+      const result = await response.json();
+
+      const filteredData = result.data
+        .filter(item => item.news_banner || (item.attachments && item.attachments.length > 0))
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      populateWorkshopsHTML(filteredData);
+    } catch (error) {
+      console.error("Error fetching workshops:", error);
     }
+  }
 
-    function populateWorkshopsHTML(data) {
-      console.log(data[0].image_urls[0], "worsh1");
-      console.log(data[1].image_urls[0], "worsh2");
-      if (data.length >= 2) {
-        document.querySelector(".workshop1-title").textContent =
-          data[0].news_subject;
-        document.querySelector(
-          ".workshop1-date"
-        ).textContent = `Date: ${formatDate(data[0].news_date)}`;
-        document.querySelector(".workshop1-image").src = data[0].image_urls[0];
+  function populateWorkshopsHTML(data) {
+    if (data.length >= 2) {
+      document.querySelector(".workshop1-title").textContent = data[0].subject;
+      document.querySelector(".workshop1-date").textContent = `Date: ${formatDate(data[0].date)}`;
+      document.querySelector(".workshop1-image").src = data[0].news_banner || (data[0].attachments[0]?.picture || "");
 
-        document.querySelector(".workshop2-title").textContent =
-          data[1].news_subject;
-        document.querySelector(
-          ".workshop2-date"
-        ).textContent = `Date: ${formatDate(data[1].news_date)}`;
-        document.querySelector(".workshop2-image").src = data[1].image_urls[0];
+      document.querySelector(".workshop2-title").textContent = data[1].subject;
+      document.querySelector(".workshop2-date").textContent = `Date: ${formatDate(data[1].date)}`;
+      document.querySelector(".workshop2-image").src = data[1].news_banner || (data[1].attachments[0]?.picture || "");
+    }
+  }
+
+  function formatDate(inputDate) {
+    const date = new Date(inputDate);
+    const options = { year: "numeric", month: "short", day: "numeric" };
+    return date.toLocaleDateString("en-US", options);
+  }
+
+  fetchAndPopulateWorkshops();
+</script>
+
+<script>
+  async function fetchAndPopulatePublications() {
+    const apiURL = "https://conext.in/website_manager/api/mdc/bulletin_posts/?type=11";
+    try {
+      const response = await fetch(apiURL);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
       }
-    }
+      const result = await response.json();
 
-    fetchAndPopulateWorkshops();
-  </script>
+      const filteredData = result.data
+        .filter(item => item.news_banner || (item.attachments && item.attachments.length > 0))
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      populatePublicationsHTML(filteredData);
+    } catch (error) {
+      console.error("Error fetching publications:", error);
+    }
+  }
+
+  function populatePublicationsHTML(data) {
+    if (data.length >= 2) {
+      document.querySelector(".publication1-title").textContent = data[0].subject;
+      document.querySelector(".publication1-date").textContent = `Date: ${formatDate(data[0].date)}`;
+      document.querySelector(".publication1-image").src = data[0].news_banner || (data[0].attachments[0]?.picture || "");
+
+      document.querySelector(".publication2-title").textContent = data[1].subject;
+      document.querySelector(".publication2-date").textContent = `Date: ${formatDate(data[1].date)}`;
+      document.querySelector(".publication2-image").src = data[1].news_banner || (data[1].attachments[0]?.picture || "");
+    }
+  }
+
+  function formatDate(inputDate) {
+    const date = new Date(inputDate);
+    const options = { year: "numeric", month: "short", day: "numeric" };
+    return date.toLocaleDateString("en-US", options);
+  }
+
+  fetchAndPopulatePublications();
+</script>
+
+
   <script>
-    async function fetchAndPopulatePublications() {
-      const apiURL = "http://app.conext.in/news/api/MdcPublicationsListAll/";
-      try {
-        const response = await fetch(apiURL);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        const filteredData = data.filter((item) => item.image_urls.length > 0);
-        populatePublicationsHTML(filteredData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
+    function createTestimonial(t) {
+      const div = document.createElement("div");
+      div.classList.add("testimonial");
+      div.innerHTML = `
+        <div class="box">
+          <i class="fas fa-quote-left quote"></i>
+          <p>${t.text}</p>
+          <div class="content">
+            <div class="info">
+              <div class="name">${t.name}</div>
+              <div class="job">${t.job}</div>
+              <div class="stars">
+                ${renderStars(t.stars)}
+              </div>
+            </div>
+            <div class="image">
+              <img src="${t.image}" alt="${t.name}" />
+            </div>
+          </div>
+        </div>
+      `;
+      return div;
     }
 
-    function populatePublicationsHTML(data) {
-      console.log(data[0].image_urls[0], "pub1");
-      console.log(data[1].image_urls[0], "pub2");
-      if (data.length >= 2) {
-        document.querySelector(".publication1-title").textContent =
-          data[0].news_subject;
-        document.querySelector(
-          ".publication1-date"
-        ).textContent = `Date: ${formatDate(data[0].news_date)}`;
-        document.querySelector(".publication1-image").src =
-          data[0].image_urls[0];
-
-        document.querySelector(".publication2-title").textContent =
-          data[1].news_subject;
-        document.querySelector(
-          ".publication2-date"
-        ).textContent = `Date: ${formatDate(data[1].news_date)}`;
-        document.querySelector(".publication2-image").src =
-          data[1].image_urls[0];
+  function renderStars(starCount) {
+    let stars = "";
+    for (let i = 1; i <= 5; i++) {
+      if (i <= starCount) {
+        stars += `<i class="fas fa-star"></i>`;
+      } else {
+        stars += `<i class="far fa-star"></i>`;
       }
     }
+    return stars;
+  }
 
-    fetchAndPopulatePublications();
+    async function fetchTestimonials() {
+    const res = await fetch("https://conext.in/website_manager/api/mdc/latest_testimonials/");
+    const data = await res.json();
+    data.forEach(t => document
+      .getElementById("testimonial-slider")
+      .appendChild(createTestimonial(t))
+    );
+  }
+  fetchTestimonials();
+
+  function renderTestimonials() {
+    const slider = document.getElementById("testimonial-slider");
+    testimonials.forEach(t => slider.appendChild(createTestimonial(t)));
+  }
+
+  renderTestimonials();
   </script>
+  
 </html>
 
 <!-- <span class="gdlr-core-event-item-info gdlr-core-type-location">
