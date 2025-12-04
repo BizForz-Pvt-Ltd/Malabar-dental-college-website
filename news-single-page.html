@@ -53,6 +53,7 @@
       media="all"
     />
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
       
       .loading-animation {
@@ -275,6 +276,371 @@
         border-radius: 4px;
         margin-bottom: 20px;
       }
+      
+      /* Attachments Section */
+      .attachments-section {
+        margin-top: 60px;
+        padding: 30px 20px;
+        background-color: #f8f9fa;
+        border-radius: 12px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid #eaeaea;
+      }
+      
+      .attachments-section h3 {
+        color: #182847;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #3db166;
+        font-size: 24px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .attachments-section h3 i {
+        color: #3db166;
+      }
+      
+      .attachments-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+      
+      .attachment-item {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .attachment-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+      }
+
+      .attachment-image-container {
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+      }
+      
+      .attachment-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .attachment-item:hover .attachment-image {
+        transform: scale(1.05);
+      }
+      
+      .attachment-doc {
+        padding: 25px 15px;
+        text-align: center;
+        background: linear-gradient(135deg, #182847 0%, #1a365d 100%);
+        color: white;
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .attachment-doc:hover {
+        background: linear-gradient(135deg, #3db166 0%, #2e8b57 100%);
+      }
+      
+      .attachment-doc:hover i {
+        color: white;
+      }
+      
+      .attachment-doc span {
+        font-size: 14px;
+        word-break: break-word;
+        padding: 0 10px;
+        line-height: 1.4;
+      }
+      
+      .attachment-label {
+        padding: 12px 15px;
+        background: white;
+        border-top: 1px solid #eee;
+        text-align: center;
+        font-size: 13px;
+        color: #666;
+        font-weight: 500;
+        flex-grow: 0;
+      }
+      
+      /* Image Modal Styles - Improved for mobile */
+      .image-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+        touch-action: none;
+      }
+      
+      .modal-content {
+        max-width: 95%;
+        max-height: 95%;
+        position: relative;
+        width: auto;
+        height: auto;
+      }
+      
+      .modal-image {
+        max-width: 100%;
+        max-height: 85vh;
+        display: block;
+        margin: 0 auto;
+        border-radius: 4px;
+        object-fit: contain;
+      }
+      
+      .close-modal {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 36px;
+        font-weight: 300;
+        cursor: pointer;
+        z-index: 10001;
+        transition: color 0.3s;
+        background: rgba(0,0,0,0.5);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+      }
+      
+      .close-modal:hover {
+        color: #3db166;
+        background: rgba(0,0,0,0.7);
+      }
+      
+      .modal-nav {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.7);
+        color: white;
+        border: none;
+        font-size: 24px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: all 0.3s;
+        z-index: 10001;
+      }
+      
+      .modal-nav:hover {
+        background: rgba(59, 177, 102, 0.9);
+        transform: translateY(-50%) scale(1.1);
+      }
+      
+      .prev-btn {
+        left: 20px;
+      }
+      
+      .next-btn {
+        right: 20px;
+      }
+      
+      .image-counter {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 16px;
+        background: rgba(0,0,0,0.8);
+        padding: 8px 20px;
+        border-radius: 25px;
+        font-weight: 500;
+        z-index: 10001;
+      }
+
+      /* Mobile responsiveness for attachments */
+      @media (max-width: 768px) {
+        .attachments-section {
+          padding: 20px 15px;
+          margin-top: 40px;
+        }
+        
+        .attachments-section h3 {
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+        
+        .attachments-grid {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+          gap: 15px;
+        }
+        
+        .attachment-image-container {
+          height: 150px;
+        }
+        
+        .attachment-doc {
+          height: 150px;
+          padding: 20px 10px;
+        }
+        
+        .attachment-doc i {
+          font-size: 36px;
+          margin-bottom: 10px;
+        }
+        
+        .attachment-label {
+          padding: 10px;
+          font-size: 12px;
+        }
+        
+        /* Improved mobile modal */
+        .modal-nav {
+          width: 50px;
+          height: 50px;
+          font-size: 20px;
+        }
+        
+        .prev-btn {
+          left: 10px;
+        }
+        
+        .next-btn {
+          right: 10px;
+        }
+        
+        .close-modal {
+          top: 15px;
+          right: 15px;
+          width: 45px;
+          height: 45px;
+          font-size: 30px;
+        }
+        
+        .image-counter {
+          bottom: 20px;
+          font-size: 14px;
+          padding: 6px 15px;
+        }
+        
+        .modal-image {
+          max-height: 75vh;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .attachments-grid {
+          grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+          gap: 12px;
+        }
+        
+        .attachment-image-container {
+          height: 130px;
+        }
+        
+        .attachment-doc {
+          height: 130px;
+          padding: 15px 8px;
+        }
+        
+        .attachment-doc i {
+          font-size: 32px;
+          margin-bottom: 8px;
+        }
+        
+        .attachment-doc span {
+          font-size: 12px;
+        }
+        
+        /* Mobile modal adjustments */
+        .modal-nav {
+          width: 45px;
+          height: 45px;
+          font-size: 18px;
+        }
+        
+        .close-modal {
+          top: 10px;
+          right: 10px;
+          width: 40px;
+          height: 40px;
+          font-size: 26px;
+        }
+        
+        .image-counter {
+          bottom: 15px;
+          font-size: 13px;
+        }
+      }
+      
+      /* Touch swipe support */
+      .modal-content {
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      
+      /* Loading indicator for images */
+      .image-loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 14px;
+      }
+      
+      /* No attachments message */
+      .no-attachments {
+        text-align: center;
+        padding: 40px 20px;
+        color: #666;
+        font-style: italic;
+      }
+      
+      .no-attachments i {
+        font-size: 48px;
+        margin-bottom: 15px;
+        color: #ccc;
+        display: block;
+      }
+      
       /* 
 
       .gdlr-core-pbf-element:only-child .gdlr-core-media-image img {
@@ -1263,6 +1629,17 @@
       </div>
     </header>
 
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+      <span class="close-modal">&times;</span>
+      <button class="modal-nav prev-btn"><i class="fas fa-chevron-left"></i></button>
+      <button class="modal-nav next-btn"><i class="fas fa-chevron-right"></i></button>
+      <div class="modal-content">
+        <img class="modal-image" id="modalImage" src="" alt="">
+        <div class="image-counter" id="imageCounter">1 / 1</div>
+      </div>
+    </div>
+
     <div class="kingster-page-title-wrap kingster-style-medium kingster-left-align"></div>
     <div class="kingster-page-wrapper" id="kingster-page-wrapper">
       <div class="gdlr-core-page-builder-body">
@@ -1329,16 +1706,16 @@
                                   </div>
                               </div>
                           </div>
-                  
-                          <!-- Container for attachments -->
-                          <div class="gdlr-core-pbf-element below-images-container">
-                              <!-- Documents will be added here -->
-                          </div>
                       </div>
                   </div>
               </div>
             </div>
           </div>
+        </div>
+        
+        <!-- Attachments Section (Added at the bottom) -->
+        <div id="attachmentsSection" class="attachments-section" style="display: none;">
+          <!-- Attachments will be dynamically added here -->
         </div>
       </div>
     </div>
@@ -1649,29 +2026,62 @@
 
           document.getElementById("loadingAnimation").style.display = "none";
 
-          const article = isOld
-              ? {
-                    subject: data.news_subject,
-                    date: data.news_date,
-                    location: data.location,
-                    content: data.news_content,
-                    staff: data.staff_name,
-                    images: data.image_urls || [],
-                }
-              : {
-                    subject: data.data.subject,
-                    date: data.data.date,
-                    location: data.data.location,
-                    content: data.data.content,
-                    staff: data.data.added_by_name,
-                    images: [data.data.picture || data.data.news_banner],
-                };
+          let article;
+          let attachments = [];
+          let imageAttachments = [];
+
+          if (isOld) {
+              article = {
+                  subject: data.news_subject,
+                  date: data.news_date,
+                  location: data.location,
+                  content: data.news_content,
+                  staff: data.staff_name,
+                  banner: data.image_urls?.[0] || null,
+              };
+              // For old API, extract images from content or use image_urls
+              if (data.image_urls && data.image_urls.length > 0) {
+                  data.image_urls.forEach((url, index) => {
+                      if (url) {
+                          imageAttachments.push({
+                              id: index,
+                              url: url,
+                              isImage: true
+                          });
+                      }
+                  });
+              }
+          } else {
+              article = {
+                  subject: data.data.subject,
+                  date: data.data.date,
+                  location: data.data.location,
+                  content: data.data.content,
+                  staff: data.data.added_by_name,
+                  banner: data.data.picture || data.data.news_banner,
+                  type_name: data.data.type_name || "News",
+              };
+              
+              // Extract attachments from new API
+              if (data.data.attachments && data.data.attachments.length > 0) {
+                  attachments = data.data.attachments;
+                  
+                  // Separate image attachments for gallery
+                  attachments.forEach(attachment => {
+                      if (attachment.picture) {
+                          imageAttachments.push({
+                              id: attachment.id,
+                              url: attachment.picture,
+                              isImage: true
+                          });
+                      }
+                  });
+              }
+          }
 
           // Populate the title section
-          document.querySelector('.type_name').textContent = "News";
+          document.querySelector('.type_name').textContent = article.type_name || "News";
           document.querySelector('.news_subject').textContent = article.subject || "No title";
-
-          // Populate the location, date, and added by sections
           document.querySelector('.location').textContent = article.location || "Not available";
           document.querySelector('.news_date').textContent = article.date || "Unknown date";
           document.querySelector('.staff_name').textContent = article.staff || "Admin";
@@ -1688,13 +2098,21 @@
           const contentContainer = document.createElement('div');
           contentContainer.className = 'news-content-container';
 
-          // Add image to image container
-          if (article.images && article.images.length > 0) {
+          // Add banner image to image container
+          if (article.banner) {
               const img = document.createElement("img");
-              img.src = article.images[0];
+              img.src = article.banner;
               img.alt = article.subject;
               img.className = 'news-main-image';
               imageContainer.appendChild(img);
+              
+              // Add banner to image attachments for gallery
+              imageAttachments.unshift({
+                  id: 'banner',
+                  url: article.banner,
+                  isImage: true,
+                  isBanner: true
+              });
           } else {
               // Add placeholder if no image
               const placeholder = document.createElement("div");
@@ -1718,6 +2136,14 @@
           const existingContainer = document.querySelector('.first-image-container').parentElement;
           existingContainer.innerHTML = '';
           existingContainer.appendChild(mainContainer);
+
+          // Display attachments section if there are any attachments
+          if (attachments.length > 0 || imageAttachments.length > 1) {
+              displayAttachments(attachments, imageAttachments);
+          }
+
+          // Initialize image modal functionality
+          initializeImageModal(imageAttachments);
 
           // Add CSS for the new layout
           const style = document.createElement('style');
@@ -1750,6 +2176,12 @@
                   border-radius: 8px;
                   background: #f8f9fa;
                   display: block;
+                  cursor: pointer;
+                  transition: transform 0.3s ease;
+              }
+
+              .news-main-image:hover {
+                  transform: scale(1.02);
               }
 
               .news-image-placeholder {
@@ -1779,6 +2211,7 @@
                   height: auto;
                   border-radius: 6px;
                   margin: 10px 0;
+                  cursor: pointer;
               }
 
               /* Style for the title section */
@@ -1885,6 +2318,10 @@
                   .news-header-section {
                       padding: 15px 15px 0 15px;
                   }
+                  
+                  .attachments-grid {
+                      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                  }
               }
 
               @media (max-width: 480px) {
@@ -1900,10 +2337,304 @@
                   .news-header-section {
                       padding: 10px 10px 0 10px;
                   }
+                  
+                  .attachments-grid {
+                      grid-template-columns: 1fr;
+                  }
               }
           `;
           document.head.appendChild(style);
       });
+      
+      function displayAttachments(attachments, imageAttachments) {
+          const attachmentsSection = document.getElementById('attachmentsSection');
+          
+          // If no attachments at all, don't show the section
+          if ((!attachments || attachments.length === 0) && (!imageAttachments || imageAttachments.length <= 1)) {
+              attachmentsSection.style.display = 'none';
+              return;
+          }
+          
+          attachmentsSection.style.display = 'block';
+          
+          let html = '<h3><i class="fas fa-paperclip"></i> Attachments</h3>';
+          
+          // Count how many items we have (excluding banner)
+          const imageCount = Math.max(0, imageAttachments.length - 1); // Exclude banner
+          const docCount = attachments.filter(a => a.doc).length;
+          const totalItems = imageCount + docCount;
+          
+          if (totalItems === 0) {
+              html += `
+                  <div class="no-attachments">
+                      <i class="far fa-folder-open"></i>
+                      <p>No attachments available for this news article.</p>
+                  </div>
+              `;
+          } else {
+              html += '<div class="attachments-grid">';
+              
+              // Add image attachments (excluding banner which is index 0)
+              for (let i = 1; i < imageAttachments.length; i++) {
+                  const attachment = imageAttachments[i];
+                  html += `
+                      <div class="attachment-item" data-image-index="${i}">
+                          <div class="attachment-image-container">
+                              <img src="${attachment.url}" alt="Attachment" class="attachment-image" 
+                                   loading="lazy" onerror="this.src='https://via.placeholder.com/180x180/cccccc/ffffff?text=Image'">
+                          </div>
+                          <div class="attachment-label">
+                              Image ${i}
+                          </div>
+                      </div>
+                  `;
+              }
+              
+              // Add document attachments
+              attachments.forEach(attachment => {
+                  if (attachment.doc) {
+                      const fileName = attachment.doc.split('/').pop();
+                      const fileExtension = fileName.split('.').pop().toLowerCase();
+                      let iconClass = 'fas fa-file';
+                      
+                      // Set icon based on file type
+                      if (fileExtension === 'pdf') {
+                          iconClass = 'fas fa-file-pdf';
+                      } else if (['doc', 'docx'].includes(fileExtension)) {
+                          iconClass = 'fas fa-file-word';
+                      } else if (['xls', 'xlsx'].includes(fileExtension)) {
+                          iconClass = 'fas fa-file-excel';
+                      }
+                      
+                      // Truncate long file names
+                      const displayName = fileName.length > 30 ? 
+                          fileName.substring(0, 27) + '...' : fileName;
+                      
+                      html += `
+                          <div class="attachment-item">
+                              <a href="${attachment.doc}" target="_blank" class="attachment-doc">
+                                  <i class="${iconClass}"></i>
+                                  <span>${displayName}</span>
+                              </a>
+                              <div class="attachment-label">
+                                  Download File
+                              </div>
+                          </div>
+                      `;
+                  }
+              });
+              
+              html += '</div>';
+          }
+          
+          attachmentsSection.innerHTML = html;
+      }
+      
+      function initializeImageModal(imageAttachments) {
+          const modal = document.getElementById('imageModal');
+          const modalImage = document.getElementById('modalImage');
+          const closeModal = document.querySelector('.close-modal');
+          const prevBtn = document.querySelector('.prev-btn');
+          const nextBtn = document.querySelector('.next-btn');
+          const imageCounter = document.getElementById('imageCounter');
+          
+          let currentImageIndex = 0;
+          let touchStartX = 0;
+          let touchEndX = 0;
+          
+          // Function to open modal with specific image
+          function openModal(index) {
+              if (imageAttachments.length === 0) return;
+              
+              currentImageIndex = index;
+              modal.style.display = 'flex';
+              
+              // Show loading temporarily
+              modalImage.style.opacity = '0.5';
+              
+              // Load image
+              const img = new Image();
+              img.onload = function() {
+                  modalImage.src = imageAttachments[currentImageIndex].url;
+                  modalImage.style.opacity = '1';
+                  updateCounter();
+              };
+              img.onerror = function() {
+                  modalImage.src = 'https://via.placeholder.com/800x600/cccccc/ffffff?text=Image+Not+Found';
+                  modalImage.style.opacity = '1';
+                  updateCounter();
+              };
+              img.src = imageAttachments[currentImageIndex].url;
+              
+              // Prevent body scroll when modal is open
+              document.body.style.overflow = 'hidden';
+              document.documentElement.style.overflow = 'hidden';
+          }
+          
+          // Function to update image counter
+          function updateCounter() {
+              imageCounter.textContent = `${currentImageIndex + 1} / ${imageAttachments.length}`;
+              imageCounter.style.display = 'block';
+          }
+          
+          // Function to show next image
+          function showNextImage() {
+              if (imageAttachments.length <= 1) return;
+              currentImageIndex = (currentImageIndex + 1) % imageAttachments.length;
+              loadImage();
+          }
+          
+          // Function to show previous image
+          function showPrevImage() {
+              if (imageAttachments.length <= 1) return;
+              currentImageIndex = (currentImageIndex - 1 + imageAttachments.length) % imageAttachments.length;
+              loadImage();
+          }
+          
+          // Function to load image with transition
+          function loadImage() {
+              modalImage.style.opacity = '0.3';
+              
+              const img = new Image();
+              img.onload = function() {
+                  modalImage.src = imageAttachments[currentImageIndex].url;
+                  setTimeout(() => {
+                      modalImage.style.opacity = '1';
+                  }, 50);
+                  updateCounter();
+              };
+              img.onerror = function() {
+                  modalImage.src = 'https://via.placeholder.com/800x600/cccccc/ffffff?text=Image+Not+Found';
+                  setTimeout(() => {
+                      modalImage.style.opacity = '1';
+                  }, 50);
+                  updateCounter();
+              };
+              img.src = imageAttachments[currentImageIndex].url;
+          }
+          
+          // Close modal
+          closeModal.addEventListener('click', function() {
+              modal.style.display = 'none';
+              document.body.style.overflow = 'auto';
+              document.documentElement.style.overflow = 'auto';
+          });
+          
+          // Next button
+          nextBtn.addEventListener('click', showNextImage);
+          
+          // Previous button
+          prevBtn.addEventListener('click', showPrevImage);
+          
+          // Keyboard navigation
+          document.addEventListener('keydown', function(e) {
+              if (modal.style.display === 'flex') {
+                  if (e.key === 'ArrowRight' || e.key === 'Right') {
+                      showNextImage();
+                  } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+                      showPrevImage();
+                  } else if (e.key === 'Escape' || e.key === 'Esc') {
+                      modal.style.display = 'none';
+                      document.body.style.overflow = 'auto';
+                      document.documentElement.style.overflow = 'auto';
+                  }
+              }
+          });
+          
+          // Click outside image to close
+          modal.addEventListener('click', function(e) {
+              if (e.target === modal || e.target.classList.contains('modal-content')) {
+                  modal.style.display = 'none';
+                  document.body.style.overflow = 'auto';
+                  document.documentElement.style.overflow = 'auto';
+              }
+          });
+          
+          // Touch swipe for mobile
+          modal.addEventListener('touchstart', function(e) {
+              touchStartX = e.changedTouches[0].screenX;
+          }, { passive: true });
+          
+          modal.addEventListener('touchend', function(e) {
+              touchEndX = e.changedTouches[0].screenX;
+              handleSwipe();
+          }, { passive: true });
+          
+          function handleSwipe() {
+              const swipeThreshold = 50;
+              const diff = touchStartX - touchEndX;
+              
+              if (Math.abs(diff) > swipeThreshold) {
+                  if (diff > 0) {
+                      // Swipe left - next image
+                      showNextImage();
+                  } else {
+                      // Swipe right - previous image
+                      showPrevImage();
+                  }
+              }
+          }
+          
+          // Add click event to main banner image
+          const bannerImage = document.querySelector('.news-main-image');
+          if (bannerImage) {
+              bannerImage.style.cursor = 'pointer';
+              bannerImage.addEventListener('click', function() {
+                  openModal(0); // Banner is first image
+              });
+          }
+          
+          // Add click event to all images in content
+          document.querySelectorAll('.news_content img').forEach((img, index) => {
+              img.style.cursor = 'pointer';
+              img.addEventListener('click', function() {
+                  // If this image is from attachments, find its index
+                  let foundIndex = -1;
+                  for (let i = 0; i < imageAttachments.length; i++) {
+                      if (imageAttachments[i].url === img.src) {
+                          foundIndex = i;
+                          break;
+                      }
+                  }
+                  
+                  if (foundIndex !== -1) {
+                      openModal(foundIndex);
+                  } else {
+                      // If image is not in attachments, open it alone
+                      modalImage.src = img.src;
+                      modal.style.display = 'flex';
+                      document.body.style.overflow = 'hidden';
+                      document.documentElement.style.overflow = 'hidden';
+                      imageCounter.style.display = 'none';
+                  }
+              });
+          });
+          
+          // Add click event to attachment images
+          document.addEventListener('click', function(e) {
+              const attachmentItem = e.target.closest('.attachment-item[data-image-index]');
+              if (attachmentItem) {
+                  const index = parseInt(attachmentItem.getAttribute('data-image-index'));
+                  openModal(index);
+              }
+          });
+          
+          // Ensure buttons are visible on mobile
+          function checkMobileButtons() {
+              const isMobile = window.innerWidth <= 768;
+              if (isMobile && imageAttachments.length > 1) {
+                  prevBtn.style.display = 'flex';
+                  nextBtn.style.display = 'flex';
+              } else if (!isMobile) {
+                  prevBtn.style.display = 'flex';
+                  nextBtn.style.display = 'flex';
+              }
+          }
+          
+          // Check on load and resize
+          checkMobileButtons();
+          window.addEventListener('resize', checkMobileButtons);
+      }
 </script>
 
     </script>
