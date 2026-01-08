@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon" />
     <title>IT Department | MDCRC</title>
@@ -57,6 +57,79 @@
           transform: translateY(-100%);
         }
               }
+              @media (max-width: 768px) {
+  /* Adjust the header and navigation for mobile */
+  .kingster-header-wrap {
+    padding: 10px 0;
+  }
+
+  /* Make the menu collapsible for mobile */
+  .kingster-main-menu {
+    display: none;
+  }
+
+  /* Show the mobile menu button */
+  .kingster-mm-menu-button {
+    display: block;
+  }
+
+  /* Adjust the footer layout */
+  .kingster-footer-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust the faculty grid */
+  .gdlr-core-pbf-wrapper-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .gdlr-core-pbf-column {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust the images */
+  .gdlr-core-image-item-wrap img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Adjust the floating WhatsApp button */
+  .floating-button {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 15px;
+  }
+
+  .whatsapp-logo {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .kingster-page-title-wrap .kingster-page-title-container .kingster-page-title-content {
+    padding-top: 150px;
+    padding-bottom: 20px;
+  }
+
+  .kingster-page-title-wrap .kingster-page-title {
+    font-size: 24px;
+  }
+
+  /* Adjust the faculty images */
+  .directors-image {
+    width: 100%;
+    height: auto;
+  }
+}
     </style>
 </head> <a href="https://api.whatsapp.com/send?phone=7034555514" target="_blank" class="floating-button"> <img src="upload/wsup-logo.png" alt="WhatsApp Logo" class="whatsapp-logo" /> </a>
 
@@ -1558,113 +1631,252 @@
     </script>
 
 <script>
-  function renderMember(member) {
+// Function to render team members
+function renderMember(member) {
     const col = document.createElement("div");
-    col.className = "gdlr-core-pbf-column gdlr-core-column-20";
-    col.style.flex = "0 0 calc(33.33% - 40px)"; 
-    col.style.boxSizing = "border-box";
+    col.className = "gdlr-core-pbf-column gdlr-core-column-20 mobile-team-column";
+    
+    // Handle missing image
+    const imageUrl = member.picture || 'upload/default-avatar.png';
     
     col.innerHTML = `
-      <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="padding-bottom:20px;">
-        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
-          <div class="gdlr-core-pbf-element">
-            <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align" style="padding-bottom:33px;">
-              <div class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-round" style="border-radius:2px; border-width:0px;">
-                <a class="gdlr-core-lightgallery gdlr-core-js" href="${member.picture}">
-                  <img style="border-radius: 15px;" src="${member.picture}" width="500" height="700" class="directors-image" alt="${member.name}" />
-                </a>
-              </div>
+        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="padding-bottom:20px;">
+            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
+                <div class="gdlr-core-pbf-element">
+                    <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align" style="padding-bottom:33px;">
+                        <div class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-round" style="border-radius:2px; border-width:0px;">
+                            <a class="gdlr-core-lightgallery gdlr-core-js" href="${imageUrl}">
+                                <img style="border-radius: 15px; width: 100%; height: auto; max-width: 500px;" 
+                                     src="${imageUrl}" 
+                                     alt="${member.name || 'Staff Member'}"
+                                     class="directors-image responsive-team-image" 
+                                     onerror="this.src='upload/default-avatar.png'" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gdlr-core-pbf-element">
+                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-center-align-mobile" style="padding-bottom:10px;">
+                        <div class="gdlr-core-title-item-title-wrap clearfix">
+                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size:18px; font-weight:600;">${member.name || 'Staff Member'}</h3>
+                        </div>
+                        <span style="color:#3db166;" class="gdlr-core-info-font">${member.designation || 'IT Staff'}</span>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="gdlr-core-pbf-element">
-            <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align" style="padding-bottom:10px;">
-              <div class="gdlr-core-title-item-title-wrap clearfix">
-                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size:18px; font-weight:600;">${member.name}</h3>
-              </div>
-              <span style="color:#3db166;" class="gdlr-core-info-font">${member.designation}</span>
-            </div>
-          </div>
         </div>
-      </div>
     `;
 
     return col;
-  }
+}
 
-  function renderStaff(apiData) {
+// Function to render combined staff
+function renderCombinedStaff(combinedData) {
     const container = document.getElementById("team-container");
+    
+    if (!container) {
+        console.error("Container element not found!");
+        return;
+    }
+    
+    // Clear loading message
     container.innerHTML = "";
-
-    let staff = apiData.non_teaching_staff;
-
-    const manualMembers = [
-      {
-        name: "Nidheesh VK",
-        designation: "System Admin",
-        picture: "upload/it-2.jpeg"
-      },
-      {
+    
+    // Initialize empty array for staff
+    let allStaff = [];
+    
+    // Check if we have data from API 158
+    if (combinedData.dep158 && combinedData.dep158.non_teaching_staff) {
+        allStaff = allStaff.concat(combinedData.dep158.non_teaching_staff);
+    }
+    
+    // Check if we have data from API 26
+    if (combinedData.dep26 && combinedData.dep26.non_teaching_staff) {
+        allStaff = allStaff.concat(combinedData.dep26.non_teaching_staff);
+    }
+    
+    // Add manual member
+    allStaff.push({
         name: "Abdul Raheem",
         designation: "Graphic Designer",
         picture: "upload/it-4.png"
-      }
-    ];
-
-    staff = [...staff, ...manualMembers];
-
-    staff = staff.filter(m => {
-      const designation = m.designation.toLowerCase();
-      return !designation.includes("director of engineering") && 
-             !designation.includes("Director of Engineering") &&
-             !designation.includes("it manager");
     });
-
+    
+    // Filter out Director of Engineering and IT Manager
+    const filteredStaff = allStaff.filter(m => {
+        if (!m.designation) return true;
+        const designation = m.designation.toLowerCase();
+        return !designation.includes("director of engineering") && 
+               !designation.includes("it manager");
+    });
+    
+    // Remove duplicates based on name
+    const uniqueStaff = [];
+    const seenNames = new Set();
+    
+    filteredStaff.forEach(staff => {
+        const name = staff.name ? staff.name.toLowerCase().trim() : '';
+        if (name && !seenNames.has(name)) {
+            seenNames.add(name);
+            uniqueStaff.push(staff);
+        }
+    });
+    
     // Custom order for staff
     const designationOrder = [
-      "system admin",
-      "front-end lead",
-      "graphic designer",
-      "digital marketing executive",
-      "full - stack developer",
-      "back-end developer",
-      "jr. front-end developer",
+        "system admin",
+        "team lead",
+        "digital marketing executive",
+        "graphic designer",
+        "back-end developer",
+        "full - stack developer",
+        "jr. front-end developer",
+        "front-end lead"
     ];
+    
+    // Sort the staff
+    uniqueStaff.sort((a, b) => {
+        const aDesignation = a.designation ? a.designation.toLowerCase() : '';
+        const bDesignation = b.designation ? b.designation.toLowerCase() : '';
+        
+        const aIndex = designationOrder.findIndex(d => aDesignation.includes(d));
+        const bIndex = designationOrder.findIndex(d => bDesignation.includes(d));
 
-    const others = [...staff];
-
-    others.sort((a, b) => {
-      const aIndex = designationOrder.findIndex(d => a.designation.toLowerCase().includes(d));
-      const bIndex = designationOrder.findIndex(d => b.designation.toLowerCase().includes(d));
-
-      if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
-      if (aIndex !== -1) return -1;
-      if (bIndex !== -1) return 1;
-      return a.name.localeCompare(b.name);
+        if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+        if (aIndex !== -1) return -1;
+        if (bIndex !== -1) return 1;
+        return a.name ? a.name.localeCompare(b.name) : 0;
     });
-
+    
+    // Create grid wrapper
     const gridWrapper = document.createElement("div");
-    gridWrapper.className = "gdlr-core-pbf-wrapper-container clearfix gdlr-core-container";
-    gridWrapper.style.display = "flex";
-    gridWrapper.style.flexWrap = "wrap";
-    gridWrapper.style.justifyContent = "center";
-    gridWrapper.style.gap = "20px";
-
-    others.forEach(member => {
-      gridWrapper.appendChild(renderMember(member));
+    gridWrapper.className = "gdlr-core-pbf-wrapper-container clearfix gdlr-core-container team-grid-container";
+    
+    // Add CSS for responsive grid
+    const style = document.createElement('style');
+    style.textContent = `
+        .team-grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            justify-items: center;
+        }
+        
+        .team-grid-container .mobile-team-column {
+            width: 100%;
+            max-width: 350px;
+        }
+        
+        @media (max-width: 1200px) {
+            .team-grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .team-grid-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .team-grid-container .mobile-team-column {
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .team-grid-container {
+                gap: 15px;
+            }
+            
+            .team-grid-container .mobile-team-column {
+                max-width: 280px;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Add each member to the grid
+    uniqueStaff.forEach(member => {
+        gridWrapper.appendChild(renderMember(member));
     });
-
+    
+    // Add count indicator
+    const countIndicator = document.createElement("div");
+    countIndicator.className = "gdlr-core-pbf-element";
+    countIndicator.style.width = "100%";
+    countIndicator.style.textAlign = "center";
+    countIndicator.style.marginBottom = "30px";
+    countIndicator.style.fontSize = "18px";
+    countIndicator.style.color = "#293a5b";
+    
+    container.appendChild(countIndicator);
     container.appendChild(gridWrapper);
-  }
+}
 
-  fetch("https://conext.in/custom_users/api/staff_list_dep_wise/158")
-    .then(res => res.json())
+// Object to store combined data
+const combinedStaffData = {
+    dep158: null,
+    dep26: null
+};
+
+// Counter to track how many APIs have responded
+let apiResponseCount = 0;
+
+// Function to check if both APIs have responded
+function checkAllResponses() {
+    apiResponseCount++;
+    
+    // If both APIs have responded (or timed out), render the combined data
+    if (apiResponseCount >= 2) {
+        renderCombinedStaff(combinedStaffData);
+    }
+}
+
+// Fetch first API (department 158)
+fetch("https://conext.in/custom_users/api/staff_list_dep_wise/158")
+    .then(res => {
+        if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+    })
     .then(data => {
-      console.log("Staff data:", data);
-      renderStaff(data);
+        combinedStaffData.dep158 = data;
+        checkAllResponses();
     })
     .catch(err => {
-      console.error("Error fetching staff:", err);
+        console.error("Error fetching API 158:", err);
+        combinedStaffData.dep158 = { non_teaching_staff: [] }; // Empty data
+        checkAllResponses();
     });
+
+// Fetch second API (department 26)
+fetch("https://conext.in/custom_users/api/staff_list_dep_wise/26")
+    .then(res => {
+        if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+    })
+    .then(data => {
+        console.log("API 26 data:", data);
+        combinedStaffData.dep26 = data;
+        checkAllResponses();
+    })
+    .catch(err => {
+        console.error("Error fetching API 26:", err);
+        combinedStaffData.dep26 = { non_teaching_staff: [] }; // Empty data
+        checkAllResponses();
+    });
+
+// Set timeout to render even if APIs don't respond
+setTimeout(() => {
+    if (apiResponseCount < 2) {
+        renderCombinedStaff(combinedStaffData);
+    }
+}, 10000); // 10 second timeout
 </script>
 
       <script>
