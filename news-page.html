@@ -1726,7 +1726,9 @@
   newsItemDiv.className = `gdlr-core-item-list gdlr-core-item-mgb gdlr-core-column-30`;
   
   const newsDate = new Date(newsData.date);
-  const newsId = newsData.id;
+  console.log("newsData",newsData);
+  
+  const newsId = newsData.unique_id;
   
   function getFullImageUrl(url) {
     if (!url) return null;
@@ -1759,7 +1761,7 @@
   <div class="gdlr-core-blog-modern gdlr-core-with-image gdlr-core-hover-overlay-content gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
     <div class="gdlr-core-blog-modern-inner">
       <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
-        <a class="news_subject" href='news-single-page.html?id=${newsId}'>
+        <a class="news_subject" href='news-single-page.html?unique_id=${newsId}'>
           <div class="image-container">
             <img class="image_urls" src="${img}" alt="${title}" loading="lazy">
           </div>
@@ -1767,7 +1769,7 @@
       </div>
       <div class="gdlr-core-blog-modern-content gdlr-core-center-align">
         <h3 class="gdlr-core-blog-title gdlr-core-skin-title">
-          <a class="news_subject" href='news-single-page.html?id=${newsId}'>${title}</a>
+          <a class="news_subject" href='news-single-page.html?unique_id=${newsId}'>${title}</a>
         </h3>
         <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
           <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">

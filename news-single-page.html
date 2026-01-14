@@ -1993,7 +1993,7 @@
               return urlSearchParams.get(name);
           }
 
-          const id = getQueryParameter("id");
+          const id = getQueryParameter("unique_id");
           if (!id) {
               alert("No news ID provided in URL");
               return;
@@ -2009,9 +2009,8 @@
               if (!resp.ok) throw new Error("New API failed");
               data = await resp.json();
           } catch (err) {
-              console.warn("New API failed, trying old API:", err);
               try {
-                  const resp = await fetch(`https://app.conext.in/news/api/MdcNewsDetiles/?id=${id}`);
+                  const resp = await fetch(`https://app.conext.in/news/api/MdcNewsDetiles/${id}`);
                   if (!resp.ok) throw new Error("Old API also failed");
                   data = await resp.json();
                   isOld = true;
