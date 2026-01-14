@@ -6615,8 +6615,8 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
         return date.toLocaleDateString("en-US", options).toUpperCase();
       }
 
-      function setHrefAttribute(element, id) {
-        element.href = `news-single-page.html?id=${id}`;
+      function setHrefAttribute(element, unique_id) {
+        element.href = `news-single-page.html?unique_id=${unique_id}`;
       }
 
       fetch("https://conext.in/news/api/get_org_news_articles/1/")
@@ -6628,7 +6628,7 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
             const imageUrl = newsItem.picture || "upload/clg.jpg";
             const newsDate = formatDate(newsItem.date);
             const newsSubject = newsItem.subject;
-            const id = newsItem.id;
+            const id = newsItem.unique_id;
 
             const imageElement = document.querySelector(".image_urls");
             imageElement.src = imageUrl;
@@ -6671,9 +6671,9 @@ function displayMoreInfo(answerById, answerByName, answerByMobile,question) {
           subjectElement.textContent = item.subject;
 
           const linkElement = itemDivs[index].querySelector("a");
-          linkElement.href = `news-single-page.html?id=${item.id}`;
+          linkElement.href = `news-single-page.html?unique_id=${item.unique_id}`;
           const subjectLinkElement = subjectElement.closest("a");
-          subjectLinkElement.href = `news-single-page.html?id=${item.id}`;
+          subjectLinkElement.href = `news-single-page.html?unique_id=${item.unique_id}`;
         });
       }
 
