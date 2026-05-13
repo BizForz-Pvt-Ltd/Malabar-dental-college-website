@@ -991,6 +991,11 @@
           height: 29px;
         }
       }
+      .form-group.has-error .consent-box {
+  border-color: var(--mdc-danger);
+  background: var(--mdc-danger-bg);
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.08);
+}
     </style>
   </head>
 
@@ -1906,10 +1911,247 @@
           if (error) error.textContent = "";
         }
 
+        function getJobApplicationFields(job) {
+          const fields = Array.isArray(job?.application_fields)
+            ? job.application_fields
+            : [];
+
+          return fields
+            .filter((field) => field && field.is_active !== false)
+            .slice()
+            .sort((a, b) => {
+              const aOrder = Number.isFinite(Number(a.sort_order))
+                ? Number(a.sort_order)
+                : 9999;
+              const bOrder = Number.isFinite(Number(b.sort_order))
+                ? Number(b.sort_order)
+                : 9999;
+              return aOrder - bOrder;
+            });
+        }
+
+        function slugifyAnswerKey(value, fallback) {
+          const key = String(value || "")
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9]+/g, "_")
+            .replace(/^_+|_+$/g, "");
+
+          return key || fallback;
+        }
+
+        function getApplicationAnswerKey(field, index) {
+          return slugifyAnswerKey(
+            field?.label,
+            `field_${field?.id || index + 1}`,
+          );
+        }
+
+        function getApplicationInputId(field, index) {
+          return `application_field_${field?.id || index + 1}_${getApplicationAnswerKey(field, index)}`;
+        }
+
+        function normalizeApplicationFieldType(fieldType) {
+          const type = String(fieldType || "text").toLowerCase();
+          const allowedTypes = [
+            "text",
+            "number",
+            "email",
+            "tel",
+            "textarea",
+            "select",
+            "date",
+            "file",
+            "checkbox",
+          ];
+          return allowedTypes.includes(type) ? type : "text";
+        }
+
+        function renderFieldRequiredMarker(field) {
+          return field?.is_required
+            ? '<span class="required">*</span>'
+            : '<span class="optional">(optional)</span>';
+        }
+
+        function renderDynamicApplicationFields(fields) {
+          if (!fields.length) return "";
+
+          const controlsHtml = fields
+            .map((field, index) => {
+              const fieldType = normalizeApplicationFieldType(field.field_type);
+              const key = getApplicationAnswerKey(field, index);
+              const inputId = getApplicationInputId(field, index);
+              const label = field.label || `Application Field ${index + 1}`;
+              const placeholder = field.placeholder || "";
+              const helpText = field.help_text || "";
+              const required = field.is_required ? "true" : "false";
+              const options = Array.isArray(field.options) ? field.options : [];
+              const commonAttrs = `data-application-field="true" data-answer-key="${escapeHtml(key)}" data-field-label="${escapeHtml(label)}" data-field-type="${escapeHtml(fieldType)}" data-required="${required}"`;
+
+              let controlHtml = "";
+
+              if (fieldType === "textarea") {
+                controlHtml = `
+                  <textarea
+                    id="${escapeHtml(inputId)}"
+                    name="answer_${escapeHtml(key)}"
+                    class="form-textarea"
+                    placeholder="${escapeHtml(placeholder)}"
+                    ${commonAttrs}
+                  ></textarea>
+                `;
+              } else if (fieldType === "select") {
+                controlHtml = `
+                  <select
+                    id="${escapeHtml(inputId)}"
+                    name="answer_${escapeHtml(key)}"
+                    class="form-select"
+                    ${commonAttrs}
+                  >
+                    <option value="">${escapeHtml(placeholder || "Select option")}</option>
+                    ${options
+                      .map((option) => {
+                        const optionValue =
+                          typeof option === "object" && option !== null
+                            ? option.value ?? option.label ?? ""
+                            : option;
+                        const optionLabel =
+                          typeof option === "object" && option !== null
+                            ? option.label ?? option.value ?? ""
+                            : option;
+                        return `<option value="${escapeHtml(optionValue)}">${escapeHtml(optionLabel)}</option>`;
+                      })
+                      .join("")}
+                  </select>
+                `;
+              } else if (fieldType === "checkbox") {
+                controlHtml = `
+                  <div class="consent-box">
+                    <input
+                      id="${escapeHtml(inputId)}"
+                      name="answer_${escapeHtml(key)}"
+                      type="checkbox"
+                      ${commonAttrs}
+                    />
+                    <label for="${escapeHtml(inputId)}">
+                      ${escapeHtml(placeholder || label)}
+                    </label>
+                  </div>
+                `;
+              } else if (fieldType === "file") {
+                controlHtml = `
+                  <input
+                    id="${escapeHtml(inputId)}"
+                    name="answer_${escapeHtml(key)}"
+                    type="file"
+                    class="form-control"
+                    placeholder="${escapeHtml(placeholder)}"
+                    ${commonAttrs}
+                  />
+                `;
+              } else {
+                controlHtml = `
+                  <input
+                    id="${escapeHtml(inputId)}"
+                    name="answer_${escapeHtml(key)}"
+                    type="${escapeHtml(fieldType)}"
+                    class="form-control"
+                    placeholder="${escapeHtml(placeholder)}"
+                    ${fieldType === "number" ? 'min="0" step="any"' : ""}
+                    ${commonAttrs}
+                  />
+                `;
+              }
+
+              return `
+                <div class="form-group ${fieldType === "textarea" || fieldType === "file" || fieldType === "checkbox" ? "full" : ""}">
+                  ${
+                    fieldType === "checkbox"
+                      ? `<label class="form-label" for="${escapeHtml(inputId)}">${escapeHtml(label)} ${renderFieldRequiredMarker(field)}</label>`
+                      : `<label class="form-label" for="${escapeHtml(inputId)}">${escapeHtml(label)} ${renderFieldRequiredMarker(field)}</label>`
+                  }
+                  ${controlHtml}
+                  ${helpText ? `<div class="help-text">${escapeHtml(helpText)}</div>` : ""}
+                  <div class="field-error"></div>
+                </div>
+              `;
+            })
+            .join("");
+
+          return `
+            <div class="form-section" id="dynamic-application-fields-section">
+              <h3>Additional Application Questions</h3>
+              <div class="form-note">
+                These questions are configured for this job opening. Required fields are marked with <span class="required">*</span>.
+              </div>
+              <div class="form-row">
+                ${controlsHtml}
+              </div>
+            </div>
+          `;
+        }
+
+        function getDynamicApplicationControls(form) {
+          return Array.from(
+            form.querySelectorAll('[data-application-field="true"]'),
+          );
+        }
+
+        function getControlAnswerValue(control) {
+          const fieldType = control.dataset.fieldType;
+
+          if (fieldType === "checkbox") {
+            return control.checked ? "True" : "";
+          }
+
+          if (fieldType === "file") {
+            const file = control.files && control.files[0];
+            return file ? file.name : "";
+          }
+
+          return String(control.value || "").trim();
+        }
+
+        function collectDynamicReviewItems(form) {
+          return getDynamicApplicationControls(form)
+            .map((control) => [
+              control.dataset.fieldLabel || control.dataset.answerKey || "Question",
+              getControlAnswerValue(control),
+            ])
+            .filter(([, value]) => String(value || "").trim());
+        }
+
+        function collectDynamicAnswers(form, fd) {
+          const answers = {};
+
+          getDynamicApplicationControls(form).forEach((control) => {
+            const key = control.dataset.answerKey;
+            if (!key) return;
+
+            const fieldType = control.dataset.fieldType;
+
+            if (fieldType === "file") {
+              const file = control.files && control.files[0];
+              if (!file) return;
+
+              answers[key] = file.name;
+              fd.append(key, file);
+              return;
+            }
+
+            const value = getControlAnswerValue(control);
+            if (String(value || "").trim()) {
+              answers[key] = value;
+            }
+          });
+
+          return answers;
+        }
+
         function validateForm(form) {
           let isValid = true;
 
-          /* Required fields only as requested:
+          /* Required base fields:
              Full Name, Phone Number, Current Location, Resume */
           const requiredFields = [
             "name",
@@ -1937,6 +2179,19 @@
               isValid = false;
             }
           });
+
+          const consentAccepted = form.elements.consent_accepted;
+          if (consentAccepted) {
+            clearFieldError(consentAccepted);
+
+            if (!consentAccepted.checked) {
+              setFieldError(
+                consentAccepted,
+                "Please accept the declaration before submitting your application.",
+              );
+              isValid = false;
+            }
+          }
 
           const email = form.elements.email;
           if (email && email.value.trim()) {
@@ -1971,17 +2226,68 @@
             }
           }
 
-          const expectedSalary = form.elements.expected_salary;
-          if (expectedSalary && expectedSalary.value.trim()) {
-            const value = Number(expectedSalary.value);
-            if (!Number.isFinite(value) || value < 0) {
-              setFieldError(
-                expectedSalary,
-                "Please enter a valid expected salary.",
-              );
-              isValid = false;
+          getDynamicApplicationControls(form).forEach((control) => {
+            clearFieldError(control);
+
+            const fieldType = control.dataset.fieldType;
+            const isRequired = control.dataset.required === "true";
+            const fieldLabel = control.dataset.fieldLabel || "This field";
+
+            if (fieldType === "file") {
+              const file = control.files && control.files[0];
+
+              if (isRequired && !file) {
+                setFieldError(control, `${fieldLabel} is required.`);
+                isValid = false;
+                return;
+              }
+
+              if (file) {
+                const maxSize = CONFIG.MAX_RESUME_SIZE_MB * 1024 * 1024;
+                if (file.size > maxSize) {
+                  setFieldError(
+                    control,
+                    `File size must be less than ${CONFIG.MAX_RESUME_SIZE_MB}MB.`,
+                  );
+                  isValid = false;
+                }
+              }
+
+              return;
             }
-          }
+
+            if (fieldType === "checkbox") {
+              if (isRequired && !control.checked) {
+                setFieldError(control, `${fieldLabel} is required.`);
+                isValid = false;
+              }
+              return;
+            }
+
+            const value = String(control.value || "").trim();
+
+            if (isRequired && !value) {
+              setFieldError(control, `${fieldLabel} is required.`);
+              isValid = false;
+              return;
+            }
+
+            if (value && fieldType === "email") {
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailRegex.test(value)) {
+                setFieldError(control, "Please enter a valid email address.");
+                isValid = false;
+              }
+            }
+
+            if (value && fieldType === "number") {
+              const numberValue = Number(value);
+              if (!Number.isFinite(numberValue)) {
+                setFieldError(control, "Please enter a valid number.");
+                isValid = false;
+              }
+            }
+          });
 
           const linkedIn = form.elements.linkedin_url;
           if (linkedIn && linkedIn.value.trim()) {
@@ -2040,6 +2346,7 @@
         function collectReviewItems(form) {
           const resume = form.elements.resume;
           const resumeFile = resume && resume.files && resume.files[0];
+          const dynamicItems = collectDynamicReviewItems(form);
 
           const items = [
             ["Job Title", currentJob?.title || ""],
@@ -2054,9 +2361,8 @@
             ["Current Company", form.elements.current_company.value],
             ["Current Designation", form.elements.current_designation.value],
             ["Total Experience", form.elements.total_experience.value],
-            ["Expected Salary", form.elements.expected_salary.value],
             ["Notice Period Days", form.elements.notice_period_days.value],
-            ["Currently in Qatar", form.elements.currently_in_qatar.value],
+            ...dynamicItems,
             ["LinkedIn URL", form.elements.linkedin_url.value],
             ["Portfolio URL", form.elements.portfolio_url.value],
             [
@@ -2113,7 +2419,6 @@
             "linkedin_url",
             "portfolio_url",
             "cover_letter",
-            "expected_salary",
             "notice_period_days",
           ];
 
@@ -2132,18 +2437,7 @@
             fd.append("resume", resume.files[0]);
           }
 
-          const answers = {};
-
-          const expectedSalary = String(
-            form.elements.expected_salary.value || "",
-          ).trim();
-          const currentlyInQatar = String(
-            form.elements.currently_in_qatar.value || "",
-          ).trim();
-
-          if (expectedSalary) answers.expected_salary = expectedSalary;
-          if (currentlyInQatar) answers.currently_in_qatar = currentlyInQatar;
-
+          const answers = collectDynamicAnswers(form, fd);
           fd.append("answers", JSON.stringify(answers));
 
           return fd;
@@ -2310,6 +2604,12 @@
 
           currentApplyUrl = applyUrl;
 
+          const applicationFields = getJobApplicationFields(job);
+          const applicationFieldsHtml = renderDynamicApplicationFields(applicationFields);
+          const requiredApplicationFieldsCount = applicationFields.filter(
+            (field) => field?.is_required,
+          ).length;
+
           document.title = `Apply for ${jobTitle} | MDCRC Careers`;
           $("page-title").textContent = `Apply for ${jobTitle}`;
           $("bc-title").textContent = `Apply for ${jobTitle}`;
@@ -2342,8 +2642,12 @@
                 <div id="form-alert" class="alert error"></div>
 
                 <div class="form-note">
-                  <strong>Required fields:</strong> Full Name, Phone Number, Current Location, and Resume only.
-                  Other details are optional, but adding them helps HR review your profile faster.
+                  <strong>Required base fields:</strong> Full Name, Phone Number, Current Location, and Resume.
+                  ${
+                    applicationFields.length
+                      ? `This job also has ${applicationFields.length} additional question${applicationFields.length > 1 ? "s" : ""}${requiredApplicationFieldsCount ? `, including ${requiredApplicationFieldsCount} required field${requiredApplicationFieldsCount > 1 ? "s" : ""}` : ""}.`
+                      : "Other details are optional, but adding them helps HR review your profile faster."
+                  }
                 </div>
 
                 <form id="career-apply-form" novalidate>
@@ -2468,7 +2772,7 @@
                           name="current_designation"
                           type="text"
                           class="form-control"
-                          placeholder="Frontend Developer"
+                          placeholder="Your Designation"
                         />
                         <div class="field-error"></div>
                       </div>
@@ -2484,7 +2788,7 @@
                           step="0.1"
                           min="0"
                           class="form-control"
-                          placeholder="2.5"
+                          placeholder="Your Experience"
                         />
                         <div class="help-text">Enter experience in years. Example: 2.5</div>
                         <div class="field-error"></div>
@@ -2501,40 +2805,8 @@
                           min="0"
                           step="1"
                           class="form-control"
-                          placeholder="30"
+                          placeholder="Days"
                         />
-                        <div class="field-error"></div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="form-label" for="expected_salary">
-                          Expected Salary <span class="optional">(optional)</span>
-                        </label>
-                        <input
-                          id="expected_salary"
-                          name="expected_salary"
-                          type="number"
-                          min="0"
-                          step="0.01"
-                          class="form-control"
-                          placeholder="6000"
-                        />
-                        <div class="field-error"></div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="form-label" for="currently_in_qatar">
-                          Currently in Qatar? <span class="optional">(optional)</span>
-                        </label>
-                        <select
-                          id="currently_in_qatar"
-                          name="currently_in_qatar"
-                          class="form-select"
-                        >
-                          <option value="">Select option</option>
-                          <option value="Yes">Yes</option>
-                          <option value="No">No</option>
-                        </select>
                         <div class="field-error"></div>
                       </div>
 
@@ -2567,6 +2839,8 @@
                       </div>
                     </div>
                   </div>
+
+                  ${applicationFieldsHtml}
 
                   <div class="form-section">
                     <h3>Resume &amp; Cover Letter</h3>
@@ -2618,24 +2892,27 @@
                   </div>
 
                   <div class="form-section">
-                    <h3>Declaration</h3>
+  <h3>Declaration</h3>
 
-                    <div class="consent-wrapper">
-                      <div class="consent-box">
-                        <input
-                          id="consent_accepted"
-                          name="consent_accepted"
-                          type="checkbox"
-                        />
-                        <label for="consent_accepted">
-                          I confirm that the information provided above is true and accurate.
-                          I agree that the organization may contact me regarding this application
-                          and process my application details for recruitment purposes.
-                          <span class="optional">(optional)</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
+  <div class="form-group full">
+    <div class="consent-box">
+      <input
+        id="consent_accepted"
+        name="consent_accepted"
+        type="checkbox"
+        aria-required="true"
+      />
+      <label for="consent_accepted">
+        I confirm that the information provided above is true and accurate.
+        I agree that the organization may contact me regarding this application
+        and process my application details for recruitment purposes.
+        <span class="required">*</span>
+      </label>
+    </div>
+
+    <div class="field-error"></div>
+  </div>
+</div>
 
                   <div class="submit-row">
                     <a href="${jobDetailUrl}" class="btn-secondary">
@@ -2707,7 +2984,7 @@
                   <h4>Before submitting</h4>
                   <ul>
                     <li>You will see a review screen before final submission.</li>
-                    <li>Only Full Name, Phone Number, Current Location, and Resume are mandatory.</li>
+                    <li>Full Name, Phone Number, Current Location, Resume, and any additional required questions are mandatory.</li>
                     <li>Upload the latest version of your resume.</li>
                     <li>HR will contact shortlisted candidates soon.</li>
                   </ul>
