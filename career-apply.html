@@ -1,0 +1,2860 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon" />
+    <title>Apply for Job | MDCRC Careers</title>
+
+    <!-- Site styles - same Kingster assets used by about-us.html -->
+    <link
+      rel="stylesheet"
+      href="plugins/goodlayers-core/plugins/combine/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="plugins/goodlayers-core/include/css/page-builder.css"
+    />
+    <link
+      rel="stylesheet"
+      href="plugins/revslider/public/assets/css/settings.css"
+    />
+    <link rel="stylesheet" href="css/style-core.css" />
+    <link rel="stylesheet" href="css/kingster-style-custom.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:700%2C400"
+      rel="stylesheet"
+      property="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CABeeZee%3Aregular%2Citalic&amp;subset=latin%2Clatin-ext%2Cdevanagari&amp;ver=5.0.3"
+      type="text/css"
+      media="all"
+    />
+
+    <style>
+      :root {
+        --mdc-green: #3db166;
+        --mdc-green-dark: #2d8a4f;
+        --mdc-green-light: #e8f5ee;
+        --mdc-navy: #132443;
+        --mdc-navy-light: #1e3460;
+        --mdc-amber: #fbbf24;
+        --mdc-bg: #f7f9fc;
+        --mdc-border: #e5e9f0;
+        --mdc-text: #132443;
+        --mdc-muted: #64748b;
+        --mdc-danger: #dc2626;
+        --mdc-danger-bg: #fef2f2;
+        --mdc-success: #16a34a;
+        --mdc-success-bg: #ecfdf5;
+        --shadow-sm: 0 1px 2px rgba(19, 36, 67, 0.05);
+        --shadow-md: 0 4px 12px rgba(19, 36, 67, 0.07);
+        --shadow-lg: 0 16px 40px rgba(19, 36, 67, 0.1);
+        --shadow-glow: 0 10px 30px rgba(61, 177, 102, 0.28);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      .floating-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #182847;
+        color: #fff;
+        width: 66px;
+        height: 66px;
+        border-radius: 50%;
+        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+        z-index: 9999;
+      }
+
+      .whatsapp-logo {
+        width: 34px;
+        height: 34px;
+      }
+
+      .notification-list {
+        display: inline-block;
+        max-height: 20px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 0 !important;
+      }
+
+
+
+      .gdlr-core-divider-line {
+        width: 100%;
+        height: 5px;
+        background: #3db166;
+      }
+
+      ul.notification-list {
+        margin-bottom: 0 !important;
+      }
+
+      @keyframes marquee-up {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-100%);
+        }
+      }
+      .marquee {
+        background: var(--mdc-navy);
+        color: #fff;
+        padding: 9px 20px;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .marquee p {
+        margin: 0;
+      }
+
+      .apply-section {
+        font-family: "Poppins", sans-serif;
+        background: var(--mdc-bg);
+        color: var(--mdc-text);
+        padding: 58px 24px 92px;
+      }
+
+      .apply-section h1,
+      .apply-section h2,
+      .apply-section h3 {
+        font-family: "Playfair Display", serif;
+        color: var(--mdc-navy);
+        letter-spacing: -0.01em;
+      }
+
+      .apply-wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--mdc-navy);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 22px;
+        padding: 8px 14px;
+        border-radius: 10px;
+        background: #fff;
+        border: 1px solid var(--mdc-border);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.2s ease;
+      }
+
+      .back-link:hover {
+        transform: translateX(-2px);
+        color: var(--mdc-green);
+        border-color: var(--mdc-green);
+      }
+
+      .back-link svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .apply-hero {
+        background: #fff;
+        border-radius: 24px;
+        padding: 34px 36px;
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--mdc-border);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 28px;
+      }
+
+      .apply-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(
+          90deg,
+          var(--mdc-green),
+          var(--mdc-navy),
+          var(--mdc-amber)
+        );
+      }
+
+      .apply-hero-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+      }
+
+      .badge.code {
+        background: var(--mdc-bg);
+        border: 1px solid var(--mdc-border);
+        font-family: "SF Mono", monospace;
+        color: var(--mdc-navy);
+      }
+
+      .badge.dept {
+        background: var(--mdc-green-light);
+        color: var(--mdc-green-dark);
+        text-transform: uppercase;
+      }
+
+      .badge.type {
+        background: #eff6ff;
+        color: #1e40af;
+        text-transform: uppercase;
+      }
+
+      .apply-hero h1 {
+        font-size: clamp(28px, 3.5vw, 42px);
+        line-height: 1.15;
+        margin: 0 0 10px;
+        font-weight: 700;
+      }
+
+      .apply-hero p {
+        color: var(--mdc-muted);
+        font-size: 15px;
+        line-height: 1.7;
+        margin: 0;
+        max-width: 850px;
+      }
+
+      .apply-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 28px;
+        align-items: start;
+      }
+
+      .form-card,
+      .side-card,
+      .success-card,
+      .error-card {
+        background: #fff;
+        border-radius: 22px;
+        border: 1px solid var(--mdc-border);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .form-card {
+        padding: 32px;
+      }
+
+      .side-card {
+        padding: 28px;
+        position: sticky;
+        top: 24px;
+        box-shadow: var(--shadow-md);
+      }
+
+      .form-note {
+        background: linear-gradient(135deg, var(--mdc-green-light), #fff);
+        border: 1px solid #ccebd8;
+        color: var(--mdc-navy);
+        border-radius: 14px;
+        padding: 14px 16px;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+
+      .form-section {
+        margin-bottom: 30px;
+      }
+
+      .form-section:last-child {
+        margin-bottom: 0;
+      }
+
+      .form-section h3 {
+        font-size: 18px;
+        margin: 0 0 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .form-section h3::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: var(--mdc-green);
+        border-radius: 999px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .form-group {
+        margin-bottom: 16px;
+      }
+
+      .form-group.full {
+        grid-column: 1 / -1;
+      }
+
+      .form-label {
+        display: block;
+        font-size: 13px;
+        color: var(--mdc-navy);
+        font-weight: 700;
+        margin-bottom: 7px;
+      }
+
+      .required {
+        color: var(--mdc-danger);
+      }
+
+      .optional {
+        color: var(--mdc-muted);
+        font-weight: 500;
+      }
+
+      .form-control,
+      .form-select,
+      .form-textarea {
+        width: 100%;
+        border: 1px solid var(--mdc-border);
+        background: #fff;
+        color: var(--mdc-text);
+        border-radius: 12px;
+        padding: 13px 14px;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        outline: none;
+        transition: all 0.2s ease;
+      }
+
+      .form-control:focus,
+      .form-select:focus,
+      .form-textarea:focus {
+        border-color: var(--mdc-green);
+        box-shadow: 0 0 0 4px rgba(61, 177, 102, 0.12);
+      }
+
+      .form-textarea {
+        min-height: 130px;
+        resize: vertical;
+        line-height: 1.6;
+      }
+
+      .help-text {
+        color: var(--mdc-muted);
+        font-size: 12px;
+        line-height: 1.5;
+        margin-top: 6px;
+      }
+
+      .field-error {
+        display: none;
+        color: var(--mdc-danger);
+        font-size: 12px;
+        font-weight: 600;
+        margin-top: 6px;
+      }
+
+      .form-group.has-error .form-control,
+      .form-group.has-error .form-select,
+      .form-group.has-error .form-textarea {
+        border-color: var(--mdc-danger);
+        box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.08);
+      }
+
+      .form-group.has-error .field-error {
+        display: block;
+      }
+
+      /* Fixed upload box UI */
+      .file-drop {
+        width: 100%;
+        min-height: 190px;
+        border: 2px dashed #b7c4d8;
+        border-radius: 18px;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(61, 177, 102, 0.05),
+            rgba(19, 36, 67, 0.02)
+          ),
+          #fff;
+        padding: 30px 22px;
+        text-align: center;
+        transition: all 0.22s ease;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .file-drop:hover,
+      .file-drop.dragover {
+        border-color: var(--mdc-green);
+        background: var(--mdc-green-light);
+        transform: translateY(-1px);
+      }
+
+      .file-drop input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .file-drop-inner {
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+
+      .file-drop-icon {
+        width: 62px;
+        height: 62px;
+        border-radius: 18px;
+        background: var(--mdc-green-light);
+        color: var(--mdc-green-dark);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+      }
+
+      .file-drop-icon svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .file-drop-title {
+        display: block;
+        color: var(--mdc-navy);
+        font-size: 16px;
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+
+      .file-drop-subtitle {
+        display: block;
+        color: var(--mdc-muted);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .file-name {
+        display: none;
+        margin: 14px auto 0;
+        width: fit-content;
+        max-width: 100%;
+        padding: 8px 12px;
+        font-weight: 700;
+        color: var(--mdc-green-dark);
+        background: #fff;
+        border: 1px solid #ccebd8;
+        border-radius: 999px;
+        font-size: 13px;
+        word-break: break-word;
+      }
+
+      .file-name.show {
+        display: block;
+      }
+
+      .consent-box {
+        display: flex;
+        gap: 12px;
+        padding: 16px;
+        background: var(--mdc-bg);
+        border: 1px solid var(--mdc-border);
+        border-radius: 14px;
+        margin-top: 8px;
+      }
+
+      .consent-box input {
+        width: 18px;
+        height: 18px;
+        margin-top: 2px;
+        accent-color: var(--mdc-green);
+        flex-shrink: 0;
+      }
+
+      .consent-box label {
+        font-size: 13px;
+        line-height: 1.6;
+        color: var(--mdc-text);
+        cursor: pointer;
+      }
+
+      .alert {
+        display: none;
+        border-radius: 14px;
+        padding: 14px 16px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 1.6;
+        font-weight: 600;
+      }
+
+      .alert.show {
+        display: block;
+      }
+
+      .alert.error {
+        background: var(--mdc-danger-bg);
+        color: #991b1b;
+        border: 1px solid #fecaca;
+      }
+
+      .alert.success {
+        background: var(--mdc-success-bg);
+        color: #166534;
+        border: 1px solid #bbf7d0;
+      }
+
+      .submit-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 22px;
+        border-top: 1px solid var(--mdc-border);
+        margin-top: 28px;
+      }
+
+      .btn-primary,
+      .btn-secondary,
+      .btn-danger-light {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        border-radius: 12px;
+        padding: 14px 24px;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.25s ease;
+      }
+
+      .btn-primary {
+        background: var(--mdc-green);
+        color: #fff;
+        box-shadow: var(--shadow-glow);
+      }
+
+      .btn-primary:hover {
+        background: var(--mdc-green-dark);
+        transform: translateY(-1px);
+        color: #fff;
+      }
+
+      .btn-primary:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .btn-secondary {
+        background: #fff;
+        color: var(--mdc-navy);
+        border: 1px solid var(--mdc-border);
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--mdc-green);
+        color: var(--mdc-green-dark);
+        background: var(--mdc-green-light);
+      }
+
+      .btn-danger-light {
+        background: var(--mdc-danger-bg);
+        color: #991b1b;
+        border: 1px solid #fecaca;
+      }
+
+      .btn-primary svg,
+      .btn-secondary svg {
+        width: 17px;
+        height: 17px;
+      }
+
+      .btn-spinner {
+        width: 17px;
+        height: 17px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-top-color: #fff;
+        border-radius: 999px;
+        animation: spin 0.8s linear infinite;
+        display: none;
+      }
+
+      .btn-primary.loading .btn-spinner {
+        display: inline-block;
+      }
+
+      .btn-primary.loading .btn-icon {
+        display: none;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .side-card h3 {
+        font-size: 18px;
+        margin: 0 0 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .side-card h3 .dot {
+        width: 8px;
+        height: 8px;
+        background: var(--mdc-green);
+        border-radius: 50%;
+      }
+
+      .side-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 0;
+        border-bottom: 1px dashed var(--mdc-border);
+        font-size: 13px;
+      }
+
+      .side-row:last-child {
+        border-bottom: 0;
+      }
+
+      .side-row .k {
+        color: var(--mdc-muted);
+        font-weight: 500;
+      }
+
+      .side-row .v {
+        color: var(--mdc-navy);
+        font-weight: 700;
+        text-align: right;
+      }
+
+      .tips-card {
+        margin-top: 18px;
+        padding: 20px;
+        background: linear-gradient(
+          135deg,
+          var(--mdc-navy),
+          var(--mdc-navy-light)
+        );
+        color: #fff;
+        border-radius: 18px;
+      }
+
+      .tips-card h4 {
+        color: #fff;
+        margin: 0 0 10px;
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+      }
+
+      .tips-card ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .tips-card li {
+        font-size: 12px;
+        line-height: 1.7;
+        opacity: 0.9;
+      }
+
+      .loading-state,
+      .error-state {
+        text-align: center;
+        padding: 70px 24px;
+      }
+
+      .spinner {
+        width: 48px;
+        height: 48px;
+        border: 4px solid var(--mdc-green-light);
+        border-top-color: var(--mdc-green);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin: 0 auto 20px;
+      }
+
+      .success-card {
+        padding: 46px 36px;
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .success-icon {
+        width: 92px;
+        height: 92px;
+        border-radius: 999px;
+        background: var(--mdc-success-bg);
+        color: var(--mdc-success);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        box-shadow: 0 10px 26px rgba(22, 163, 74, 0.15);
+      }
+
+      .success-icon svg {
+        width: 46px;
+        height: 46px;
+      }
+
+      .success-card h2 {
+        font-size: clamp(28px, 4vw, 40px);
+        margin: 0 0 10px;
+      }
+
+      .success-card p {
+        color: var(--mdc-muted);
+        font-size: 15px;
+        line-height: 1.8;
+        margin: 0 auto 22px;
+        max-width: 620px;
+      }
+
+      .success-summary {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        text-align: left;
+        margin: 24px 0;
+      }
+
+      .success-summary-item {
+        padding: 14px;
+        background: var(--mdc-bg);
+        border: 1px solid var(--mdc-border);
+        border-radius: 14px;
+      }
+
+      .success-summary-item .label {
+        font-size: 11px;
+        color: var(--mdc-muted);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 5px;
+      }
+
+      .success-summary-item .value {
+        font-size: 14px;
+        color: var(--mdc-navy);
+        font-weight: 800;
+        word-break: break-word;
+      }
+
+      .success-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 26px;
+      }
+
+      /* Review modal */
+      .review-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        display: none;
+      }
+
+      .review-modal.show {
+        display: block;
+      }
+
+      .review-modal-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(8, 18, 36, 0.62);
+        backdrop-filter: blur(4px);
+      }
+
+      .review-modal-dialog {
+        position: relative;
+        width: min(820px, calc(100% - 28px));
+        max-height: calc(100vh - 40px);
+        overflow: auto;
+        margin: 20px auto;
+        background: #fff;
+        border-radius: 22px;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+      }
+
+      .review-modal-header {
+        padding: 24px 28px 18px;
+        border-bottom: 1px solid var(--mdc-border);
+      }
+
+      .review-modal-header h2 {
+        font-size: 26px;
+        margin: 0 0 6px;
+      }
+
+      .review-modal-header p {
+        margin: 0;
+        color: var(--mdc-muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .review-modal-body {
+        padding: 24px 28px;
+      }
+
+      .review-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .review-item {
+        background: var(--mdc-bg);
+        border: 1px solid var(--mdc-border);
+        border-radius: 14px;
+        padding: 13px 14px;
+      }
+
+      .review-item.full {
+        grid-column: 1 / -1;
+      }
+
+      .review-item .label {
+        font-size: 11px;
+        color: var(--mdc-muted);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 5px;
+      }
+
+      .review-item .value {
+        color: var(--mdc-navy);
+        font-weight: 700;
+        line-height: 1.55;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+
+      .review-modal-footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-end;
+        padding: 18px 28px 24px;
+        border-top: 1px solid var(--mdc-border);
+      }
+
+      @media (max-width: 1180px) {
+        .kingster-navigation .sf-menu > li > a {
+          padding-left: 9px !important;
+          padding-right: 9px !important;
+          font-size: 12px !important;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .apply-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .side-card {
+          position: static;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .apply-section {
+          padding: 30px 16px 86px;
+        }
+
+        .apply-hero,
+        .form-card,
+        .success-card {
+          padding: 24px 20px;
+          border-radius: 20px;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .submit-row {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .btn-primary,
+        .btn-secondary,
+        .btn-danger-light {
+          width: 100%;
+        }
+
+        .success-summary,
+        .review-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .review-modal-dialog {
+          width: calc(100% - 18px);
+          margin: 9px auto;
+          max-height: calc(100vh - 18px);
+          border-radius: 18px;
+        }
+
+        .review-modal-header,
+        .review-modal-body,
+        .review-modal-footer {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+
+        .review-modal-footer {
+          flex-direction: column-reverse;
+        }
+
+        .floating-button {
+          bottom: 18px;
+          right: 18px;
+          width: 54px;
+          height: 54px;
+        }
+
+        .whatsapp-logo {
+          width: 29px;
+          height: 29px;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="home page-template-default page page-id-2039 gdlr-core-body woocommerce-no-js tribe-no-js kingster-body kingster-body-front kingster-full kingster-with-sticky-navigation kingster-blockquote-style-1 gdlr-core-link-to-lightbox"
+  >
+    <a
+      href="https://api.whatsapp.com/send?phone=7034555514"
+      target="_blank"
+      class="floating-button"
+    >
+      <img src="upload/wsup-logo.png" alt="WhatsApp" class="whatsapp-logo" />
+    </a>
+
+    <!-- Mobile Header -->
+    <div class="kingster-mobile-header-wrap">
+      <div
+        class="kingster-mobile-header kingster-header-background kingster-style-slide kingster-sticky-mobile-navigation"
+        id="kingster-mobile-header"
+      >
+        <div class="kingster-mobile-header-container kingster-container clearfix">
+          <div class="kingster-logo kingster-item-pdlr">
+            <div class="kingster-logo-inner">
+              <a class="" href="index.html"><img src="upload/logo.png" alt="" /></a>
+            </div>
+          </div>
+          <div class="kingster-mobile-menu-right">
+            <div class="kingster-main-menu-search" id="kingster-mobile-top-search">
+              <i class="fa fa-search"></i>
+            </div>
+            <div class="kingster-top-search-wrap">
+              <div class="kingster-top-search-close"></div>
+              <div class="kingster-top-search-row">
+                <div class="kingster-top-search-cell">
+                  <form role="search" method="get" class="search-form" action="search.html">
+                    <input
+                      type="text"
+                      class="search-field kingster-title-font"
+                      placeholder="Search..."
+                      value=""
+                      name="q"
+                    />
+                    <div class="kingster-top-search-submit">
+                      <i class="fa fa-search"></i>
+                    </div>
+                    <input type="submit" class="search-submit" value="Search" />
+                    <div class="kingster-top-search-close">
+                      <i class="icon_close"></i>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="kingster-mobile-menu">
+              <a
+                class="kingster-mm-menu-button kingster-mobile-menu-button kingster-mobile-button-hamburger"
+                href="#kingster-mobile-menu"
+                ><span></span
+              ></a>
+              <div
+                class="kingster-mm-menu-wrap kingster-navigation-font"
+                id="kingster-mobile-menu"
+                data-slide="right"
+              >
+                <ul id="menu-main-navigation" class="m-menu">
+                  <li class="menu-item menu-item-home">
+                    <a href="index.html">Home</a>
+                  </li>
+                  <li class="menu-item menu-item-has-children kingster-normal-menu">
+                    <a>About HEI</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item">
+                        <a href="/about-us.html">About Us: Overview</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="act-and-statutes-or-moa.html">Act and Statutes or MOA</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="institutional-development-plan.html">Institutional Development Plan</a>
+                      </li>
+                      <li class="menu-item menu-item-has-children">
+                        <a class="sf-with-ul-pre">Accreditation/Ranking Status</a>
+                        <ul class="sub-menu">
+                          <li class="menu-item" data-size="60">
+                            <a href="naac.html">NAAC</a>
+                          </li>
+                          <li class="menu-item" data-size="60">
+                            <a href="NAAC_Files/NIRF/NIRF_2025.pdf" target="_blank">NIRF 2025</a>
+                          </li>
+                          <li class="menu-item" data-size="60">
+                            <a href="NAAC_Files/NIRF/NIRF_2023.pdf" target="_blank">NIRF 2023</a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="NAAC_Files/NIRF/NIRF_2022.pdf" target="_blank">NIRF 2022</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item">
+                        <a href="recognition-approval.html">Recognition/Approval</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-has-children">
+                    <a>Administration</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item">
+                        <a href="/about-us.html#board-of-directors">Board of Management</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="/about-us.html#principal-message">Principal</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="finance-officer.html">Finance Officer</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="internal-complaint-committee.html">Internal Complaint Committee</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="academic-leadership.html">Academic Leadership</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-has-children">
+                    <a>Academics</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item menu-item-has-children">
+                        <a>Academic Programs</a>
+                        <ul class="sub-menu">
+                          <li class="menu-item menu-item-has-children">
+                            <a>UG &amp; PG</a>
+                            <ul>
+                              <li class="menu-item">
+                                <a href="bachelor-of-dental-surgery.html">BDS(Bachelor Dental Surgery)</a>
+                              </li>
+                              <li class="menu-item">
+                                <a href="master-of-dental-surgery.html">MDS(Master Dental Surgery)</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="menu-item menu-item-has-children">
+                            <a>Diploma</a>
+                            <ul>
+                              <li class="menu-item">
+                                <a href="dora.html">Dental Operating <br />Room Assistant (DORA)</a>
+                              </li>
+                              <li class="menu-item">
+                                <a href="dental-mechanic.html">Dental Mechanic (DM)</a>
+                              </li>
+                              <li class="menu-item">
+                                <a href="dental-hygienist.html">Dental Hygienist (DH)</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item">
+                        <a href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf" target="_blank">Academic Calendar</a>
+                      </li>
+                      <li class="menu-item menu-item-has-children">
+                        <a class="sf-with-ul-pre">Departments</a>
+                        <ul class="sub-menu">
+                          <li class="menu-item menu-item-has-children">
+                            <a class="sf-with-ul-pre">Basic Science Departments</a>
+                            <ul class="sub-menu">
+                              <li class="menu-item"><a href="anatomy.html">Anatomy</a></li>
+                              <li class="menu-item"><a href="physiology.html">Physiology</a></li>
+                              <li class="menu-item"><a href="biochemistry.html">Biochemistry</a></li>
+                              <li class="menu-item"><a href="general-pathology.html">General Pathology</a></li>
+                              <li class="menu-item"><a href="general-microbiology.html">General Microbiology</a></li>
+                              <li class="menu-item"><a href="pharmacology.html">Pharmacology</a></li>
+                              <li class="menu-item"><a href="general-medicine.html">General Medicine</a></li>
+                              <li class="menu-item"><a href="general-surgery.html">General Surgery</a></li>
+                            </ul>
+                          </li>
+                          <li class="menu-item menu-item-has-children">
+                            <a class="sf-with-ul-pre">Dental Departments</a>
+                            <ul class="sub-menu">
+                              <li class="menu-item"><a href="oral-pathology.html">Oral Pathology and Microbiology</a></li>
+                              <li class="menu-item"><a href="public-health.html">Public Health Dentistry</a></li>
+                              <li class="menu-item"><a href="periodontology.html">Periodontology</a></li>
+                              <li class="menu-item"><a href="oral-medicine-and-radiology.html">Oral Medicine and Radiology</a></li>
+                              <li class="menu-item"><a href="orthodontics.html">Orthodontics &amp; Dentofacial Orthopaedics</a></li>
+                              <li class="menu-item"><a href="oral-and-maxilofacial-surgery.html">Oral &amp; Maxillofacial Surgery</a></li>
+                              <li class="menu-item"><a href="conservative-dentistry-&-edodontics.html">Conservative Dentistry &amp; Endodontics</a></li>
+                              <li class="menu-item"><a href="prosthodontic.html">Prosthodontics &amp; Crown and Bridge</a></li>
+                              <li class="menu-item"><a href="pedodontics.html">Pedodontics &amp; Preventive Dentistry</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item">
+                        <a href="naac.html#quick-links-section">Internal Quality Assurance Cell (IQAC)</a>
+                      </li>
+                      <li class="menu-item"><a href="library.html">Library</a></li>
+                      <li class="menu-item"><a href="academic-collaborations.html">Academic Collaborations</a></li>
+                      <li class="menu-item"><a href="feedbacks.html">Feedbacks</a></li>
+                      <li class="menu-item"><a href="journals.html">Journals</a></li>
+                      <li class="menu-item"><a href="admission.html">Admission</a></li>
+                      <li class="menu-item"><a href="code-of-conduct.html">Code of Conduct</a></li>
+                      <li class="menu-item"><a href="facilities.html">Facilities</a></li>
+                      <li class="menu-item"><a href="awards.html">Awards</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-has-children">
+                    <a>Admission &amp; Fee</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item"><a href="prospectus.html">Prospectus</a></li>
+                      <li class="menu-item"><a href="dept-of-admission.html">Department of Admission</a></li>
+                      <li class="menu-item"><a href="admission.html">Admission Process And Guidelines</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-has-children">
+                    <a>Research</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item"><a href="research-and-development.html">Research and Development Cell</a></li>
+                      <li class="menu-item"><a href="incubation-center.html">Incubation Center / Start-ups / Entrepreneurship Cell</a></li>
+                      <li class="menu-item"><a href="central-facilities.html">Central Facilities</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-has-children">
+                    <a>Student Life</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item"><a href="sports-facilities.html">Sports Facilities</a></li>
+                      <li class="menu-item"><a href="clubs.html">Clubs</a></li>
+                      <li class="menu-item"><a href="mdcrc-scholarship.html">Scholarships</a></li>
+                      <li class="menu-item"><a href="nss-activities.html">NSS</a></li>
+                      <li class="menu-item"><a href="hostel-details.html">Hostel Details</a></li>
+                      <li class="menu-item"><a href="students-union.html">Students Union</a></li>
+                      <li class="menu-item"><a href="placement-cell-and-activities.html">Placement Cell and Activities</a></li>
+                      <li class="menu-item"><a href="index.html#grievance-redressal-cell">Student Grievance Redressal Committee (SGRC)</a></li>
+                      <li class="menu-item"><a href="health-facilities.html">Health Facilities</a></li>
+                      <li class="menu-item"><a href="internal-complaint-committee.html">Internal Complaint Committee</a></li>
+                      <li class="menu-item" data-size="60"><a href="women-cell.html">Women Cell</a></li>
+                      <li class="menu-item"><a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-has-children">
+                    <a>Alumni</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item"><a href="alumni.html">Alumni Association</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-has-children">
+                    <a>Information Corner</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item"><a href="circulars-and-notices.html">Circulars and Notices</a></li>
+                      <li class="menu-item"><a href="mass-media.html">MDC in Mass Media</a></li>
+                      <li class="menu-item"><a href="announcements.html">Announcements</a></li>
+                      <li class="menu-item"><a href="/index.html#newsletterColumn">Newsletters</a></li>
+                      <li class="menu-item"><a href="satelite-clinic.html">Satellite Clinic</a></li>
+                      <li class="menu-item"><a href="news-page.html">News &amp; Achievements</a></li>
+                      <li class="menu-item"><a href="events.html">Recent Events</a></li>
+                      <li class="menu-item"><a href="careers.html">Job Openings</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item">
+                    <a href="mdrc-gallery.html">Gallery</a>
+                  </li>
+                  <li class="menu-item current-menu-item">
+                    <a href="careers.html">Careers</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="contact-us.html">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kingster-body-outer-wrapper">
+      <div class="kingster-body-wrapper clearfix kingster-with-frame">
+        <!-- Top Bar -->
+        <div class="kingster-top-bar">
+          <div class="kingster-top-bar-background"></div>
+          <div class="kingster-top-bar-container kingster-container">
+            <div class="kingster-top-bar-container-inner clearfix">
+              <div class="kingster-top-bar-left kingster-item-pdlr">
+                <i class="fa fa-envelope-open-o" id="i_fd84_0"></i>
+                <a href="mailto:info@macity.edu.in">info@macity.edu.in</a>
+                <i class="fa fa-phone" id="i_fd84_1"></i>
+                <a href="tel:+917034555514">+91 7034 55555 1</a>
+              </div>
+              <div class="kingster-top-bar-right kingster-item-pdlr">
+                <ul
+                  class="notification-list kingster-top-bar-right-menu notification"
+                  id="notification-container"
+                >
+                  Loading...
+                </ul>
+                <div class="kingster-top-bar-right-social"></div>
+                <a
+                  class="kingster-top-bar-right-button"
+                  href="https://www.mdcconnect.in/"
+                  target="_blank"
+                  >MDC Connect</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop Header -->
+      <header
+        class="kingster-header-wrap kingster-header-style-plain kingster-style-menu-right kingster-sticky-navigation kingster-style-fixed"
+        data-navigation-offset="75px"
+      >
+        <div class="kingster-header-background"></div>
+        <div class="kingster-header-container kingster-container">
+          <div
+            style="display: flex; align-items: center"
+            class="kingster-header-container-inner"
+          >
+            <div class="kingster-logo kingster-item-pdlr">
+              <div class="kingster-logo-inner">
+                <a class="" href="index.html">
+                  <img width="100%" src="upload/logo.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="kingster-navigation kingster-item-pdlr clearfix">
+              <div class="kingster-main-menu" id="kingster-main-menu">
+                <ul id="menu-main-navigation-1" class="sf-menu">
+                  <li class="menu-item menu-item-home menu-item-has-children">
+                    <a href="index.html">Home</a>
+                  </li>
+                  <li class="menu-item menu-item-has-children kingster-normal-menu">
+                    <a class="sf-with-ul-pre">About HEI</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item"><a href="about-us.html">About Us: Overview</a></li>
+                      <li class="menu-item"><a href="act-and-statutes-or-moa.html">Act and Statutes or MOA</a></li>
+                      <li class="menu-item"><a href="institutional-development-plan.html">Institutional Development Plan</a></li>
+                      <li class="menu-item menu-item-has-children" data-size="60">
+                        <a class="sf-with-ul-pre">Accreditation/Ranking Status</a>
+                        <ul class="sub-menu">
+                          <b>
+                            <li class="menu-item" data-size="60"><a href="naac.html">NAAC</a></li>
+                            <li class="menu-item" data-size="60"><a href="NAAC_Files/NIRF/NIRF_2026.pdf" target="_blank">NIRF 2026</a></li>
+                            <li class="menu-item" data-size="60"><a href="NAAC_Files/NIRF/NIRF_2025.pdf" target="_blank">NIRF 2025</a></li>
+                            <li class="menu-item" data-size="60"><a href="NAAC_Files/NIRF/NIRF_2023.pdf" target="_blank">NIRF 2023</a></li>
+                            <li class="menu-item" data-size="60"><a href="NAAC_Files/NIRF/NIRF_2022.pdf" target="_blank">NIRF 2022</a></li>
+                          </b>
+                        </ul>
+                      </li>
+                      <li class="menu-item"><a href="recognition-approval.html">Recognition/Approval</a></li>
+                      <li class="menu-item"><a href="NAAC_Files/aqar2023-2024.pdf" target="_blank">Annual Reports</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-home menu-item-has-children kingster-normal-menu">
+                    <a href="about-us.html" class="sf-with-ul-pre">Administration</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item"><a href="/about-us.html#board-of-directors">Board of Management</a></li>
+                      <li class="menu-item"><a href="/about-us.html#principal-message">Principal</a></li>
+                      <li class="menu-item"><a href="finance-officer.html">Finance Officer</a></li>
+                      <li class="menu-item"><a href="internal-complaint-committee.html">Internal Complaint Committee</a></li>
+                      <li class="menu-item"><a href="academic-leadership.html">Academic Leadership</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-has-children kingster-normal-menu">
+                    <a class="sf-with-ul-pre">Academics</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item" data-size="60">
+                        <a href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf">Academic Calendar</a>
+                      </li>
+                      <li class="menu-item menu-item-has-children" data-size="60">
+                        <a class="sf-with-ul-pre">Academic Programs</a>
+                        <ul class="sub-menu">
+                          <li class="menu-item menu-item-has-children">
+                            <a class="sf-with-ul-pre">UG &amp; PG</a>
+                            <ul>
+                              <li class="menu-item"><a href="bachelor-of-dental-surgery.html">BDS(Bachelor Dental Surgery)</a></li>
+                              <li class="menu-item"><a href="master-of-dental-surgery.html">MDS(Master Dental Surgery)</a></li>
+                            </ul>
+                          </li>
+                          <li class="menu-item menu-item-has-children">
+                            <a class="sf-with-ul-pre">Diploma</a>
+                            <ul>
+                              <li class="menu-item"><a href="dora.html">Dental Operating <br/>Room Assistant (DORA)</a></li>
+                              <li class="menu-item"><a href="dental-mechanic.html">Dental Mechanic (DM)</a></li>
+                              <li class="menu-item"><a href="dental-hygienist.html">Dental Hygienist (DH)</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item menu-item-has-children">
+                        <a class="sf-with-ul-pre">Departments</a>
+                        <ul class="sub-menu">
+                          <li class="menu-item menu-item-has-children">
+                            <a>Basic Science Departments</a>
+                            <ul class="sub-menu">
+                              <li class="menu-item"><a href="anatomy.html">Anatomy</a></li>
+                              <li class="menu-item"><a href="physiology.html">Physiology</a></li>
+                              <li class="menu-item"><a href="biochemistry.html">Biochemistry</a></li>
+                              <li class="menu-item"><a href="general-pathology.html">General Pathology</a></li>
+                              <li class="menu-item"><a href="general-microbiology.html">General Microbiology</a></li>
+                              <li class="menu-item"><a href="pharmacology.html">Pharmacology</a></li>
+                              <li class="menu-item"><a href="general-medicine.html">General Medicine</a></li>
+                              <li class="menu-item"><a href="general-surgery.html">General Surgery</a></li>
+                            </ul>
+                          </li>
+                          <li class="menu-item menu-item-has-children">
+                            <a>Dental Departments</a>
+                            <ul class="sub-menu">
+                              <li class="menu-item"><a href="oral-pathology.html">Oral Pathology and Microbiology</a></li>
+                              <li class="menu-item"><a href="public-health.html">Public Health Dentistry</a></li>
+                              <li class="menu-item"><a href="periodontology.html">Periodontology</a></li>
+                              <li class="menu-item"><a href="oral-medicine-and-radiology.html">Oral Medicine and Radiology</a></li>
+                              <li class="menu-item"><a href="orthodontics.html">Orthodontics &amp; Dentofacial Orthopaedics</a></li>
+                              <li class="menu-item"><a href="oral-and-maxilofacial-surgery.html">Oral &amp; Maxillofacial Surgery</a></li>
+                              <li class="menu-item"><a href="conservative-dentistry-&-edodontics.html">Conservative Dentistry &amp; Endodontics</a></li>
+                              <li class="menu-item"><a href="prosthodontic.html">Prosthodontics &amp; Crown and Bridge</a></li>
+                              <li class="menu-item"><a href="pedodontics.html">Pedodontics &amp; Preventive Dentistry</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item"><a href="naac.html#quick-links-section">Internal Quality Assurance Cell (IQAC)</a></li>
+                      <li class="menu-item" data-size="60"><a href="library.html">Library</a></li>
+                      <li class="menu-item" data-size="60"><a href="academic-collaborations.html">Academic Collaborations</a></li>
+                      <li class="menu-item" data-size="60"><a href="feedbacks.html">Feedbacks</a></li>
+                      <li class="menu-item" data-size="60"><a href="journals.html">Journals</a></li>
+                      <li class="menu-item" data-size="60"><a href="admission.html">Admission Procedures</a></li>
+                      <li class="menu-item" data-size="60"><a href="code-of-conduct.html">Code of Conduct</a></li>
+                      <li class="menu-item" data-size="60"><a href="facilities.html">Facilities</a></li>
+                      <li class="menu-item" data-size="60"><a href="awards.html">Awards &amp; Achievements</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-has-children kingster-normal-menu">
+                    <a class="sf-with-ul-pre">Admission &amp; Fee</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item"><a href="prospectus.html">Prospectus</a></li>
+                      <li class="menu-item"><a href="dept-of-admission.html">Department of Admission</a></li>
+                      <li class="menu-item"><a href="admission.html">Admission Process And Guidelines</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-has-children kingster-normal-menu">
+                    <a class="sf-with-ul-pre">Research</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item"><a href="research-and-development.html">Research and Development Cell</a></li>
+                      <li class="menu-item"><a href="incubation-center.html">Incubation Center / Start-ups / Entrepreneurship Cell</a></li>
+                      <li class="menu-item"><a href="central-facilities.html">Central Facilities</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-has-children kingster-normal-menu">
+                    <a class="sf-with-ul-pre">Student Life</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item"><a href="sports-facilities.html">Sports Facilities</a></li>
+                      <li class="menu-item"><a href="clubs.html">Clubs</a></li>
+                      <li class="menu-item"><a href="mdcrc-scholarship.html">Scholarships</a></li>
+                      <li class="menu-item"><a href="nss-activities.html">NSS</a></li>
+                      <li class="menu-item"><a href="hostel-details.html">Hostel Details</a></li>
+                      <li class="menu-item"><a href="students-union.html">Students Union</a></li>
+                      <li class="menu-item"><a href="placement-cell-and-activities.html">Placement Cell and Activities</a></li>
+                      <li class="menu-item"><a href="index.html#grievance-redressal-cell">Student Grievance Redressal Committee (SGRC)</a></li>
+                      <li class="menu-item"><a href="health-facilities.html">Health Facilities</a></li>
+                      <li class="menu-item"><a href="internal-complaint-committee.html">Internal Complaint Committee</a></li>
+                      <li class="menu-item" data-size="60"><a href="women-cell.html">Women Cell</a></li>
+                      <li class="menu-item"><a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-has-children kingster-normal-menu">
+                    <a class="sf-with-ul-pre">Alumni</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item"><a href="alumni.html">Alumni Association</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item menu-item-has-children kingster-normal-menu">
+                    <a class="sf-with-ul-pre">Information Corner</a>
+                    <ul class="sub-menu">
+                      <li class="menu-item"><a href="circulars-and-notices.html">Circulars and Notices</a></li>
+                      <li class="menu-item"><a href="mass-media.html">MDC in Mass Media</a></li>
+                      <li class="menu-item"><a href="announcements.html">Announcements</a></li>
+                      <li class="menu-item"><a href="/index.html#newsletterColumn">Newsletters</a></li>
+                      <li class="menu-item"><a href="satelite-clinic.html">Satellite Clinic</a></li>
+                      <li class="menu-item"><a href="news-page.html">News &amp; Achievements</a></li>
+                      <li class="menu-item"><a href="events.html">Recent Events</a></li>
+                      <li class="menu-item"><a href="careers.html">Job Openings</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item">
+                    <a href="mdrc-gallery.html">Gallery</a>
+                  </li>
+                  <li class="menu-item current-menu-item">
+                    <a href="careers.html">Careers</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="contact-us.html">Contact Us</a>
+                  </li>
+                  <li class="menu-item">
+                    <div class="kingster-main-menu-right-wrap clearfix">
+                      <div class="kingster-main-menu-search" id="kingster-top-search">
+                        <i class="icon_search"></i>
+                        <span>Search</span>
+                      </div>
+                      <div class="kingster-top-search-wrap">
+                        <div class="kingster-top-search-close"></div>
+                        <div class="kingster-top-search-row">
+                          <div class="kingster-top-search-cell">
+                            <form role="search" method="get" class="search-form" action="search.html">
+                              <input
+                                type="text"
+                                class="search-field kingster-title-font"
+                                placeholder="Search..."
+                                value=""
+                                name="q"
+                              />
+                              <div class="kingster-top-search-submit">
+                                <i class="fa fa-search"></i>
+                              </div>
+                              <input type="submit" class="search-submit" value="Search" />
+                              <div class="kingster-top-search-close">
+                                <i class="icon_close"></i>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div
+                  class="kingster-navigation-slide-bar"
+                  id="kingster-navigation-slide-bar"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+        <!-- Page title -->
+        <div
+          class="kingster-page-title-wrap kingster-style-custom kingster-left-align"
+        >
+          <div class="kingster-header-transparent-substitute"></div>
+          <div class="kingster-page-title-overlay"></div>
+          <div class="kingster-page-title-bottom-gradient"></div>
+          <div class="kingster-page-title-container kingster-container">
+            <div class="kingster-page-title-content kingster-item-pdlr">
+              <h1 class="kingster-page-title" id="page-title">Apply for Job</h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breadcrumbs -->
+        <div class="kingster-breadcrumbs">
+          <div class="kingster-breadcrumbs-container kingster-container">
+            <div class="kingster-breadcrumbs-item kingster-item-pdlr">
+              <span>
+                <a href="index.html" class="home"><span>Home</span></a>
+              </span>
+              &gt;
+              <span>
+                <a href="careers.html"><span>Careers</span></a>
+              </span>
+              &gt;
+              <span>
+                <span id="bc-title">Apply for Job</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Apply Body -->
+        <section class="apply-section">
+          <div class="apply-wrap">
+            <a href="careers.html" class="back-link" id="back-to-job-link">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="19" y1="12" x2="5" y2="12" />
+                <polyline points="12 19 5 12 12 5" />
+              </svg>
+              Back to Careers
+            </a>
+
+            <div id="page-content">
+              <div class="loading-state">
+                <div class="spinner"></div>
+                <p style="color: var(--mdc-muted); font-size: 15px">
+                  Loading application form…
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+      <footer>
+        <div class="kingster-footer-wrapper">
+          <div class="kingster-footer-container kingster-container clearfix">
+            <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+              <div id="text-2" class="widget widget_text kingster-widget">
+                <div class="textwidget">
+                  <p><img width="250" src="upload/footer-logo.png" alt="" />
+                    <br /> <span class="gdlr-core-space-shortcode" id="span_1dd7_10"></span>
+                    <br /> Manoor - Chekanoor Road,
+                    <br /> Manoor, Edappal, Malappuram,
+                    <br /> Kerala 679578</p>
+                  <br /><br />
+                  0494 2697020, 21, 22 <br />
+                  7034555514
+                  <br /> <span class="gdlr-core-space-shortcode" id="span_1dd7_12"></span>
+                  <br /> <a id="a_1dd7_8" href="mailto:admin@kingsteruni.edu">info@macity.edu.in</a></p>
+                  <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-left-align">
+                    <div class="gdlr-core-divider-line gdlr-core-skin-divider" id="div_1dd7_111"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+              <div id="gdlr-core-custom-menu-widget-2" class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
+                <h3 class="kingster-widget-title">Quick links</h3><span class="clear"></span>
+                <div class="menu-our-campus-container">
+                  <ul id="menu-our-campus" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+                    <li class="menu-item"><a href="about-us.html">Academic Calendar</a></li>
+                    <li class="menu-item"><a href="about-us.html">About Us</a></li>
+                    <li class="menu-item"><a href="bachelor-of-dental-surgery.html">Bachelor of Dental Surgery</a></li>
+                    <li class="menu-item"><a href="master-of-dental-surgery.html">Master of Dental Surgery</a></li>
+                    <li class="menu-item"><a href="dental-mechanic.html">Dental Mechanic</a></li>
+                    <li class="menu-item"><a href="dora.html">DORA</a></li>
+                    <li class="menu-item"><a href="dental-hygienist.html">Dental Hygienist</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+              <div id="gdlr-core-custom-menu-widget-3" class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
+                <h3 class="kingster-widget-title">Social Life</h3><span class="clear"></span>
+                <div class="menu-campus-life-container">
+                  <ul id="menu-campus-life" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+                    <li class="menu-item"><a target="_blank" href="https://www.instagram.com/malabar_dental_college/">Instagram</a></li>
+                    <li class="menu-item"><a target="_blank" href="https://www.facebook.com/malabarAcademicCity/">Facebook</a></li>
+                    <li class="menu-item"><a target="_blank" href="https://in.linkedin.com/school/malabar-dental-college-&-research-center/">LinkedIn</a></li>
+                    <li class="menu-item"><a target="_blank" href="https://www.youtube.com/@malabardentalcollege8050">Youtube</a></li>
+                    <li class="menu-item"><a target="_blank" href="https://goo.gl/maps/mqi1nkPswEPLQjzv6">Google</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+              <div id="gdlr-core-custom-menu-widget-4" class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
+                <h3 class="kingster-widget-title">Location</h3><span class="clear"></span>
+                <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=271&amp;height=281&amp;hl=en&amp;q=malabar dental college manoor&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div><style>.mapouter{position:relative;text-align:right;width:271px;height:281px;}.gmap_canvas {overflow:hidden;background:none!important;width:271px;height:281px;}.gmap_iframe {width:271px!important;height:281px!important;}</style></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kingster-copyright-wrapper">
+          <div class="kingster-copyright-container kingster-container clearfix">
+            <div class="kingster-copyright-left kingster-item-pdlr">Copyright © 2026 Malabar Dental College | <a style="color: #fff" href="dept_of_IT.html">Department of IT 💻</a></div>
+            <div class="kingster-copyright-right kingster-item-pdlr">
+              <div class="gdlr-core-social-network-item gdlr-core-item-pdb gdlr-core-none-align" id="div_1dd7_112">
+                <a href="https://www.facebook.com/malabarAcademicCity/" target="_blank" class="gdlr-core-social-network-icon" title="facebook">
+                  <i class="fa fa-facebook"></i>
+                </a>
+                <a href="https://goo.gl/maps/mqi1nkPswEPLQjzv6" target="_blank" class="gdlr-core-social-network-icon" title="google-plus">
+                  <i class="fa fa-google-plus"></i>
+                </a>
+                <a href="https://in.linkedin.com/school/malabar-dental-college-&-research-center/" target="_blank" class="gdlr-core-social-network-icon" title="linkedin">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/malabar_dental_college/" target="_blank" class="gdlr-core-social-network-icon" title="instagram">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      </div>
+    </div>
+
+    <!-- Notification ticker script (matches about-us.html) -->
+    <script>
+      const apiUrl =
+        "https://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";
+      const notificationContainer = document.getElementById("notification-container");
+      let notifications = [];
+      let currentIndex = 0;
+
+      async function fetchAndUpdateNotifications() {
+        try {
+          const response = await fetch(apiUrl);
+          notifications = await response.json();
+          updateNotification();
+          setInterval(updateNotification, 4500);
+        } catch (error) {
+          console.error("Error fetching notifications:", error);
+        }
+      }
+
+      function updateNotification() {
+        if (notifications.length > 0) {
+          const list = notificationContainer;
+          list.innerHTML = `<li>${notifications[currentIndex].notification}</li>`;
+          currentIndex = (currentIndex + 1) % notifications.length;
+        }
+      }
+
+      fetchAndUpdateNotifications();
+    </script>
+
+<!-- Review before submit modal -->
+    <div class="review-modal" id="review-modal" aria-hidden="true">
+      <div class="review-modal-backdrop" id="review-modal-backdrop"></div>
+
+      <div
+        class="review-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="review-modal-title"
+      >
+        <div class="review-modal-header">
+          <h2 id="review-modal-title">Review Your Application</h2>
+          <p>
+            Please check the details below. The application will be submitted
+            only after you click
+            <strong>Confirm &amp; Submit</strong>.
+          </p>
+        </div>
+
+        <div class="review-modal-body">
+          <div class="review-grid" id="review-grid"></div>
+        </div>
+
+        <div class="review-modal-footer">
+          <button type="button" class="btn-secondary" id="review-edit-btn">
+            Edit Details
+          </button>
+          <button type="button" class="btn-primary" id="review-confirm-btn">
+            <span class="btn-spinner"></span>
+            <span>Confirm &amp; Submit</span>
+            <svg
+              class="btn-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        const CONFIG = {
+          JOB_DETAIL_API_BASE: "https://conext.in/hr/api/public/job-openings/",
+          APPLY_API_BASE: "https://conext.in/hr/api/job-openings/",
+          CAREERS_PAGE: "careers.html",
+          JOB_DETAIL_PAGE: "career-detail.html",
+          MAX_RESUME_SIZE_MB: 5,
+        };
+
+        const $ = (id) => document.getElementById(id);
+        const pageContent = $("page-content");
+        const params = new URLSearchParams(window.location.search);
+
+        const jobUuid =
+          params.get("id") ||
+          params.get("job_uuid") ||
+          params.get("job") ||
+          params.get("uuid");
+
+        const icons = {
+          upload:
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>',
+          arrow:
+            '<svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>',
+          check:
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+          alert:
+            '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+        };
+
+        let currentJob = null;
+        let currentApplyUrl = "";
+        let currentForm = null;
+        let isSubmitting = false;
+
+        const reviewModal = $("review-modal");
+        const reviewGrid = $("review-grid");
+        const reviewEditBtn = $("review-edit-btn");
+        const reviewConfirmBtn = $("review-confirm-btn");
+        const reviewBackdrop = $("review-modal-backdrop");
+
+        const escapeHtml = (value) =>
+          String(value ?? "").replace(/[&<>"']/g, (char) => {
+            return {
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            }[char];
+          });
+
+        const normalizeValue = (value) => {
+          if (value === null || value === undefined || value === "") return "—";
+          return String(value);
+        };
+
+        const hasValue = (value) => {
+          return (
+            value !== null && value !== undefined && String(value).trim() !== ""
+          );
+        };
+
+        const empTypeLabel = (value) =>
+          ({
+            full_time: "Full Time",
+            part_time: "Part Time",
+            contract: "Contract",
+            internship: "Internship",
+            temporary: "Temporary",
+          })[value] || normalizeValue(value);
+
+        const workModeLabel = (value) =>
+          ({
+            on_site: "On-Site",
+            remote: "Remote",
+            hybrid: "Hybrid",
+          })[value] || normalizeValue(value);
+
+        const formatDate = (value) => {
+          if (!value) return "—";
+          const date = new Date(value);
+          if (Number.isNaN(date.getTime())) return "—";
+          return date.toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+          });
+        };
+
+        const formatExperience = (experience) => {
+          if (!experience) return "—";
+
+          const min = experience.min_experience;
+          const max = experience.max_experience;
+
+          if (
+            min !== null &&
+            min !== undefined &&
+            max !== null &&
+            max !== undefined
+          ) {
+            return `${min} – ${max} years`;
+          }
+
+          if (min !== null && min !== undefined) return `${min}+ years`;
+          if (max !== null && max !== undefined) return `Up to ${max} years`;
+
+          return "—";
+        };
+
+        function showError(message, title) {
+          pageContent.innerHTML = `
+            <div class="error-state">
+              <div style="width:80px;height:80px;margin:0 auto 20px;background:#fef2f2;border-radius:50%;display:flex;align-items:center;justify-content:center">
+                ${icons.alert}
+              </div>
+              <h2 style="font-family:'Playfair Display',serif;color:var(--mdc-navy);margin:0 0 10px">
+                ${escapeHtml(title || "Unable to load application")}
+              </h2>
+              <p style="color:var(--mdc-muted);max-width:520px;margin:0 auto 24px;line-height:1.7">
+                ${escapeHtml(message)}
+              </p>
+              <a href="${CONFIG.CAREERS_PAGE}" class="btn-primary">
+                Browse All Jobs ${icons.arrow}
+              </a>
+            </div>
+          `;
+        }
+
+        function setFieldError(field, message) {
+          const group = field.closest(".form-group");
+          if (!group) return;
+
+          group.classList.add("has-error");
+
+          const error = group.querySelector(".field-error");
+          if (error) error.textContent = message;
+        }
+
+        function clearFieldError(field) {
+          const group = field.closest(".form-group");
+          if (!group) return;
+
+          group.classList.remove("has-error");
+
+          const error = group.querySelector(".field-error");
+          if (error) error.textContent = "";
+        }
+
+        function validateForm(form) {
+          let isValid = true;
+
+          /* Required fields only as requested:
+             Full Name, Phone Number, Current Location, Resume */
+          const requiredFields = [
+            "name",
+            "phone",
+            "current_location",
+            "resume",
+          ];
+
+          requiredFields.forEach((fieldName) => {
+            const field = form.elements[fieldName];
+            if (!field) return;
+
+            clearFieldError(field);
+
+            if (field.type === "file") {
+              if (!field.files || !field.files.length) {
+                setFieldError(field, "Please upload your resume.");
+                isValid = false;
+              }
+              return;
+            }
+
+            if (!String(field.value || "").trim()) {
+              setFieldError(field, "This field is required.");
+              isValid = false;
+            }
+          });
+
+          const email = form.elements.email;
+          if (email && email.value.trim()) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value.trim())) {
+              setFieldError(email, "Please enter a valid email address.");
+              isValid = false;
+            }
+          }
+
+          const totalExperience = form.elements.total_experience;
+          if (totalExperience && totalExperience.value.trim()) {
+            const value = Number(totalExperience.value);
+            if (!Number.isFinite(value) || value < 0 || value > 60) {
+              setFieldError(
+                totalExperience,
+                "Please enter a valid experience.",
+              );
+              isValid = false;
+            }
+          }
+
+          const noticePeriod = form.elements.notice_period_days;
+          if (noticePeriod && noticePeriod.value.trim()) {
+            const value = Number(noticePeriod.value);
+            if (!Number.isInteger(value) || value < 0 || value > 365) {
+              setFieldError(
+                noticePeriod,
+                "Please enter valid notice period days.",
+              );
+              isValid = false;
+            }
+          }
+
+          const expectedSalary = form.elements.expected_salary;
+          if (expectedSalary && expectedSalary.value.trim()) {
+            const value = Number(expectedSalary.value);
+            if (!Number.isFinite(value) || value < 0) {
+              setFieldError(
+                expectedSalary,
+                "Please enter a valid expected salary.",
+              );
+              isValid = false;
+            }
+          }
+
+          const linkedIn = form.elements.linkedin_url;
+          if (linkedIn && linkedIn.value.trim()) {
+            try {
+              new URL(linkedIn.value.trim());
+            } catch (error) {
+              setFieldError(linkedIn, "Please enter a valid LinkedIn URL.");
+              isValid = false;
+            }
+          }
+
+          const portfolio = form.elements.portfolio_url;
+          if (portfolio && portfolio.value.trim()) {
+            try {
+              new URL(portfolio.value.trim());
+            } catch (error) {
+              setFieldError(portfolio, "Please enter a valid portfolio URL.");
+              isValid = false;
+            }
+          }
+
+          const resume = form.elements.resume;
+          if (resume && resume.files && resume.files[0]) {
+            const file = resume.files[0];
+            const maxSize = CONFIG.MAX_RESUME_SIZE_MB * 1024 * 1024;
+            const allowedTypes = [
+              "application/pdf",
+              "application/msword",
+              "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            ];
+            const allowedExtensions = /\.(pdf|doc|docx)$/i;
+
+            if (file.size > maxSize) {
+              setFieldError(
+                resume,
+                `Resume size must be less than ${CONFIG.MAX_RESUME_SIZE_MB}MB.`,
+              );
+              isValid = false;
+            }
+
+            if (
+              !allowedTypes.includes(file.type) &&
+              !allowedExtensions.test(file.name)
+            ) {
+              setFieldError(
+                resume,
+                "Only PDF, DOC, or DOCX files are allowed.",
+              );
+              isValid = false;
+            }
+          }
+
+          return isValid;
+        }
+
+        function collectReviewItems(form) {
+          const resume = form.elements.resume;
+          const resumeFile = resume && resume.files && resume.files[0];
+
+          const items = [
+            ["Job Title", currentJob?.title || ""],
+            ["Job Code", currentJob?.job_code || currentJob?.uuid || ""],
+            ["Full Name", form.elements.name.value],
+            ["Phone Number", form.elements.phone.value],
+            ["Current Location", form.elements.current_location.value],
+            ["Resume", resumeFile ? resumeFile.name : ""],
+            ["Email Address", form.elements.email.value],
+            ["WhatsApp Number", form.elements.whatsapp_number.value],
+            ["Nationality", form.elements.nationality.value],
+            ["Current Company", form.elements.current_company.value],
+            ["Current Designation", form.elements.current_designation.value],
+            ["Total Experience", form.elements.total_experience.value],
+            ["Expected Salary", form.elements.expected_salary.value],
+            ["Notice Period Days", form.elements.notice_period_days.value],
+            ["Currently in Qatar", form.elements.currently_in_qatar.value],
+            ["LinkedIn URL", form.elements.linkedin_url.value],
+            ["Portfolio URL", form.elements.portfolio_url.value],
+            [
+              "Declaration Accepted",
+              form.elements.consent_accepted.checked ? "Yes" : "",
+            ],
+            ["Cover Letter", form.elements.cover_letter.value],
+          ];
+
+          return items
+            .map(([label, value]) => [label, String(value || "").trim()])
+            .filter(([, value]) => value);
+        }
+
+        function openReviewModal(form) {
+          const items = collectReviewItems(form);
+
+          reviewGrid.innerHTML = items
+            .map(([label, value]) => {
+              const isLong = value.length > 90 || label === "Cover Letter";
+              return `
+                <div class="review-item ${isLong ? "full" : ""}">
+                  <div class="label">${escapeHtml(label)}</div>
+                  <div class="value">${escapeHtml(value)}</div>
+                </div>
+              `;
+            })
+            .join("");
+
+          reviewModal.classList.add("show");
+          reviewModal.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeReviewModal() {
+          reviewModal.classList.remove("show");
+          reviewModal.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+        }
+
+        function buildFormData(form) {
+          const fd = new FormData();
+
+          const textFields = [
+            "name",
+            "email",
+            "phone",
+            "whatsapp_number",
+            "nationality",
+            "current_location",
+            "current_company",
+            "current_designation",
+            "total_experience",
+            "linkedin_url",
+            "portfolio_url",
+            "cover_letter",
+            "expected_salary",
+            "notice_period_days",
+          ];
+
+          textFields.forEach((fieldName) => {
+            const field = form.elements[fieldName];
+            fd.append(fieldName, field ? String(field.value || "").trim() : "");
+          });
+
+          fd.append(
+            "consent_accepted",
+            form.elements.consent_accepted.checked ? "true" : "false",
+          );
+
+          const resume = form.elements.resume;
+          if (resume && resume.files && resume.files[0]) {
+            fd.append("resume", resume.files[0]);
+          }
+
+          const answers = {};
+
+          const expectedSalary = String(
+            form.elements.expected_salary.value || "",
+          ).trim();
+          const currentlyInQatar = String(
+            form.elements.currently_in_qatar.value || "",
+          ).trim();
+
+          if (expectedSalary) answers.expected_salary = expectedSalary;
+          if (currentlyInQatar) answers.currently_in_qatar = currentlyInQatar;
+
+          fd.append("answers", JSON.stringify(answers));
+
+          return fd;
+        }
+
+        function setSubmitting(value) {
+          isSubmitting = value;
+
+          if (!reviewConfirmBtn) return;
+
+          reviewConfirmBtn.disabled = value;
+          reviewConfirmBtn.classList.toggle("loading", value);
+        }
+
+        function submitApplication() {
+          if (!currentForm || !currentApplyUrl || isSubmitting) return;
+
+          setSubmitting(true);
+
+          const alertBox = $("form-alert");
+          if (alertBox) {
+            alertBox.className = "alert error";
+            alertBox.textContent = "";
+          }
+
+          fetch(currentApplyUrl, {
+            method: "POST",
+            body: buildFormData(currentForm),
+          })
+            .then(async (response) => {
+              let data = null;
+
+              try {
+                data = await response.json();
+              } catch (error) {
+                data = null;
+              }
+
+              if (!response.ok) {
+                const message =
+                  data?.message ||
+                  data?.detail ||
+                  "Application submission failed. Please try again.";
+                throw new Error(message);
+              }
+
+              return data;
+            })
+            .then((res) => {
+              if (res && res.status && res.data) {
+                closeReviewModal();
+                renderSuccess(res.data);
+                return;
+              }
+
+              throw new Error(
+                (res && res.message) ||
+                  "Application submission failed. Please try again.",
+              );
+            })
+            .catch((error) => {
+              console.error(error);
+              closeReviewModal();
+
+              if (alertBox) {
+                alertBox.textContent =
+                  error.message ||
+                  "Something went wrong while submitting your application. Please try again.";
+                alertBox.classList.add("show");
+              }
+
+              if (currentForm) {
+                window.scrollTo({
+                  top:
+                    currentForm.getBoundingClientRect().top +
+                    window.scrollY -
+                    120,
+                  behavior: "smooth",
+                });
+              }
+            })
+            .finally(() => {
+              setSubmitting(false);
+            });
+        }
+
+        function renderSuccess(responseData) {
+          const candidateName = responseData.candidate_name || "Candidate";
+          const applicationNo = responseData.application_no || "—";
+          const jobTitle = responseData.job_title || "this position";
+          const resumeUrl = responseData.resume_url || "";
+          const status = responseData.status || "applied";
+
+          document.title = "Application Submitted | MDCRC Careers";
+          $("page-title").textContent = "Application Submitted";
+          $("bc-title").textContent = "Application Submitted";
+
+          pageContent.innerHTML = `
+            <div class="success-card">
+              <div class="success-icon">${icons.check}</div>
+
+              <h2>Thank you for applying!</h2>
+
+              <p>
+                Dear <strong>${escapeHtml(candidateName)}</strong>, your application for
+                <strong>${escapeHtml(jobTitle)}</strong> has been submitted successfully.
+                Our HR team will review your profile and contact you soon if your profile
+                matches the requirement.
+              </p>
+
+              <div class="success-summary">
+                <div class="success-summary-item">
+                  <div class="label">Application Number</div>
+                  <div class="value">${escapeHtml(applicationNo)}</div>
+                </div>
+
+                <div class="success-summary-item">
+                  <div class="label">Application Status</div>
+                  <div class="value">${escapeHtml(status)}</div>
+                </div>
+
+                <div class="success-summary-item">
+                  <div class="label">Job Title</div>
+                  <div class="value">${escapeHtml(jobTitle)}</div>
+                </div>
+
+                <div class="success-summary-item">
+                  <div class="label">Candidate Name</div>
+                  <div class="value">${escapeHtml(candidateName)}</div>
+                </div>
+              </div>
+
+              <p style="font-size:14px">
+                Please keep your application number safe for future reference.
+                Thank you for your interest in joining Malabar Dental College &amp; Research Centre.
+              </p>
+
+              <div class="success-actions">
+                <a href="${CONFIG.CAREERS_PAGE}" class="btn-primary">
+                  Browse More Jobs ${icons.arrow}
+                </a>
+
+                ${
+                  resumeUrl
+                    ? `<a href="${escapeHtml(resumeUrl)}" target="_blank" class="btn-secondary">View Uploaded Resume</a>`
+                    : ""
+                }
+              </div>
+            </div>
+          `;
+
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function renderApplyForm(job) {
+          currentJob = job;
+
+          const jobTitle = job.title || "Job Opening";
+          const jobCode = job.job_code || job.job_uuid || job.uuid || "";
+          const department = job.department || "";
+          const jobId = job.uuid || jobUuid;
+          const applyUrl = `${CONFIG.APPLY_API_BASE}${encodeURIComponent(jobId)}/apply/`;
+          const jobDetailUrl = `${CONFIG.JOB_DETAIL_PAGE}?id=${encodeURIComponent(jobId)}`;
+
+          currentApplyUrl = applyUrl;
+
+          document.title = `Apply for ${jobTitle} | MDCRC Careers`;
+          $("page-title").textContent = `Apply for ${jobTitle}`;
+          $("bc-title").textContent = `Apply for ${jobTitle}`;
+          $("back-to-job-link").href = jobDetailUrl;
+          $("back-to-job-link").innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
+            Back to Job Details
+          `;
+
+          pageContent.innerHTML = `
+            <div class="apply-hero">
+              <div class="apply-hero-top">
+                ${jobCode ? `<span class="badge code">#${escapeHtml(jobCode)}</span>` : ""}
+                ${department ? `<span class="badge dept">${escapeHtml(department)}</span>` : ""}
+                ${job.employment_type ? `<span class="badge type">${escapeHtml(empTypeLabel(job.employment_type))}</span>` : ""}
+              </div>
+
+              <h1>${escapeHtml(jobTitle)}</h1>
+              <p>
+                Fill in your details and upload your resume. You will be asked to review all filled
+                details before the final submission.
+              </p>
+            </div>
+
+            <div class="apply-grid">
+              <main class="form-card">
+                <div id="form-alert" class="alert error"></div>
+
+                <div class="form-note">
+                  <strong>Required fields:</strong> Full Name, Phone Number, Current Location, and Resume only.
+                  Other details are optional, but adding them helps HR review your profile faster.
+                </div>
+
+                <form id="career-apply-form" novalidate>
+                  <div class="form-section">
+                    <h3>Personal Information</h3>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label" for="name">
+                          Full Name <span class="required">*</span>
+                        </label>
+                        <input
+                          id="name"
+                          name="name"
+                          type="text"
+                          class="form-control"
+                          placeholder="Enter your full name"
+                          autocomplete="name"
+                        />
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="email">
+                          Email Address <span class="optional">(optional)</span>
+                        </label>
+                        <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          class="form-control"
+                          placeholder="example@email.com"
+                          autocomplete="email"
+                        />
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="phone">
+                          Phone Number <span class="required">*</span>
+                        </label>
+                        <input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          class="form-control"
+                          placeholder="+91XXXXXXXXXX"
+                          autocomplete="tel"
+                        />
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="whatsapp_number">
+                          WhatsApp Number <span class="optional">(optional)</span>
+                        </label>
+                        <input
+                          id="whatsapp_number"
+                          name="whatsapp_number"
+                          type="tel"
+                          class="form-control"
+                          placeholder="+91XXXXXXXXXX"
+                        />
+                        <div class="help-text">Leave blank if same as phone number.</div>
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="nationality">
+                          Nationality <span class="optional">(optional)</span>
+                        </label>
+                        <input
+                          id="nationality"
+                          name="nationality"
+                          type="text"
+                          class="form-control"
+                          placeholder="Indian"
+                        />
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="current_location">
+                          Current Location <span class="required">*</span>
+                        </label>
+                        <input
+                          id="current_location"
+                          name="current_location"
+                          type="text"
+                          class="form-control"
+                          placeholder="City, Country"
+                        />
+                        <div class="field-error"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-section">
+                    <h3>Professional Information</h3>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label" for="current_company">
+                          Current Company <span class="optional">(optional)</span>
+                        </label>
+                        <input
+                          id="current_company"
+                          name="current_company"
+                          type="text"
+                          class="form-control"
+                          placeholder="Current or previous company"
+                        />
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="current_designation">
+                          Current Designation <span class="optional">(optional)</span>
+                        </label>
+                        <input
+                          id="current_designation"
+                          name="current_designation"
+                          type="text"
+                          class="form-control"
+                          placeholder="Frontend Developer"
+                        />
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="total_experience">
+                          Total Experience <span class="optional">(optional)</span>
+                        </label>
+                        <input
+                          id="total_experience"
+                          name="total_experience"
+                          type="number"
+                          step="0.1"
+                          min="0"
+                          class="form-control"
+                          placeholder="2.5"
+                        />
+                        <div class="help-text">Enter experience in years. Example: 2.5</div>
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="notice_period_days">
+                          Notice Period Days <span class="optional">(optional)</span>
+                        </label>
+                        <input
+                          id="notice_period_days"
+                          name="notice_period_days"
+                          type="number"
+                          min="0"
+                          step="1"
+                          class="form-control"
+                          placeholder="30"
+                        />
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="expected_salary">
+                          Expected Salary <span class="optional">(optional)</span>
+                        </label>
+                        <input
+                          id="expected_salary"
+                          name="expected_salary"
+                          type="number"
+                          min="0"
+                          step="0.01"
+                          class="form-control"
+                          placeholder="6000"
+                        />
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="currently_in_qatar">
+                          Currently in Qatar? <span class="optional">(optional)</span>
+                        </label>
+                        <select
+                          id="currently_in_qatar"
+                          name="currently_in_qatar"
+                          class="form-select"
+                        >
+                          <option value="">Select option</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="linkedin_url">
+                          LinkedIn URL <span class="optional">(optional)</span>
+                        </label>
+                        <input
+                          id="linkedin_url"
+                          name="linkedin_url"
+                          type="url"
+                          class="form-control"
+                          placeholder="https://linkedin.com/in/your-profile"
+                        />
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="portfolio_url">
+                          Portfolio URL <span class="optional">(optional)</span>
+                        </label>
+                        <input
+                          id="portfolio_url"
+                          name="portfolio_url"
+                          type="url"
+                          class="form-control"
+                          placeholder="https://yourportfolio.com"
+                        />
+                        <div class="field-error"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-section">
+                    <h3>Resume &amp; Cover Letter</h3>
+
+                    <div class="form-group full">
+                      <label class="form-label">
+                        Resume <span class="required">*</span>
+                      </label>
+
+                      <label class="file-drop" id="resume-drop" for="resume">
+                        <input
+                          id="resume"
+                          name="resume"
+                          type="file"
+                          accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                        />
+
+                        <span class="file-drop-inner">
+                          <span class="file-drop-icon">${icons.upload}</span>
+
+                          <span class="file-drop-title">
+                            Click to upload your resume
+                          </span>
+
+                          <span class="file-drop-subtitle">
+                            Accepted file types: PDF, DOC, DOCX. Maximum size:
+                            ${CONFIG.MAX_RESUME_SIZE_MB}MB.
+                          </span>
+
+                          <span class="file-name" id="resume-file-name"></span>
+                        </span>
+                      </label>
+
+                      <div class="field-error"></div>
+                    </div>
+
+                    <div class="form-group full">
+                      <label class="form-label" for="cover_letter">
+                        Cover Letter <span class="optional">(optional)</span>
+                      </label>
+                      <textarea
+                        id="cover_letter"
+                        name="cover_letter"
+                        class="form-textarea"
+                        placeholder="Write a short message about why you are interested in this position."
+                      ></textarea>
+                      <div class="field-error"></div>
+                    </div>
+                  </div>
+
+                  <div class="form-section">
+                    <h3>Declaration</h3>
+
+                    <div class="consent-wrapper">
+                      <div class="consent-box">
+                        <input
+                          id="consent_accepted"
+                          name="consent_accepted"
+                          type="checkbox"
+                        />
+                        <label for="consent_accepted">
+                          I confirm that the information provided above is true and accurate.
+                          I agree that the organization may contact me regarding this application
+                          and process my application details for recruitment purposes.
+                          <span class="optional">(optional)</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="submit-row">
+                    <a href="${jobDetailUrl}" class="btn-secondary">
+                      Back to Job Details
+                    </a>
+
+                    <button type="submit" id="submit-btn" class="btn-primary">
+                      Review Application
+                      ${icons.arrow}
+                    </button>
+                  </div>
+                </form>
+              </main>
+
+              <aside>
+                <div class="side-card">
+                  <h3><span class="dot"></span>Job Summary</h3>
+
+                  <div class="side-row">
+                    <span class="k">Job Title</span>
+                    <span class="v">${escapeHtml(jobTitle)}</span>
+                  </div>
+
+                  ${
+                    jobCode
+                      ? `<div class="side-row"><span class="k">Job Code</span><span class="v">${escapeHtml(jobCode)}</span></div>`
+                      : ""
+                  }
+
+                  ${
+                    department
+                      ? `<div class="side-row"><span class="k">Department</span><span class="v">${escapeHtml(department)}</span></div>`
+                      : ""
+                  }
+
+                  <div class="side-row">
+                    <span class="k">Location</span>
+                    <span class="v">${escapeHtml(normalizeValue(job.location))}</span>
+                  </div>
+
+                  <div class="side-row">
+                    <span class="k">Type</span>
+                    <span class="v">${escapeHtml(empTypeLabel(job.employment_type))}</span>
+                  </div>
+
+                  <div class="side-row">
+                    <span class="k">Work Mode</span>
+                    <span class="v">${escapeHtml(workModeLabel(job.work_mode))}</span>
+                  </div>
+
+                  <div class="side-row">
+                    <span class="k">Experience</span>
+                    <span class="v">${escapeHtml(formatExperience(job.experience))}</span>
+                  </div>
+
+                  <div class="side-row">
+                    <span class="k">Openings</span>
+                    <span class="v">${escapeHtml(job.no_of_openings || 1)}</span>
+                  </div>
+
+                  ${
+                    job.closing_date
+                      ? `<div class="side-row"><span class="k">Apply By</span><span class="v">${escapeHtml(formatDate(job.closing_date))}</span></div>`
+                      : ""
+                  }
+                </div>
+
+                <div class="tips-card">
+                  <h4>Before submitting</h4>
+                  <ul>
+                    <li>You will see a review screen before final submission.</li>
+                    <li>Only Full Name, Phone Number, Current Location, and Resume are mandatory.</li>
+                    <li>Upload the latest version of your resume.</li>
+                    <li>HR will contact shortlisted candidates soon.</li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          `;
+
+          const form = $("career-apply-form");
+          currentForm = form;
+
+          const alertBox = $("form-alert");
+          const resumeInput = $("resume");
+          const resumeDrop = $("resume-drop");
+          const resumeFileName = $("resume-file-name");
+
+          resumeInput.addEventListener("change", function () {
+            clearFieldError(resumeInput);
+
+            const file = resumeInput.files && resumeInput.files[0];
+
+            if (file) {
+              resumeFileName.textContent = `Selected: ${file.name}`;
+              resumeFileName.classList.add("show");
+            } else {
+              resumeFileName.textContent = "";
+              resumeFileName.classList.remove("show");
+            }
+          });
+
+          ["dragenter", "dragover"].forEach((eventName) => {
+            resumeDrop.addEventListener(eventName, function (event) {
+              event.preventDefault();
+              resumeDrop.classList.add("dragover");
+            });
+          });
+
+          ["dragleave", "drop"].forEach((eventName) => {
+            resumeDrop.addEventListener(eventName, function (event) {
+              event.preventDefault();
+              resumeDrop.classList.remove("dragover");
+            });
+          });
+
+          resumeDrop.addEventListener("drop", function (event) {
+            const file =
+              event.dataTransfer.files && event.dataTransfer.files[0];
+            if (!file) return;
+
+            const dt = new DataTransfer();
+            dt.items.add(file);
+            resumeInput.files = dt.files;
+            resumeInput.dispatchEvent(new Event("change", { bubbles: true }));
+          });
+
+          Array.from(form.elements).forEach((field) => {
+            if (!field || !field.name) return;
+            field.addEventListener("input", () => clearFieldError(field));
+            field.addEventListener("change", () => clearFieldError(field));
+          });
+
+          form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            alertBox.className = "alert error";
+            alertBox.textContent = "";
+
+            if (!validateForm(form)) {
+              alertBox.textContent =
+                "Please correct the highlighted fields and review again.";
+              alertBox.classList.add("show");
+              window.scrollTo({
+                top: form.getBoundingClientRect().top + window.scrollY - 120,
+                behavior: "smooth",
+              });
+              return;
+            }
+
+            openReviewModal(form);
+          });
+        }
+
+        reviewEditBtn.addEventListener("click", closeReviewModal);
+        reviewBackdrop.addEventListener("click", closeReviewModal);
+        reviewConfirmBtn.addEventListener("click", submitApplication);
+
+        document.addEventListener("keydown", function (event) {
+          if (
+            event.key === "Escape" &&
+            reviewModal.classList.contains("show")
+          ) {
+            closeReviewModal();
+          }
+        });
+
+        if (!jobUuid) {
+          showError(
+            "No job ID was provided. Please open the application form from the careers page.",
+            "Job not found",
+          );
+          return;
+        }
+
+        fetch(`${CONFIG.JOB_DETAIL_API_BASE}${encodeURIComponent(jobUuid)}/`)
+          .then((response) => {
+            if (!response.ok) throw new Error("Status " + response.status);
+            return response.json();
+          })
+          .then((res) => {
+            if (res.status && res.data) {
+              renderApplyForm(res.data);
+              return;
+            }
+
+            throw new Error(res.message || "Unable to load job details.");
+          })
+          .catch((error) => {
+            console.error(error);
+            showError(
+              "Unable to load job details. Please check the job link or try again later.",
+              "Could not load job",
+            );
+          });
+      })();
+    </script>
+
+<!-- Core scripts (matches about-us.html) -->
+    <script type='text/javascript' src='js/jquery/jquery.js'></script>
+    <script type='text/javascript' src='js/jquery/jquery-migrate.min.js'></script>
+    <script type='text/javascript' src='plugins/goodlayers-core/plugins/combine/script.js'></script>
+    <script type='text/javascript'>
+      var gdlr_core_pbf = {
+        "admin": "",
+        "video": {
+          "width": "640",
+          "height": "360"
+        },
+        "ajax_url": "#"
+      };
+    </script>
+    <script type='text/javascript' src='plugins/goodlayers-core/include/js/page-builder.js'></script>
+    <script type='text/javascript' src='js/jquery/ui/effect.min.js'></script>
+    <script type='text/javascript'>
+      var kingster_script_core = {
+        "home_url": "index.html"
+      };
+    </script>
+    <script type='text/javascript' src='js/plugins.min.js'></script>
+</body>
+</html>
