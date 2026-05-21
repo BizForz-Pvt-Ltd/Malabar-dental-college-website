@@ -2177,6 +2177,7 @@
             "name",
             "phone",
             "current_location",
+            "address",
             "resume",
           ];
 
@@ -2213,12 +2214,33 @@
             }
           }
 
-          const email = form.elements.email;
+const email = form.elements.email;
           if (email && email.value.trim()) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email.value.trim())) {
               setFieldError(email, "Please enter a valid email address.");
               isValid = false;
+            }
+          }
+
+          const dob = form.elements.dob;
+          if (dob && dob.value.trim()) {
+            const dobDate = new Date(dob.value);
+            const today = new Date();
+            if (Number.isNaN(dobDate.getTime())) {
+              setFieldError(dob, "Please enter a valid date of birth.");
+              isValid = false;
+            } else if (dobDate >= today) {
+              setFieldError(dob, "Date of birth must be in the past.");
+              isValid = false;
+            } else {
+              const age =
+                (today.getTime() - dobDate.getTime()) /
+                (1000 * 60 * 60 * 24 * 365.25);
+              if (age < 16 || age > 100) {
+                setFieldError(dob, "Please enter a realistic date of birth.");
+                isValid = false;
+              }
             }
           }
 
@@ -2374,6 +2396,9 @@
             ["Full Name", form.elements.name.value],
             ["Phone Number", form.elements.phone.value],
             ["Current Location", form.elements.current_location.value],
+            ["Date of Birth", form.elements.dob.value],
+            ["Education Qualification", form.elements.education_qualification.value],
+            ["Address", form.elements.address.value],
             ["Resume", resumeFile ? resumeFile.name : ""],
             ["Email Address", form.elements.email.value],
             ["WhatsApp Number", form.elements.whatsapp_number.value],
@@ -2423,7 +2448,7 @@
           document.body.style.overflow = "";
         }
 
-        function buildFormData(form) {
+function buildFormData(form) {
           const fd = new FormData();
 
           const textFields = [
@@ -2433,6 +2458,9 @@
             "whatsapp_number",
             "nationality",
             "current_location",
+            "dob",
+            "education_qualification",
+            "address",
             "current_company",
             "current_designation",
             "total_experience",
@@ -2661,8 +2689,8 @@
               <main class="form-card">
                 <div id="form-alert" class="alert error"></div>
 
-                <div class="form-note">
-                  <strong>Required base fields:</strong> Full Name, Phone Number, Current Location, and Resume.
+<div class="form-note">
+                  <strong>Required base fields:</strong> Full Name, Phone Number, Current Location, Date of Birth, Education Qualification, Address, and Resume.
                   ${
                     applicationFields.length
                       ? `This job also has ${applicationFields.length} additional question${applicationFields.length > 1 ? "s" : ""}${requiredApplicationFieldsCount ? `, including ${requiredApplicationFieldsCount} required field${requiredApplicationFieldsCount > 1 ? "s" : ""}` : ""}.`
@@ -2749,7 +2777,7 @@
                         <div class="field-error"></div>
                       </div>
 
-                      <div class="form-group">
+<div class="form-group">
                         <label class="form-label" for="current_location">
                           Current Location <span class="required">*</span>
                         </label>
@@ -2760,6 +2788,48 @@
                           class="form-control"
                           placeholder="City, Country"
                         />
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="dob">
+                          Date of Birth
+                        </label>
+                        <input
+                          id="dob"
+                          name="dob"
+                          type="date"
+                          class="form-control"
+                        />
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label" for="education_qualification">
+                          Education Qualification
+                        </label>
+                        <input
+                          id="education_qualification"
+                          name="education_qualification"
+                          type="text"
+                          class="form-control"
+                          placeholder="e.g. B.Tech Computer Science"
+                        />
+                        <div class="field-error"></div>
+                      </div>
+
+                      <div class="form-group full">
+                        <label class="form-label" for="address">
+                          Full Address <span class="required">*</span>
+                        </label>
+                        <textarea
+                          id="address"
+                          name="address"
+                          class="form-textarea"
+                          placeholder="House / Building, Street, City, District, State, Pincode"
+                          style="min-height: 90px"
+                        ></textarea>
+                        <div class="help-text">Include city, district, state and pincode.</div>
                         <div class="field-error"></div>
                       </div>
                     </div>
@@ -3000,11 +3070,11 @@
                   }
                 </div>
 
-                <div class="tips-card">
+<div class="tips-card">
                   <h4>Before submitting</h4>
                   <ul>
                     <li>You will see a review screen before final submission.</li>
-                    <li>Full Name, Phone Number, Current Location, Resume, and any additional required questions are mandatory.</li>
+                    <li>Full Name, Phone Number, Current Location, Date of Birth, Education Qualification, Address, Resume, and any additional required questions are mandatory.</li>
                     <li>Upload the latest version of your resume.</li>
                     <li>HR will contact shortlisted candidates soon.</li>
                   </ul>
