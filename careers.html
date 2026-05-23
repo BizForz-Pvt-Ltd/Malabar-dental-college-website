@@ -284,6 +284,102 @@
         line-height: 1.75;
       }
 
+
+
+      .careers-top-actions {
+        display: grid;
+        grid-template-columns: 190px minmax(220px, 280px);
+        gap: 14px;
+        align-items: stretch;
+      }
+
+      .open-candidate-card {
+        background: #ffffff;
+        border: 1px solid #ccebd8;
+        border-radius: 20px;
+        padding: 18px;
+        box-shadow: var(--shadow-md);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 14px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .open-candidate-card::before {
+        content: "";
+        position: absolute;
+        top: -38px;
+        right: -38px;
+        width: 105px;
+        height: 105px;
+        border-radius: 999px;
+        background: rgba(61, 177, 102, 0.12);
+      }
+
+      .open-candidate-card .label {
+        color: var(--mdc-green-dark);
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        position: relative;
+        z-index: 1;
+      }
+
+      .open-candidate-card h3 {
+        margin: 4px 0 5px;
+        font-family: "Poppins", sans-serif;
+        font-size: 17px;
+        line-height: 1.3;
+        font-weight: 900;
+        position: relative;
+        z-index: 1;
+      }
+
+      .open-candidate-card p {
+        margin: 0;
+        color: var(--mdc-muted);
+        font-size: 12px;
+        line-height: 1.55;
+        position: relative;
+        z-index: 1;
+      }
+
+      .btn-open-candidate,
+      .btn-open-candidate:visited {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        width: 100%;
+        padding: 11px 14px;
+        background: linear-gradient(135deg, var(--mdc-green), var(--mdc-green-dark));
+        color: #ffffff !important;
+        border-radius: 12px;
+        text-decoration: none !important;
+        font-size: 13px;
+        font-weight: 900;
+        box-shadow: var(--shadow-glow);
+        position: relative;
+        z-index: 1;
+        transition: all 0.25s ease;
+      }
+
+      .btn-open-candidate:hover,
+      .btn-open-candidate:focus {
+        background: linear-gradient(135deg, var(--mdc-navy), var(--mdc-navy-light));
+        color: #ffffff !important;
+        transform: translateY(-2px);
+      }
+
+      .btn-open-candidate svg {
+        width: 14px;
+        height: 14px;
+        stroke: currentColor;
+      }
+
       .open-count-card {
         min-width: 190px;
         background: linear-gradient(
@@ -1073,6 +1169,10 @@
           flex-direction: column;
         }
 
+        .careers-top-actions {
+          grid-template-columns: 1fr;
+        }
+
         .open-count-card {
           min-width: 0;
         }
@@ -1425,6 +1525,7 @@
                       <li class="menu-item"><a href="news-page.html">News &amp; Achievements</a></li>
                       <li class="menu-item"><a href="events.html">Recent Events</a></li>
                       <li class="menu-item"><a href="careers.html">Job Openings</a></li>
+                      <li class="menu-item"><a href="open-candidate-appy.html">Open Candidate Apply</a></li>
                     </ul>
                   </li><li class="menu-item">
                     <a href="mdrc-gallery.html">Gallery</a>
@@ -1651,6 +1752,7 @@
                       <li class="menu-item"><a href="news-page.html">News &amp; Achievements</a></li>
                       <li class="menu-item"><a href="events.html">Recent Events</a></li>
                       <li class="menu-item"><a href="careers.html">Job Openings</a></li>
+                      <li class="menu-item"><a href="open-candidate-appy.html">Open Candidate Apply</a></li>
                     </ul>
                   </li><li class="menu-item">
                     <a href="mdrc-gallery.html">Gallery</a>
@@ -1736,9 +1838,25 @@
               </p>
             </div>
 
-            <div class="open-count-card">
-              <div class="num" id="stat-total">—</div>
-              <div class="label">Open Positions</div>
+            <div class="careers-top-actions">
+              <div class="open-count-card">
+                <div class="num" id="stat-total">—</div>
+                <div class="label">Open Positions</div>
+              </div>
+
+              <div class="open-candidate-card">
+                <div>
+                  <div class="label">No matching role?</div>
+                  <h3>Submit CV for future jobs</h3>
+                </div>
+                <a href="open-candidate-appy.html" class="btn-open-candidate">
+                  Apply
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
 
