@@ -5661,3 +5661,129 @@ body .gdlr-core-flipbox-item .gdlr-core-flipbox-item-image {
     justify-content: center;
   }
 }
+
+/* MDCRC Top Bar Award Image */
+.kingster-top-bar {
+  height: 52px !important;
+  padding: 0 !important;
+  line-height: normal !important;
+  background: #192f59 !important;
+}
+
+.kingster-top-bar-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  padding-left: 52px !important;
+  padding-right: 18px !important;
+  margin: 0 !important;
+}
+
+.kingster-top-bar-container-inner {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.kingster-top-bar-left {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.kingster-top-bar-left i,
+.kingster-top-bar-left a {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.kingster-top-bar-left i {
+  font-size: 13px !important;
+  margin-left: 16px !important;
+}
+
+.kingster-top-bar-left i:first-child {
+  margin-left: 0 !important;
+}
+
+.kingster-top-bar-right {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 22px;
+  padding: 0 !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+.kingster-top-bar-right .notification-list {
+  height: auto !important;
+  max-height: none !important;
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.kingster-top-bar-right-social {
+  display: none !important;
+}
+
+.mdcrc-top-award {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0 !important;
+  background: transparent !important;
+  line-height: 0;
+  text-decoration: none;
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.mdcrc-top-award img {
+  height: 46px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+@media (max-width: 767px) {
+  .kingster-top-bar {
+    height: 48px !important;
+  }
+
+  .kingster-top-bar-container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .kingster-top-bar-left a,
+  .kingster-top-bar-left i {
+    font-size: 13px !important;
+  }
+
+  .mdcrc-top-award {
+    display: none;
+  }
+}
+
+
