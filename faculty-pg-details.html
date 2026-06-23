@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="View and download Faculty and PG biometric Excel sheets of Malabar Dental College & Research Center."
+      content="View and download Faculty and PG details PDF documents of Malabar Dental College & Research Center."
     />
     <meta
       name="keywords"
-      content="Faculty PG Biometrics, MDCRC, Malabar Dental College, Faculty Biometrics, PG Biometrics"
+      content="Faculty PG Details, MDCRC, Malabar Dental College, Faculty Details, PG Details"
     />
     <meta name="author" content="Malabar Dental College & Research Center" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Faculty/PG Biometrics | MDCRC</title>
+    <title>Faculty/PG Details | MDCRC</title>
 
     <link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon" />
 
@@ -421,9 +421,7 @@
                         <a>Institutional Details</a>
                         <ul class="sub-menu">
                           <li class="menu-item">
-                            <a href="faculty-pg-details.html"
-                              >Faculty/PG Details</a
-                            >
+                            <a href="faculty-pg-details.html">Faculty/PG Details</a>
                           </li>
                           <li class="menu-item">
                             <a href="faculty-pg-biometrics.html"
@@ -666,9 +664,7 @@
                           <a class="sf-with-ul-pre">Institutional Details</a>
                           <ul class="sub-menu">
                             <li class="menu-item" data-size="60">
-                              <a href="faculty-pg-details.html"
-                                >Faculty/PG Details</a
-                              >
+                              <a href="faculty-pg-details.html">Faculty/PG Details</a>
                             </li>
                             <li class="menu-item" data-size="60">
                               <a href="faculty-pg-biometrics.html"
@@ -894,10 +890,11 @@
           <section class="biometric-hero">
             <div class="biometric-container">
               <div class="subtitle">Institutional Details</div>
-              <h1>Faculty/PG Biometrics</h1>
+              <h1>Faculty/PG Details</h1>
               <p>
-                Access Faculty and PG biometric Excel sheets. You can download
-                them directly.
+                Access Faculty and PG details PDF documents. You can view them
+                online or download them directly from the institutional records
+                section.
               </p>
             </div>
           </section>
@@ -905,22 +902,32 @@
           <section class="biometric-section">
             <div class="biometric-container">
               <div class="sheet-grid">
-                <!-- PG Biometrics -->
+                <!-- Faculty Details -->
                 <article class="sheet-card">
                   <div class="sheet-icon">
-                    <i class="fa fa-file-excel" style="font-size: 30px"></i>
+                    <i class="fa fa-file-pdf" style="font-size: 30px"></i>
                   </div>
 
-                  <h2>Faculty Attendance</h2>
+                  <h2>Faculty Details</h2>
                   <p>
-                    View or download the PG biometric Excel sheet from the
+                    View or download the Faculty details PDF document from the
                     institutional records section.
                   </p>
 
                   <div class="button-group">
                     <a
+                      class="sheet-btn sheet-btn-view"
+                      href="assets/pdf/STAFF_LIST.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i class="fa fa-eye"></i>
+                      View PDF
+                    </a>
+
+                    <a
                       class="sheet-btn sheet-btn-download"
-                      href="assets/xl/faculty-attendance.xlsx"
+                      href="assets/pdf/STAFF_LIST.pdf"
                       download
                     >
                       <i class="fa fa-download"></i>
@@ -928,22 +935,33 @@
                     </a>
                   </div>
                 </article>
-                <!-- Faculty Biometrics -->
+
+                <!-- PG Details -->
                 <article class="sheet-card">
                   <div class="sheet-icon">
-                    <i class="fa fa-file-excel" style="font-size: 30px"></i>
+                    <i class="fa fa-file-pdf" style="font-size: 30px"></i>
                   </div>
 
-                  <h2>PG Attendance</h2>
+                  <h2>PG Details</h2>
                   <p>
-                    View or download the Faculty biometric Excel sheet from the
+                    View or download the PG details PDF document from the
                     institutional records section.
                   </p>
 
                   <div class="button-group">
                     <a
+                      class="sheet-btn sheet-btn-view"
+                      href="assets/pdf/PG_LIST.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i class="fa fa-eye"></i>
+                      View PDF
+                    </a>
+
+                    <a
                       class="sheet-btn sheet-btn-download"
-                      href="assets/xl/pg-attendance.xlsx"
+                      href="assets/pdf/PG_LIST.pdf"
                       download
                     >
                       <i class="fa fa-download"></i>
@@ -1230,16 +1248,5 @@
     <script src="plugins/goodlayers-core/include/js/page-builder.js"></script>
     <script src="js/jquery/ui/effect.min.js"></script>
     <script src="js/plugins.min.js"></script>
-
-    <script>
-      function viewExcel(filePath) {
-        var fileUrl = window.location.origin + "/" + filePath;
-        var viewerUrl =
-          "https://view.officeapps.live.com/op/view.aspx?src=" +
-          encodeURIComponent(fileUrl);
-
-        window.open(viewerUrl, "_blank", "noopener,noreferrer");
-      }
-    </script>
   </body>
 </html>
