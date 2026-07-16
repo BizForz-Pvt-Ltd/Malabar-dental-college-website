@@ -419,6 +419,150 @@
       background-repeat: no-repeat !important;
     }
 
+    /* =========================================
+   TOP BAR AWARD IMAGES
+========================================= */
+
+.kingster-top-bar-right {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 45px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.mdcrc-top-awards {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.mdcrc-top-award {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 36px;
+  padding: 2px 4px;
+  overflow: hidden;
+  line-height: 0;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 3px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mdcrc-top-award:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+.mdcrc-top-award img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* =========================================
+   MOBILE MENU AWARD IMAGES
+========================================= */
+
+@media only screen and (max-width: 767px) {
+  #kingster-mobile-menu .mdcrc-mobile-awards-item {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #192f59 !important;
+    border: 0 !important;
+  }
+
+  #kingster-mobile-menu .mdcrc-mobile-awards-item::after {
+    display: none !important;
+  }
+
+  #kingster-mobile-menu .mdcrc-mobile-menu-awards {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 10px !important;
+
+    background: #192f59 !important;
+    box-sizing: border-box !important;
+  }
+
+  #kingster-mobile-menu .mdcrc-mobile-menu-award {
+    display: flex !important;
+    flex: 1 1 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
+
+    margin: 0 !important;
+    padding: 4px !important;
+
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+
+    overflow: hidden !important;
+    line-height: 0 !important;
+    box-sizing: border-box !important;
+
+    background: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+    border-radius: 4px !important;
+  }
+
+  #kingster-mobile-menu .mdcrc-mobile-menu-award img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    position: static !important;
+    transform: none !important;
+
+    object-fit: contain !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .mdcrc-top-award {
+    width: 112px;
+    height: 32px;
+  }
+
+  .mdcrc-top-awards {
+    gap: 5px;
+  }
+}
+
     </style>
   </head>
   <a
@@ -490,14 +634,48 @@
   id="kingster-mobile-menu"
   data-slide="right"
 >
-  <a class="mdcrc-mobile-menu-award" href="index.html">
-    <img src="upload/top-ten-college.jpeg" alt="Higher Education Top 10 Dental Colleges Award" />
-  </a>
-
   <ul id="menu-main-navigation" class="m-menu">
-                  <li class="menu-item menu-item-home current-menu-item">
-                    <a href="index.html">Home</a>
-                  </li>
+
+    <li class="mdcrc-mobile-awards-item">
+      <div
+        class="mdcrc-mobile-menu-awards"
+        aria-label="Malabar Dental College rankings and awards"
+      >
+        <a
+          class="mdcrc-mobile-menu-award"
+          href="awards.html"
+          aria-label="India Today Survey 2026 Rank 22"
+        >
+          <img
+            src="upload/india-today-rank.webp"
+            alt="India Today Survey 2026 Rank 22"
+            width="640"
+            height="160"
+            loading="eager"
+            decoding="async"
+          />
+        </a>
+
+        <a
+          class="mdcrc-mobile-menu-award"
+          href="awards.html"
+          aria-label="Higher Education Review Top 10 Dental Colleges 2025"
+        >
+          <img
+            src="upload/higher-education-rank.webp"
+            alt="Higher Education Review Top 10 Dental Colleges 2025"
+            width="640"
+            height="160"
+            loading="eager"
+            decoding="async"
+          />
+        </a>
+      </div>
+    </li>
+
+    <li class="menu-item menu-item-home current-menu-item">
+      <a href="index.html">Home</a>
+    </li>
                   <li class="menu-item menu-item-has-children">
                     <a>About HEI</a>
                     <ul class="sub-menu">
@@ -1036,19 +1214,46 @@
                 ><i class="fa fa-phone" id="i_fd84_1"></i>
                 <a href="tel:+917034555521">+91 7034 555521 </a>
               </div>
-              <div class="kingster-top-bar-right kingster-item-pdlr">
-                <ul
-                  class="notification-list kingster-top-bar-right-menu notification"
-                  id="notification-container"
-                >
-                  Loading...
-                </ul>
+<div class="kingster-top-bar-right kingster-item-pdlr">
+  <div
+    class="mdcrc-top-awards"
+    aria-label="Malabar Dental College rankings and awards"
+  >
+    <!-- India Today award must remain first/left -->
+    <a
+      class="mdcrc-top-award"
+      href="awards.html"
+      aria-label="India Today Survey 2026 Rank 22"
+      title="India Today Survey 2026 – Rank 22"
+    >
+      <img
+        src="upload/india-today-rank.webp"
+        alt="India Today Survey 2026 Rank 22 among India's best emerging dental colleges"
+        width="640"
+        height="160"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
 
-                <div class="kingster-top-bar-right-social"></div>
-<a class="mdcrc-top-award" href="index.html">
-  <img src="upload/top-ten-college.jpeg" alt="Higher Education Top 10 Dental Colleges Award" />
-</a>
-              </div>
+    <!-- Higher Education award remains second/right -->
+    <a
+      class="mdcrc-top-award"
+      href="awards.html"
+      aria-label="Higher Education Review Top 10 Dental Colleges 2025"
+      title="Higher Education Review – Top 10 Dental Colleges 2025"
+    >
+      <img
+        src="upload/higher-education-rank.webp"
+        alt="Higher Education Review Top 10 Dental Colleges 2025"
+        width="640"
+        height="160"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+  </div>
+</div>
             </div>
           </div>
         </div>
@@ -1916,6 +2121,148 @@
                                   >Take a tour
                                 </a>
                               </div> -->
+                            </li>
+                            <li
+                              data-index="rs-3"
+                              data-transition="fade"
+                              data-slotamount="default"
+                              data-hideafterloop="0"
+                              data-hideslideonmobile="off"
+                              data-easein="default"
+                              data-easeout="default"
+                              data-masterspeed="300"
+                              data-thumb="upload/BDS-2024.jpeg"
+                              data-rotate="0"
+                              data-saveperformance="off"
+                              data-title="Slide"
+                              data-param1=""
+                              data-param2=""
+                              data-param3=""
+                              data-param4=""
+                              data-param5=""
+                              data-param6=""
+                              data-param7=""
+                              data-param8=""
+                              data-param9=""
+                              data-param10=""
+                              data-description=""
+                            >
+                              <img
+                                src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc-website/6be5b051eee644b2be3fc33c46335682.jpeg"
+                                alt=""
+                                title="slider-1-2"
+                                width="1800"
+                                height="1119"
+                                data-bgposition="center center"
+                                data-bgfit="contain"
+                                data-bgrepeat="no-repeat"
+                                data-bgcolor="#192f59"
+                                class="rev-slidebg"
+                                data-no-retina
+                              />
+                              <div
+                                class="tp-caption tp-resizeme"
+                                id="slide-3-layer-1"
+                                data-x="38"
+                                data-y="center"
+                                data-voffset="-146"
+                                data-width="['auto']"
+                                data-height="['auto']"
+                                data-type="text"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":0,"speed":300,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 5;
+                                  white-space: nowrap;
+                                  font-size: 33px;
+                                  line-height: 33px;
+                                  font-weight: 300;
+                                  color: #ffffff;
+                                  letter-spacing: 0px;
+                                  font-family: Poppins;
+                                "
+                              ></div>
+                              <div
+                                class="tp-caption tp-shape tp-shapewrapper tp-resizeme"
+                                id="slide-3-layer-4"
+                                data-x="33"
+                                data-y="center"
+                                data-voffset="-44"
+                                data-width="['830']"
+                                data-height="['118']"
+                                data-type="shape"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 6;
+                                  background-color: rgba(24, 36, 59, 0.9);
+                                  border-radius: 3px 3px 3px 3px;
+                                "
+                              ></div>
+                              <div
+                                class="tp-caption tp-resizeme"
+                                id="slide-3-layer-2"
+                                data-x="55"
+                                data-y="center"
+                                data-voffset="-52"
+                                data-width="['auto']"
+                                data-height="['auto']"
+                                data-type="text"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":360,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 7;
+                                  white-space: nowrap;
+                                  font-size: 88px;
+                                  line-height: 88px;
+                                  font-weight: 700;
+                                  color: #ffffff;
+                                  letter-spacing: 0px;
+                                  font-family: Playfair Display;
+                                "
+                              ></div>
+                              <div
+                                class="tp-caption tp-resizeme"
+                                id="slide-3-layer-3"
+                                data-x="423"
+                                data-y="center"
+                                data-voffset="-51"
+                                data-width="['auto']"
+                                data-height="['auto']"
+                                data-type="text"
+                                data-responsive_offset="on"
+                                data-frames='[{"delay":360,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                data-textAlign="['inherit','inherit','inherit','inherit']"
+                                data-paddingtop="[0,0,0,0]"
+                                data-paddingright="[0,0,0,0]"
+                                data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]"
+                                style="
+                                  z-index: 8;
+                                  white-space: nowrap;
+                                  font-size: 66px;
+                                  line-height: 55px;
+                                  font-weight: 400;
+                                  color: #ffffff;
+                                  letter-spacing: 0px;
+                                  font-family: Playfair Display;
+                                "
+                              ></div>
                             </li>
                             <li
                               data-index="rs-3"
