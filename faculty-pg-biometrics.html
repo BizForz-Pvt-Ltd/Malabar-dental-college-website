@@ -65,207 +65,386 @@
       media="all"
     />
 
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
-      * {
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
+  * {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
 
-      .floating-button {
-        position: fixed;
-        bottom: 10px;
-        right: 20px;
-        background-color: #182847;
-        color: #fff;
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        cursor: pointer;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-      }
+  /* Floating WhatsApp button */
 
-      .whatsapp-logo {
-        width: 36px;
-        height: 36px;
-      }
+  .floating-button {
+    position: fixed;
+    right: 18px;
+    bottom: 14px;
+    z-index: 1000;
+    display: flex;
+    width: 58px;
+    height: 58px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: #182847;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(24, 40, 71, 0.22);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
 
-      .biometric-hero {
-        background: linear-gradient(135deg, #192f59 0%, #254f88 100%);
-        padding: 85px 20px;
-        text-align: center;
-        color: #ffffff;
-      }
+  .floating-button:hover {
+    color: #ffffff;
+    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(24, 40, 71, 0.3);
+  }
 
-      .biometric-hero .subtitle {
-        color: #3db166;
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        margin-bottom: 12px;
-      }
+  .floating-button:focus-visible {
+    outline: 3px solid rgba(61, 177, 102, 0.35);
+    outline-offset: 3px;
+  }
 
-      .biometric-hero h1 {
-        color: #ffffff;
-        font-size: 46px;
-        line-height: 1.2;
-        margin-bottom: 15px;
-      }
+  .whatsapp-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
 
-      .biometric-hero p {
-        max-width: 720px;
-        margin: 0 auto;
-        color: rgba(255, 255, 255, 0.82);
-        font-size: 16px;
-        line-height: 1.8;
-      }
+  /* Shared container */
 
-      .biometric-section {
-        background: #f5f7fb;
-        padding: 70px 20px 80px;
-      }
+  .biometric-container {
+    width: min(100%, 1040px);
+    margin: 0 auto;
+  }
 
-      .biometric-container {
-        max-width: 1120px;
-        margin: 0 auto;
-      }
+  /* Hero */
 
-      .sheet-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 28px;
-      }
+  .biometric-hero {
+    padding: 54px 20px 50px;
+    color: #ffffff;
+    text-align: center;
+    background: linear-gradient(135deg, #192f59 0%, #254f88 100%);
+  }
 
-      .sheet-card {
-        background: #ffffff;
-        border-radius: 18px;
-        padding: 34px;
-        border: 1px solid #e5e7eb;
-        box-shadow: 0 16px 45px rgba(25, 47, 89, 0.1);
-        transition: 0.3s ease;
-      }
+  .biometric-hero .subtitle {
+    margin-bottom: 8px;
+    color: #3db166;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
 
-      .sheet-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 55px rgba(25, 47, 89, 0.16);
-      }
+  .biometric-hero h1 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: clamp(30px, 4vw, 40px);
+    font-weight: 700;
+    line-height: 1.25;
+  }
 
-      .sheet-icon {
-        width: 62px;
-        height: 62px;
-        border-radius: 16px;
-        background: rgba(61, 177, 102, 0.12);
-        color: #3db166;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 22px;
-      }
+  .biometric-hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 14px;
+    line-height: 1.7;
+  }
 
-      .sheet-card h2 {
-        color: #192f59;
-        font-size: 24px;
-        margin-bottom: 10px;
-      }
+  /* Listing section */
 
-      .sheet-card p {
-        color: #6b7280;
-        font-size: 15px;
-        line-height: 1.7;
-        margin-bottom: 26px;
-      }
+  .biometric-section {
+    padding: 42px 20px 56px;
+    background: #f5f7fb;
+  }
 
-      .button-group {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
+  .sheet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 18px;
+  }
 
-      .sheet-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        min-height: 45px;
-        padding: 12px 22px;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 700;
-        text-decoration: none;
-        transition: 0.3s ease;
-      }
+  .sheet-grid:last-child {
+    margin-bottom: 0;
+  }
 
-      .sheet-btn-view {
-        background: #192f59;
-        color: #ffffff;
-      }
+  /* Compact cards */
 
-      .sheet-btn-view:hover {
-        background: #10213f;
-        color: #ffffff;
-      }
+  .sheet-card {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    min-height: 215px;
+    flex-direction: column;
+    padding: 22px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(25, 47, 89, 0.07);
+    transition:
+      transform 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
 
-      .sheet-btn-download {
-        background: #3db166;
-        color: #ffffff;
-      }
+  .sheet-card:hover {
+    border-color: rgba(61, 177, 102, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 13px 30px rgba(25, 47, 89, 0.11);
+  }
 
-      .sheet-btn-download:hover {
-        background: #2d9656;
-        color: #ffffff;
-      }
+  .sheet-icon {
+    display: flex;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    color: #3db166;
+    background: rgba(61, 177, 102, 0.12);
+  }
 
-      .note-box {
-        margin-top: 35px;
-        background: #ffffff;
-        border-left: 4px solid #3db166;
-        border-radius: 12px;
-        padding: 18px 22px;
-        color: #4b5563;
-        font-size: 14px;
-        line-height: 1.7;
-        box-shadow: 0 10px 30px rgba(25, 47, 89, 0.08);
-      }
+  .sheet-icon i {
+    font-size: 23px !important;
+  }
 
-      @media (max-width: 768px) {
-        .biometric-hero {
-          padding: 60px 18px;
-        }
+  .sheet-card h2 {
+    margin: 0 0 7px;
+    color: #192f59;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
 
-        .biometric-hero h1 {
-          font-size: 32px;
-        }
+  .sheet-card p {
+    flex: 1;
+    margin: 0 0 16px;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.65;
+  }
 
-        .sheet-grid {
-          grid-template-columns: 1fr;
-        }
+  /* Buttons */
 
-        .sheet-card {
-          padding: 26px;
-        }
+  .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid #edf0f3;
+  }
 
-        .button-group {
-          flex-direction: column;
-        }
+  .sheet-btn {
+    display: inline-flex;
+    min-height: 38px;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 9px 16px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background-color 0.2s ease;
+  }
 
-        .sheet-btn {
-          width: 100%;
-        }
+  .sheet-btn i {
+    font-size: 12px;
+  }
 
-        .floating-button {
-          width: 58px;
-          height: 58px;
-        }
-      }
-    </style>
+  .sheet-btn:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  .sheet-btn:focus-visible {
+    outline: 3px solid rgba(61, 177, 102, 0.25);
+    outline-offset: 2px;
+  }
+
+  .sheet-btn-view {
+    color: #ffffff;
+    background: #192f59;
+  }
+
+  .sheet-btn-view:hover {
+    color: #ffffff;
+    background: #10213f;
+    box-shadow: 0 7px 16px rgba(25, 47, 89, 0.2);
+  }
+
+  .sheet-btn-download {
+    color: #ffffff;
+    background: #3db166;
+  }
+
+  .sheet-btn-download:hover {
+    color: #ffffff;
+    background: #2d9656;
+    box-shadow: 0 7px 16px rgba(61, 177, 102, 0.22);
+  }
+
+  /* Optional note box */
+
+  .note-box {
+    margin-top: 24px;
+    padding: 14px 17px;
+    border-left: 4px solid #3db166;
+    border-radius: 9px;
+    color: #4b5563;
+    background: #ffffff;
+    font-size: 13px;
+    line-height: 1.65;
+    box-shadow: 0 7px 22px rgba(25, 47, 89, 0.07);
+  }
+
+  /* Tablet */
+
+  @media (max-width: 900px) {
+    .biometric-container {
+      width: min(100%, 860px);
+    }
+
+    .sheet-grid {
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .sheet-card {
+      padding: 20px;
+    }
+  }
+
+  /* Mobile */
+
+  @media (max-width: 768px) {
+    .biometric-container {
+      width: 100%;
+    }
+
+    .biometric-hero {
+      padding: 42px 18px 40px;
+    }
+
+    .biometric-hero h1 {
+      font-size: 29px;
+    }
+
+    .biometric-hero p {
+      max-width: 520px;
+      font-size: 13px;
+    }
+
+    .biometric-section {
+      padding: 30px 16px 42px;
+    }
+
+    .sheet-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .sheet-card {
+      min-height: auto;
+      padding: 18px;
+      border-radius: 12px;
+    }
+
+    .sheet-icon {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+    }
+
+    .sheet-icon i {
+      font-size: 21px !important;
+    }
+
+    .sheet-card h2 {
+      font-size: 17px;
+    }
+
+    .sheet-card p {
+      margin-bottom: 14px;
+      font-size: 12.5px;
+    }
+
+    .button-group {
+      padding-top: 12px;
+    }
+
+    .sheet-btn {
+      width: 100%;
+      min-height: 39px;
+    }
+
+    .floating-button {
+      right: 13px;
+      bottom: 13px;
+      width: 52px;
+      height: 52px;
+    }
+
+    .whatsapp-logo {
+      width: 27px;
+      height: 27px;
+    }
+  }
+
+  /* Small mobile */
+
+  @media (max-width: 420px) {
+    .biometric-hero {
+      padding: 36px 15px;
+    }
+
+    .biometric-hero h1 {
+      font-size: 26px;
+    }
+
+    .biometric-section {
+      padding-right: 12px;
+      padding-left: 12px;
+    }
+
+    .sheet-card {
+      padding: 16px;
+    }
+  }
+
+  /* Accessibility */
+
+  @media (prefers-reduced-motion: reduce) {
+    .floating-button,
+    .sheet-card,
+    .sheet-btn {
+      transition: none;
+    }
+
+    .floating-button:hover,
+    .sheet-card:hover,
+    .sheet-btn:hover {
+      transform: none;
+    }
+  }
+</style>
+
+
   </head>
 
   <body
@@ -431,23 +610,17 @@
                             >
                           </li>
                           <li class="menu-item">
-                            <a href="assets/pdf/Op_details .pdf" target="_blank"
+                            <a href="op-details.html"
                               >OP Details</a
                             >
                           </li>
                           <li class="menu-item">
-                            <a href="assets/pdf/patient_count_details.pdf"
+                            <a href="ip-details.html"
                               >IP Details</a
                             >
                           </li>
                           <li class="menu-item">
-                            <a
-                              href="assets/pdf/major-clinical-procedures.pdf"
-                              target="_blank"
-                            >
-                              Major Clinical Procedures
-                            </a>
-                          </li>
+ <a href="major-clinical-procedures.html">Major Clinical Procedures</a></li>
                         </ul>
                       </li>
 
@@ -679,20 +852,18 @@
                             </li>
                             <li class="menu-item" data-size="60">
                               <a
-                                href="assets/pdf/Op_details .pdf"
-                                target="_blank"
+                                href="op-details.html"
                                 >OP Details</a
                               >
                             </li>
                             <li class="menu-item" data-size="60">
-                              <a href="assets/pdf/patient_count_details.pdf"
+                              <a href="ip-details.html"
                                 >IP Details</a
                               >
                             </li>
                             <li class="menu-item" data-size="60">
                               <a
-                                href="assets/pdf/major-clinical-procedures.pdf"
-                                target="_blank"
+                                href="major-clinical-procedures.html"
                               >
                                 Major Clinical Procedures
                               </a>
@@ -915,7 +1086,7 @@
                     <i class="fa fa-file-excel" style="font-size: 30px"></i>
                   </div>
 
-                  <h2>Faculty Attendance</h2>
+                  <h2>Faculty Attendance - June 2026</h2>
                   <p>
                     View or download the PG biometric Excel sheet from the
                     institutional records section.
@@ -938,7 +1109,7 @@
                     <i class="fa fa-file-excel" style="font-size: 30px"></i>
                   </div>
 
-                  <h2>PG Attendance</h2>
+                  <h2>PG Attendance - June 2026</h2>
                   <p>
                     View or download the Faculty biometric Excel sheet from the
                     institutional records section.
@@ -948,6 +1119,150 @@
                     <a
                       class="sheet-btn sheet-btn-download"
                       href="assets/xl/pg-attendance.xlsx"
+                      download
+                    >
+                      <i class="fa fa-download"></i>
+                      Download
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div class="sheet-grid">
+                <!-- PG Biometrics -->
+                <article class="sheet-card">
+                  <div class="sheet-icon">
+                    <i class="fa fa-file-excel" style="font-size: 30px"></i>
+                  </div>
+
+                  <h2>Faculty Attendance - May 2026</h2>
+                  <p>
+                    View or download the PG biometric Excel sheet from the
+                    institutional records section.
+                  </p>
+
+                  <div class="button-group">
+                    <a
+                      class="sheet-btn sheet-btn-download"
+                      href="assets\xl\faculty attendance MAY.xlsx"
+                      download
+                    >
+                      <i class="fa fa-download"></i>
+                      Download
+                    </a>
+                  </div>
+                </article>
+                <!-- Faculty Biometrics -->
+                <article class="sheet-card">
+                  <div class="sheet-icon">
+                    <i class="fa fa-file-excel" style="font-size: 30px"></i>
+                  </div>
+
+                  <h2>PG Attendance - May 2026</h2>
+                  <p>
+                    View or download the Faculty biometric Excel sheet from the
+                    institutional records section.
+                  </p>
+
+                  <div class="button-group">
+                    <a
+                      class="sheet-btn sheet-btn-download"
+                      href="assets/xl/pg attendance MAY.xlsx"
+                      download
+                    >
+                      <i class="fa fa-download"></i>
+                      Download
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div class="sheet-grid">
+                <!-- PG Biometrics -->
+                <article class="sheet-card">
+                  <div class="sheet-icon">
+                    <i class="fa fa-file-excel" style="font-size: 30px"></i>
+                  </div>
+
+                  <h2>Faculty Attendance - April 2026</h2>
+                  <p>
+                    View or download the PG biometric Excel sheet from the
+                    institutional records section.
+                  </p>
+
+                  <div class="button-group">
+                    <a
+                      class="sheet-btn sheet-btn-download"
+                      href="assets/xl/faculty attendance APRIL.xlsx"
+                      download
+                    >
+                      <i class="fa fa-download"></i>
+                      Download
+                    </a>
+                  </div>
+                </article>
+                <!-- Faculty Biometrics -->
+                <article class="sheet-card">
+                  <div class="sheet-icon">
+                    <i class="fa fa-file-excel" style="font-size: 30px"></i>
+                  </div>
+
+                  <h2>PG Attendance - April 2026</h2>
+                  <p>
+                    View or download the Faculty biometric Excel sheet from the
+                    institutional records section.
+                  </p>
+
+                  <div class="button-group">
+                    <a
+                      class="sheet-btn sheet-btn-download"
+                      href="assets/xl/pg attendance APRIL.xlsx"
+                      download
+                    >
+                      <i class="fa fa-download"></i>
+                      Download
+                    </a>
+                  </div>
+                </article>
+              </div>
+              <div class="sheet-grid">
+                <!-- PG Biometrics -->
+                <article class="sheet-card">
+                  <div class="sheet-icon">
+                    <i class="fa fa-file-excel" style="font-size: 30px"></i>
+                  </div>
+
+                  <h2>Faculty Attendance - March 2026</h2>
+                  <p>
+                    View or download the PG biometric Excel sheet from the
+                    institutional records section.
+                  </p>
+
+                  <div class="button-group">
+                    <a
+                      class="sheet-btn sheet-btn-download"
+                      href="assets/xl/faculty attendance MARCH.xlsx"
+                      download
+                    >
+                      <i class="fa fa-download"></i>
+                      Download
+                    </a>
+                  </div>
+                </article>
+                <!-- Faculty Biometrics -->
+                <article class="sheet-card">
+                  <div class="sheet-icon">
+                    <i class="fa fa-file-excel" style="font-size: 30px"></i>
+                  </div>
+
+                  <h2>PG Attendance - March 2026</h2>
+                  <p>
+                    View or download the Faculty biometric Excel sheet from the
+                    institutional records section.
+                  </p>
+
+                  <div class="button-group">
+                    <a
+                      class="sheet-btn sheet-btn-download"
+                      href="assets/xl/pg attendance MARCH.xlsx"
                       download
                     >
                       <i class="fa fa-download"></i>
