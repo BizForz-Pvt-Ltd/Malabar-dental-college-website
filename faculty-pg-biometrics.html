@@ -286,16 +286,28 @@
     box-shadow: 0 7px 16px rgba(25, 47, 89, 0.2);
   }
 
-  .sheet-btn-download {
-    color: #ffffff;
-    background: #3db166;
-  }
+.sheet-btn-download,
+.sheet-btn-download:link,
+.sheet-btn-download:visited,
+.sheet-btn-download:hover,
+.sheet-btn-download:focus,
+.sheet-btn-download:active {
+  color: #ffffff !important;
+}
 
-  .sheet-btn-download:hover {
-    color: #ffffff;
-    background: #2d9656;
-    box-shadow: 0 7px 16px rgba(61, 177, 102, 0.22);
-  }
+.sheet-btn-download {
+  background: #3db166;
+}
+
+.sheet-btn-download:hover,
+.sheet-btn-download:focus {
+  background: #2d9656;
+  box-shadow: 0 7px 16px rgba(61, 177, 102, 0.22);
+}
+
+.sheet-btn-download i {
+  color: #ffffff !important;
+}
 
   /* Optional note box */
 
