@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="View and download Faculty and PG details PDF documents of Malabar Dental College & Research Center."
+      content="View and download Faculty and PG details documents of Malabar Dental College & Research Center."
     />
     <meta
       name="keywords"
@@ -233,6 +233,40 @@
         font-size: 14px;
         line-height: 1.7;
         box-shadow: 0 10px 30px rgba(25, 47, 89, 0.08);
+      }
+
+
+      .sheet-message {
+        grid-column: 1 / -1;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 18px;
+        padding: 34px;
+        text-align: center;
+        color: #6b7280;
+        box-shadow: 0 16px 45px rgba(25, 47, 89, 0.08);
+      }
+
+      .sheet-message i {
+        display: block;
+        margin-bottom: 14px;
+        color: #3db166;
+        font-size: 30px;
+      }
+
+      .sheet-message-error i {
+        color: #c2410c;
+      }
+
+      .sheet-message h2 {
+        margin: 0 0 8px;
+        color: #192f59;
+        font-size: 21px;
+      }
+
+      .sheet-message p {
+        margin: 0;
+        line-height: 1.7;
       }
 
       @media (max-width: 768px) {
@@ -894,7 +928,7 @@
               <div class="subtitle">Institutional Details</div>
               <h1>Faculty/PG Details</h1>
               <p>
-                Access Faculty and PG details PDF documents. You can view them
+                Access Faculty and PG details documents. You can view them
                 online or download them directly from the institutional records
                 section.
               </p>
@@ -903,74 +937,16 @@
 
           <section class="biometric-section">
             <div class="biometric-container">
-              <div class="sheet-grid">
-                <!-- Faculty Details -->
-                <article class="sheet-card">
-                  <div class="sheet-icon">
-                    <i class="fa fa-file-pdf" style="font-size: 30px"></i>
-                  </div>
-
-                  <h2>Faculty Details</h2>
-                  <p>
-                    View or download the Faculty details PDF document from the
-                    institutional records section.
-                  </p>
-
-                  <div class="button-group">
-                    <a
-                      class="sheet-btn sheet-btn-view"
-                      href="assets/pdf/STAFF_LIST.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fa fa-eye"></i>
-                      View PDF
-                    </a>
-
-                    <a
-                      class="sheet-btn sheet-btn-download"
-                      href="assets/pdf/STAFF_LIST.pdf"
-                      download
-                    >
-                      <i class="fa fa-download"></i>
-                      Download
-                    </a>
-                  </div>
-                </article>
-
-                <!-- PG Details -->
-                <article class="sheet-card">
-                  <div class="sheet-icon">
-                    <i class="fa fa-file-pdf" style="font-size: 30px"></i>
-                  </div>
-
-                  <h2>PG Details</h2>
-                  <p>
-                    View or download the PG details PDF document from the
-                    institutional records section.
-                  </p>
-
-                  <div class="button-group">
-                    <a
-                      class="sheet-btn sheet-btn-view"
-                      href="assets/pdf/PG_LIST.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i class="fa fa-eye"></i>
-                      View PDF
-                    </a>
-
-                    <a
-                      class="sheet-btn sheet-btn-download"
-                      href="assets/pdf/PG_LIST.pdf"
-                      download
-                    >
-                      <i class="fa fa-download"></i>
-                      Download
-                    </a>
-                  </div>
-                </article>
+              <!--
+                Cards are loaded dynamically from:
+                https://conext.in/static_site_apis/api/faculty-pg-details/
+              -->
+              <div class="sheet-grid" id="faculty-pg-list">
+                <div class="sheet-message" id="faculty-pg-loading">
+                  <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                  <h2>Loading details...</h2>
+                  <p>Please wait while the latest institutional records are loaded.</p>
+                </div>
               </div>
             </div>
           </section>
@@ -1242,6 +1218,246 @@
         </footer>
       </div>
     </div>
+
+
+    <script>
+      (function () {
+        "use strict";
+
+        const API_URL =
+          "https://conext.in/static_site_apis/api/faculty-pg-details/";
+
+        const listElement = document.getElementById("faculty-pg-list");
+
+        if (!listElement) {
+          return;
+        }
+
+        function getFileType(fileName, fileUrl) {
+          const source = String(fileName || fileUrl || "").toLowerCase();
+
+          if (source.endsWith(".pdf")) {
+            return {
+              icon: "fa-file-pdf",
+              label: "PDF",
+            };
+          }
+
+          if (source.endsWith(".xls") || source.endsWith(".xlsx")) {
+            return {
+              icon: "fa-file-excel",
+              label: "Excel",
+            };
+          }
+
+          if (source.endsWith(".doc") || source.endsWith(".docx")) {
+            return {
+              icon: "fa-file-word",
+              label: "Document",
+            };
+          }
+
+          return {
+            icon: "fa-file",
+            label: "File",
+          };
+        }
+
+        function createMessage(type, title, message) {
+          const wrapper = document.createElement("div");
+          wrapper.className =
+            "sheet-message" +
+            (type === "error" ? " sheet-message-error" : "");
+
+          const icon = document.createElement("i");
+          icon.className =
+            type === "error"
+              ? "fa fa-exclamation-circle"
+              : "fa fa-info-circle";
+          icon.setAttribute("aria-hidden", "true");
+
+          const heading = document.createElement("h2");
+          heading.textContent = title;
+
+          const paragraph = document.createElement("p");
+          paragraph.textContent = message;
+
+          wrapper.appendChild(icon);
+          wrapper.appendChild(heading);
+          wrapper.appendChild(paragraph);
+
+          return wrapper;
+        }
+
+        function createCard(item) {
+          const article = document.createElement("article");
+          article.className = "sheet-card";
+
+          const fileType = getFileType(item.file_name, item.file_url);
+
+          const iconWrapper = document.createElement("div");
+          iconWrapper.className = "sheet-icon";
+
+          const icon = document.createElement("i");
+          icon.className = "fa " + fileType.icon;
+          icon.style.fontSize = "30px";
+          icon.setAttribute("aria-hidden", "true");
+
+          iconWrapper.appendChild(icon);
+
+          const title = document.createElement("h2");
+          title.textContent = item.title || "Institutional Details";
+
+          const description = document.createElement("p");
+          description.textContent =
+            "View or download the " +
+            (item.title || "institutional details") +
+            " " +
+            fileType.label +
+            " file from the institutional records section.";
+
+const buttonGroup = document.createElement("div");
+buttonGroup.className = "button-group";
+
+          const viewButton = document.createElement("a");
+          viewButton.className = "sheet-btn sheet-btn-view";
+          viewButton.href = item.file_url;
+          viewButton.target = "_blank";
+          viewButton.rel = "noopener noreferrer";
+
+          const viewIcon = document.createElement("i");
+          viewIcon.className = "fa fa-eye";
+          viewIcon.setAttribute("aria-hidden", "true");
+
+          const viewText = document.createTextNode(" View " + fileType.label);
+
+          viewButton.appendChild(viewIcon);
+          viewButton.appendChild(viewText);
+
+          const downloadButton = document.createElement("a");
+          downloadButton.className = "sheet-btn sheet-btn-download";
+          downloadButton.href = item.file_url;
+          downloadButton.setAttribute("download", item.file_name || "");
+
+          const downloadIcon = document.createElement("i");
+          downloadIcon.className = "fa fa-download";
+          downloadIcon.setAttribute("aria-hidden", "true");
+
+          const downloadText = document.createTextNode(" Download");
+
+          downloadButton.appendChild(downloadIcon);
+          downloadButton.appendChild(downloadText);
+
+          buttonGroup.appendChild(viewButton);
+          buttonGroup.appendChild(downloadButton);
+
+article.appendChild(iconWrapper);
+article.appendChild(title);
+article.appendChild(description);
+article.appendChild(buttonGroup);
+
+          return article;
+        }
+
+        function sortLikeOldStaticPage(items) {
+          const preferredOrder = {
+            "faculty details": 0,
+            "pg details": 1,
+          };
+
+          return items.slice().sort(function (a, b) {
+            const aTitle = String(a.title || "").trim().toLowerCase();
+            const bTitle = String(b.title || "").trim().toLowerCase();
+
+            const aRank = Object.prototype.hasOwnProperty.call(
+              preferredOrder,
+              aTitle,
+            )
+              ? preferredOrder[aTitle]
+              : 999;
+
+            const bRank = Object.prototype.hasOwnProperty.call(
+              preferredOrder,
+              bTitle,
+            )
+              ? preferredOrder[bTitle]
+              : 999;
+
+            if (aRank !== bRank) {
+              return aRank - bRank;
+            }
+
+            return Number(b.id || 0) - Number(a.id || 0);
+          });
+        }
+
+        async function loadFacultyPgDetails() {
+          try {
+            const response = await fetch(API_URL, {
+              method: "GET",
+              headers: {
+                Accept: "application/json",
+              },
+              cache: "no-store",
+            });
+
+            if (!response.ok) {
+              throw new Error(
+                "API request failed with status " + response.status,
+              );
+            }
+
+            const data = await response.json();
+
+            if (!Array.isArray(data)) {
+              throw new Error("Unexpected API response format.");
+            }
+
+            const activeItems = sortLikeOldStaticPage(
+              data.filter(function (item) {
+                return (
+                  item &&
+                  item.is_active === true &&
+                  typeof item.file_url === "string" &&
+                  item.file_url.trim() !== ""
+                );
+              }),
+            );
+
+            listElement.innerHTML = "";
+
+            if (activeItems.length === 0) {
+              listElement.appendChild(
+                createMessage(
+                  "empty",
+                  "No records available",
+                  "There are currently no active Faculty/PG detail files to display.",
+                ),
+              );
+              return;
+            }
+
+            activeItems.forEach(function (item) {
+              listElement.appendChild(createCard(item));
+            });
+          } catch (error) {
+            console.error("Unable to load Faculty/PG details:", error);
+
+            listElement.innerHTML = "";
+            listElement.appendChild(
+              createMessage(
+                "error",
+                "Unable to load details",
+                "The latest Faculty/PG records could not be loaded. Please try again later.",
+              ),
+            );
+          }
+        }
+
+        loadFacultyPgDetails();
+      })();
+    </script>
+
 
     <!-- Scripts -->
     <script src="js/jquery/jquery.js"></script>
