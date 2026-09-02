@@ -8,7 +8,7 @@
 <link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="/upload/favicon.ico" type="image/x-icon" />
 
-<title>Publih Health Dentistry | MDCRC</title>
+<title>Public Health Dentistry | MDCRC</title>
 
     <link rel='stylesheet' href='plugins/goodlayers-core/plugins/combine/style.css' type='text/css' media='all' />
     <link rel='stylesheet' href='plugins/goodlayers-core/include/css/page-builder.css' type='text/css' media='all' />
@@ -62,7 +62,169 @@
           transform: translateY(-100%);
         }
       }
+    
+      /* =========================================================
+         Public Health Dentistry page enhancements
+         ========================================================= */
+
+      .phd-page-heading { background:#f8fafc; border-bottom:1px solid #e7ebf0; }
+      .phd-page-heading-inner { width:calc(100% - 40px); max-width:1200px; min-height:290px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:52px; padding:24px 0; }
+      .phd-page-heading-copy { flex:1 1 auto; min-width:0; }
+      .phd-page-eyebrow { display:block; margin-bottom:8px; color:#3db166; font-family:"Poppins",sans-serif; font-size:16px; font-weight:600; line-height:1.4; }
+      .phd-page-title { margin:0; color:#182847; font-family:"Poppins",sans-serif; font-size:42px; font-weight:700; line-height:1.18; letter-spacing:-0.6px; }
+
+      .phd-heading-poster-wrap { flex:0 0 225px; width:225px; display:flex; align-items:center; justify-content:center; }
+      .phd-heading-poster-link { display:block; width:100%; text-decoration:none; }
+      .phd-heading-poster { display:block; width:100%; height:auto; border:1px solid #dfe5eb; border-radius:12px; box-shadow:0 12px 30px rgba(24,40,71,.13); }
+
+      .phd-overview-brand { display:flex; align-items:center; gap:20px; margin:0 0 22px; }
+      .phd-overview-logo { flex:0 0 112px; width:112px; padding:6px; background:#fff; border:1px solid #e2e7ec; border-radius:50%; box-shadow:0 8px 22px rgba(24,40,71,.10); }
+      .phd-overview-logo img { display:block; width:100%; height:auto; border-radius:50%; }
+      .phd-overview-heading-wrap { flex:1 1 auto; min-width:0; }
+      .phd-overview-heading-wrap h3 { margin:0; color:#293a5b; font-family:"Poppins",sans-serif; font-size:24px; font-weight:700; line-height:1.35; }
+      .phd-special-heading { margin:0 0 18px; color:#293a5b; font-family:"Poppins",sans-serif; font-size:24px; font-weight:700; line-height:1.35; }
+
+      #phd-custom-accordion-v2 { width:100%; font-family:"Poppins",sans-serif; }
+      #phd-custom-accordion-v2 .phd-v2-item { width:100%; margin:0 0 10px; }
+      #phd-custom-accordion-v2 .phd-v2-button { appearance:none!important; -webkit-appearance:none!important; width:100%!important; min-height:66px; display:flex!important; align-items:center; justify-content:space-between; gap:18px; box-sizing:border-box; margin:0!important; padding:16px 25px!important; color:#3db166!important; background:#f3f3f3!important; border:0!important; border-radius:4px!important; outline:0; box-shadow:none; font-family:"Poppins",sans-serif!important; font-size:16px!important; font-weight:600!important; line-height:1.4!important; text-align:left!important; text-transform:none!important; cursor:pointer!important; position:relative; z-index:2; }
+      #phd-custom-accordion-v2 .phd-v2-button:hover,#phd-custom-accordion-v2 .phd-v2-button:focus { background:#eaf7ef!important; color:#3db166!important; }
+      #phd-custom-accordion-v2 .phd-v2-item.phd-v2-open>.phd-v2-button { color:#fff!important; background:#3db166!important; }
+      #phd-custom-accordion-v2 .phd-v2-item.phd-v2-open>.phd-v2-button:hover,#phd-custom-accordion-v2 .phd-v2-item.phd-v2-open>.phd-v2-button:focus { color:#fff!important; background:#36a15d!important; }
+      .phd-v2-title { flex:1 1 auto; min-width:0; }
+      .phd-v2-symbol { flex:0 0 22px; width:22px; display:inline-flex; align-items:center; justify-content:center; font-family:Arial,sans-serif; font-size:22px; font-weight:400; line-height:1; pointer-events:none; }
+      #phd-custom-accordion-v2 .phd-v2-panel { display:none!important; box-sizing:border-box; width:100%; padding:18px 25px 22px; color:#5f6670; background:#fff; font-size:16px; line-height:1.75; }
+      #phd-custom-accordion-v2 .phd-v2-item.phd-v2-open>.phd-v2-panel { display:block!important; }
+      #phd-custom-accordion-v2 .phd-v2-panel p:last-child,#phd-custom-accordion-v2 .phd-v2-panel ul:last-child { margin-bottom:0; }
+      #phd-custom-accordion-v2 .phd-v2-panel ul { margin:0; padding-left:22px; }
+      #phd-custom-accordion-v2 .phd-v2-panel li { margin-bottom:7px; }
+      #phd-custom-accordion-v2 .phd-v2-empty-panel { padding:0!important; min-height:0!important; height:0!important; overflow:hidden!important; }
+
+      @media (max-width:1024px) {
+        .phd-page-heading-inner { min-height:245px; gap:34px; }
+        .phd-page-title { font-size:36px; }
+        .phd-heading-poster-wrap { flex-basis:185px; width:185px; }
+        .phd-overview-logo { flex-basis:100px; width:100px; }
+      }
+      @media (max-width:767px) {
+        .phd-page-heading-inner { width:calc(100% - 28px); min-height:auto; flex-direction:column; justify-content:center; gap:20px; padding:26px 0 30px; text-align:center; }
+        .phd-page-heading-copy { width:100%; }
+        .phd-page-eyebrow { margin-bottom:5px; font-size:14px; }
+        .phd-page-title { font-size:29px; line-height:1.25; }
+        .phd-heading-poster-wrap { flex-basis:auto; width:190px; max-width:62vw; }
+        .phd-overview-brand { flex-direction:column; justify-content:center; gap:12px; margin-bottom:18px; text-align:center; }
+        .phd-overview-logo { flex-basis:auto; width:92px; padding:5px; }
+        .phd-overview-heading-wrap h3,.phd-special-heading { font-size:21px; line-height:1.4; }
+        #phd-custom-accordion-v2 .phd-v2-button { min-height:58px; gap:12px; padding:14px 16px!important; font-size:14px!important; }
+        .phd-v2-symbol { flex-basis:20px; width:20px; font-size:20px; }
+        #phd-custom-accordion-v2 .phd-v2-panel { padding:14px 16px 18px; font-size:14px; line-height:1.7; }
+        #phd-custom-accordion-v2 .phd-v2-panel ul { padding-left:19px; }
+      }
+
     </style>
+  
+    <script>
+      /*
+       * Public Health Dentistry accordion - isolated custom function.
+       *
+       * This function is global on purpose because every accordion button
+       * calls it directly through onclick. It does not depend on jQuery,
+       * GoodLayers, page-builder.js, details/summary, or delegated listeners.
+       */
+      window.togglePHDAccordion = function (button, clickEvent) {
+        try {
+          if (clickEvent) {
+            clickEvent.preventDefault();
+            clickEvent.stopPropagation();
+
+            if (typeof clickEvent.stopImmediatePropagation === "function") {
+              clickEvent.stopImmediatePropagation();
+            }
+          }
+
+          var accordion = document.getElementById("phd-custom-accordion-v2");
+          if (!accordion || !button) {
+            return false;
+          }
+
+          var currentItem = button.parentElement;
+          if (
+            !currentItem ||
+            !currentItem.classList.contains("phd-v2-item")
+          ) {
+            return false;
+          }
+
+          var wasOpen = currentItem.classList.contains("phd-v2-open");
+          var allItems = accordion.getElementsByClassName("phd-v2-item");
+
+          /* Close every section first. */
+          for (var i = 0; i < allItems.length; i++) {
+            var item = allItems[i];
+            var itemButton = item.getElementsByClassName("phd-v2-button")[0];
+            var itemSymbol = item.getElementsByClassName("phd-v2-symbol")[0];
+
+            item.classList.remove("phd-v2-open");
+
+            if (itemButton) {
+              itemButton.setAttribute("aria-expanded", "false");
+            }
+
+            if (itemSymbol) {
+              itemSymbol.textContent = "+";
+            }
+          }
+
+          /* Re-open the clicked item only when it was previously closed. */
+          if (!wasOpen) {
+            currentItem.classList.add("phd-v2-open");
+            button.setAttribute("aria-expanded", "true");
+
+            var currentSymbol =
+              button.getElementsByClassName("phd-v2-symbol")[0];
+
+            if (currentSymbol) {
+              currentSymbol.textContent = "−";
+            }
+          }
+
+          return false;
+        } catch (accordionError) {
+          console.error(
+            "Public Health Dentistry accordion error:",
+            accordionError
+          );
+          return false;
+        }
+      };
+
+      /*
+       * Reset accordion state after the page has loaded.
+       * This also protects against browser back/forward state restoration.
+       */
+      window.addEventListener("load", function () {
+        var accordion = document.getElementById("phd-custom-accordion-v2");
+        if (!accordion) return;
+
+        var items = accordion.getElementsByClassName("phd-v2-item");
+
+        for (var i = 0; i < items.length; i++) {
+          var item = items[i];
+          var button = item.getElementsByClassName("phd-v2-button")[0];
+          var symbol = item.getElementsByClassName("phd-v2-symbol")[0];
+
+          item.classList.remove("phd-v2-open");
+
+          if (button) {
+            button.setAttribute("aria-expanded", "false");
+          }
+
+          if (symbol) {
+            symbol.textContent = "+";
+          }
+        }
+      });
+    </script>
+
   </head>
   <a
     href="https://api.whatsapp.com/send?phone=7034555514"
@@ -1204,16 +1366,21 @@
         </div>
       </div>
     </header>
-          <div class="kingster-page-title-wrap  kingster-style-custom kingster-left-align" style="background-image: url(upload/MDC.png) ;">
-                <div class="kingster-header-transparent-substitute"></div>
-                <div class="kingster-page-title-overlay"></div>
-                <div class="kingster-page-title-bottom-gradient"></div>
-                <div class="kingster-page-title-container kingster-container">
-                    <div class="kingster-page-title-content kingster-item-pdlr" style="padding-top: 390px ;padding-bottom: 55px ;">
-                        <div class="kingster-page-caption" style="font-size: 21px ;font-weight: 400 ;letter-spacing: 0px ;">Dental Department</div>
-                        <h1 class="kingster-page-title" id="dep-title" style="font-weight: 700 ;text-transform: none ;letter-spacing: 0px ;">Public Health Dentistry</h1></div>
-                </div>
-            </div>
+    <!-- Simple Public Health Dentistry page heading -->
+    <section class="phd-page-heading" aria-labelledby="dep-title">
+      <div class="phd-page-heading-inner">
+        <div class="phd-page-heading-copy">
+          <span class="phd-page-eyebrow">Dental Department</span>
+          <h1 class="phd-page-title" id="dep-title">Public Health Dentistry</h1>
+        </div>
+        <div class="phd-heading-poster-wrap">
+          <a class="phd-heading-poster-link" href="upload/phd-dep-mandasmitham.jpeg" target="_blank" rel="noopener noreferrer" aria-label="Open Mandasmitham Village adoption programme poster">
+            <img class="phd-heading-poster" src="upload/phd-dep-mandasmitham.jpeg" alt="Mandasmitham Village Adoption Program - Best Innovation in Community Outreach award" width="1080" height="1350" loading="eager" decoding="async" />
+          </a>
+        </div>
+      </div>
+    </section>
+
             <div class="kingster-breadcrumbs">
                 <div class="kingster-breadcrumbs-container kingster-container">
                     <div class="kingster-breadcrumbs-item kingster-item-pdlr"> <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Kingster." href="index.html" class="home"><span property="name">Home</span></a>
@@ -1234,10 +1401,14 @@
                                 <div class="gdlr-core-pbf-sidebar-content-inner">
                                  
                                     <div class="gdlr-core-pbf-element">
-                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr">
-                                            <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 24px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;color: #293a5b ;">Department Overview</h3></div>
-                                        </div>
+                                        <div class="gdlr-core-item-pdlr phd-overview-brand">
+                                             <div class="phd-overview-logo">
+                                               <img src="upload/phd-dep-logo.jpeg" alt="Public Health Dentistry - Malabar Dental College and Research Centre" width="704" height="658" loading="eager" decoding="async" />
+                                             </div>
+                                             <div class="phd-overview-heading-wrap">
+                                               <h3>Department Overview</h3>
+                                             </div>
+                                           </div>
                                    
                                         <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 10px ;">
                                             <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;">
@@ -1255,10 +1426,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="gdlr-core-pbf-element" style="text-align:center; margin:20px 0;">
-                                      <img src="upload/about-2.jpeg" alt="Department of Oral Pathology" style="max-width:100%; border-radius:8px;">
-                                    </div>
-
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align">
                                             <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #3db166 ;border-bottom-width: 3px ;"></div>
@@ -1266,99 +1433,129 @@
                                     </div>
                                    
                                      <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-accordion-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-accordion-style-background-title-icon gdlr-core-left-align gdlr-core-icon-pos-right"
-                          >
-                            <div
-                              class="gdlr-core-accordion-item-tab clearfix gdlr-core-active"
-                            >
-                              <div
-                                class="gdlr-core-accordion-item-icon gdlr-core-js gdlr-core-skin-icon"
-                              ></div>
-                              <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 24px ;font-weight: 700 ;letter-spacing: 0px ;padding-top: 0px;text-transform: none ;color: #293a5b ;">Why Public Health Dentistry Department is Special ?</h3></div>
-                              <div
-                                class="gdlr-core-accordion-item-content-wrapper"
-                              >
-                                <h4
-                                  class="gdlr-core-accordion-item-title gdlr-core-js gdlr-core-skin-e-background gdlr-core-skin-e-content"
-                                >
-                               Vision 
-                                </h4>
-                                <div class="gdlr-core-accordion-item-content" style="padding: 10px 30px!important;">
-                                  <p>Striving to achieve optimum oral health of the community through application of
-scientific knowledge and clinical skills of Public health dentistry.</p>
-                                 
-                                </div>
-                              </div>
-                            </div>
-                            <div class="gdlr-core-accordion-item-tab clearfix">
-                              <div
-                                class="gdlr-core-accordion-item-icon gdlr-core-js gdlr-core-skin-icon"
-                              ></div>
-                              <div
-                                class="gdlr-core-accordion-item-content-wrapper"
-                              >
-                                <h4
-                                  class="gdlr-core-accordion-item-title gdlr-core-js gdlr-core-skin-e-background gdlr-core-skin-e-content"
-                                >
-                                  Mission
-                                </h4>
-                                <div class="gdlr-core-accordion-item-content" style="padding: 10px 30px!important;">
-                                 <p>
-                               <ul>
-                                <li>
-                                  Development of comprehensive oral health programmes to cater to unmet needs of the
-community through effective collaboration with external stakeholders.
-                                </li>
-                                <li>
-                                 Enabling students to understand their unique roles and responsibilities in preventing oral
-diseases &amp; promoting oral health of individuals &amp; communities.
-                                </li>
-                                <li>
-                                  Promotion of interdisciplinary community based oral health care research.
-                                </li>
-                                <li>
-                                 Competency enhancement of faculty members to help them realize their career objectives
-                                </li>
-                               </ul>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="gdlr-core-accordion-item-tab clearfix">
-                              <div
-                                class="gdlr-core-accordion-item-icon gdlr-core-js gdlr-core-skin-icon"
-                              ></div>
-                              <div
-                                class="gdlr-core-accordion-item-content-wrapper"
-                              >
-                                <h4
-                                  class="gdlr-core-accordion-item-title gdlr-core-js gdlr-core-skin-e-background gdlr-core-skin-e-content"
-                                >
-                                 Department Facilities
-                                
-                                </h4>
-                                <div class="gdlr-core-accordion-item-content" style="padding: 10px 30px!important;">
+                                       <div class="gdlr-core-item-pdlr gdlr-core-item-pdb">
+                                         <h3 class="phd-special-heading">
+                                           Why Public Health Dentistry Department is Special ?
+                                         </h3>
 
-                               <ul>
- <li>Mobile dental Van</li>
- <li>Department Museum </li>
- <li>Department Library</li>
- <li>Portal dental Chair</li>
- <li>Sterilization Unit</li>
- <li>Health education Models</li>
- <li>Audio Visual Aids</li>
-                               </ul>
-                           
-                                </div>
-                              </div>
-                            </div>
-                            
-                          </div>
-                        </div>
-                                </div>
-                            </div>
+                                         <div id="phd-custom-accordion-v2">
+
+                                           <!-- 1. Vision -->
+                                           <div class="phd-v2-item" id="phd-item-vision">
+                                             <button
+                                               type="button"
+                                               class="phd-v2-button"
+                                               aria-expanded="false"
+                                               aria-controls="phd-v2-panel-vision"
+                                               onclick="return togglePHDAccordion(this, event);"
+                                             >
+                                               <span class="phd-v2-title">Vision</span>
+                                               <span class="phd-v2-symbol" aria-hidden="true">+</span>
+                                             </button>
+
+                                             <div
+                                               class="phd-v2-panel"
+                                               id="phd-v2-panel-vision"
+                                             >
+                                               <p>
+                                                 Striving to achieve optimum oral health of the community through application of
+                                                 scientific knowledge and clinical skills of Public health dentistry.
+                                               </p>
+                                             </div>
+                                           </div>
+
+                                           <!-- 2. Mission -->
+                                           <div class="phd-v2-item" id="phd-item-mission">
+                                             <button
+                                               type="button"
+                                               class="phd-v2-button"
+                                               aria-expanded="false"
+                                               aria-controls="phd-v2-panel-mission"
+                                               onclick="return togglePHDAccordion(this, event);"
+                                             >
+                                               <span class="phd-v2-title">Mission</span>
+                                               <span class="phd-v2-symbol" aria-hidden="true">+</span>
+                                             </button>
+
+                                             <div
+                                               class="phd-v2-panel"
+                                               id="phd-v2-panel-mission"
+                                             >
+                                               <ul>
+                                                 <li>
+                                                   Development of comprehensive oral health programmes to cater to unmet needs of the
+                                                   community through effective collaboration with external stakeholders.
+                                                 </li>
+                                                 <li>
+                                                   Enabling students to understand their unique roles and responsibilities in preventing oral
+                                                   diseases &amp; promoting oral health of individuals &amp; communities.
+                                                 </li>
+                                                 <li>
+                                                   Promotion of interdisciplinary community based oral health care research.
+                                                 </li>
+                                                 <li>
+                                                   Competency enhancement of faculty members to help them realize their career objectives.
+                                                 </li>
+                                               </ul>
+                                             </div>
+                                           </div>
+
+                                           <!-- 3. Department Facilities -->
+                                           <div class="phd-v2-item" id="phd-item-facilities">
+                                             <button
+                                               type="button"
+                                               class="phd-v2-button"
+                                               aria-expanded="false"
+                                               aria-controls="phd-v2-panel-facilities"
+                                               onclick="return togglePHDAccordion(this, event);"
+                                             >
+                                               <span class="phd-v2-title">Department Facilities</span>
+                                               <span class="phd-v2-symbol" aria-hidden="true">+</span>
+                                             </button>
+
+                                             <div
+                                               class="phd-v2-panel"
+                                               id="phd-v2-panel-facilities"
+                                             >
+                                               <ul>
+                                                 <li>Mobile dental Van</li>
+                                                 <li>Department Museum</li>
+                                                 <li>Department Library</li>
+                                                 <li>Portal dental Chair</li>
+                                                 <li>Sterilization Unit</li>
+                                                 <li>Health education Models</li>
+                                                 <li>Audio Visual Aids</li>
+                                               </ul>
+                                             </div>
+                                           </div>
+
+                                           <!-- 4. Mandasmitham - intentionally empty -->
+                                           <div class="phd-v2-item" id="phd-item-mandasmitham">
+                                             <button
+                                               type="button"
+                                               class="phd-v2-button"
+                                               aria-expanded="false"
+                                               aria-controls="phd-v2-panel-mandasmitham"
+                                               onclick="return togglePHDAccordion(this, event);"
+                                             >
+                                               <span class="phd-v2-title">
+                                                 ‘Mandasmitham’ - Village adoption programme.
+                                               </span>
+                                               <span class="phd-v2-symbol" aria-hidden="true">+</span>
+                                             </button>
+
+                                             <div
+                                               class="phd-v2-panel phd-v2-empty-panel"
+                                               id="phd-v2-panel-mandasmitham"
+                                               aria-hidden="true"
+                                             ></div>
+                                           </div>
+
+                                         </div>
+                                       </div>
+                                     </div>
+                                 </div>
+                             </div>
                             <div class="gdlr-core-pbf-sidebar-right gdlr-core-column-extend-right  kingster-sidebar-area gdlr-core-column-20 gdlr-core-pbf-sidebar-padding  gdlr-core-line-height" style="padding: 30px 0px 30px 0px;">
                                 <div class="gdlr-core-sidebar-item gdlr-core-item-pdlr">
                                    <div id="text-21" class="widget widget_text kingster-widget">
@@ -2229,6 +2426,12 @@ setInterval(removeFontSizeStyle, 100);
 
   fetchAndDisplayStaffList();
 </script>
+
+
+
+
+
+
 
 </body>
 
