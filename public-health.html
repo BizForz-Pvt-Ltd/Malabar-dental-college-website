@@ -20,49 +20,44 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CABeeZee%3Aregular%2Citalic&amp;subset=latin%2Clatin-ext%2Cdevanagari&amp;ver=5.0.3' type='text/css' media='all' />
 
 <style>
-          .floating-button {
+      .floating-button {
         position: fixed;
         bottom: 30px;
         right: 30px;
-        background-color: #182847; /* WhatsApp green */
+        background-color: #182847;
         color: #fff;
-        width: 70px; /* Set width and height to the same value for a perfect circle */
+        width: 70px;
         height: 70px;
-        border-radius: 50%; /* Make the button round */
+        border-radius: 50%;
         cursor: pointer;
         text-decoration: none;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 24px; /* Adjust the font size for larger text */
+        font-size: 24px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 9999; /* Set a high z-index to appear above other content */
+        z-index: 9999;
       }
 
-      /* Style for WhatsApp logo */
-       .whatsapp-logo {
-        width: 36px; /* Adjust the logo size */
-        height: 36px; /* Adjust the logo size */
+      .whatsapp-logo {
+        width: 36px;
+        height: 36px;
       }
+
       .notification-list {
         display: inline-block;
         max-height: 20px;
         overflow: hidden;
         position: relative;
-        max-height: 20px;
       }
       ul.notification-list {
         margin-bottom: 0px !important;
       }
       @keyframes marquee-up {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(-100%);
-        }
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-100%); }
       }
-    
+
       /* =========================================================
          Public Health Dentistry page enhancements
          ========================================================= */
@@ -88,11 +83,7 @@
         gap: 48px;
         padding: 32px 0;
       }
-      .phd-page-heading-copy {
-        flex: 1 1 auto;
-        min-width: 0;
-        max-width: 720px;
-      }
+      .phd-page-heading-copy { flex: 1 1 auto; min-width: 0; max-width: 720px; }
       .phd-page-eyebrow {
         display: block;
         margin-bottom: 10px;
@@ -161,26 +152,492 @@
       #phd-custom-accordion-v2 .phd-v2-panel li { margin-bottom:7px; }
       #phd-custom-accordion-v2 .phd-v2-empty-panel { padding:0!important; min-height:0!important; height:0!important; overflow:hidden!important; }
 
-      @media (max-width:1024px) {
-        .phd-page-heading-inner {
-          min-height: 400px;
-          gap: 32px;
-        }
+      /* =========================================================
+         Mandasmitham media gallery
+         ========================================================= */
 
-        .phd-page-title {
-          font-size: 40px;
-        }
-
-        .phd-heading-poster-wrap {
-          flex-basis: 275px;
-          width: 275px;
-        }
-
-        .phd-overview-logo {
-          flex-basis: 100px;
-          width: 100px;
-        }
+      #phd-custom-accordion-v2 .phd-mandasmitham-panel {
+        padding: 24px !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
       }
+
+      .phd-mandasmitham-media { width: 100%; }
+
+      .phd-mandasmitham-media-heading {
+        margin: 0 0 6px;
+        color: #293a5b;
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      .phd-mandasmitham-media-subtitle {
+        margin: 0 0 18px;
+        color: #6a717c;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      /* ---------- Custom video player ---------- */
+
+      .phd-mandasmitham-video-card {
+        position: relative;
+        z-index: 5;
+        width: 100%;
+        margin: 0 0 20px;
+        overflow: hidden;
+        background: #0a0f18;
+        border: 1px solid #e1e6eb;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(24, 40, 71, 0.10);
+        font-family: "Poppins", sans-serif;
+      }
+
+      .phd-video-stage {
+        position: relative;
+        width: 100%;
+        background: #000;
+        line-height: 0;
+      }
+
+      #phd-mandasmitham-video {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 300px;
+        max-height: 560px;
+        margin: 0 !important;
+        background: #000;
+        object-fit: contain;
+        cursor: pointer;
+      }
+
+      .phd-video-bigplay {
+        appearance: none;
+        -webkit-appearance: none;
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: rgba(6, 12, 22, 0.34);
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+      .phd-video-bigplay i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 76px;
+        height: 76px;
+        padding-left: 6px;
+        color: #fff;
+        background: rgba(61, 177, 102, 0.95);
+        border-radius: 50%;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+        font-style: normal;
+        font-size: 26px;
+        line-height: 1;
+      }
+      .phd-mandasmitham-video-card.phd-is-playing .phd-video-bigplay {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .phd-video-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 3;
+        display: none;
+        width: 42px;
+        height: 42px;
+        margin: -21px 0 0 -21px;
+        border: 3px solid rgba(255, 255, 255, 0.28);
+        border-top-color: #3db166;
+        border-radius: 50%;
+        animation: phd-spin 0.9s linear infinite;
+      }
+      .phd-mandasmitham-video-card.phd-is-buffering .phd-video-spinner { display: block; }
+      @keyframes phd-spin { to { transform: rotate(360deg); } }
+
+      .phd-video-controls {
+        position: relative;
+        z-index: 6;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px 12px;
+        background: #101a2b;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .phd-vc-btn {
+        appearance: none;
+        -webkit-appearance: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        box-sizing: border-box;
+        width: 38px;
+        height: 38px;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.10);
+        border: 0;
+        border-radius: 8px;
+        outline: 0;
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1;
+        cursor: pointer;
+        touch-action: manipulation;
+      }
+      .phd-vc-btn:hover, .phd-vc-btn:focus { background: #3db166; }
+      .phd-vc-btn.phd-vc-wide { width: auto; padding: 0 11px; font-size: 12px; font-family: "Poppins", sans-serif; }
+
+      .phd-vc-progress {
+        flex: 1 1 auto;
+        min-width: 60px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        outline: 0;
+        cursor: pointer;
+        touch-action: none;
+      }
+      .phd-vc-track {
+        position: relative;
+        width: 100%;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.22);
+        border-radius: 5px;
+      }
+      .phd-vc-buffer, .phd-vc-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        border-radius: 5px;
+      }
+      .phd-vc-buffer { background: rgba(255, 255, 255, 0.26); }
+      .phd-vc-fill { background: #3db166; }
+      .phd-vc-knob {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 14px;
+        height: 14px;
+        margin: -7px 0 0 -7px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      }
+      .phd-vc-progress:focus .phd-vc-knob { box-shadow: 0 0 0 4px rgba(61, 177, 102, 0.45); }
+
+      .phd-vc-time {
+        flex: 0 0 auto;
+        color: #dfe6ef;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .phd-video-status {
+        display: none;
+        margin: 0 !important;
+        padding: 11px 14px;
+        color: #8a2727;
+        background: #fff2f2;
+        border-top: 1px solid #f1d0d0;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+      .phd-video-status.is-visible { display: block !important; }
+
+      .phd-mandasmitham-video-tools {
+        position: relative;
+        z-index: 6;
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 12px;
+        padding: 10px 12px;
+        background: #ffffff;
+        border-top: 1px solid #e5e9ee;
+      }
+
+      .phd-video-original-link {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        min-height: 38px;
+        padding: 9px 15px;
+        color: #293a5b !important;
+        background: #f4f6f8;
+        border: 1px solid #dfe4e9;
+        border-radius: 7px;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.3;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        touch-action: manipulation;
+      }
+      .phd-video-original-link:hover, .phd-video-original-link:focus {
+        color: #182847 !important;
+        background: #e9eef2;
+      }
+
+      .phd-mandasmitham-video-card:fullscreen,
+      .phd-mandasmitham-video-card:-webkit-full-screen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: #000;
+        border: 0;
+        border-radius: 0;
+      }
+      .phd-mandasmitham-video-card:fullscreen .phd-video-stage,
+      .phd-mandasmitham-video-card:-webkit-full-screen .phd-video-stage {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .phd-mandasmitham-video-card:fullscreen #phd-mandasmitham-video,
+      .phd-mandasmitham-video-card:-webkit-full-screen #phd-mandasmitham-video {
+        max-height: 100vh;
+        height: 100%;
+      }
+      .phd-mandasmitham-video-card:fullscreen .phd-mandasmitham-video-tools,
+      .phd-mandasmitham-video-card:-webkit-full-screen .phd-mandasmitham-video-tools {
+        display: none !important;
+      }
+
+      /* ---------- Thumbnail grid ---------- */
+
+      .phd-mandasmitham-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .phd-mandasmitham-gallery-item {
+        appearance: none;
+        -webkit-appearance: none;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        aspect-ratio: 4 / 3;
+        background: #f4f6f8;
+        border: 1px solid #e2e7ec;
+        border-radius: 10px;
+        outline: 0;
+        box-shadow: 0 5px 16px rgba(24, 40, 71, 0.08);
+        cursor: zoom-in !important;
+        touch-action: manipulation;
+      }
+
+      .phd-mandasmitham-gallery-item img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.25s ease;
+        pointer-events: none;
+      }
+
+      .phd-mandasmitham-gallery-item:hover img,
+      .phd-mandasmitham-gallery-item:focus img { transform: scale(1.035); }
+
+      .phd-mandasmitham-gallery-item:focus {
+        outline: 3px solid rgba(61, 177, 102, 0.30);
+        outline-offset: 2px;
+      }
+
+      /* ---------- Full screen image viewer ---------- */
+
+      #phd-image-viewer {
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 2147483000 !important;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        width: 100vw !important;
+        height: 100vh !important;
+        padding: 18px;
+        background: rgba(4, 9, 18, 0.96);
+      }
+
+      #phd-image-viewer.phd-viewer-open { display: flex !important; }
+
+      .phd-image-viewer-stage {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        touch-action: pan-y;
+      }
+
+      #phd-image-viewer-img {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: calc(100vw - 120px);
+        max-height: calc(100vh - 105px);
+        object-fit: contain;
+        background: #ffffff;
+        border-radius: 7px;
+        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.48);
+        transition: opacity 0.15s ease;
+      }
+      #phd-image-viewer.phd-viewer-loading #phd-image-viewer-img { opacity: 0.25; }
+
+      .phd-viewer-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: none;
+        width: 44px;
+        height: 44px;
+        margin: -22px 0 0 -22px;
+        border: 3px solid rgba(255, 255, 255, 0.25);
+        border-top-color: #3db166;
+        border-radius: 50%;
+        animation: phd-spin 0.9s linear infinite;
+      }
+      #phd-image-viewer.phd-viewer-loading .phd-viewer-spinner { display: block; }
+
+      .phd-viewer-close,
+      .phd-viewer-prev,
+      .phd-viewer-next,
+      .phd-viewer-fullscreen {
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        position: absolute !important;
+        z-index: 2147483001 !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        margin: 0 !important;
+        padding: 0 !important;
+        color: #ffffff !important;
+        background: rgba(20, 35, 59, 0.92) !important;
+        border: 1px solid rgba(255, 255, 255, 0.24) !important;
+        outline: none !important;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.24);
+        cursor: pointer !important;
+        touch-action: manipulation;
+      }
+
+      .phd-viewer-close:hover, .phd-viewer-prev:hover, .phd-viewer-next:hover, .phd-viewer-fullscreen:hover,
+      .phd-viewer-close:focus, .phd-viewer-prev:focus, .phd-viewer-next:focus, .phd-viewer-fullscreen:focus {
+        background: #3db166 !important;
+      }
+
+      .phd-viewer-close {
+        top: 0 !important;
+        right: 0 !important;
+        width: 46px !important;
+        height: 46px !important;
+        border-radius: 50% !important;
+        font-size: 28px !important;
+      }
+
+      .phd-viewer-fullscreen {
+        top: 0 !important;
+        right: 58px !important;
+        min-width: 92px !important;
+        height: 46px !important;
+        padding: 0 13px !important;
+        border-radius: 8px !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+      }
+
+      .phd-viewer-prev, .phd-viewer-next {
+        top: 50% !important;
+        width: 48px !important;
+        height: 58px !important;
+        margin-top: -29px !important;
+        border-radius: 10px !important;
+        font-size: 30px !important;
+      }
+
+      .phd-viewer-prev { left: 0 !important; }
+      .phd-viewer-next { right: 0 !important; }
+
+      .phd-viewer-footer {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        z-index: 2147483001;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        max-width: calc(100% - 130px);
+        padding: 8px 13px;
+        color: #ffffff;
+        background: rgba(20, 35, 59, 0.92);
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        white-space: nowrap;
+      }
+
+      #phd-viewer-original {
+        color: #78e6a1 !important;
+        font-weight: 600;
+        text-decoration: none !important;
+      }
+
+      body.phd-media-viewer-open { overflow: hidden !important; }
+      body.page-id-2039 { overflow-x: hidden; }
+
+      #staff-list-container { box-sizing: border-box; width: 100%; }
+
+      @media (max-width:1024px) {
+        .phd-page-heading-inner { min-height: 400px; gap: 32px; }
+        .phd-page-title { font-size: 40px; }
+        .phd-heading-poster-wrap { flex-basis: 275px; width: 275px; }
+        .phd-overview-logo { flex-basis: 100px; width: 100px; }
+        .phd-mandasmitham-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        #phd-mandasmitham-video { min-height: 260px; max-height: 500px; }
+      }
+
       @media (max-width:767px) {
         .phd-page-heading {
           background:
@@ -198,15 +655,8 @@
           text-align: center;
         }
 
-        .phd-page-heading-copy {
-          width: 100%;
-          max-width: none;
-        }
-
-        .phd-page-eyebrow {
-          margin-bottom: 6px;
-          font-size: 14px;
-        }
+        .phd-page-heading-copy { width: 100%; max-width: none; }
+        .phd-page-eyebrow { margin-bottom: 6px; font-size: 14px; }
 
         .phd-page-heading .phd-page-title {
           color: #ffffff !important;
@@ -215,20 +665,9 @@
           line-height: 1.24;
         }
 
-        .phd-heading-poster-wrap {
-          flex-basis: auto;
-          width: 245px;
-          max-width: 78vw;
-        }
-
-        .phd-heading-poster-link {
-          padding: 5px;
-          border-radius: 12px;
-        }
-
-        .phd-heading-poster {
-          border-radius: 8px;
-        }
+        .phd-heading-poster-wrap { flex-basis: auto; width: 245px; max-width: 78vw; }
+        .phd-heading-poster-link { padding: 5px; border-radius: 12px; }
+        .phd-heading-poster { border-radius: 8px; }
 
         .phd-overview-brand {
           flex-direction: column;
@@ -238,17 +677,8 @@
           text-align: center;
         }
 
-        .phd-overview-logo {
-          flex-basis: auto;
-          width: 92px;
-          padding: 5px;
-        }
-
-        .phd-overview-heading-wrap h3,
-        .phd-special-heading {
-          font-size: 21px;
-          line-height: 1.4;
-        }
+        .phd-overview-logo { flex-basis: auto; width: 92px; padding: 5px; }
+        .phd-overview-heading-wrap h3, .phd-special-heading { font-size: 21px; line-height: 1.4; }
 
         #phd-custom-accordion-v2 .phd-v2-button {
           min-height: 58px;
@@ -257,11 +687,7 @@
           font-size: 14px !important;
         }
 
-        .phd-v2-symbol {
-          flex-basis: 20px;
-          width: 20px;
-          font-size: 20px;
-        }
+        .phd-v2-symbol { flex-basis: 20px; width: 20px; font-size: 20px; }
 
         #phd-custom-accordion-v2 .phd-v2-panel {
           padding: 14px 16px 18px;
@@ -269,22 +695,116 @@
           line-height: 1.7;
         }
 
-        #phd-custom-accordion-v2 .phd-v2-panel ul {
-          padding-left: 19px;
+        #phd-custom-accordion-v2 .phd-v2-panel ul { padding-left: 19px; }
+        #phd-custom-accordion-v2 .phd-mandasmitham-panel { padding: 12px !important; }
+
+        .phd-mandasmitham-media-heading { font-size: 18px; }
+        .phd-mandasmitham-media-subtitle { margin-bottom: 14px; font-size: 13px; }
+
+        .phd-mandasmitham-video-card { margin-bottom: 14px; border-radius: 9px; }
+
+        #phd-mandasmitham-video {
+          min-height: 0;
+          max-height: none;
+          aspect-ratio: 16 / 9;
+        }
+
+        .phd-video-bigplay i { width: 62px; height: 62px; font-size: 22px; }
+
+        .phd-video-controls { gap: 7px; padding: 9px 9px; }
+        .phd-vc-btn { width: 34px; height: 34px; font-size: 14px; }
+        .phd-vc-btn.phd-vc-skip { display: none; }
+        .phd-vc-time { font-size: 11px; }
+
+        .phd-mandasmitham-video-tools { justify-content: stretch; padding: 9px; }
+        .phd-video-original-link { width: 100%; }
+
+        .kingster-breadcrumbs-container,
+        .gdlr-core-container,
+        .gdlr-core-pbf-sidebar-container {
+          max-width: 100% !important;
+          box-sizing: border-box;
+        }
+
+        .gdlr-core-pbf-sidebar-content,
+        .gdlr-core-pbf-sidebar-right,
+        .kingster-sidebar-area {
+          float: none !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+
+        .gdlr-core-pbf-sidebar-content { padding: 22px 0 !important; }
+        .gdlr-core-pbf-sidebar-right, .kingster-sidebar-area { padding: 0 0 28px !important; }
+
+        .gdlr-core-sidebar-item {
+          box-sizing: border-box;
+          padding-left: 14px !important;
+          padding-right: 14px !important;
+        }
+
+        .kingster-sidebar-area .gdlr-core-widget-box-shortcode {
+          box-sizing: border-box;
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+
+        .phd-special-heading { font-size: 20px !important; }
+
+        .phd-mandasmitham-gallery {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 8px !important;
+        }
+
+        .phd-mandasmitham-gallery-item { border-radius: 8px; }
+
+        #staff-list-container { padding: 12px !important; }
+
+        #phd-image-viewer { padding: 8px; }
+
+        #phd-image-viewer-img {
+          max-width: 96vw;
+          max-height: 80vh;
+          border-radius: 5px;
+        }
+
+        .phd-viewer-close {
+          top: 4px !important;
+          right: 4px !important;
+          width: 42px !important;
+          height: 42px !important;
+        }
+
+        .phd-viewer-fullscreen {
+          top: 4px !important;
+          right: 54px !important;
+          min-width: 80px !important;
+          height: 42px !important;
+        }
+
+        .phd-viewer-prev, .phd-viewer-next {
+          top: auto !important;
+          bottom: 48px !important;
+          width: 44px !important;
+          height: 44px !important;
+          margin-top: 0 !important;
+          border-radius: 50% !important;
+        }
+
+        .phd-viewer-prev { left: 6px !important; }
+        .phd-viewer-next { right: 6px !important; }
+
+        .phd-viewer-footer {
+          bottom: 3px;
+          max-width: calc(100% - 18px);
+          font-size: 11px;
         }
       }
 
-
       @media (max-width:480px) {
-        .phd-page-heading-inner {
-          width: calc(100% - 24px);
-          gap: 18px;
-          padding: 30px 0 28px;
-        }
-
-        .phd-page-eyebrow {
-          font-size: 13px;
-        }
+        .phd-page-heading-inner { width: calc(100% - 24px); gap: 18px; padding: 30px 0 28px; }
+        .phd-page-eyebrow { font-size: 13px; }
 
         .phd-page-heading .phd-page-title {
           color: #ffffff !important;
@@ -293,13 +813,49 @@
           line-height: 1.22;
         }
 
-        .phd-heading-poster-wrap {
-          width: 215px;
-          max-width: 80vw;
-        }
+        .phd-heading-poster-wrap { width: 215px; max-width: 80vw; }
+
+        .phd-mandasmitham-gallery { grid-template-columns: 1fr !important; }
+        .phd-mandasmitham-gallery-item { aspect-ratio: 4 / 3; }
+
+        .phd-viewer-fullscreen { display: none !important; }
+        #staff-list-container h2 { font-size: 21px !important; }
       }
-    </style>
-  
+
+      /* ---------- Gallery / viewer hardening (added) ---------- */
+
+      .phd-mandasmitham-gallery-item {
+        position: relative;
+        z-index: 2;
+        cursor: zoom-in !important;
+        pointer-events: auto !important;
+      }
+      .phd-mandasmitham-gallery-item img {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        margin: 0 !important;
+        object-fit: cover !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        pointer-events: none !important;
+      }
+
+      #phd-image-viewer:fullscreen,
+      #phd-image-viewer:-webkit-full-screen {
+        width: 100vw !important;
+        height: 100vh !important;
+        padding: 18px;
+        background: rgba(4, 9, 18, 0.98);
+      }
+      #phd-image-viewer:fullscreen #phd-image-viewer-img,
+      #phd-image-viewer:-webkit-full-screen #phd-image-viewer-img {
+        max-width: calc(100vw - 120px);
+        max-height: calc(100vh - 105px);
+      }
+</style>
+
     <script>
       /*
        * Public Health Dentistry accordion - isolated custom function.
@@ -325,10 +881,7 @@
           }
 
           var currentItem = button.parentElement;
-          if (
-            !currentItem ||
-            !currentItem.classList.contains("phd-v2-item")
-          ) {
+          if (!currentItem || !currentItem.classList.contains("phd-v2-item")) {
             return false;
           }
 
@@ -357,20 +910,27 @@
             currentItem.classList.add("phd-v2-open");
             button.setAttribute("aria-expanded", "true");
 
-            var currentSymbol =
-              button.getElementsByClassName("phd-v2-symbol")[0];
+            var currentSymbol = button.getElementsByClassName("phd-v2-symbol")[0];
 
             if (currentSymbol) {
               currentSymbol.textContent = "−";
             }
           }
 
+          /* Pause the Mandasmitham video whenever its panel gets closed. */
+          if (
+            window.PHDMedia &&
+            typeof window.PHDMedia.pauseVideo === "function" &&
+            !document
+              .getElementById("phd-item-mandasmitham")
+              .classList.contains("phd-v2-open")
+          ) {
+            window.PHDMedia.pauseVideo();
+          }
+
           return false;
         } catch (accordionError) {
-          console.error(
-            "Public Health Dentistry accordion error:",
-            accordionError
-          );
+          console.error("Public Health Dentistry accordion error:", accordionError);
           return false;
         }
       };
@@ -403,36 +963,309 @@
       });
     </script>
 
-  </head>
+    <script>
+      /*
+       * Mandasmitham image viewer.
+       *
+       * Deliberately defined in <head> as a global, so the thumbnails work
+       * through their inline onclick even if a theme script later breaks,
+       * replaces or re-renders any part of the page. A capture phase listener
+       * on document is registered too: it runs BEFORE every theme handler,
+       * so the GoodLayers lightbox / page-builder can never swallow the click.
+       */
+      (function () {
+        "use strict";
+
+        var items = [];
+        var index = 0;
+        var wired = false;
+        var swipeStartX = null;
+
+        function byId(id) { return document.getElementById(id); }
+        function viewer() { return byId("phd-image-viewer"); }
+
+        function collect() {
+          items = Array.prototype.slice.call(
+            document.querySelectorAll(".phd-mandasmitham-gallery-item")
+          );
+          return items;
+        }
+
+        function srcOf(item) {
+          if (!item) return "";
+          var thumb = item.querySelector ? item.querySelector("img") : null;
+          return item.getAttribute("data-full") || (thumb ? thumb.src : "");
+        }
+
+        function stop(event) {
+          if (!event) return;
+          if (event.preventDefault) event.preventDefault();
+          if (event.stopPropagation) event.stopPropagation();
+        }
+
+        /* One time setup: lift the overlay to <body> and hook the image. */
+        function wire() {
+          var v = viewer();
+          if (!v) return null;
+
+          if (!wired) {
+            wired = true;
+
+            if (v.parentNode !== document.body) {
+              document.body.appendChild(v);
+            }
+
+            var img = byId("phd-image-viewer-img");
+            if (img) {
+              img.addEventListener("load", function () {
+                v.classList.remove("phd-viewer-loading");
+              });
+              img.addEventListener("error", function () {
+                v.classList.remove("phd-viewer-loading");
+              });
+            }
+
+            var stage = byId("phd-image-viewer-stage");
+            if (stage) {
+              stage.addEventListener("touchstart", function (e) {
+                swipeStartX = e.changedTouches[0].clientX;
+              }, { passive: true });
+
+              stage.addEventListener("touchend", function (e) {
+                if (swipeStartX === null) return;
+                var dx = e.changedTouches[0].clientX - swipeStartX;
+                if (Math.abs(dx) > 50) { render(index + (dx < 0 ? 1 : -1)); }
+                swipeStartX = null;
+              }, { passive: true });
+            }
+          }
+
+          return v;
+        }
+
+        function render(next) {
+          collect();
+          var total = items.length;
+          if (!total) return;
+
+          index = ((next % total) + total) % total;
+
+          var item = items[index];
+          var thumb = item.querySelector("img");
+          var src = srcOf(item);
+          var v = viewer();
+          var img = byId("phd-image-viewer-img");
+          var counter = byId("phd-viewer-counter");
+          var original = byId("phd-viewer-original");
+
+          if (v) v.classList.add("phd-viewer-loading");
+          if (img) {
+            img.src = src;
+            img.alt = thumb ? thumb.alt : "Mandasmitham gallery image";
+          }
+          if (counter) counter.textContent = (index + 1) + " / " + total;
+          if (original) original.href = src;
+
+          /* Warm the neighbours so left / right feels instant. */
+          [index + 1, index - 1].forEach(function (i) {
+            var j = ((i % total) + total) % total;
+            var pre = new Image();
+            pre.src = srcOf(items[j]);
+          });
+        }
+
+        function fullscreenElement() {
+          return document.fullscreenElement || document.webkitFullscreenElement || null;
+        }
+
+        function enterFullscreen(el) {
+          if (!el || fullscreenElement()) return;
+          try {
+            if (el.requestFullscreen) {
+              var p = el.requestFullscreen();
+              if (p && p.catch) p.catch(function () {});
+            } else if (el.webkitRequestFullscreen) {
+              el.webkitRequestFullscreen();
+            }
+          } catch (e) { /* overlay alone is already full viewport */ }
+        }
+
+        function exitFullscreen() {
+          if (!fullscreenElement()) return;
+          try {
+            if (document.exitFullscreen) {
+              var p = document.exitFullscreen();
+              if (p && p.catch) p.catch(function () {});
+            } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+            }
+          } catch (e) {}
+        }
+
+        var PHDGallery = {
+          open: function (element, event) {
+            stop(event);
+
+            var v = wire();
+            collect();
+
+            /* Last resort: no overlay in the DOM, so just open the file. */
+            if (!v || !items.length) {
+              if (element) window.open(srcOf(element), "_blank");
+              return false;
+            }
+
+            var i = items.indexOf(element);
+            if (i < 0) {
+              i = parseInt(element && element.getAttribute("data-phd-gallery-index"), 10);
+              if (isNaN(i)) i = 0;
+            }
+
+            render(i);
+
+            v.classList.add("phd-viewer-open");
+            v.setAttribute("aria-hidden", "false");
+            document.body.classList.add("phd-media-viewer-open");
+
+            if (window.PHDMedia && window.PHDMedia.pauseVideo) {
+              window.PHDMedia.pauseVideo();
+            }
+
+            enterFullscreen(v);
+
+            var closeBtn = byId("phd-viewer-close");
+            if (closeBtn) { try { closeBtn.focus(); } catch (e) {} }
+
+            return false;
+          },
+
+          close: function (event) {
+            stop(event);
+
+            var v = viewer();
+            var img = byId("phd-image-viewer-img");
+
+            if (v) {
+              v.classList.remove("phd-viewer-open");
+              v.classList.remove("phd-viewer-loading");
+              v.setAttribute("aria-hidden", "true");
+            }
+            if (img) img.removeAttribute("src");
+
+            document.body.classList.remove("phd-media-viewer-open");
+            exitFullscreen();
+
+            if (items[index]) { try { items[index].focus(); } catch (e) {} }
+            return false;
+          },
+
+          prev: function (event) { stop(event); render(index - 1); return false; },
+          next: function (event) { stop(event); render(index + 1); return false; },
+
+          toggleFullscreen: function (event) {
+            stop(event);
+            if (fullscreenElement()) { exitFullscreen(); } else { enterFullscreen(viewer()); }
+            return false;
+          },
+
+          /* Clicking the dark background closes; clicking the photo does not. */
+          backdrop: function (event) {
+            var v = viewer();
+            var stage = byId("phd-image-viewer-stage");
+            if (event && (event.target === v || event.target === stage)) {
+              return PHDGallery.close(event);
+            }
+            return false;
+          },
+
+          isOpen: function () {
+            var v = viewer();
+            return Boolean(v && v.classList.contains("phd-viewer-open"));
+          }
+        };
+
+        window.PHDGallery = PHDGallery;
+
+        /* Capture phase: fires before any theme handler can cancel the click. */
+        document.addEventListener("click", function (event) {
+          var target = event.target;
+          if (!target) return;
+
+          var item = null;
+          if (target.closest) {
+            item = target.closest(".phd-mandasmitham-gallery-item");
+          } else {
+            var node = target;
+            while (node && node !== document) {
+              if (node.className &&
+                  String(node.className).indexOf("phd-mandasmitham-gallery-item") !== -1) {
+                item = node;
+                break;
+              }
+              node = node.parentNode;
+            }
+          }
+
+          if (!item) return;
+
+          event.preventDefault();
+          event.stopPropagation();
+          if (typeof event.stopImmediatePropagation === "function") {
+            event.stopImmediatePropagation();
+          }
+
+          PHDGallery.open(item, null);
+        }, true);
+
+        /* Keyboard: Esc closes, arrows move. */
+        document.addEventListener("keydown", function (event) {
+          if (!PHDGallery.isOpen()) return;
+          if (event.key === "Escape")     { event.preventDefault(); PHDGallery.close(event); }
+          if (event.key === "ArrowLeft")  { event.preventDefault(); PHDGallery.prev(event); }
+          if (event.key === "ArrowRight") { event.preventDefault(); PHDGallery.next(event); }
+        });
+
+        /* Number the thumbnails once the DOM is ready. */
+        function numberItems() {
+          collect();
+          items.forEach(function (item, i) {
+            item.setAttribute("data-phd-gallery-index", i);
+          });
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", numberItems);
+        } else {
+          numberItems();
+        }
+      })();
+    </script>
+
+</head>
+
+<body class="home page-template-default page page-id-2039 gdlr-core-body woocommerce-no-js tribe-no-js kingster-body kingster-body-front kingster-full  kingster-with-sticky-navigation  kingster-blockquote-style-1 gdlr-core-link-to-lightbox">
+
   <a
     href="https://api.whatsapp.com/send?phone=7034555514"
     target="_blank"
+    rel="noopener noreferrer"
     class="floating-button"
   >
     <img src="upload/wsup-logo.png" alt="WhatsApp Logo" class="whatsapp-logo" />
   </a>
 
-<body class="home page-template-default page page-id-2039 gdlr-core-body woocommerce-no-js tribe-no-js kingster-body kingster-body-front kingster-full  kingster-with-sticky-navigation  kingster-blockquote-style-1 gdlr-core-link-to-lightbox">
   <div class="kingster-mobile-header-wrap">
     <div
       class="kingster-mobile-header kingster-header-background kingster-style-slide kingster-sticky-mobile-navigation"
       id="kingster-mobile-header"
     >
-      <div
-        class="kingster-mobile-header-container kingster-container clearfix"
-      >
+      <div class="kingster-mobile-header-container kingster-container clearfix">
         <div class="kingster-logo kingster-item-pdlr">
           <div class="kingster-logo-inner">
-            <a class="" href="index.html"
-              ><img src="upload/logo.png" alt=""
-            /></a>
+            <a class="" href="index.html"><img src="upload/logo.png" alt="" /></a>
           </div>
         </div>
           <div class="kingster-mobile-menu-right">
-            <div
-              class="kingster-main-menu-search"
-              id="kingster-mobile-top-search"
-            >
+            <div class="kingster-main-menu-search" id="kingster-mobile-top-search">
               <i class="fa fa-search"></i>
             </div>
             <div class="kingster-top-search-wrap">
@@ -480,19 +1313,13 @@
                       <a href="/about-us.html">About Us: Overview</a>
                     </li>
                     <li class="menu-item">
-                      <a href="act-and-statutes-or-moa.html"
-                        >Act and Statutes or MOA</a
-                      >
+                      <a href="act-and-statutes-or-moa.html">Act and Statutes or MOA</a>
                     </li>
                     <li class="menu-item">
-                      <a href="institutional-development-plan.html"
-                        >Institutional Development Plan</a
-                      >
+                      <a href="institutional-development-plan.html">Institutional Development Plan</a>
                     </li>
                     <li class="menu-item menu-item-has-children">
-                      <a class="sf-with-ul-pre"
-                        >Accreditation/Ranking Status</a
-                      >
+                      <a class="sf-with-ul-pre">Accreditation/Ranking Status</a>
                       <ul class="sub-menu">
                           <li class="menu-item">
                             <a href="naac.html">NAAC</a>
@@ -512,15 +1339,14 @@
                         </ul>
                     </li>
                     <li class="menu-item">
-                      <a href="recognition-approval.html"
-                        >Recognition/Approval</a
-                      >
+                      <a href="recognition-approval.html">Recognition/Approval</a>
                     </li>
                     <li class="menu-item menu-item-has-children">
                         <a class="sf-with-ul-pre">Institutional Details</a>
                         <ul class="sub-menu">
                           <li class="menu-item">
-<a href="faculty-pg-details.html">Faculty/PG Details</a>                          </li>
+                            <a href="faculty-pg-details.html">Faculty/PG Details</a>
+                          </li>
                           <li class="menu-item">
                             <a href="faculty-pg-biometrics.html">Faculty/PG Biometrics</a>
                           </li>
@@ -531,9 +1357,8 @@
                             <a href="ip-details.html">IP Details</a>
                           </li>
                           <li class="menu-item">
-<a href="major-clinical-procedures.html">
-    Major Clinical Procedures
-  </a>                          </li>
+                            <a href="major-clinical-procedures.html">Major Clinical Procedures</a>
+                          </li>
                         </ul>
                       </li>
                     <li class="menu-item">
@@ -548,9 +1373,7 @@
                   <a>Administration</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="/about-us.html#board-of-directors"
-                        >Board of Management</a
-                      >
+                      <a href="/about-us.html#board-of-directors">Board of Management</a>
                     </li>
                     <li class="menu-item">
                       <a href="/about-us.html#principal-message">Principal</a>
@@ -559,24 +1382,16 @@
                       <a href="finance-officer.html">Finance Officer</a>
                     </li>
                   <!-- <li class="menu-item">
-                      <a href="controller-of-examination.html"
-                        >Controller of Examination</a
-                      >
+                      <a href="controller-of-examination.html">Controller of Examination</a>
                     </li>
                     <li class="menu-item">
-                      <a href="chief-vigilance-officer.html"
-                        >Chief Vigilance Officer</a
-                      >
+                      <a href="chief-vigilance-officer.html">Chief Vigilance Officer</a>
                     </li> -->
                     <li class="menu-item">
-                      <a href="internal-complaint-committee.html"
-                        >Internal Complaint Committee</a
-                      >
+                      <a href="internal-complaint-committee.html">Internal Complaint Committee</a>
                     </li>
                     <li class="menu-item">
-                      <a href="academic-leadership.html"
-                        >Academic Leadership</a
-                      >
+                      <a href="academic-leadership.html">Academic Leadership</a>
                     </li>
                   </ul>
                 </li>
@@ -587,17 +1402,13 @@
                       <a>Academic Programs</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a>UG & PG</a>
+                          <a>UG &amp; PG</a>
                           <ul>
                             <li class="menu-item">
-                              <a href="bachelor-of-dental-surgery.html"
-                                >BDS(Bachelor Dental Surgery)</a
-                              >
+                              <a href="bachelor-of-dental-surgery.html">BDS(Bachelor Dental Surgery)</a>
                             </li>
                             <li class="menu-item">
-                              <a href="master-of-dental-surgery.html"
-                                >MDS(Master Dental Surgery)</a
-                              >
+                              <a href="master-of-dental-surgery.html">MDS(Master Dental Surgery)</a>
                             </li>
                           </ul>
                         </li>
@@ -605,36 +1416,23 @@
                           <a>Diploma</a>
                           <ul>
                              <li class="menu-item">
-                              <a href="dora.html"
-                                >Dental Operating <br/> Room Assistant (DORA)</a
-                              >
+                              <a href="dora.html">Dental Operating <br/> Room Assistant (DORA)</a>
                             </li>
                             <li class="menu-item">
-                              <a href="dental-mechanic.html"
-                                >Dental Mechanic (DM)</a
-                              >
+                              <a href="dental-mechanic.html">Dental Mechanic (DM)</a>
                             </li>
                              <li class="menu-item">
-                              <a href="dental-hygienist.html"
-                                >Dental Hygienist (DH)</a
-                              >
+                              <a href="dental-hygienist.html">Dental Hygienist (DH)</a>
                             </li>
                           </ul>
                         </li>
                       </ul>
                     </li>
                     <li class="menu-item">
-                      <a
-                        href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf"
-                        target="_blank"
-                        >Academic Calendar</a
-                      >
+                      <a href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf" target="_blank">Academic Calendar</a>
                     </li>
                  <!-- <li class="menu-item">
-                      <a href="/assets/ACADEMICPROSPECTS.pdf" target="_blank"
-                        >Ordinances pertaining to
-                        <br />Academics/Examinations</a
-                      >
+                      <a href="/assets/ACADEMICPROSPECTS.pdf" target="_blank">Ordinances pertaining to <br />Academics/Examinations</a>
                     </li> -->
                     <li class="menu-item menu-item-has-children">
                       <a class="sf-with-ul-pre">Departments</a>
@@ -642,139 +1440,51 @@
                         <li class="menu-item menu-item-has-children">
                           <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
-                            <li class="menu-item">
-                              <a href="anatomy.html">Anatomy</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="physiology.html">Physiology</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="biochemistry.html">Biochemistry</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="general-pathology.html"
-                                >General Pathology</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="general-microbiology.html"
-                                >General Microbiology</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="pharmacology.html">Pharmacology</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="general-medicine.html"
-                                >General Medicine</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="general-surgery.html"
-                                >General Surgery</a
-                              >
-                            </li>
+                            <li class="menu-item"><a href="anatomy.html">Anatomy</a></li>
+                            <li class="menu-item"><a href="physiology.html">Physiology</a></li>
+                            <li class="menu-item"><a href="biochemistry.html">Biochemistry</a></li>
+                            <li class="menu-item"><a href="general-pathology.html">General Pathology</a></li>
+                            <li class="menu-item"><a href="general-microbiology.html">General Microbiology</a></li>
+                            <li class="menu-item"><a href="pharmacology.html">Pharmacology</a></li>
+                            <li class="menu-item"><a href="general-medicine.html">General Medicine</a></li>
+                            <li class="menu-item"><a href="general-surgery.html">General Surgery</a></li>
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
                           <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
-                            <li class="menu-item">
-                              <a href="oral-pathology.html"
-                                >Oral Pathology and Microbiology</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="public-health.html"
-                                >Public Health Dentistry</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="periodontology.html">Periodontology</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="oral-medicine-and-radiology.html"
-                                >Oral Medicine and Radiology</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="orthodontics.html"
-                                >Orthodontics & Dentofacial Orthopaedics</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral & Maxillofacial Surgery</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a
-                                href="conservative-dentistry-&-edodontics.html"
-                                >Conservative Dentistry & Endodontics</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="prosthodontic.html"
-                                >Prosthodontics & Crown and Bridge</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="pedodontics.html"
-                                >Pedodontics & Preventive Dentistry</a
-                              >
-                            </li>
+                            <li class="menu-item"><a href="oral-pathology.html">Oral Pathology and Microbiology</a></li>
+                            <li class="menu-item"><a href="public-health.html">Public Health Dentistry</a></li>
+                            <li class="menu-item"><a href="periodontology.html">Periodontology</a></li>
+                            <li class="menu-item"><a href="oral-medicine-and-radiology.html">Oral Medicine and Radiology</a></li>
+                            <li class="menu-item"><a href="orthodontics.html">Orthodontics &amp; Dentofacial Orthopaedics</a></li>
+                            <li class="menu-item"><a href="oral-and-maxilofacial-surgery.html">Oral &amp; Maxillofacial Surgery</a></li>
+                            <li class="menu-item"><a href="conservative-dentistry-&amp;-edodontics.html">Conservative Dentistry &amp; Endodontics</a></li>
+                            <li class="menu-item"><a href="prosthodontic.html">Prosthodontics &amp; Crown and Bridge</a></li>
+                            <li class="menu-item"><a href="pedodontics.html">Pedodontics &amp; Preventive Dentistry</a></li>
                           </ul>
                         </li>
                       </ul>
                     </li>
                     <li class="menu-item">
-                      <a href="naac.html#quick-links-section"
-                        >Internal Quality Assurance Cell (IQAC)</a
-                      >
+                      <a href="naac.html#quick-links-section">Internal Quality Assurance Cell (IQAC)</a>
                     </li>
-                    <li class="menu-item">
-                      <a href="library.html">Library</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="academic-collaborations.html"
-                        >Academic Collaborations</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="feedbacks.html">Feedbacks</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="journals.html">Journals</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="admission.html">Admission</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="code-of-conduct.html">Code of Conduct</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="facilities.html">Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="awards.html">Awards</a>
-                    </li>
+                    <li class="menu-item"><a href="library.html">Library</a></li>
+                    <li class="menu-item"><a href="academic-collaborations.html">Academic Collaborations</a></li>
+                    <li class="menu-item"><a href="feedbacks.html">Feedbacks</a></li>
+                    <li class="menu-item"><a href="journals.html">Journals</a></li>
+                    <li class="menu-item"><a href="admission.html">Admission</a></li>
+                    <li class="menu-item"><a href="code-of-conduct.html">Code of Conduct</a></li>
+                    <li class="menu-item"><a href="facilities.html">Facilities</a></li>
+                    <li class="menu-item"><a href="awards.html">Awards</a></li>
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
-                  <a>Admission & Fee</a>
+                  <a>Admission &amp; Fee</a>
                   <ul class="sub-menu">
-                    <li class="menu-item">
-                      <a href="prospectus.html">Prospectus</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="dept-of-admission.html"
-                        >Department of Admission</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="admission.html"
-                        >Admission Process And Guidelines</a
-                      >
-                    </li>
+                    <li class="menu-item"><a href="prospectus.html">Prospectus</a></li>
+                    <li class="menu-item"><a href="dept-of-admission.html">Department of Admission</a></li>
+                    <li class="menu-item"><a href="admission.html">Admission Process And Guidelines</a></li>
                     <!-- <li class="menu-item">
                       <a href="fee-refund-policy.html">Fee Refund Policy</a>
                     </li> -->
@@ -783,92 +1493,41 @@
                 <li class="menu-item menu-item-has-children">
                   <a>Research</a>
                   <ul class="sub-menu">
-                    <li class="menu-item">
-                      <a href="research-and-development.html"
-                        >Research and Development Cell</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="incubation-center.html"
-                        >Incubation Center / Start-ups / Entrepreneurship
-                        Cell</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="central-facilities.html">Central Facilities</a>
-                    </li>
+                    <li class="menu-item"><a href="research-and-development.html">Research and Development Cell</a></li>
+                    <li class="menu-item"><a href="incubation-center.html">Incubation Center / Start-ups / Entrepreneurship Cell</a></li>
+                    <li class="menu-item"><a href="central-facilities.html">Central Facilities</a></li>
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
                   <a>Student Life</a>
                   <ul class="sub-menu">
-                    <li class="menu-item">
-                        <a href="sports-facilities.html">Sports Facilities</a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="clubs.html">Clubs</a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="mdcrc-scholarship.html">Scholarships</a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="nss-activities.html">NSS</a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="hostel-details.html">Hostel Details</a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="students-union.html">Students Union</a>
-                      </li>
-                    <li class="menu-item">
-                      <a href="placement-cell-and-activities.html"
-                        >Placement Cell and Activities</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="index.html#grievance-redressal-cell"
-                        >Student Grievance Redressal Committee (SGRC)</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="health-facilities.html">Health Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="internal-complaint-committee.html"
-                        >Internal Complaint Committee</a
-                      >
-                    </li>
-                     <li class="menu-item" data-size="60">
-                          <a href="women-cell.html">Women Cell</a>
-                        </li>
-                    <li class="menu-item">
-                      <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
-                    </li>
+                    <li class="menu-item"><a href="sports-facilities.html">Sports Facilities</a></li>
+                    <li class="menu-item"><a href="clubs.html">Clubs</a></li>
+                    <li class="menu-item"><a href="mdcrc-scholarship.html">Scholarships</a></li>
+                    <li class="menu-item"><a href="nss-activities.html">NSS</a></li>
+                    <li class="menu-item"><a href="hostel-details.html">Hostel Details</a></li>
+                    <li class="menu-item"><a href="students-union.html">Students Union</a></li>
+                    <li class="menu-item"><a href="placement-cell-and-activities.html">Placement Cell and Activities</a></li>
+                    <li class="menu-item"><a href="index.html#grievance-redressal-cell">Student Grievance Redressal Committee (SGRC)</a></li>
+                    <li class="menu-item"><a href="health-facilities.html">Health Facilities</a></li>
+                    <li class="menu-item"><a href="internal-complaint-committee.html">Internal Complaint Committee</a></li>
+                    <li class="menu-item" data-size="60"><a href="women-cell.html">Women Cell</a></li>
+                    <li class="menu-item"><a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a></li>
                        <!-- <li class="menu-item">
-                      <a href="equal-opportunity-cell.html"
-                        >Equal Opportunity Cell</a
-                      >
+                      <a href="equal-opportunity-cell.html">Equal Opportunity Cell</a>
                     </li> -->
                    <!-- <li class="menu-item">
-                      <a
-                        href="socio-economically-disadvantaged-groups-cell.html"
-                        >Socio-Economically Disadvantaged Groups Cell
-                        (SEDG)</a
-                      >
+                      <a href="socio-economically-disadvantaged-groups-cell.html">Socio-Economically Disadvantaged Groups Cell (SEDG)</a>
                     </li>
                     <li class="menu-item">
-                      <a href="facilities-for-differently-abled.html"
-                        >Facilities for Differently-Abled</a
-                      >
+                      <a href="facilities-for-differently-abled.html">Facilities for Differently-Abled</a>
                     </li> -->
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
                   <a>Alumni</a>
                   <ul class="sub-menu">
-                    <li class="menu-item">
-                      <a href="alumni.html">Alumni Association</a>
-                    </li>
+                    <li class="menu-item"><a href="alumni.html">Alumni Association</a></li>
                   </ul>
                 </li>
                 <li class="menu-item menu-item-has-children">
@@ -877,51 +1536,22 @@
                     <!-- <li class="menu-item">
                       <a href="rti.html">RTI</a>
                     </li> -->
-                    <li class="menu-item">
-                      <a href="circulars-and-notices.html"
-                        >Circulars and Notices</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="mass-media.html"
-                        >MDC in Mass Media</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="announcements.html">Announcements</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="/index.html#newsletterColumn">Newsletters</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="satelite-clinic.html">Satellite Clinic</a>
-                    </li>
-                     <li class="menu-item">
-                      <a href="news-page.html"
-                        >News & Achievements</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="events.html"
-                        >Recent Events</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="careers.html">Job Openings</a>
-                    </li>
+                    <li class="menu-item"><a href="circulars-and-notices.html">Circulars and Notices</a></li>
+                    <li class="menu-item"><a href="mass-media.html">MDC in Mass Media</a></li>
+                    <li class="menu-item"><a href="announcements.html">Announcements</a></li>
+                    <li class="menu-item"><a href="/index.html#newsletterColumn">Newsletters</a></li>
+                    <li class="menu-item"><a href="satelite-clinic.html">Satellite Clinic</a></li>
+                    <li class="menu-item"><a href="news-page.html">News &amp; Achievements</a></li>
+                    <li class="menu-item"><a href="events.html">Recent Events</a></li>
+                    <li class="menu-item"><a href="careers.html">Job Openings</a></li>
                     <!-- <li class="menu-item">
-                      <a href="reservation-roaster.html"
-                        >Reservation Roaster</a
-                      >
+                      <a href="reservation-roaster.html">Reservation Roaster</a>
                     </li>
                     <li class="menu-item">
                       <a href="study-in-india.html">Study in India</a>
                     </li>
                     <li class="menu-item">
-                      <a href="admission.html"
-                        >Admission Procedure and Facilities Provided to
-                        International Students</a
-                      >
+                      <a href="admission.html">Admission Procedure and Facilities Provided to International Students</a>
                     </li> -->
                   </ul>
                 </li>
@@ -974,10 +1604,7 @@
     >
       <div class="kingster-header-background"></div>
       <div class="kingster-header-container kingster-container">
-        <div
-          style="display: flex; align-items: center"
-          class="kingster-header-container-inner"
-        >
+        <div style="display: flex; align-items: center" class="kingster-header-container-inner">
           <div class="kingster-logo kingster-item-pdlr">
             <div class="kingster-logo-inner">
               <a class="" href="index.html">
@@ -988,83 +1615,53 @@
           <div class="kingster-navigation kingster-item-pdlr clearfix">
             <div class="kingster-main-menu" id="kingster-main-menu">
               <ul id="menu-main-navigation-1" class="sf-menu">
-                <li
-                  class="menu-item menu-item-home menu-item-has-children"
-                >
+                <li class="menu-item menu-item-home menu-item-has-children">
                   <a href="index.html">Home</a>
                 </li>
-                <li
-                  class="menu-item menu-item-home menu-item-has-children kingster-normal-menu"
-                >
+                <li class="menu-item menu-item-home menu-item-has-children kingster-normal-menu">
                   <a class="sf-with-ul-pre">About HEI</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
                       <a href="/about-us.html">About Us: Overview</a>
                     </li>
                     <li class="menu-item">
-                      <a href="act-and-statutes-or-moa.html"
-                        >Act and Statutes or MOA</a
-                      >
+                      <a href="act-and-statutes-or-moa.html">Act and Statutes or MOA</a>
                     </li>
                     <li class="menu-item">
-                      <a href="institutional-development-plan.html"
-                        >Institutional Development Plan</a
-                      >
+                      <a href="institutional-development-plan.html">Institutional Development Plan</a>
                     </li>
-                    <li
-                      class="menu-item menu-item-has-children"
-                      data-size="60"
-                    >
-                      <a class="sf-with-ul-pre"
-                        >Accreditation/Ranking Status</a
-                      >
+                    <li class="menu-item menu-item-has-children" data-size="60">
+                      <a class="sf-with-ul-pre">Accreditation/Ranking Status</a>
                       <ul class="sub-menu">
                          <b>
                               <li class="menu-item" data-size="60">
                                 <a href="naac.html">NAAC</a>
                               </li>
                               <li class="menu-item" data-size="60">
-                                <a
-                                  href="NAAC_Files/NIRF/NIRF_2026.pdf"
-                                  target="_blank"
-                                  >NIRF 2026</a
-                                >
+                                <a href="NAAC_Files/NIRF/NIRF_2026.pdf" target="_blank">NIRF 2026</a>
                               </li>
                               <li class="menu-item" data-size="60">
-                                <a
-                                  href="NAAC_Files/NIRF/NIRF_2025.pdf"
-                                  target="_blank"
-                                  >NIRF 2025</a
-                                >
+                                <a href="NAAC_Files/NIRF/NIRF_2025.pdf" target="_blank">NIRF 2025</a>
                               </li>
                               <li class="menu-item" data-size="60">
-                                <a
-                                  href="NAAC_Files/NIRF/NIRF_2023.pdf"
-                                  target="_blank"
-                                  >NIRF 2023</a
-                                >
+                                <a href="NAAC_Files/NIRF/NIRF_2023.pdf" target="_blank">NIRF 2023</a>
                               </li>
                               <li class="menu-item" data-size="60">
-                                <a
-                                  href="NAAC_Files/NIRF/NIRF_2022.pdf"
-                                  target="_blank"
-                                  >NIRF 2022</a
-                                >
+                                <a href="NAAC_Files/NIRF/NIRF_2022.pdf" target="_blank">NIRF 2022</a>
                               </li></b
                             >
                       </ul>
                     </li>
 
                     <li class="menu-item">
-                      <a href="recognition-approval.html"
-                        >Recognition/Approval</a
-                      >
+                      <a href="recognition-approval.html">Recognition/Approval</a>
                     </li>
                     <li class="menu-item menu-item-has-children">
                         <a class="sf-with-ul-pre">Institutional Details</a>
                         <ul class="sub-menu">
                           <li class="menu-item">
-<a href="faculty-pg-details.html">Faculty/PG Details</a>                          </li>
+                            <a href="faculty-pg-details.html">Faculty/PG Details</a>
+                          </li>
                           <li class="menu-item">
                             <a href="faculty-pg-biometrics.html">Faculty/PG Biometrics</a>
                           </li>
@@ -1075,9 +1672,8 @@
                             <a href="ip-details.html">IP Details</a>
                           </li>
                           <li class="menu-item">
-<a href="major-clinical-procedures.html">
-    Major Clinical Procedures
-  </a>                          </li>
+                            <a href="major-clinical-procedures.html">Major Clinical Procedures</a>
+                          </li>
                         </ul>
                       </li>
                     <li class="menu-item">
@@ -1088,17 +1684,11 @@
                     </li> -->
                   </ul>
                 </li>
-                <li
-                  class="menu-item menu-item-home menu-item-has-children kingster-normal-menu"
-                >
-                  <a href="about-us.html" class="sf-with-ul-pre"
-                    >Administration</a
-                  >
+                <li class="menu-item menu-item-home menu-item-has-children kingster-normal-menu">
+                  <a href="about-us.html" class="sf-with-ul-pre">Administration</a>
                   <ul class="sub-menu">
                     <li class="menu-item">
-                      <a href="/about-us.html#board-of-directors"
-                        >Board of Management</a
-                      >
+                      <a href="/about-us.html#board-of-directors">Board of Management</a>
                     </li>
                     <li class="menu-item">
                       <a href="/about-us.html#principal-message">Principal</a>
@@ -1107,55 +1697,36 @@
                       <a href="finance-officer.html">Finance Officer</a>
                     </li>
                   <!-- <li class="menu-item">
-                      <a href="controller-of-examination.html"
-                        >Controller of Examination</a
-                      >
+                      <a href="controller-of-examination.html">Controller of Examination</a>
                     </li>
                     <li class="menu-item">
-                      <a href="chief-vigilance-officer.html"
-                        >Chief Vigilance Officer</a
-                      >
+                      <a href="chief-vigilance-officer.html">Chief Vigilance Officer</a>
                     </li> -->
                     <li class="menu-item">
-                      <a href="internal-complaint-committee.html"
-                        >Internal Complaint Committee</a
-                      >
+                      <a href="internal-complaint-committee.html">Internal Complaint Committee</a>
                     </li>
                     <li class="menu-item">
-                      <a href="academic-leadership.html"
-                        >Academic Leadership</a
-                      >
+                      <a href="academic-leadership.html">Academic Leadership</a>
                     </li>
                   </ul>
                 </li>
-                <li
-                  class="menu-item current-menu-item menu-item-has-children kingster-normal-menu"
-                >
+                <li class="menu-item current-menu-item menu-item-has-children kingster-normal-menu">
                   <a class="sf-with-ul-pre">Academics</a>
                   <ul class="sub-menu">
                     <li class="menu-item" data-size="60">
-                      <a href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf"
-                        >Academic Calendar</a
-                      >
+                      <a href="/assets/MDCRC 2024 ACADEMIC CALENDER.pdf">Academic Calendar</a>
                     </li>
-                    <li
-                      class="menu-item menu-item-has-children"
-                      data-size="60"
-                    >
+                    <li class="menu-item menu-item-has-children" data-size="60">
                       <a class="sf-with-ul-pre">Academic Programs</a>
                       <ul class="sub-menu">
                         <li class="menu-item menu-item-has-children">
-                          <a class="sf-with-ul-pre">UG & PG</a>
+                          <a class="sf-with-ul-pre">UG &amp; PG</a>
                           <ul>
                             <li class="menu-item">
-                              <a href="bachelor-of-dental-surgery.html"
-                                >BDS(Bachelor Dental Surgery)</a
-                              >
+                              <a href="bachelor-of-dental-surgery.html">BDS(Bachelor Dental Surgery)</a>
                             </li>
                             <li class="menu-item">
-                              <a href="master-of-dental-surgery.html"
-                                >MDS(Master Dental Surgery)</a
-                              >
+                              <a href="master-of-dental-surgery.html">MDS(Master Dental Surgery)</a>
                             </li>
                           </ul>
                         </li>
@@ -1163,29 +1734,20 @@
                           <a class="sf-with-ul-pre">Diploma</a>
                           <ul>
                              <li class="menu-item">
-                              <a href="dora.html"
-                                >Dental Operating <br/> Room Assistant (DORA)</a
-                              >
+                              <a href="dora.html">Dental Operating <br/> Room Assistant (DORA)</a>
                             </li>
                             <li class="menu-item">
-                              <a href="dental-mechanic.html"
-                                >Dental Mechanic (DM)</a
-                              >
+                              <a href="dental-mechanic.html">Dental Mechanic (DM)</a>
                             </li>
                              <li class="menu-item">
-                              <a href="dental-hygienist.html"
-                                >Dental Hygienist (DH)</a
-                              >
+                              <a href="dental-hygienist.html">Dental Hygienist (DH)</a>
                             </li>
                           </ul>
                         </li>
                       </ul>
                     </li>
                  <!-- <li class="menu-item">
-                      <a href="/assets/ACADEMICPROSPECTS.pdf" target="_blank"
-                        >Ordinances pertaining to
-                        <br />Academics/Examinations</a
-                      >
+                      <a href="/assets/ACADEMICPROSPECTS.pdf" target="_blank">Ordinances pertaining to <br />Academics/Examinations</a>
                     </li> -->
                     <li class="menu-item menu-item-has-children">
                       <a class="sf-with-ul-pre">Departments</a>
@@ -1193,300 +1755,122 @@
                         <li class="menu-item menu-item-has-children">
                           <a class="sf-with-ul-pre">Basic Science Departments</a>
                           <ul class="sub-menu">
-                            <li class="menu-item">
-                              <a href="anatomy.html">Anatomy</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="physiology.html">Physiology</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="biochemistry.html">Biochemistry</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="general-pathology.html"
-                                >General Pathology</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="general-microbiology.html"
-                                >General Microbiology</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="pharmacology.html">Pharmacology</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="general-medicine.html"
-                                >General Medicine</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="general-surgery.html"
-                                >General Surgery</a
-                              >
-                            </li>
+                            <li class="menu-item"><a href="anatomy.html">Anatomy</a></li>
+                            <li class="menu-item"><a href="physiology.html">Physiology</a></li>
+                            <li class="menu-item"><a href="biochemistry.html">Biochemistry</a></li>
+                            <li class="menu-item"><a href="general-pathology.html">General Pathology</a></li>
+                            <li class="menu-item"><a href="general-microbiology.html">General Microbiology</a></li>
+                            <li class="menu-item"><a href="pharmacology.html">Pharmacology</a></li>
+                            <li class="menu-item"><a href="general-medicine.html">General Medicine</a></li>
+                            <li class="menu-item"><a href="general-surgery.html">General Surgery</a></li>
                           </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
                           <a class="sf-with-ul-pre">Dental Departments</a>
                           <ul class="sub-menu">
-                            <li class="menu-item">
-                              <a href="oral-pathology.html"
-                                >Oral Pathology and Microbiology</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="public-health.html"
-                                >Public Health Dentistry</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="periodontology.html">Periodontology</a>
-                            </li>
-                            <li class="menu-item">
-                              <a href="oral-medicine-and-radiology.html"
-                                >Oral Medicine and Radiology</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="orthodontics.html"
-                                >Orthodontics & Dentofacial Orthopaedics</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="oral-and-maxilofacial-surgery.html"
-                                >Oral & Maxillofacial Surgery</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a
-                                href="conservative-dentistry-&-edodontics.html"
-                                >Conservative Dentistry & Endodontics</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="prosthodontic.html"
-                                >Prosthodontics & Crown and Bridge</a
-                              >
-                            </li>
-                            <li class="menu-item">
-                              <a href="pedodontics.html"
-                                >Pedodontics & Preventive Dentistry</a
-                              >
-                            </li>
+                            <li class="menu-item"><a href="oral-pathology.html">Oral Pathology and Microbiology</a></li>
+                            <li class="menu-item"><a href="public-health.html">Public Health Dentistry</a></li>
+                            <li class="menu-item"><a href="periodontology.html">Periodontology</a></li>
+                            <li class="menu-item"><a href="oral-medicine-and-radiology.html">Oral Medicine and Radiology</a></li>
+                            <li class="menu-item"><a href="orthodontics.html">Orthodontics &amp; Dentofacial Orthopaedics</a></li>
+                            <li class="menu-item"><a href="oral-and-maxilofacial-surgery.html">Oral &amp; Maxillofacial Surgery</a></li>
+                            <li class="menu-item"><a href="conservative-dentistry-&amp;-edodontics.html">Conservative Dentistry &amp; Endodontics</a></li>
+                            <li class="menu-item"><a href="prosthodontic.html">Prosthodontics &amp; Crown and Bridge</a></li>
+                            <li class="menu-item"><a href="pedodontics.html">Pedodontics &amp; Preventive Dentistry</a></li>
                           </ul>
                         </li>
                       </ul>
                     </li>
                     <li class="menu-item">
-                      <a href="naac.html#quick-links-section"
-                        >Internal Quality Assurance Cell (IQAC)</a
-                      >
+                      <a href="naac.html#quick-links-section">Internal Quality Assurance Cell (IQAC)</a>
                     </li>
-                    <li class="menu-item" data-size="60">
-                      <a href="library.html">Library</a>
-                    </li>
-                    <li class="menu-item" data-size="60">
-                      <a href="academic-collaborations.html"
-                        >Academic Collaborations</a
-                      >
-                    </li>
-                    <li class="menu-item" data-size="60">
-                      <a href="feedbacks.html">Feedbacks</a>
-                    </li>
-                    <li class="menu-item" data-size="60">
-                      <a href="journals.html">Journals</a>
-                    </li>
-                    <li class="menu-item" data-size="60">
-                      <a href="admission.html">Admission Procedures</a>
-                    </li>
-                    <li class="menu-item" data-size="60">
-                      <a href="code-of-conduct.html">Code of Conduct</a>
-                    </li>
-                    <li class="menu-item" data-size="60">
-                      <a href="facilities.html">Facilities</a>
-                    </li>
-                    <li class="menu-item" data-size="60">
-                      <a href="awards.html">Awards & Achievements</a>
-                    </li>
+                    <li class="menu-item" data-size="60"><a href="library.html">Library</a></li>
+                    <li class="menu-item" data-size="60"><a href="academic-collaborations.html">Academic Collaborations</a></li>
+                    <li class="menu-item" data-size="60"><a href="feedbacks.html">Feedbacks</a></li>
+                    <li class="menu-item" data-size="60"><a href="journals.html">Journals</a></li>
+                    <li class="menu-item" data-size="60"><a href="admission.html">Admission Procedures</a></li>
+                    <li class="menu-item" data-size="60"><a href="code-of-conduct.html">Code of Conduct</a></li>
+                    <li class="menu-item" data-size="60"><a href="facilities.html">Facilities</a></li>
+                    <li class="menu-item" data-size="60"><a href="awards.html">Awards &amp; Achievements</a></li>
                   </ul>
                 </li>
-                <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
-                >
-                  <a class="sf-with-ul-pre">Admission & Fee</a>
+                <li class="menu-item menu-item-has-children kingster-normal-menu">
+                  <a class="sf-with-ul-pre">Admission &amp; Fee</a>
                   <ul class="sub-menu">
-                    <li class="menu-item">
-                      <a href="prospectus.html">Prospectus</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="dept-of-admission.html"
-                        >Department of Admission</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="admission.html"
-                        >Admission Process And Guidelines</a
-                      >
-                    </li>
+                    <li class="menu-item"><a href="prospectus.html">Prospectus</a></li>
+                    <li class="menu-item"><a href="dept-of-admission.html">Department of Admission</a></li>
+                    <li class="menu-item"><a href="admission.html">Admission Process And Guidelines</a></li>
                     <!-- <li class="menu-item">
                       <a href="fee-refund-policy.html">Fee Refund Policy</a>
                     </li> -->
                   </ul>
                 </li>
-                <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
-                >
+                <li class="menu-item menu-item-has-children kingster-normal-menu">
                   <a class="sf-with-ul-pre">Research</a>
                   <ul class="sub-menu">
-                    <li class="menu-item">
-                      <a href="research-and-development.html"
-                        >Research and Development Cell</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="incubation-center.html"
-                        >Incubation Center / Start-ups / Entrepreneurship
-                        Cell</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="central-facilities.html">Central Facilities</a>
-                    </li>
+                    <li class="menu-item"><a href="research-and-development.html">Research and Development Cell</a></li>
+                    <li class="menu-item"><a href="incubation-center.html">Incubation Center / Start-ups / Entrepreneurship Cell</a></li>
+                    <li class="menu-item"><a href="central-facilities.html">Central Facilities</a></li>
                   </ul>
                 </li>
-                <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
-                >
+                <li class="menu-item menu-item-has-children kingster-normal-menu">
                   <a class="sf-with-ul-pre">Student Life</a>
                   <ul class="sub-menu">
-                    <li class="menu-item">
-                        <a href="sports-facilities.html">Sports Facilities</a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="clubs.html">Clubs</a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="mdcrc-scholarship.html">Scholarships</a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="nss-activities.html">NSS</a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="hostel-details.html">Hostel Details</a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="students-union.html">Students Union</a>
-                      </li>
-                    <li class="menu-item">
-                      <a href="placement-cell-and-activities.html"
-                        >Placement Cell and Activities</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="index.html#grievance-redressal-cell"
-                        >Student Grievance Redressal Committee (SGRC)</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="health-facilities.html">Health Facilities</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="internal-complaint-committee.html"
-                        >Internal Complaint Committee</a
-                      >
-                    </li>
-                     <li class="menu-item" data-size="60">
-                          <a href="women-cell.html">Women Cell</a>
-                        </li>
-                    <li class="menu-item">
-                      <a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a>
-                    </li>
+                    <li class="menu-item"><a href="sports-facilities.html">Sports Facilities</a></li>
+                    <li class="menu-item"><a href="clubs.html">Clubs</a></li>
+                    <li class="menu-item"><a href="mdcrc-scholarship.html">Scholarships</a></li>
+                    <li class="menu-item"><a href="nss-activities.html">NSS</a></li>
+                    <li class="menu-item"><a href="hostel-details.html">Hostel Details</a></li>
+                    <li class="menu-item"><a href="students-union.html">Students Union</a></li>
+                    <li class="menu-item"><a href="placement-cell-and-activities.html">Placement Cell and Activities</a></li>
+                    <li class="menu-item"><a href="index.html#grievance-redressal-cell">Student Grievance Redressal Committee (SGRC)</a></li>
+                    <li class="menu-item"><a href="health-facilities.html">Health Facilities</a></li>
+                    <li class="menu-item"><a href="internal-complaint-committee.html">Internal Complaint Committee</a></li>
+                    <li class="menu-item" data-size="60"><a href="women-cell.html">Women Cell</a></li>
+                    <li class="menu-item"><a href="index.html#grievance-redressal-cell">Anti-Ragging Cell</a></li>
                        <!-- <li class="menu-item">
-                      <a href="equal-opportunity-cell.html"
-                        >Equal Opportunity Cell</a
-                      >
+                      <a href="equal-opportunity-cell.html">Equal Opportunity Cell</a>
                     </li> -->
                    <!-- <li class="menu-item">
-                      <a
-                        href="socio-economically-disadvantaged-groups-cell.html"
-                        >Socio-Economically Disadvantaged Groups Cell
-                        (SEDG)</a
-                      >
+                      <a href="socio-economically-disadvantaged-groups-cell.html">Socio-Economically Disadvantaged Groups Cell (SEDG)</a>
                     </li>
                     <li class="menu-item">
-                      <a href="facilities-for-differently-abled.html"
-                        >Facilities for Differently-Abled</a
-                      >
+                      <a href="facilities-for-differently-abled.html">Facilities for Differently-Abled</a>
                     </li> -->
                   </ul>
                 </li>
-                <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
-                >
+                <li class="menu-item menu-item-has-children kingster-normal-menu">
                   <a class="sf-with-ul-pre">Alumni</a>
                   <ul class="sub-menu">
-                    <li class="menu-item">
-                      <a href="alumni.html">Alumni Association</a>
-                    </li>
+                    <li class="menu-item"><a href="alumni.html">Alumni Association</a></li>
                   </ul>
                 </li>
-                <li
-                  class="menu-item menu-item-has-children kingster-normal-menu"
-                >
+                <li class="menu-item menu-item-has-children kingster-normal-menu">
                   <a class="sf-with-ul-pre">Information Corner</a>
                   <ul class="sub-menu">
                     <!-- <li class="menu-item">
                       <a href="rti.html">RTI</a>
                     </li> -->
-                    <li class="menu-item">
-                      <a href="circulars-and-notices.html"
-                        >Circulars and Notices</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="mass-media.html"
-                        >MDC in Mass Media</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="announcements.html">Announcements</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="/index.html#newsletterColumn">Newsletters</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="satelite-clinic.html">Satellite Clinic</a>
-                    </li>
-                     <li class="menu-item">
-                      <a href="news-page.html"
-                        >News & Achievements</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="events.html"
-                        >Recent Events</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="careers.html">Job Openings</a>
-                    </li>
+                    <li class="menu-item"><a href="circulars-and-notices.html">Circulars and Notices</a></li>
+                    <li class="menu-item"><a href="mass-media.html">MDC in Mass Media</a></li>
+                    <li class="menu-item"><a href="announcements.html">Announcements</a></li>
+                    <li class="menu-item"><a href="/index.html#newsletterColumn">Newsletters</a></li>
+                    <li class="menu-item"><a href="satelite-clinic.html">Satellite Clinic</a></li>
+                    <li class="menu-item"><a href="news-page.html">News &amp; Achievements</a></li>
+                    <li class="menu-item"><a href="events.html">Recent Events</a></li>
+                    <li class="menu-item"><a href="careers.html">Job Openings</a></li>
                     <!-- <li class="menu-item">
-                      <a href="reservation-roaster.html"
-                        >Reservation Roaster</a
-                      >
+                      <a href="reservation-roaster.html">Reservation Roaster</a>
                     </li>
                     <li class="menu-item">
                       <a href="study-in-india.html">Study in India</a>
                     </li>
                     <li class="menu-item">
-                      <a href="admission.html"
-                        >Admission Procedure and Facilities Provided to
-                        International Students</a
-                      >
+                      <a href="admission.html">Admission Procedure and Facilities Provided to International Students</a>
                     </li> -->
                   </ul>
                 </li>
-                
+
                   <li class="menu-item">
                     <a href="mdrc-gallery.html">Gallery</a>
                   </li>
@@ -1495,12 +1879,8 @@
                   </li>
                   <li class="menu-item">
                     <a href="contact-us.html">Contact Us</a>
-                  </li></li>
                       <div class="kingster-main-menu-right-wrap clearfix">
-                        <div
-                          class="kingster-main-menu-search"
-                          id="kingster-top-search"
-                        >
+                        <div class="kingster-main-menu-search" id="kingster-top-search">
                           <i class="icon_search"></i>
                           <span>Search</span>
                         </div>
@@ -1519,11 +1899,7 @@
                                 <div class="kingster-top-search-submit">
                                   <i class="fa fa-search"></i>
                                 </div>
-                                <input
-                                  type="submit"
-                                  class="search-submit"
-                                  value="Search"
-                                />
+                                <input type="submit" class="search-submit" value="Search" />
                                 <div class="kingster-top-search-close">
                                   <i class="icon_close"></i>
                                 </div>
@@ -1535,10 +1911,7 @@
                     </li>
                   </ul>
 
-                  <div
-                class="kingster-navigation-slide-bar"
-                id="kingster-navigation-slide-bar"
-              ></div>
+                  <div class="kingster-navigation-slide-bar" id="kingster-navigation-slide-bar"></div>
             </div>
           </div>
         </div>
@@ -1591,7 +1964,7 @@
                         <div class="gdlr-core-pbf-sidebar-container gdlr-core-line-height-0 clearfix gdlr-core-js gdlr-core-container">
                             <div class="gdlr-core-pbf-sidebar-content  gdlr-core-column-40 gdlr-core-pbf-sidebar-padding gdlr-core-line-height gdlr-core-column-extend-left" style="padding: 30px 0px 30px 0px;">
                                 <div class="gdlr-core-pbf-sidebar-content-inner">
-                                 
+
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-item-pdlr phd-overview-brand">
                                              <div class="phd-overview-logo">
@@ -1601,11 +1974,11 @@
                                                <h3>Department Overview</h3>
                                              </div>
                                            </div>
-                                   
+
                                         <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 10px ;">
                                             <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;">
                                                 <p>
-                                                The Department of Public Health Dentistry provides students with a comprehensive learning experience, including clinical case discussions, field visits, project assignments, seminars, and innovative teaching methods. Emphasis is placed on activity-based and active learning to enhance practical skills and critical thinking. 
+                                                The Department of Public Health Dentistry provides students with a comprehensive learning experience, including clinical case discussions, field visits, project assignments, seminars, and innovative teaching methods. Emphasis is placed on activity-based and active learning to enhance practical skills and critical thinking.
                                                 </p>
                                             </div>
                                         </div>
@@ -1613,7 +1986,7 @@
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 15px ;">
                                             <div class="gdlr-core-text-box-item-content" style="font-size: 18px ;text-transform: none ;color: #3db166 ;">
-                                                <p>Public health dentistry focuses on preventing oral diseases at the community level, encompassing various preventive measures through community dental programs. The department takes charge of planning, organizing, implementing, and evaluating these initiatives. Dental public health measures such as School Dental Hygienist screening, education, pit and fissure sealant application, and fluoride mouth rinsing are emphasized. Outreach programs, like dental camps and the Mobile Dental Unit (MDU) – 'Dentistry on wheels,' reach underserved areas, providing vital dental care. Two peripheral Dental Hygienist care centers at Ponnai and Kuttipuram offer valuable clinical exposure to interns, contributing to community oral health. This commitment to promoting oral health and community-based care empowers the next generation of dental professionals in public health dentistry.</p>
+                                                <p>Public health dentistry focuses on preventing oral diseases at the community level, encompassing various preventive measures through community dental programs. The department takes charge of planning, organizing, implementing, and evaluating these initiatives. Dental public health measures such as School Dental Hygienist screening, education, pit and fissure sealant application, and fluoride mouth rinsing are emphasized. Outreach programs, like dental camps and the Mobile Dental Unit (MDU) – 'Dentistry on wheels,' reach underserved areas, providing vital dental care. The department also supports satellite dental clinics at Edappal and Manoor, extending accessible oral-health services to the community while providing supervised, community-based clinical exposure for students. This commitment to promoting oral health and community-based care empowers the next generation of dental professionals in public health dentistry.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1623,7 +1996,7 @@
                                             <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #3db166 ;border-bottom-width: 3px ;"></div>
                                         </div>
                                     </div>
-                                   
+
                                      <div class="gdlr-core-pbf-element">
                                        <div class="gdlr-core-item-pdlr gdlr-core-item-pdb">
                                          <h3 class="phd-special-heading">
@@ -1645,10 +2018,7 @@
                                                <span class="phd-v2-symbol" aria-hidden="true">+</span>
                                              </button>
 
-                                             <div
-                                               class="phd-v2-panel"
-                                               id="phd-v2-panel-vision"
-                                             >
+                                             <div class="phd-v2-panel" id="phd-v2-panel-vision">
                                                <p>
                                                  Striving to achieve optimum oral health of the community through application of
                                                  scientific knowledge and clinical skills of Public health dentistry.
@@ -1669,10 +2039,7 @@
                                                <span class="phd-v2-symbol" aria-hidden="true">+</span>
                                              </button>
 
-                                             <div
-                                               class="phd-v2-panel"
-                                               id="phd-v2-panel-mission"
-                                             >
+                                             <div class="phd-v2-panel" id="phd-v2-panel-mission">
                                                <ul>
                                                  <li>
                                                    Development of comprehensive oral health programmes to cater to unmet needs of the
@@ -1705,10 +2072,7 @@
                                                <span class="phd-v2-symbol" aria-hidden="true">+</span>
                                              </button>
 
-                                             <div
-                                               class="phd-v2-panel"
-                                               id="phd-v2-panel-facilities"
-                                             >
+                                             <div class="phd-v2-panel" id="phd-v2-panel-facilities">
                                                <ul>
                                                  <li>Mobile dental Van</li>
                                                  <li>Department Museum</li>
@@ -1721,7 +2085,7 @@
                                              </div>
                                            </div>
 
-                                           <!-- 4. Mandasmitham - intentionally empty -->
+                                           <!-- 4. Mandasmitham - media gallery -->
                                            <div class="phd-v2-item" id="phd-item-mandasmitham">
                                              <button
                                                type="button"
@@ -1736,11 +2100,145 @@
                                                <span class="phd-v2-symbol" aria-hidden="true">+</span>
                                              </button>
 
-                                             <div
-                                               class="phd-v2-panel phd-v2-empty-panel"
-                                               id="phd-v2-panel-mandasmitham"
-                                               aria-hidden="true"
-                                             ></div>
+                                             <div class="phd-v2-panel phd-mandasmitham-panel" id="phd-v2-panel-mandasmitham">
+                                               <div class="phd-mandasmitham-media">
+                                                 <h4 class="phd-mandasmitham-media-heading">
+                                                   Mandasmitham Media Gallery
+                                                 </h4>
+                                                 <p class="phd-mandasmitham-media-subtitle">
+                                                   Highlights from the Mandasmitham Village Adoption Programme.
+                                                 </p>
+
+                                                 <!-- Custom player: all controls are driven by JavaScript, so nothing
+                                                      here depends on the browser default action, which the theme
+                                                      scripts were cancelling. -->
+                                                 <div class="phd-mandasmitham-video-card" id="phd-video-card">
+                                                   <div class="phd-video-stage">
+                                                     <video
+                                                       id="phd-mandasmitham-video"
+                                                       class="phd-mandasmitham-video"
+                                                       src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/f368f88379454a0896eaf1ede87dd361.mp4"
+                                                       preload="metadata"
+                                                       playsinline
+                                                       webkit-playsinline
+                                                       poster="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/728cb66a16a74ce0b3a0f715b8a52775.jpeg"
+                                                     >
+                                                       Your browser does not support HTML5 video.
+                                                     </video>
+
+                                                     <div class="phd-video-spinner" aria-hidden="true"></div>
+
+                                                     <button
+                                                       type="button"
+                                                       class="phd-video-bigplay"
+                                                       id="phd-video-bigplay"
+                                                       aria-label="Play video"
+                                                     >
+                                                       <i aria-hidden="true">&#9654;</i>
+                                                     </button>
+                                                   </div>
+
+                                                   <div class="phd-video-controls" id="phd-video-controls">
+                                                     <button type="button" class="phd-vc-btn" id="phd-vc-play" aria-label="Play or pause">&#9654;</button>
+                                                     <button type="button" class="phd-vc-btn phd-vc-skip" id="phd-vc-back" aria-label="Rewind 10 seconds">&#8630;</button>
+                                                     <button type="button" class="phd-vc-btn phd-vc-skip" id="phd-vc-fwd" aria-label="Forward 10 seconds">&#8631;</button>
+
+                                                     <div
+                                                       class="phd-vc-progress"
+                                                       id="phd-vc-progress"
+                                                       role="slider"
+                                                       tabindex="0"
+                                                       aria-label="Seek video"
+                                                       aria-valuemin="0"
+                                                       aria-valuemax="100"
+                                                       aria-valuenow="0"
+                                                     >
+                                                       <div class="phd-vc-track" id="phd-vc-track">
+                                                         <div class="phd-vc-buffer" id="phd-vc-buffer"></div>
+                                                         <div class="phd-vc-fill" id="phd-vc-fill"></div>
+                                                         <div class="phd-vc-knob" id="phd-vc-knob"></div>
+                                                       </div>
+                                                     </div>
+
+                                                     <span class="phd-vc-time" id="phd-vc-time">0:00 / 0:00</span>
+
+                                                     <button type="button" class="phd-vc-btn" id="phd-vc-mute" aria-label="Mute or unmute">&#128266;</button>
+                                                     <button type="button" class="phd-vc-btn phd-vc-wide" id="phd-vc-speed" aria-label="Playback speed">1x</button>
+                                                     <button type="button" class="phd-vc-btn" id="phd-vc-fs" aria-label="Full screen">&#9974;</button>
+                                                   </div>
+
+                                                   <p class="phd-video-status" id="phd-video-status" role="status" aria-live="polite"></p>
+
+                                                   <div class="phd-mandasmitham-video-tools">
+                                                     <a
+                                                       class="phd-video-original-link"
+                                                       id="phd-video-original-link"
+                                                       href="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/f368f88379454a0896eaf1ede87dd361.mp4"
+                                                       target="_blank"
+                                                       rel="noopener noreferrer"
+                                                     >
+                                                       Open Original Video
+                                                     </a>
+                                                   </div>
+                                                 </div>
+
+                                                 <!-- Thumbnails are buttons, not anchors, so the theme lightbox
+                                                      never binds to them. -->
+                                                 <div class="phd-mandasmitham-gallery" id="phd-mandasmitham-gallery">
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/728cb66a16a74ce0b3a0f715b8a52775.jpeg" aria-label="Open Mandasmitham gallery image 1 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/728cb66a16a74ce0b3a0f715b8a52775.jpeg" alt="Mandasmitham Village Adoption Programme activity 1" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/27e2bca7ee834ff6a08b7533957d83db.jpeg" aria-label="Open Mandasmitham gallery image 2 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/27e2bca7ee834ff6a08b7533957d83db.jpeg" alt="Mandasmitham Village Adoption Programme activity 2" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/843b1e7001084be3997c2c217df829a4.jpeg" aria-label="Open Mandasmitham gallery image 3 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/843b1e7001084be3997c2c217df829a4.jpeg" alt="Mandasmitham Village Adoption Programme activity 3" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/64467a6ae97b446688b28e3f0aae3b3c.jpeg" aria-label="Open Mandasmitham gallery image 4 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/64467a6ae97b446688b28e3f0aae3b3c.jpeg" alt="Mandasmitham Village Adoption Programme activity 4" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/7d8ce53f8bc4427394228d11118855ec.jpeg" aria-label="Open Mandasmitham gallery image 5 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/7d8ce53f8bc4427394228d11118855ec.jpeg" alt="Mandasmitham Village Adoption Programme activity 5" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/b38e304ea13641ea8939a349817c9c95.jpeg" aria-label="Open Mandasmitham gallery image 6 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/b38e304ea13641ea8939a349817c9c95.jpeg" alt="Mandasmitham Village Adoption Programme activity 6" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/40b53b4f469242b8afdbf675cdc79e27.jpeg" aria-label="Open Mandasmitham gallery image 7 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/40b53b4f469242b8afdbf675cdc79e27.jpeg" alt="Mandasmitham Village Adoption Programme activity 7" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/1c1e555ab7404470a4d20a23a304d403.jpeg" aria-label="Open Mandasmitham gallery image 8 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/1c1e555ab7404470a4d20a23a304d403.jpeg" alt="Mandasmitham Village Adoption Programme activity 8" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/dee96881ba0f49559bcfce1959250ca2.jpeg" aria-label="Open Mandasmitham gallery image 9 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/dee96881ba0f49559bcfce1959250ca2.jpeg" alt="Mandasmitham Village Adoption Programme activity 9" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/2a3bf4ad3cc248ff85d51332615334f8.jpeg" aria-label="Open Mandasmitham gallery image 10 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/2a3bf4ad3cc248ff85d51332615334f8.jpeg" alt="Mandasmitham Village Adoption Programme activity 10" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/a3d8f2c9a82e40909c3cb34beeed2be1.jpeg" aria-label="Open Mandasmitham gallery image 11 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/a3d8f2c9a82e40909c3cb34beeed2be1.jpeg" alt="Mandasmitham Village Adoption Programme activity 11" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/9f635067575249e2ade945b8f17b44fd.jpeg" aria-label="Open Mandasmitham gallery image 12 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/9f635067575249e2ade945b8f17b44fd.jpeg" alt="Mandasmitham Village Adoption Programme activity 12" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/f0f8f71d9b1744c8b86997b7b6eb71e7.jpeg" aria-label="Open Mandasmitham gallery image 13 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/f0f8f71d9b1744c8b86997b7b6eb71e7.jpeg" alt="Mandasmitham Village Adoption Programme activity 13" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/d6372d5357394930b3133f57fdd9c571.jpeg" aria-label="Open Mandasmitham gallery image 14 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/d6372d5357394930b3133f57fdd9c571.jpeg" alt="Mandasmitham Village Adoption Programme activity 14" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/3dc36c0622f14c84a40c978d8ba995bf.jpeg" aria-label="Open Mandasmitham gallery image 15 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/3dc36c0622f14c84a40c978d8ba995bf.jpeg" alt="Mandasmitham Village Adoption Programme activity 15" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/1b5e4062cf7d456188bf7ad3e1a3fa7a.jpeg" aria-label="Open Mandasmitham gallery image 16 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/1b5e4062cf7d456188bf7ad3e1a3fa7a.jpeg" alt="Mandasmitham Village Adoption Programme activity 16" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/58164e18298d4060975b6cd436dc49cd.jpeg" aria-label="Open Mandasmitham gallery image 17 full screen">
+                                                   <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/58164e18298d4060975b6cd436dc49cd.jpeg" alt="Mandasmitham Village Adoption Programme activity 17" loading="lazy" decoding="async" />
+                                                 </button>
+                                                 </div>
+                                               </div>
+                                             </div>
                                            </div>
 
                                          </div>
@@ -1754,20 +2252,16 @@
                                         <div class="textwidget">
                                             <div class="gdlr-core-widget-box-shortcode " style="color: #ffffff ;padding: 30px 45px;background-color: #192f59 ;">
                                                 <div class="gdlr-core-widget-box-shortcode-content">
-                                                    </p>
                                                     <h3 style="font-size: 20px; color: #fff; margin-bottom: 25px;">Department Contact Info</h3>
-                                                    <p><span style="color: #3db166; font-size: 16px; font-weight: 600;">Department of PHD</span>
-                                                     <br><p><span style="font-size: 15px;">Malabar Dental College
-& Research Centre Manoor,
+                                                    <p><span style="color: #3db166; font-size: 16px; font-weight: 600;">Department of PHD</span></p>
+                                                    <p><span style="font-size: 15px;">Malabar Dental College
+&amp; Research Centre Manoor,
 Chekanoor Rd, Mudur P.O Edappal,
-Malappuram, Dt Pin : 679578</span></p>   
+Malappuram, Dt Pin : 679578</span></p>
                                                      <p><span style="font-size: 15px;">+91 7034555521 , +91 9995333334<br/>info@macity.edu.in</span></p>
                                                     <p><span style="font-size: 16px; color: #3db166;">Mon &#8211; Fri 8:30A.M. &#8211; 4:00P.M.</span> <br>
                                                     <span style="font-size: 16px; color: #3db166;">Sat 8:30A.M. &#8211; 2:00P.M.</span></p> <span class="gdlr-core-space-shortcode" style="margin-top: 40px ;"></span>
-                                                    
-                                                    
                                                 </div>
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -1787,144 +2281,24 @@ Malappuram, Dt Pin : 679578</span></p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="gdlr-core-pbf-background-wrap"></div>
                         <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
                           <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 34; text-transform: none ;align-items: center;justify-content: center;display: flex;">Department Faculty</h3>
                           <div class="gdlr-core-pbf-wrapper " style="padding: 40px 0px 40px 0px;">
                         <div class="gdlr-core-pbf-background-wrap"></div>
-                        
+
                     </div>
-                    
+
                     <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                      <!-- <div class="gdlr-core-pbf-wrapper-container">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js  gdlr-core-column" style="margin: 10px 20px 0px 20px;padding: 0px 0px 0px 0px;">
-                                        <div class="gdlr-core-pbf-background-wrap" style=" background-color: #f5f5f5 ;"></div>
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align" style=" background-color: #f5f5f5;padding-bottom: 45px ;">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" style="border-width: 0px;"><img src="upload/chairman.jpg" width="600" height="317"  alt="" /></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 20px ;">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix chairman-title">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 24px ;font-weight: 600 ;letter-spacing: 0px ;text-align: center;text-transform: none ;">Dr. C P BAVA HAJI</h3></div><span class="chairman-title gdlr-core-info-font">Chairman and Managing Trustee</span>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 35px ;">
-                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 17px ;text-transform: none ;text-align: justify;color: #3c3c3c ;">
-                                                        <p>An esteemed authority with a rich and wide experience in the various business, Educational and philanthropic activities.  He has developed his ventures in India, Middle East and Mozambique. As the chairman of Crescent International Group, he has presence in different verticals like infrastructure Development, Tourism, Manufacturing, Retail, Educational Activities. He is the Chairman of Eranad Knowledge City, Malabar Academic City, Malabar Dental college and Research Centre, Al Ameen engineering College, Al Ameen law college, Modern Higher Secondary School and Crescent International Group, Dubai.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- <div class="gdlr-core-pbf-column gdlr-core-column-15 gdlr-core-column-first">
-                                    
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding-bottom: 20px;">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align" style="padding-bottom: 33px ;">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-round" style="border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border-width: 0px;">
-                                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="upload/ph-dentistry-3.jpg"><img src="upload/ph-dentistry-3.jpg" width="300" height="500" class="directors-image "  alt="" /></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 10px ;">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 18px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;">Dr Aparna B K</h3></div><span style="color: #3db166;"  class=" gdlr-core-info-font">Sr. Lecturer</span>
-                                                </div>
-                                            </div>
-                                           
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-15">
-                                    
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding-bottom: 20px;">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align" style="padding-bottom: 33px ;">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-round" style="border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border-width: 0px;">
-                                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="upload/ph-dentistry-2.jpg"><img src="upload/ph-dentistry-2.jpg" width="300" height="500" class="directors-image "  alt="" /></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 10px ;">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 18px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;">Dr Manna S Mathai</h3></div><span style="color: #3db166;"  class=" gdlr-core-info-font">Lecturer</span>
-                                                </div>
-                                            </div>
-                                           
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-15">
-                                    
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding-bottom: 20px;">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align" style="padding-bottom: 33px ;">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-round" style="border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border-width: 0px;">
-                                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="upload/ph-dentistry-5.jpg"><img src="upload/ph-dentistry-5.jpg" width="300" height="500" class="directors-image "  alt="" /></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 10px ;">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 18px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;">Dr Anjana Vipal</h3></div><span style="color: #3db166;"  class=" gdlr-core-info-font">Lecturer</span>
-                                                </div>
-                                            </div>
-                                           
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-15">
-                                    
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding-bottom: 20px;">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align" style="padding-bottom: 33px ;">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-round" style="border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border-width: 0px;">
-                                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="upload/ph-dentistry-4.jpg"><img src="upload/ph-dentistry-4.jpg" width="300" height="500" class="directors-image "  alt="" /></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 10px ;">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 18px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;">Mrs Amina Sumayya</h3></div><span style="color: #3db166;"  class=" gdlr-core-info-font">Camp Coordinator</span>
-                                                </div>
-                                            </div>
-                                           
-                                            
-                                        </div>
-                                    </div>
-                                </div> -->
-                                
+
                                 <div id="staff-list-container" style="max-width: 1200px; margin: 0 auto; padding: 20px;"></div>
-                                
+
                               </div>
                               <div id="union-events" style="display: none;" >
                                         <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container" style="margin-top: 20px; margin-bottom: 40px;" >
-                                            
-                          <div
-                            class="gdlr-core-block-item-title-wrap gdlr-core-left-align gdlr-core-item-mglr"
-                            style="margin-bottom: 40px"
-                          >
+
+                          <div class="gdlr-core-block-item-title-wrap gdlr-core-left-align gdlr-core-item-mglr" style="margin-bottom: 40px">
                             <div class="gdlr-core-block-item-title-inner clearfix">
                               <h3
                                 class="gdlr-core-block-item-title"
@@ -1947,9 +2321,9 @@ Malappuram, Dt Pin : 679578</span></p>
                                   border-bottom-width: 2px;
                                 "
                               ></div>
-                              
+
                             </div>
-                            
+
                                                             <a
                                       class="gdlr-core-block-item-read-more"
                                       href="phd-camps.html"
@@ -1960,40 +2334,25 @@ Malappuram, Dt Pin : 679578</span></p>
                                     >
                           </div>
                           <div class="gdlr-core-pbf-column gdlr-core-column-20">
-                            <div
-                              class="gdlr-core-pbf-column-content-margin gdlr-core-js"
-                            >
-                              <div
-                                class="gdlr-core-pbf-column-content clearfix gdlr-core-js"
-                                id="eventColumn1"
-                              ></div>
+                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js">
+                              <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js" id="eventColumn1"></div>
                             </div>
                           </div>
                           <div class="gdlr-core-pbf-column gdlr-core-column-20">
-                            <div
-                              class="gdlr-core-pbf-column-content-margin gdlr-core-js"
-                            >
-                              <div
-                                class="gdlr-core-pbf-column-content clearfix gdlr-core-js"
-                                id="eventColumn2"
-                              ></div>
+                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js">
+                              <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js" id="eventColumn2"></div>
                             </div>
                           </div>
                           <div class="gdlr-core-pbf-column gdlr-core-column-20">
-                            <div
-                              class="gdlr-core-pbf-column-content-margin gdlr-core-js"
-                            >
-                              <div
-                                class="gdlr-core-pbf-column-content clearfix gdlr-core-js"
-                                id="eventColumn3"
-                              ></div>
+                            <div class="gdlr-core-pbf-column-content-margin gdlr-core-js">
+                              <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js" id="eventColumn3"></div>
                             </div>
                           </div>
                         </div>
                       </div>
                               <div class="gdlr-core-pbf-wrapper " style="padding: 10px 0px 45px 0px;">
-                                 
-                            
+
+
                             </div>
                         </div>
                     </div>
@@ -2004,18 +2363,12 @@ Malappuram, Dt Pin : 679578</span></p>
                                 <div class="gdlr-core-pbf-element">
                                     <div class="gdlr-core-gallery-item gdlr-core-item-pdb clearfix  gdlr-core-gallery-item-style-grid" id="div_1dd7_110">
                                         <div class="gdlr-core-gallery-item-holder gdlr-core-js-2 clearfix" data-layout="fitrows">
-                                            <!-- <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-10 gdlr-core-column-first gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-0.png" alt="" width="120" height="120" title="banner-1" /></div>
-                                            </div> -->
                                               <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-10 gdlr-core-column-first gdlr-core-item-pdlr gdlr-core-item-mgb">
                                                 <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-1.png" style="padding-top: 20px;" alt="" width="240" height="120" title="banner-1" /></div>
                                             </div>
                                             <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-10 gdlr-core-item-pdlr gdlr-core-item-mgb">
                                                 <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-2.png" alt="" width="120" height="120" title="banner-2" /></div>
                                             </div>
-                                            <!-- <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-10 gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                                <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-3.png" alt="" width="120" height="120" title="banner-3" /></div>
-                                            </div> -->
                                             <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-10 gdlr-core-item-pdlr gdlr-core-item-mgb">
                                                 <div class="gdlr-core-gallery-list gdlr-core-media-image"><img src="upload/banner-4.png" style="padding-top: 25px;" alt="" width="240" height="120" title="banner-4" /></div>
                                             </div>
@@ -2038,18 +2391,13 @@ Malappuram, Dt Pin : 679578</span></p>
            <footer>
         <div class="kingster-footer-wrapper">
           <div class="kingster-footer-container kingster-container clearfix">
-            <div
-              class="kingster-footer-column kingster-item-pdlr kingster-column-15"
-            >
+            <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
               <div id="text-2" class="widget widget_text kingster-widget">
                 <div class="textwidget">
                   <p>
                     <img width="250" src="upload/footer-logo.png" alt="" />
                     <br />
-                    <span
-                      class="gdlr-core-space-shortcode"
-                      id="span_1dd7_10"
-                    ></span>
+                    <span class="gdlr-core-space-shortcode" id="span_1dd7_10"></span>
                     <br />
                     Manoor - Chekanoor Road, <br />
                     Manoor, Edappal, Malappuram, <br />
@@ -2059,134 +2407,63 @@ Malappuram, Dt Pin : 679578</span></p>
               7034555514
                   </p>
                   <p>
-                    <!-- <span id="span_1dd7_11">
-                      Toll free:<a href="tel:18008430066"> 18008430066</a>
-                    </span> -->
-                    <!-- <br> <span id="span_1dd7_11"> Hospital/Clinic:<a href="tel:0494 269720"> 0494 269720, 21</a> </span> | <span id="span_1dd7_11"> <a href="tel:7034555514">+91 7034555514</a></span> -->
                     <br />
-                    <span
-                      class="gdlr-core-space-shortcode"
-                      id="span_1dd7_12"
-                    ></span>
+                    <span class="gdlr-core-space-shortcode" id="span_1dd7_12"></span>
 
                     <br />
-                    <a id="a_1dd7_8" href="mailto:admin@kingsteruni.edu"
-                      >info@macity.edu.in</a
-                    >
+                    <a id="a_1dd7_8" href="mailto:admin@kingsteruni.edu">info@macity.edu.in</a>
                   </p>
-                  <div
-                    class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-left-align"
-                  >
-                    <div
-                      class="gdlr-core-divider-line gdlr-core-skin-divider"
-                      id="div_1dd7_111"
-                    ></div>
+                  <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-left-align">
+                    <div class="gdlr-core-divider-line gdlr-core-skin-divider" id="div_1dd7_111"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <div
-              class="kingster-footer-column kingster-item-pdlr kingster-column-15"
-            >
-              <div
-                id="gdlr-core-custom-menu-widget-2"
-                class="widget widget_gdlr-core-custom-menu-widget kingster-widget"
-              >
+            <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+              <div id="gdlr-core-custom-menu-widget-2" class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
                 <h3 class="kingster-widget-title">Quick links</h3>
                 <span class="clear"></span>
                 <div class="menu-our-campus-container">
-                  <ul
-                    id="menu-our-campus"
-                    class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
-                  >
-                    <li class="menu-item">
-                      <a href="about-us.html">Academic Calendar</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="about-us.html">About Us</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="bachelor-of-dental-surgery.html"
-                        >Bachelor of Dental Surgery</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="master-of-dental-surgery.html"
-                        >Master of Dental Surgery</a
-                      >
-                    </li>
-                    <li class="menu-item">
-                      <a href="dental-mechanic.html">Dental Mechanic</a>
-                    </li>
+                  <ul id="menu-our-campus" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+                    <li class="menu-item"><a href="about-us.html">Academic Calendar</a></li>
+                    <li class="menu-item"><a href="about-us.html">About Us</a></li>
+                    <li class="menu-item"><a href="bachelor-of-dental-surgery.html">Bachelor of Dental Surgery</a></li>
+                    <li class="menu-item"><a href="master-of-dental-surgery.html">Master of Dental Surgery</a></li>
+                    <li class="menu-item"><a href="dental-mechanic.html">Dental Mechanic</a></li>
                     <li class="menu-item"><a href="dora.html">DORA</a></li>
                     <li class="menu-item"><a href="dental-hygienist.html">Dental Hygienist </a></li>
-                    <li class="menu-item">
-                      <a href="contact-us.html">Contact</a>
-                    </li>
+                    <li class="menu-item"><a href="contact-us.html">Contact</a></li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div
-              class="kingster-footer-column kingster-item-pdlr kingster-column-15"
-            >
-              <div
-                id="gdlr-core-custom-menu-widget-3"
-                class="widget widget_gdlr-core-custom-menu-widget kingster-widget"
-              >
+            <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+              <div id="gdlr-core-custom-menu-widget-3" class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
                 <h3 class="kingster-widget-title">Social Life</h3>
                 <span class="clear"></span>
                 <div class="menu-campus-life-container">
-                  <ul
-                    id="menu-campus-life"
-                    class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain"
-                  >
+                  <ul id="menu-campus-life" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
                     <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://www.instagram.com/malabar_dental_college/"
-                        >Instagram</a
-                      >
+                      <a target="_blank" href="https://www.instagram.com/malabar_dental_college/">Instagram</a>
                     </li>
                     <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://www.facebook.com/malabarAcademicCity/"
-                        >Facebook</a
-                      >
+                      <a target="_blank" href="https://www.facebook.com/malabarAcademicCity/">Facebook</a>
                     </li>
                     <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://in.linkedin.com/school/malabar-dental-college-&-research-center/"
-                        >LinkedIn</a
-                      >
+                      <a target="_blank" href="https://in.linkedin.com/school/malabar-dental-college-&amp;-research-center/">LinkedIn</a>
                     </li>
                     <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://www.youtube.com/@malabardentalcollege8050"
-                        >Youtube</a
-                      >
+                      <a target="_blank" href="https://www.youtube.com/@malabardentalcollege8050">Youtube</a>
                     </li>
                     <li class="menu-item">
-                      <a
-                        target="_blank"
-                        href="https://goo.gl/maps/mqi1nkPswEPLQjzv6"
-                        >Google</a
-                      >
+                      <a target="_blank" href="https://goo.gl/maps/mqi1nkPswEPLQjzv6">Google</a>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div
-              class="kingster-footer-column kingster-item-pdlr kingster-column-15"
-            >
-              <div
-                id="gdlr-core-custom-menu-widget-4"
-                class="widget widget_gdlr-core-custom-menu-widget kingster-widget"
-              >
+            <div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+              <div id="gdlr-core-custom-menu-widget-4" class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
                 <h3 class="kingster-widget-title">Location</h3>
                 <span class="clear"></span>
                 <div class="mapouter">
@@ -2198,28 +2475,12 @@ Malappuram, Dt Pin : 679578</span></p>
                       marginheight="0"
                       marginwidth="0"
                       src="https://maps.google.com/maps?width=271&amp;height=281&amp;hl=en&amp;q=malabar dental college manoor&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                    ></iframe
-                    ><a href="https://thepasswordgame.com/"
-                      >The Password Game</a
-                    >
+                    ></iframe>
                   </div>
                   <style>
-                    .mapouter {
-                      position: relative;
-                      text-align: right;
-                      width: 271px;
-                      height: 281px;
-                    }
-                    .gmap_canvas {
-                      overflow: hidden;
-                      background: none !important;
-                      width: 271px;
-                      height: 281px;
-                    }
-                    .gmap_iframe {
-                      width: 271px !important;
-                      height: 281px !important;
-                    }
+                    .mapouter { position: relative; text-align: right; width: 271px; height: 281px; }
+                    .gmap_canvas { overflow: hidden; background: none !important; width: 271px; height: 281px; }
+                    .gmap_iframe { width: 271px !important; height: 281px !important; }
                   </style>
                 </div>
               </div>
@@ -2233,46 +2494,17 @@ Malappuram, Dt Pin : 679578</span></p>
               Copyright © 2026 Malabar Dental College <a  style="color: #fff " href="dept_of_IT.html"></a>
             </div>
             <div class="kingster-copyright-right kingster-item-pdlr">
-              <div
-                class="gdlr-core-social-network-item gdlr-core-item-pdb gdlr-core-none-align"
-                id="div_1dd7_112"
-                style="color: #3db166"
-              >
-                <a
-                  href="https://www.facebook.com/malabarAcademicCity/"
-                  target="_blank"
-                  class="gdlr-core-social-network-icon"
-                  style="color: #3db166"
-                  title="facebook"
-                >
+              <div class="gdlr-core-social-network-item gdlr-core-item-pdb gdlr-core-none-align" id="div_1dd7_112" style="color: #3db166">
+                <a href="https://www.facebook.com/malabarAcademicCity/" target="_blank" class="gdlr-core-social-network-icon" style="color: #3db166" title="facebook">
                   <i class="fa fa-facebook"></i>
                 </a>
-                <a
-                  href="https://goo.gl/maps/mqi1nkPswEPLQjzv6"
-                  target="_blank"
-                  class="gdlr-core-social-network-icon"
-                  style="color: #3db166"
-                  title="google-plus"
-                >
+                <a href="https://goo.gl/maps/mqi1nkPswEPLQjzv6" target="_blank" class="gdlr-core-social-network-icon" style="color: #3db166" title="google-plus">
                   <i class="fa fa-google-plus"></i>
                 </a>
-                <a
-                  href="https://in.linkedin.com/school/malabar-dental-college-&-research-center/"
-                  target="_blank"
-                  class="gdlr-core-social-network-icon"
-                  style="color: #3db166"
-                  title="linkedin"
-                >
+                <a href="https://in.linkedin.com/school/malabar-dental-college-&amp;-research-center/" target="_blank" class="gdlr-core-social-network-icon" style="color: #3db166" title="linkedin">
                   <i class="fa fa-linkedin"></i>
                 </a>
-
-                <a
-                  href="https://www.instagram.com/malabar_dental_college/"
-                  target="_blank"
-                  class="gdlr-core-social-network-icon"
-                  style="color: #3db166"
-                  title="instagram"
-                >
+                <a href="https://www.instagram.com/malabar_dental_college/" target="_blank" class="gdlr-core-social-network-icon" style="color: #3db166" title="instagram">
                   <i class="fa fa-instagram"></i>
                 </a>
               </div>
@@ -2283,6 +2515,31 @@ Malappuram, Dt Pin : 679578</span></p>
         </div>
     </div>
 
+  <!-- Mandasmitham full viewport image viewer (moved to <body> by script) -->
+  <div
+    id="phd-image-viewer"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mandasmitham image viewer"
+    aria-hidden="true"
+    onclick="return PHDGallery.backdrop(event);"
+  >
+    <div class="phd-image-viewer-stage" id="phd-image-viewer-stage" onclick="return PHDGallery.backdrop(event);">
+      <button type="button" class="phd-viewer-close" id="phd-viewer-close" aria-label="Close image viewer" onclick="return PHDGallery.close(event);">×</button>
+      <button type="button" class="phd-viewer-fullscreen" id="phd-viewer-fullscreen" aria-label="Toggle browser fullscreen" onclick="return PHDGallery.toggleFullscreen(event);">Fullscreen</button>
+      <button type="button" class="phd-viewer-prev" id="phd-viewer-prev" aria-label="Previous image" onclick="return PHDGallery.prev(event);">‹</button>
+
+      <div class="phd-viewer-spinner" aria-hidden="true"></div>
+      <img id="phd-image-viewer-img" src="" alt="" onclick="event.stopPropagation();" />
+
+      <button type="button" class="phd-viewer-next" id="phd-viewer-next" aria-label="Next image" onclick="return PHDGallery.next(event);">›</button>
+
+      <div class="phd-viewer-footer" onclick="event.stopPropagation();">
+        <span id="phd-viewer-counter">1 / 17</span>
+        <a id="phd-viewer-original" href="#" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">Open full-resolution image</a>
+      </div>
+    </div>
+  </div>
 
 	<script type='text/javascript' src='js/jquery/jquery.js'></script>
     <script type='text/javascript' src='js/jquery/jquery-migrate.min.js'></script>
@@ -2363,13 +2620,9 @@ Malappuram, Dt Pin : 679578</span></p>
 
         events.forEach((event, index) => {
           if (index < 9) {
-            // Create the event element
             const eventElement = createEventElement(event);
 
-            // Append the event to the current column and row
-            const rowContainer = columns[columnIndex].querySelector(
-              `.row-${rowIndex}`
-            );
+            const rowContainer = columns[columnIndex].querySelector(`.row-${rowIndex}`);
             if (!rowContainer) {
               const newRow = document.createElement("div");
               newRow.classList.add(`row-${rowIndex}`);
@@ -2379,7 +2632,6 @@ Malappuram, Dt Pin : 679578</span></p>
               rowContainer.appendChild(eventElement);
             }
 
-            // Update column and row indexes
             columnIndex = (columnIndex + 1) % columns.length;
             if (columnIndex === 0) {
               rowIndex++;
@@ -2389,7 +2641,6 @@ Malappuram, Dt Pin : 679578</span></p>
         document.getElementById("union-events").style.display = "block";
       }
 
-      // Call the renderEvents function to populate the content
       renderEvents();
     </script>
      <script>
@@ -2397,32 +2648,24 @@ Malappuram, Dt Pin : 679578</span></p>
       const apiUrlNotification =
         "https://app.conext.in/Notifications/api/latest-mdc-top-bar-notification/";
 
-      // Reference to the notification container
-      const notificationContainer = document.getElementById(
-        "notification-container"
-      );
+      const notificationContainer = document.getElementById("notification-container");
 
-      // Store the notification data and current index
       let notifications = [];
       let currentIndex = 0;
 
-      // Function to fetch and update notification data
       async function fetchAndUpdateNotifications() {
         try {
           const response = await fetch(apiUrlNotification);
           notifications = await response.json();
 
-          // Call the updateNotification function initially
           updateNotification();
 
-          // Set an interval to update notifications every 1.5 seconds
           setInterval(updateNotification, 4500);
         } catch (error) {
           console.error("Error fetching notifications:", error);
         }
       }
 
-      // Function to update the notification text
       function updateNotification() {
         if (notifications.length > 0) {
           const list = notificationContainer;
@@ -2431,7 +2674,6 @@ Malappuram, Dt Pin : 679578</span></p>
         }
       }
 
-      // Call the fetchAndUpdateNotifications function initially
       fetchAndUpdateNotifications();
     </script>
     <script type='text/javascript' src='plugins/goodlayers-core/include/js/page-builder.js'></script>
@@ -2445,18 +2687,13 @@ Malappuram, Dt Pin : 679578</span></p>
     <script>
       const title = document.getElementById('dep-title');
 
-// Function to check and remove 'font-size' style
-function removeFontSizeStyle() {
-  if (title.style.fontSize) {
-    // Remove the 'font-size' style property
-    title.style.removeProperty('font-size');
-  }
-}
+      function removeFontSizeStyle() {
+        if (title && title.style.fontSize) {
+          title.style.removeProperty('font-size');
+        }
+      }
 
-// Check and remove the style every 100 milliseconds (adjust as needed)
-setInterval(removeFontSizeStyle, 100);
-
-      
+      setInterval(removeFontSizeStyle, 100);
     </script>
 <script>
   // Define the API URL to fetch staff list data
@@ -2531,7 +2768,6 @@ setInterval(removeFontSizeStyle, 100);
 
         // Function to create and append staff columns
         const createStaffColumns = (staffList, headingText) => {
-          // filter out HOD if already displayed
           staffList = staffList.filter(s => s.designation !== "Reader & HOD");
 
           staffList.sort((a, b) => {
@@ -2552,7 +2788,7 @@ setInterval(removeFontSizeStyle, 100);
 
           const rowDiv = document.createElement('div');
           rowDiv.style.display = 'grid';
-          rowDiv.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
+          rowDiv.style.gridTemplateColumns = 'repeat(auto-fit, minmax(240px, 1fr))';
           rowDiv.style.gap = '20px';
           rowDiv.style.justifyItems = 'center';
           containerDiv.appendChild(rowDiv);
@@ -2567,8 +2803,10 @@ setInterval(removeFontSizeStyle, 100);
             columnDiv.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
             columnDiv.style.display = 'flex';
             columnDiv.style.flexDirection = 'column';
-            columnDiv.style.width = '300px';
-            columnDiv.style.height = '400px';
+            columnDiv.style.width = '100%';
+            columnDiv.style.maxWidth = '300px';
+            columnDiv.style.minHeight = '400px';
+            columnDiv.style.height = 'auto';
 
             const img = document.createElement('img');
             img.src = staff.picture;
@@ -2619,11 +2857,284 @@ setInterval(removeFontSizeStyle, 100);
   fetchAndDisplayStaffList();
 </script>
 
+<!-- =========================================================
+     Mandasmitham video player.
+     Loaded LAST, after jQuery / page-builder.js / plugins.min.js,
+     so it can neutralise the theme handlers that were killing the
+     native video controls. The image viewer lives in <head>.
+     ========================================================= -->
+<script>
+(function () {
+  "use strict";
 
+  var VIDEO_URL =
+    "https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/f368f88379454a0896eaf1ede87dd361.mp4";
 
+  function byId(id) { return document.getElementById(id); }
 
+  function ready(fn) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", fn);
+    } else {
+      fn();
+    }
+  }
 
+  /* ---------------------------------------------------------
+     1. Event isolation.
+     The GoodLayers theme (page-builder.js / plugins.min.js and the
+     "gdlr-core-link-to-lightbox" body class) binds delegated click
+     handlers high up in the DOM and calls preventDefault() on them.
+     A cancelled click also cancels the native <video> controls,
+     because those controls act on the default action of the event.
+     Blocking the bubble here keeps the theme scripts out of this card.
+     --------------------------------------------------------- */
+  function isolate(el) {
+    if (!el) return;
+    ["click", "dblclick", "mousedown", "mouseup", "pointerdown", "pointerup",
+     "touchstart", "touchend", "contextmenu"].forEach(function (type) {
+      el.addEventListener(type, function (event) {
+        event.stopPropagation();
+      }, false);
+    });
+  }
 
+  /* ---------------------------------------------------------
+     2. Video player (fully script driven)
+     --------------------------------------------------------- */
+  function initVideo() {
+    var card = byId("phd-video-card");
+    var video = byId("phd-mandasmitham-video");
+    if (!card || !video) return;
+
+    var bigPlay  = byId("phd-video-bigplay");
+    var playBtn  = byId("phd-vc-play");
+    var backBtn  = byId("phd-vc-back");
+    var fwdBtn   = byId("phd-vc-fwd");
+    var progress = byId("phd-vc-progress");
+    var track    = byId("phd-vc-track");
+    var fill     = byId("phd-vc-fill");
+    var buffer   = byId("phd-vc-buffer");
+    var knob     = byId("phd-vc-knob");
+    var timeEl   = byId("phd-vc-time");
+    var muteBtn  = byId("phd-vc-mute");
+    var speedBtn = byId("phd-vc-speed");
+    var fsBtn    = byId("phd-vc-fs");
+    var status   = byId("phd-video-status");
+
+    var speeds = [1, 1.25, 1.5, 2, 0.75];
+    var speedIndex = 0;
+    var scrubbing = false;
+
+    isolate(card);
+
+    function setStatus(message) {
+      if (!status) return;
+      status.textContent = message || "";
+      status.classList.toggle("is-visible", Boolean(message));
+    }
+
+    function errorText() {
+      if (!video.error) {
+        return "The video could not start. Use \u201COpen Original Video\u201D. If that file does not play either, re-encode it as H.264 video + AAC audio in MP4.";
+      }
+      switch (video.error.code) {
+        case 1: return "Video loading was interrupted. Please try again.";
+        case 2: return "The browser could not download the video from S3. Try again or open the original video.";
+        case 3: return "The MP4 downloaded, but this browser could not decode it. Re-encode the upload as H.264 + AAC MP4.";
+        case 4: return "This MP4 codec is not supported by this browser. Re-encode it as H.264 video + AAC audio.";
+        default: return "The video could not play. Try the original video link.";
+      }
+    }
+
+    function fmt(seconds) {
+      if (!isFinite(seconds) || seconds < 0) seconds = 0;
+      var m = Math.floor(seconds / 60);
+      var s = Math.floor(seconds % 60);
+      return m + ":" + (s < 10 ? "0" + s : s);
+    }
+
+    function duration() {
+      return isFinite(video.duration) && video.duration > 0 ? video.duration : 0;
+    }
+
+    function paint() {
+      var d = duration();
+      var ratio = d ? Math.min(1, Math.max(0, video.currentTime / d)) : 0;
+      var pct = (ratio * 100).toFixed(3) + "%";
+
+      fill.style.width = pct;
+      knob.style.left = pct;
+      timeEl.textContent = fmt(video.currentTime) + " / " + fmt(d);
+      progress.setAttribute("aria-valuenow", Math.round(ratio * 100));
+
+      try {
+        if (video.buffered && video.buffered.length && d) {
+          var end = video.buffered.end(video.buffered.length - 1);
+          buffer.style.width = ((end / d) * 100).toFixed(2) + "%";
+        }
+      } catch (e) { /* buffered can throw before metadata */ }
+    }
+
+    function play() {
+      setStatus("");
+      try {
+        if (!video.getAttribute("src")) video.setAttribute("src", VIDEO_URL);
+        if (video.error || video.readyState === 0) video.load();
+
+        var promise = video.play();
+        if (promise && typeof promise.catch === "function") {
+          promise.catch(function () { setStatus(errorText()); });
+        }
+      } catch (e) {
+        setStatus(errorText());
+      }
+    }
+
+    function toggle() {
+      if (video.paused || video.ended) { play(); } else { video.pause(); }
+    }
+
+    function seekTo(seconds) {
+      var d = duration();
+      if (!d) return;
+      video.currentTime = Math.min(d - 0.05, Math.max(0, seconds));
+      paint();
+    }
+
+    function ratioFromClientX(clientX) {
+      var rect = track.getBoundingClientRect();
+      if (!rect.width) return 0;
+      return Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+    }
+
+    function scrubFrom(clientX) {
+      var d = duration();
+      if (!d) return;
+      seekTo(ratioFromClientX(clientX) * d);
+    }
+
+    /* --- buttons --- */
+    playBtn.addEventListener("click", function (e) { e.preventDefault(); toggle(); });
+    bigPlay.addEventListener("click", function (e) { e.preventDefault(); toggle(); });
+    video.addEventListener("click", function (e) { e.preventDefault(); toggle(); });
+
+    backBtn.addEventListener("click", function (e) { e.preventDefault(); seekTo(video.currentTime - 10); });
+    fwdBtn.addEventListener("click", function (e) { e.preventDefault(); seekTo(video.currentTime + 10); });
+
+    muteBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      video.muted = !video.muted;
+      muteBtn.innerHTML = video.muted ? "&#128263;" : "&#128266;";
+    });
+
+    speedBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      speedIndex = (speedIndex + 1) % speeds.length;
+      video.playbackRate = speeds[speedIndex];
+      speedBtn.textContent = speeds[speedIndex] + "x";
+    });
+
+    fsBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+
+      if (fsEl) {
+        if (document.exitFullscreen) document.exitFullscreen();
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+        return;
+      }
+
+      if (card.requestFullscreen) {
+        card.requestFullscreen().catch(function () {});
+      } else if (card.webkitRequestFullscreen) {
+        card.webkitRequestFullscreen();
+      } else if (video.webkitEnterFullscreen) {
+        /* iPhone Safari: only the video element can go fullscreen */
+        video.webkitEnterFullscreen();
+      }
+    });
+
+    /* --- scrubbing (pointer, mouse and touch fallbacks) --- */
+    if (window.PointerEvent) {
+      progress.addEventListener("pointerdown", function (e) {
+        e.preventDefault();
+        scrubbing = true;
+        try { progress.setPointerCapture(e.pointerId); } catch (err) {}
+        scrubFrom(e.clientX);
+      });
+      progress.addEventListener("pointermove", function (e) {
+        if (scrubbing) { e.preventDefault(); scrubFrom(e.clientX); }
+      });
+      ["pointerup", "pointercancel"].forEach(function (t) {
+        progress.addEventListener(t, function () { scrubbing = false; });
+      });
+    } else {
+      progress.addEventListener("mousedown", function (e) {
+        e.preventDefault(); scrubbing = true; scrubFrom(e.clientX);
+      });
+      document.addEventListener("mousemove", function (e) {
+        if (scrubbing) scrubFrom(e.clientX);
+      });
+      document.addEventListener("mouseup", function () { scrubbing = false; });
+      progress.addEventListener("touchstart", function (e) {
+        scrubbing = true; scrubFrom(e.touches[0].clientX);
+      }, { passive: true });
+      progress.addEventListener("touchmove", function (e) {
+        if (scrubbing) scrubFrom(e.touches[0].clientX);
+      }, { passive: true });
+      progress.addEventListener("touchend", function () { scrubbing = false; });
+    }
+
+    progress.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft")  { e.preventDefault(); seekTo(video.currentTime - 5); }
+      if (e.key === "ArrowRight") { e.preventDefault(); seekTo(video.currentTime + 5); }
+      if (e.key === "Home")       { e.preventDefault(); seekTo(0); }
+      if (e.key === " " || e.key === "Enter") { e.preventDefault(); toggle(); }
+    });
+
+    /* --- media events --- */
+    video.addEventListener("loadedmetadata", paint);
+    video.addEventListener("timeupdate", function () { if (!scrubbing) paint(); });
+    video.addEventListener("progress", paint);
+    video.addEventListener("durationchange", paint);
+
+    video.addEventListener("play", function () {
+      card.classList.add("phd-is-playing");
+      playBtn.innerHTML = "&#10073;&#10073;";
+      setStatus("");
+    });
+    video.addEventListener("pause", function () {
+      card.classList.remove("phd-is-playing");
+      playBtn.innerHTML = "&#9654;";
+    });
+    video.addEventListener("ended", function () {
+      card.classList.remove("phd-is-playing");
+      playBtn.innerHTML = "&#9654;";
+    });
+
+    video.addEventListener("waiting", function () { card.classList.add("phd-is-buffering"); });
+    ["playing", "canplay", "pause", "error"].forEach(function (t) {
+      video.addEventListener(t, function () { card.classList.remove("phd-is-buffering"); });
+    });
+
+    video.addEventListener("error", function () { setStatus(errorText()); });
+
+    paint();
+
+    /* Exposed so the accordion can pause the video when the panel closes. */
+    window.PHDMedia = window.PHDMedia || {};
+    window.PHDMedia.pauseVideo = function () {
+      try { if (!video.paused) video.pause(); } catch (e) {}
+    };
+    window.PHDMedia.playVideo = function () { play(); return false; };
+  }
+
+  ready(function () {
+    try { initVideo(); } catch (e) { console.error("PHD video init failed:", e); }
+  });
+})();
+</script>
 
 </body>
 
