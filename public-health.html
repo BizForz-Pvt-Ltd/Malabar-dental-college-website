@@ -182,6 +182,180 @@
         line-height: 1.7;
       }
 
+
+      /* ---------- Mandasmitham programme journey / content ---------- */
+
+      .phd-mandasmitham-story {
+        margin: 0 0 30px;
+      }
+
+      .phd-mandasmitham-story-heading {
+        margin: 0 0 7px;
+        color: #293a5b;
+        font-family: "Poppins", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
+      .phd-mandasmitham-story-intro {
+        margin: 0 0 20px;
+        color: #6a717c;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .phd-mandasmitham-milestones {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .phd-mandasmitham-milestone {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 20px 22px 21px;
+        overflow: hidden;
+        background: #f8fafc;
+        border: 1px solid #e2e7ec;
+        border-left: 5px solid #3db166;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(24, 40, 71, 0.06);
+      }
+
+      .phd-mandasmitham-milestone-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 98px;
+        min-height: 28px;
+        margin: 0 0 10px;
+        padding: 4px 10px;
+        box-sizing: border-box;
+        color: #ffffff;
+        background: #3db166;
+        border-radius: 999px;
+        font-family: "Poppins", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+      }
+
+      .phd-mandasmitham-milestone-title {
+        margin: 0 0 11px;
+        color: #182847;
+        font-family: "Poppins", sans-serif;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 1.45;
+      }
+
+      .phd-mandasmitham-milestone-tag {
+        display: inline-block;
+        margin: -2px 0 12px;
+        padding: 4px 9px;
+        color: #3b4a63;
+        background: #edf2f6;
+        border-radius: 6px;
+        font-family: "Poppins", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+
+      .phd-mandasmitham-milestone p {
+        margin: 0 0 12px;
+        color: #5f6670;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .phd-mandasmitham-milestone p:last-child {
+        margin-bottom: 0;
+      }
+
+      .phd-mandasmitham-media-section {
+        margin-top: 30px;
+        padding-top: 26px;
+        border-top: 1px solid #e2e7ec;
+      }
+
+      .phd-mandasmitham-photo-count {
+        display: inline-flex;
+        align-items: center;
+        margin: 0 0 16px;
+        padding: 6px 11px;
+        color: #277b48;
+        background: #eaf7ef;
+        border: 1px solid #ccebd7;
+        border-radius: 999px;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      @media (max-width: 767px) {
+        .phd-mandasmitham-story {
+          margin-bottom: 22px;
+        }
+
+        .phd-mandasmitham-story-heading {
+          font-size: 21px;
+        }
+
+        .phd-mandasmitham-story-intro {
+          margin-bottom: 15px;
+          font-size: 13px;
+          line-height: 1.7;
+        }
+
+        .phd-mandasmitham-milestones {
+          gap: 12px;
+        }
+
+        .phd-mandasmitham-milestone {
+          padding: 16px 16px 17px;
+          border-left-width: 4px;
+          border-radius: 8px;
+        }
+
+        .phd-mandasmitham-milestone-title {
+          font-size: 17px;
+        }
+
+        .phd-mandasmitham-milestone p {
+          font-size: 13px;
+          line-height: 1.75;
+        }
+
+        .phd-mandasmitham-media-section {
+          margin-top: 22px;
+          padding-top: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .phd-mandasmitham-milestone {
+          padding: 14px 13px 15px;
+        }
+
+        .phd-mandasmitham-milestone-number {
+          min-width: 88px;
+          min-height: 26px;
+          font-size: 10px;
+        }
+
+        .phd-mandasmitham-milestone-title {
+          font-size: 16px;
+        }
+      }
+
       /* ---------- Custom video player ---------- */
 
       .phd-mandasmitham-video-card {
@@ -2102,14 +2276,91 @@
 
                                              <div class="phd-v2-panel phd-mandasmitham-panel" id="phd-v2-panel-mandasmitham">
                                                <div class="phd-mandasmitham-media">
-                                                 <h4 class="phd-mandasmitham-media-heading">
-                                                   Mandasmitham Media Gallery
-                                                 </h4>
-                                                 <p class="phd-mandasmitham-media-subtitle">
-                                                   Highlights from the Mandasmitham Village Adoption Programme.
-                                                 </p>
 
-                                                 <!-- Custom player: all controls are driven by JavaScript, so nothing
+                                                 <section class="phd-mandasmitham-story" aria-labelledby="phd-mandasmitham-story-title">
+                                                   <h4 class="phd-mandasmitham-story-heading" id="phd-mandasmitham-story-title">
+                                                     Mandasmitham - Programme Journey
+                                                   </h4>
+                                                   <p class="phd-mandasmitham-story-intro">
+                                                     Key milestones of the Mandasmitham Village Adoption Programme, from its first launch through the completion of Phase 1, Mandasmitham 2.0 and its Best Innovation recognition.
+                                                   </p>
+
+                                                   <div class="phd-mandasmitham-milestones">
+                                                     <article class="phd-mandasmitham-milestone">
+                                                       <span class="phd-mandasmitham-milestone-number">Milestone 01</span>
+                                                       <h5 class="phd-mandasmitham-milestone-title">Mandasmitham 1.0 Launch</h5>
+                                                       <p><strong>Mandasmitham- The Village Adoption Project</strong></p>
+                                                       <p>
+                                                         ’MANDHASMITHAM’- First Ever Village Adoption Program by a Dental College in Kerala was inaugurated at Malabar Dental College and Research Centre in Association with Ponnani Block Panchayat and ICDS Ponnani on 22nd February 2023. The project was Inaugurated by Shri. C Ramakrishnan ( President,Ponnani block panchayat). Presidential address was given by Dr. C P Alibava Haji ( Chairman,Malabar Dental College and Research Centre). The college aims to implement Dental Disease Control, Awareness of Dental Hygiene Habits, to collect data and analyse the Dental Health Status of people in Ponnani Block Panchayat. Project is outlined by Dr Abdul Saheer (Project Coordinator Mandhasmitham, Reader and Head ,Department of Public Health Dentistry, Malabar Dental College and Research Centre). Action plan document was released by Mr. Thufail CP (Vice Chairman, Malabar Dental College and Research Centre). 'NARUPUNCHIRI’ logo launch was done by Mrs.Sameera Ali Bava Haji (Vice chairperson , Malabar dental college and research centre). Ponnani Block Panchayat members felicitated the event followed by Vote of Thanks by Mrs Praveena Raja (Academic Director ,Malabar Academic City ).
+                                                       </p>
+                                                     </article>
+
+                                                     <article class="phd-mandasmitham-milestone">
+                                                       <span class="phd-mandasmitham-milestone-number">Milestone 02</span>
+                                                       <h5 class="phd-mandasmitham-milestone-title">Completion of Phase 1 - Narupunchiri</h5>
+                                                       <p><strong>Completion of Narupunchiri Anganwadi Camp Series initial phase</strong></p>
+                                                       <p>
+                                                         In a groundbreaking achievement, the Narupunchiri Anganwadi camp series has successfully concluded its initial phase on 28th February 2025 marking the completion of a 2 year journey. This pioneering initiative, undertaken as part of the Mandasmitham village adoption plan, was launched in February 2023.
+                                                       </p>
+                                                       <p>
+                                                         In a remarkable feat, the camp series reached out to 1424 anganwadi children, spanning across 121 anganwadis in four grama panchayats- Edappal, Vattamkulam, Thavanur, and Kaladi - within the Ponnani Block Panchayat.
+                                                       </p>
+                                                       <p>
+                                                         This comprehensive outreach program not only promoted awareness about oral health but also provided a platform for early detection and prevention of oral diseases among children and their parents.
+                                                       </p>
+                                                       <p>
+                                                         Notably, it is the first-ever village adoption initiative undertaken by a private Dental College of Kerala in collaboration with a government entity.
+                                                       </p>
+                                                       <p>
+                                                         "The program was spearheaded by Dr. Abdul Saheer, Head of Department, along with Dr. Nikitha Mohan, Senior Lecturer, and Dr. Helna Siddique, Lecturer. The Department of Pedodontics also played an active role in the program, contributing to its success.
+                                                       </p>
+                                                       <p>
+                                                         We extend our heartfelt gratitude to our former staff members, Dr. Aparna, Dr. Mannah Mathai, Dr. Anjana, and former Camp Coordinator, Amina Sumayya, for their invaluable contributions to the completion of Phase 1 of the Mandasmitham village adoption initiative. Their dedication and efforts have been instrumental in making this project a reality."
+                                                       </p>
+                                                     </article>
+
+                                                     <article class="phd-mandasmitham-milestone">
+                                                       <span class="phd-mandasmitham-milestone-number">Milestone 03</span>
+                                                       <h5 class="phd-mandasmitham-milestone-title">Mandasmitham 2.0 Launch</h5>
+                                                       <span class="phd-mandasmitham-milestone-tag">News Banner</span>
+                                                       <p><strong>Mandasmitham 2.0 Inaugurated at Perumpadapp: Expanding Dental Outreach for Rural Communities</strong></p>
+                                                       <p>
+                                                         Malabar Dental College's Department of Public Health Dentistry launched the award-winning "Mandasmitham 2.0" program on September 27, 2025, in Perumpadapp Block, marking the second phase of the college's village adoption initiative. Ponnani MLA Nandakumar inaugurated the program, which builds on the success of Mandasmitham 1.0, implemented in Ponnani Block Panchayat from 2023-2025. College Principal Dr. Pradeep Kumar C welcomed the gathering, with Malabar Academic City Chairman DR. C P Ali Bava Hajji as the chief guest and Perumpadapp Block President Adv. E S Sindhu presiding.
+                                                       </p>
+                                                       <p>
+                                                         Project Coordinator Dr. Abdul Saheer, Head of the Department of Public Health Dentistry, provided an overview of the project, highlighting its recognition as a "Good Practice in Community Outreach" award recipient from the Kerala Government in 2025. Mandasmitham is a pioneering model for village adoption programs in dentistry through public-private partnerships.
+                                                       </p>
+                                                       <p>
+                                                         The event featured the unveiling of logos for Anganwadi-centered camps (Narupunchiri 2.0) and included speeches from notable attendees such as Veliancode Panchayat President Shamsu Kalathil, Block Secretary Varghese, Block Member Ajayan, and Health Education Standing Committee Councilor Sayeed Puzhakara. Dr. Fathimath Zahra, Associate Dean of the Dental College, delivered the vote of thanks. Additionally, Dr. Divya from the Department of Pediatric Dentistry conducted awareness classes and training for Anganwadi workers.
+                                                       </p>
+                                                     </article>
+
+                                                     <article class="phd-mandasmitham-milestone">
+                                                       <span class="phd-mandasmitham-milestone-number">Milestone 04</span>
+                                                       <h5 class="phd-mandasmitham-milestone-title">Mandasmitham - Best Innovation Award</h5>
+                                                       <p>
+                                                         Malabar Dental College’s groundbreaking initiative MANDASMITHAM – a unique village adoption project led by IQAC &amp; the Department of Public Health Dentistry – has been honored with the “Best Innovation in Community Outreach” Award by the Kerala Government.
+                                                       </p>
+                                                       <p>
+                                                         This is a historic achievement, marking India’s first-of-its-kind innovation by a private dental college in collaboration with a government entity.
+                                                       </p>
+                                                       <p>
+                                                         Adding to the pride, the project’s inspiring video was showcased at the prestigious SKILL KERALA GLOBAL SUMMIT ON SKILLS &amp; INNOVATION, organized by K-DISC in Kochi (August 29–30) – highlighting our commitment to creating healthier and empowered communities.
+                                                       </p>
+                                                     </article>
+                                                   </div>
+                                                 </section>
+
+                                                 <section class="phd-mandasmitham-media-section" aria-labelledby="phd-mandasmitham-media-title">
+                                                   <h4 class="phd-mandasmitham-media-heading" id="phd-mandasmitham-media-title">
+                                                     Mandasmitham Media Gallery
+                                                   </h4>
+                                                   <p class="phd-mandasmitham-media-subtitle">
+                                                     Video and photographic highlights from the Mandasmitham Village Adoption Programme.
+                                                   </p>
+                                                   <div class="phd-mandasmitham-photo-count">39 programme photographs</div>
+
+<!-- Custom player: all controls are driven by JavaScript, so nothing
                                                       here depends on the browser default action, which the theme
                                                       scripts were cancelling. -->
                                                  <div class="phd-mandasmitham-video-card" id="phd-video-card">
@@ -2236,7 +2487,75 @@
                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/58164e18298d4060975b6cd436dc49cd.jpeg" aria-label="Open Mandasmitham gallery image 17 full screen">
                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/58164e18298d4060975b6cd436dc49cd.jpeg" alt="Mandasmitham Village Adoption Programme activity 17" loading="lazy" decoding="async" />
                                                  </button>
-                                                 </div>
+                                                                                                   <!-- 22 additional Mandasmitham photographs -->
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/998691bf15264c86b557c25f95e5d5b1.jpeg" aria-label="Open Mandasmitham gallery image 18 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/998691bf15264c86b557c25f95e5d5b1.jpeg" alt="Mandasmitham Village Adoption Programme activity 18" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/412d245e32bd4348a193331140cef827.jpeg" aria-label="Open Mandasmitham gallery image 19 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/412d245e32bd4348a193331140cef827.jpeg" alt="Mandasmitham Village Adoption Programme activity 19" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/c76f86832e2649069227115ae2a27ad5.jpeg" aria-label="Open Mandasmitham gallery image 20 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/c76f86832e2649069227115ae2a27ad5.jpeg" alt="Mandasmitham Village Adoption Programme activity 20" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/7f9604a98e424ec698071b4cd0d59f05.jpeg" aria-label="Open Mandasmitham gallery image 21 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/7f9604a98e424ec698071b4cd0d59f05.jpeg" alt="Mandasmitham Village Adoption Programme activity 21" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/7aef911a05184009bbde44ec653a4c8e.jpeg" aria-label="Open Mandasmitham gallery image 22 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/7aef911a05184009bbde44ec653a4c8e.jpeg" alt="Mandasmitham Village Adoption Programme activity 22" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/6c3f1ef1ef26430a824a033bb06b2d71.jpeg" aria-label="Open Mandasmitham gallery image 23 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/6c3f1ef1ef26430a824a033bb06b2d71.jpeg" alt="Mandasmitham Village Adoption Programme activity 23" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/8fce4d38722e43a89fb8bc7dc21ed562.jpeg" aria-label="Open Mandasmitham gallery image 24 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/8fce4d38722e43a89fb8bc7dc21ed562.jpeg" alt="Mandasmitham Village Adoption Programme activity 24" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/56d43c723bbc47c8a0eab011973be120.jpeg" aria-label="Open Mandasmitham gallery image 25 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/56d43c723bbc47c8a0eab011973be120.jpeg" alt="Mandasmitham Village Adoption Programme activity 25" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/9c9385584fae44ceb3617ffb5c96480a.jpeg" aria-label="Open Mandasmitham gallery image 26 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/9c9385584fae44ceb3617ffb5c96480a.jpeg" alt="Mandasmitham Village Adoption Programme activity 26" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/ad96c5b0301b427e82ea19355d3ddfce.jpeg" aria-label="Open Mandasmitham gallery image 27 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/ad96c5b0301b427e82ea19355d3ddfce.jpeg" alt="Mandasmitham Village Adoption Programme activity 27" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/00e8bee1d5764b6aa25a7875ea1f6641.jpeg" aria-label="Open Mandasmitham gallery image 28 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/00e8bee1d5764b6aa25a7875ea1f6641.jpeg" alt="Mandasmitham Village Adoption Programme activity 28" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/554abb3700224c7aba25055ae1c73fcf.jpeg" aria-label="Open Mandasmitham gallery image 29 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/554abb3700224c7aba25055ae1c73fcf.jpeg" alt="Mandasmitham Village Adoption Programme activity 29" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/37345d2e16d74772b9749ef5f378f26c.jpeg" aria-label="Open Mandasmitham gallery image 30 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/37345d2e16d74772b9749ef5f378f26c.jpeg" alt="Mandasmitham Village Adoption Programme activity 30" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/27cd955ab76a4bcfb01a31104109a0e7.jpeg" aria-label="Open Mandasmitham gallery image 31 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/27cd955ab76a4bcfb01a31104109a0e7.jpeg" alt="Mandasmitham Village Adoption Programme activity 31" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/c50e0b30224b4c599176571a9b6730ec.jpeg" aria-label="Open Mandasmitham gallery image 32 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/c50e0b30224b4c599176571a9b6730ec.jpeg" alt="Mandasmitham Village Adoption Programme activity 32" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/1b531fa11b594e72ada9c823c61f9707.jpeg" aria-label="Open Mandasmitham gallery image 33 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/1b531fa11b594e72ada9c823c61f9707.jpeg" alt="Mandasmitham Village Adoption Programme activity 33" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/e6dda861c52c48afbb41374359f743f0.jpeg" aria-label="Open Mandasmitham gallery image 34 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/e6dda861c52c48afbb41374359f743f0.jpeg" alt="Mandasmitham Village Adoption Programme activity 34" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/cb4d6d7353bc4158b4ea645df4dea4a5.jpeg" aria-label="Open Mandasmitham gallery image 35 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/cb4d6d7353bc4158b4ea645df4dea4a5.jpeg" alt="Mandasmitham Village Adoption Programme activity 35" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/98a45a099862489c936a4ed0bdf3cbc2.jpeg" aria-label="Open Mandasmitham gallery image 36 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/98a45a099862489c936a4ed0bdf3cbc2.jpeg" alt="Mandasmitham Village Adoption Programme activity 36" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/52873e9048d74eca994099bdde23fa24.jpeg" aria-label="Open Mandasmitham gallery image 37 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/52873e9048d74eca994099bdde23fa24.jpeg" alt="Mandasmitham Village Adoption Programme activity 37" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/f61f74b7d2dc4e6ba6ad8cb428613ce6.jpeg" aria-label="Open Mandasmitham gallery image 38 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/f61f74b7d2dc4e6ba6ad8cb428613ce6.jpeg" alt="Mandasmitham Village Adoption Programme activity 38" loading="lazy" decoding="async" />
+                                                  </button>
+                                                  <button type="button" class="phd-mandasmitham-gallery-item" onclick="return PHDGallery.open(this, event);" data-full="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/85288725a36c410fac2e7c34fd127af4.jpeg" aria-label="Open Mandasmitham gallery image 39 full screen">
+                                                    <img src="https://connectv2s3.s3.ap-south-1.amazonaws.com/Media_Uploads/mdcrc/85288725a36c410fac2e7c34fd127af4.jpeg" alt="Mandasmitham Village Adoption Programme activity 39" loading="lazy" decoding="async" />
+                                                  </button>
+</div>
+                                                 </section>
                                                </div>
                                              </div>
                                            </div>
@@ -2535,7 +2854,7 @@ Malappuram, Dt Pin : 679578</span></p>
       <button type="button" class="phd-viewer-next" id="phd-viewer-next" aria-label="Next image" onclick="return PHDGallery.next(event);">›</button>
 
       <div class="phd-viewer-footer" onclick="event.stopPropagation();">
-        <span id="phd-viewer-counter">1 / 17</span>
+        <span id="phd-viewer-counter">1 / 39</span>
         <a id="phd-viewer-original" href="#" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">Open full-resolution image</a>
       </div>
     </div>
