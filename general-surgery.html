@@ -13,6 +13,7 @@
     <link rel='stylesheet' href='plugins/revslider/public/assets/css/settings.css' type='text/css' media='all' />
     <link rel='stylesheet' href='css/style-core.css' type='text/css' media='all' />
     <link rel='stylesheet' href='css/kingster-style-custom.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="css/department-hod.css" />
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700%2C400" rel="stylesheet" property="stylesheet" type="text/css" media="all">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CABeeZee%3Aregular%2Citalic&amp;subset=latin%2Clatin-ext%2Cdevanagari&amp;ver=5.0.3' type='text/css' media='all' />
@@ -1281,6 +1282,7 @@ General surgeons are particularly needed in remote or rural settings due to thei
                                                 <div class="gdlr-core-personnel-list  clearfix">
                                                      <div class="gdlr-core-title-item-title-wrap clearfix">
                                                 <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 30px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;color: #293a5b ;padding-bottom: 20px;">Department Faculty</h3></div>
+                                                <div id="department-hod-container"></div>
                                                     <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-column-20 gdlr-core-column-first gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover" style="margin-right: 40px;">
                                                         <a ><img src="upload/general-surgery-1.jpg" alt="" width="500" height="500" title="personnel-1" /></a>
                                                     </div>
@@ -1709,6 +1711,7 @@ setInterval(removeFontSizeStyle, 100);
       
     </script>
 
+<script src="js/department-hod.js"></script>
 <script>
   // Define the API URL to fetch staff list data
   const apiUrlStaffList = "https://conext.in/custom_users/api/staff_list_dep_wise/90";
@@ -1717,16 +1720,19 @@ setInterval(removeFontSizeStyle, 100);
   async function fetchAndDisplayStaffList() {
       try {
           const response = await fetch(apiUrlStaffList);
+          if (!response.ok) throw new Error("Staff request failed: " + response.status);
           const data = await response.json();
   
           // Check if the status is true and the staff arrays exist
-          if (data.status && (Array.isArray(data.teaching_staff) || Array.isArray(data.non_teaching_staff))) {
+          if (data && data.status === true) {
   
               // Select the container div where the staff list will be displayed
               const containerDiv = document.querySelector('#staff-list-container');
   
               // Clear any existing content in the container
-              containerDiv.innerHTML = '';
+              containerDiv.replaceChildren();
+              const { hod, teachingStaff, nonTeachingStaff } = DepartmentHOD.selectStaff(data);
+              DepartmentHOD.render(hod, document.getElementById("department-hod-container"));
   
               // Function to create and append staff columns
               const designationOrder = {
@@ -1746,7 +1752,7 @@ setInterval(removeFontSizeStyle, 100);
                 if (orderA !== orderB) {
                   return orderA - orderB;
                 }
-                return a.name.localeCompare(b.name); // secondary sort by name
+                return DepartmentHOD.text(a.name).localeCompare(DepartmentHOD.text(b.name)); // secondary sort by name
               });
 
                   // Create a heading for the staff category
@@ -1760,7 +1766,7 @@ setInterval(removeFontSizeStyle, 100);
                   // Create a row div to hold the staff columns
                   const rowDiv = document.createElement('div');
                   rowDiv.style.display = 'grid';
-                  rowDiv.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))'; // Responsive columns
+                  rowDiv.style.gridTemplateColumns = 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))'; // Responsive columns
                   rowDiv.style.gap = '20px';
                   rowDiv.style.justifyItems = 'center'; // Center the grid items
                   containerDiv.appendChild(rowDiv);
@@ -1782,14 +1788,12 @@ setInterval(removeFontSizeStyle, 100);
                       columnDiv.style.maxWidth = '100%'; // Responsive max-width
 
                       const img = document.createElement('img');
-                      img.src = staff.picture;
-                      img.alt = `${staff.name}'s picture`;
+                      DepartmentHOD.configureStaffImage(img, staff);
                       img.style.width = '100%';
                       img.style.height = 'auto';
                       img.style.borderRadius = '8px';
                       img.style.objectFit = 'cover';
                       img.style.maxHeight = '300px';
-                      img.onclick = function() { window.open(staff.picture, '_blank'); };
   
                       // Create the title element
                       const titleElement = document.createElement('div');
@@ -1801,13 +1805,13 @@ setInterval(removeFontSizeStyle, 100);
                       h3.style.fontWeight = '600';
                       h3.style.color = '#333';
                       h3.style.margin = '0';
-                      h3.textContent = staff.name;
+                      h3.textContent = DepartmentHOD.text(staff.name);
   
                       const span = document.createElement('span');
                       span.style.color = '#3db166';
                       span.style.display = 'block';
                       span.style.marginTop = '5px';
-                      span.textContent = staff.designation;
+                      span.textContent = DepartmentHOD.text(staff.designation);
   
                       // Append title and designation
                       titleElement.appendChild(h3);
@@ -1823,19 +1827,21 @@ setInterval(removeFontSizeStyle, 100);
               };
   
               // Create and display teaching staff section
-              if (Array.isArray(data.teaching_staff) && data.teaching_staff.length > 0) {
-                  createStaffColumns(data.teaching_staff, 'Teaching Staff');
+              if (teachingStaff.length > 0) {
+                createStaffColumns(teachingStaff, 'Teaching Staff');
               }
   
               // Create and display non-teaching staff section
-              if (Array.isArray(data.non_teaching_staff) && data.non_teaching_staff.length > 0) {
-                  createStaffColumns(data.non_teaching_staff, 'Non-Teaching Staff');
+              if (nonTeachingStaff.length > 0) {
+                createStaffColumns(nonTeachingStaff, 'Non-Teaching Staff');
               }
           } else {
               console.error("Unexpected API response format or no staff available.");
+              DepartmentHOD.showError(document.getElementById("staff-list-container"), document.getElementById("department-hod-container"));
           }
       } catch (error) {
           console.error("Error fetching staff list:", error);
+          DepartmentHOD.showError(document.getElementById("staff-list-container"), document.getElementById("department-hod-container"));
       }
   }
   
